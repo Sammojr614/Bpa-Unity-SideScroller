@@ -2404,6 +2404,7 @@ GameObject:
   - component: {fileID: 2022185473}
   - component: {fileID: 2022185472}
   - component: {fileID: 2022185471}
+  - component: {fileID: 2022185474}
   m_Layer: 5
   m_Name: Ozul
   m_TagString: Player
@@ -2521,6 +2522,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4048138, y: 2.467431}
   m_EdgeRadius: 0
+--- !u!114 &2022185474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2022185467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a710f54c1f0ec40a546a02d5262604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprintSpeed: 10
 --- !u!1 &2038773329
 GameObject:
   m_ObjectHideFlags: 0
