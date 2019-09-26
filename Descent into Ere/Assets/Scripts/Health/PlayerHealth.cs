@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    //variables for health and number of hearts
     public int health;
     public int numOfHearts;
 
+    //Links the hearts to the script
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
@@ -27,17 +29,25 @@ public class PlayerHealth : MonoBehaviour
 
         for (int i = 0; i < hearts.Length; i++)
         {
-
+            /* Makes the game display a full heart
+             * when the player is at full health
+             */
             if (i < health)
             {
                 hearts[i].sprite = fullHeart;
             }
+            /* Makes the game display an empty heart
+             * when the player takes damage
+             */
             else
             {
                 hearts[i].sprite = emptyHeart;
 
             }
 
+            /* Makes sure the health displayed
+             * Isn't greater that the number of hearts
+             */
             if(i < numOfHearts){
                 hearts[i].enabled = true;
             }else{
