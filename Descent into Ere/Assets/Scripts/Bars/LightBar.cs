@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 public class LightBar : MonoBehaviour {
 
+    Animator anim;
+    private float x;
+    private float y;
+    private float sprint;
+
     private Move2D controller;
 
     public float slowSpeed = 3f;
@@ -51,6 +56,13 @@ public class LightBar : MonoBehaviour {
         if(amount == 0f)
         {
             
+        }
+
+        void sprinting () {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+
+            }
         }
         
         
