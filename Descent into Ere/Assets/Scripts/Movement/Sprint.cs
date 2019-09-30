@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sprint : MonoBehaviour {
+public class Sprint : MonoBehaviour
+{
 
+    //Speed the character sprints
     public float sprintSpeed = 8f;
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         /* Allows player to sprint if they
          * Press the left shift button
          */
@@ -25,5 +28,7 @@ public class Sprint : MonoBehaviour {
             Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
             transform.position += movement * Time.deltaTime * sprintSpeed;
         }
+        
     }
 }
+

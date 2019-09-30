@@ -5,6 +5,8 @@ public class LightBar : MonoBehaviour {
 
     private Move2D controller;
 
+    public float slowSpeed = 3f;
+
     //Total amount of stamina
     public float amount = 100f;
 
@@ -45,12 +47,12 @@ public class LightBar : MonoBehaviour {
             amount += Time.deltaTime * regenAmount;
         }
 
-        if(amount > 0f)
+        
+        if(amount == 0f)
         {
-            isRunning = false;
-            isRunningRight = false;
+            
         }
-
+        
         
 
     }
