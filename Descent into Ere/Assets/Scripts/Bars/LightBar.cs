@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class LightBar : MonoBehaviour {
 
     private Move2D controller;
@@ -44,6 +43,12 @@ public class LightBar : MonoBehaviour {
              * The player will regenrate stamina
              */
             amount += Time.deltaTime * regenAmount;
+        }
+
+        if(amount > 0f)
+        {
+            isRunning = false;
+            isRunningRight = false;
         }
 
         
