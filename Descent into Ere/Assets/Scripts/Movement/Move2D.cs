@@ -8,7 +8,7 @@ public class Move2D : MonoBehaviour
     //The speed the player moves
     public float moveSpeed = 5f;
     //Checks if the player is on the ground
-    public bool isGrounded = false;
+    public bool isGrounded ;
    
     //Allows the player to move
     void Update()
