@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 484908605}
   - component: {fileID: 484908606}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -420,7 +420,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b90c3b6e9c1424e3ca3c5099aa07914b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -731,8 +731,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 739359460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.552, y: 0.916, z: 0}
-  m_LocalScale: {x: 48.343628, y: 15.9732065, z: 1}
+  m_LocalPosition: {x: 4.773, y: 0.986, z: 0}
+  m_LocalScale: {x: 52.51008, y: 15.888182, z: 1}
   m_Children: []
   m_Father: {fileID: 889245191}
   m_RootOrder: 1
@@ -958,13 +958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a591388f9bdb245eaa3158df4d2517f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 1124220024}
-  moveSpeed: 0
-  jumpPower: 5
-  isGrounded: 0
-  groundLayers:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!114 &1124220026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1382,8 +1375,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1976792558}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.514, y: -4.587, z: 0}
-  m_LocalScale: {x: 7.7565527, y: 0.21747863, z: 1}
+  m_LocalPosition: {x: 4.843, y: -4.587, z: 0}
+  m_LocalScale: {x: 8.393948, y: 0.21747863, z: 1}
   m_Children: []
   m_Father: {fileID: 889245191}
   m_RootOrder: 0
