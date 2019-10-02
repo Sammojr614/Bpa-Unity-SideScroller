@@ -11,7 +11,10 @@ public class Move2D : MonoBehaviour
     //Checks if the player is on the ground
     public bool isGrounded ;
    
-    //Allows the player to move
+    /* Allows the player to move, by using l/r arrow keys 
+     * Or wasd on the keyboard 
+     * (a left, d right)
+     */
     void Update()
     {
         Jump();
@@ -22,7 +25,7 @@ public class Move2D : MonoBehaviour
 
     }
 
-    //Allows the player to jump
+    //Allows the player to jump, if they are on the ground
     void Jump()
     {
         if (Input.GetButtonDown("Jump") && isGrounded == true)

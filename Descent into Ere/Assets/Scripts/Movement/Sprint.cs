@@ -5,10 +5,9 @@ using UnityEngine;
 public class Sprint : MonoBehaviour
 {
 
-    //Speed the character sprints
+    //Speed the character moves while sprinting
     public float sprintSpeed = 8f;
 
-    // Update is called once per frame
     void Update()
     {
         /* Allows player to sprint if they

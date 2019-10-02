@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    //variables for health and number of hearts
+    //Variables for health and number of hearts
     public int health;
     public int numOfHearts;
 
@@ -14,8 +14,6 @@ public class PlayerHealth : MonoBehaviour
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
-
-    // Update is called once per frame
     void Update()
     {
         /*Makes sure the player's health
