@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 806197476}
   - component: {fileID: 806197475}
   - component: {fileID: 806197474}
+  - component: {fileID: 806197477}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -466,6 +467,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   isGrounded: 0
+--- !u!114 &806197477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806197472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8a710f54c1f0ec40a546a02d5262604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprintSpeed: 8
 --- !u!1 &858135526
 GameObject:
   m_ObjectHideFlags: 0
