@@ -4,65 +4,51 @@ using UnityEngine;
 
 public class AnimatonController : MonoBehaviour {
 	//calling Out the animator and The Bools Needed
-	public Animator Animator;
+	public Animator OzulAnimator;
 	public GameObject Player;
-	bool isMoving;
 	bool isJumping;
-	bool sprintActive;
+	float sprintActive;
 
-	void Start () {
-		Animator = Player.GetComponent<Animator> ();
-
-
+	void Start(){
+		OzulAnimator = Player.GetComponent<Animator> ();
 	}
-	
+	//I used this alot, i made a Function for Moving
+	void Move(){
+		OzulAnimator.SetFloat ("Moving", 0.5f);
+	}
+	//To Make Things Easier i just wrote the Sprint out in a Funciton
+	void OzulSprint(){
+		OzulAnimator.SetFloat ("Moving", 1.0f);
+	}
 
 	void Update () {
-		//Key code D
+		//Key Code D
 		if(Input.GetKey(KeyCode.D)){
-			isMoving = true;
-			Animator.SetBool ("Moving", isMoving);
+			Move ();
 		}
-		//Key code A
-		if(Input.GetKey(KeyCode.A)){
-			isMoving = true;
-			Animator.SetBool ("Moving", isMoving);
+		//Key Code A
+		if (Input.GetKey (KeyCode.A)) {
+			Move ();
 		}
 		//Left Arrow Key
 		if(Input.GetKey(KeyCode.LeftArrow)){
-			isMoving = true;
-			Animator.SetBool ("Moving", isMoving);
+			Move ();
 		}
 		//Right Arrow Key
 		if(Input.GetKey(KeyCode.RightArrow)){
-			isMoving = true;
-			Animator.SetBool ("Moving", isMoving);
+			Move ();
 		}
-		isMoving = false;
-		Animator.SetBool ("Moving", isMoving);
+		OzulAnimator.SetFloat ("Moving", 0.0f);
 		//Left Shift
-		if (Input.GetKey (KeyCode.LeftShift)) {
-			sprintActive = true;
-			Animator.SetBool ("Sprinting", sprintActive);
-		} else {
-			sprintActive = false;
-			Animator.SetBool ("Sprinting", sprintActive);
+		if(Input.GetKey(KeyCode.LeftShift)){
+			OzulSprint ();
 		}
 		//Right Shift
-		if (Input.GetKey (KeyCode.RightShift)) {
-			sprintActive = false;
-			Animator.SetBool ("Sprinting", sprintActive);
-		} else {
-			sprintActive = false;
-			Animator.SetBool ("Sprinting", sprintActive);
+		if(Input.GetKey(KeyCode.RightShift)){
+			OzulSprint ();
 		}
-		//Space
-		if(Input.GetKey(KeyCode.Space)){
-			isJumping = true;
-			Animator.SetBool ("In Air", isJumping);
-		}
-		isJumping = false;
-		Animator.SetBool ("In Air", isJumping);
-	}
-}
+		OzulAnimator.SetFloat ("Moving", 0.0f);
 
+		
+}
+}
