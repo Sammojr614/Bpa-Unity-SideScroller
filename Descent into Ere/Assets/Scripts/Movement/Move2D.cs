@@ -7,10 +7,9 @@ public class Move2D : MonoBehaviour
 {
     //The speed the player moves
     public float moveSpeed = 5f;
-    float Speed;
     //Checks if the player is on the ground
     public bool isGrounded ;
-   
+
     /* Allows the player to move, by using l/r arrow keys 
      * Or wasd on the keyboard 
      * (a left, d right)
@@ -20,9 +19,9 @@ public class Move2D : MonoBehaviour
         Jump();
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
 		transform.position += movement * Time.deltaTime * moveSpeed;
-       
 
 
+	
     }
 
     //Allows the player to jump, if they are on the ground
@@ -31,6 +30,7 @@ public class Move2D : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 8f), ForceMode2D.Impulse);
+
         }
         
     }

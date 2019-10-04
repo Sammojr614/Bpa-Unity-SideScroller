@@ -17,6 +17,7 @@ public class Sprint : MonoBehaviour
         {
             Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
             transform.position += movement * Time.deltaTime * sprintSpeed;
+		
         }
 
         /* Allows player to sprint if they
@@ -24,8 +25,10 @@ public class Sprint : MonoBehaviour
          */
         if (Input.GetKey(KeyCode.RightShift))
         {
+			
             Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
             transform.position += movement * Time.deltaTime * sprintSpeed;
+
         }
         
     }
