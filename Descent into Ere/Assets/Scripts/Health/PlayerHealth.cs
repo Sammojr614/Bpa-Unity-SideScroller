@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Sprites;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public int numOfHearts;
 
     //Links the hearts to the script
-    public Image[] hearts;
+    public SpriteRenderer[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
 
