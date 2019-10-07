@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Grounded : MonoBehaviour
 {
+	
     GameObject Player;
 
     void Start()
@@ -19,6 +20,7 @@ public class Grounded : MonoBehaviour
         if (collision.collider.tag == "Ground")
         {
             Player.GetComponent<Move2D>().isGrounded = true;
+
         }
     }
     /* If the player is not on the ground

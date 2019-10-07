@@ -42,19 +42,9 @@ public class Move2D : MonoBehaviour
 			if (Input.GetButtonUp ("Horizontal")) {
 				PlayerAnimator.SetFloat ("Moving", 0.0f);
 			}
-			//Jumping Animation Perams
-			if (Input.GetButtonDown ("Vertical")) {
-				PlayerAnimator.SetFloat ("Jumping", 1.0f);
-			} else {
-				if (Input.GetButtonDown ("Vertical")) {
-					PlayerAnimator.SetFloat ("Jumping", 0.0f);
-				}
-			}
 		}
 
-
-
-		}
+	}                               
 	
     
 
@@ -62,10 +52,11 @@ public class Move2D : MonoBehaviour
   	void Jump()
     {
 		if (Input.GetButtonDown ("Jump") && isGrounded == true) {
-			
 			gameObject.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0f, 8f), ForceMode2D.Impulse);
 
+
 		}
+
         
     }
 }
