@@ -19,6 +19,7 @@ public class Move2D : MonoBehaviour
 	//Getting The Animator
 	void Start(){
 		PlayerAnimator = GetComponent<Animator> ();
+		isJumping = PlayerAnimator.GetFloat ("Jumping");
 	}
 
 
@@ -31,9 +32,10 @@ public class Move2D : MonoBehaviour
 	}
 
     void Update()
-    {
-        Jump();
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+	{
+		Jump ();
+		Fallng ();
+		Vector3 movement = new Vector3 (Input.GetAxis ("Horizontal"), 0f, 0f);
 		transform.position += movement * Time.deltaTime * moveSpeed;
 		//Walking Animation Perams
 		if (Input.GetButtonDown ("Horizontal")) {
@@ -42,23 +44,50 @@ public class Move2D : MonoBehaviour
 			if (Input.GetButtonUp ("Horizontal")) {
 				PlayerAnimator.SetFloat ("Moving", 0.0f);
 			}
-		}
 
-	}      
-	//Jumping Animation Perams
-                   
-	
+		
+	}
+		//Telling the Animator When Ozul is Grounded
+		if (isGrounded == true) {
+			PlayerAnimator.SetBool ("IsGrounded", true);
+		} else {
+			if (isGrounded == false) {
+				PlayerAnimator.SetBool ("IsGrounded", false);
+			}
+		}
+	}   
+
+
+	void Fallng(){
+		//Falling Animation Perams
+		if (isGrounded == false && Input.GetButtonUp ("Jump")) {
+			PlayerAnimator.SetFloat ("Jumping", 1.0f);
+		} 
+	}
+
+
     
 
     //Allows the player to jump, if they are on the ground
   	void Jump()
     {
 		if (Input.GetButtonDown ("Jump") && isGrounded == true) {
+			PlayerAnimator.SetFloat ("Jumping", 0.5f);
 			gameObject.GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0f, 8f), ForceMode2D.Impulse);
+			//Debuging
+			Debug.Log (PlayerAnimator.GetBool ("IsGrounded"));
+			Debug.Log (PlayerAnimator.GetFloat ("Jumping"));
 
+
+		} else {
+			if (Input.GetButtonUp ("Jump") && isGrounded == false) {
+				PlayerAnimator.SetFloat ("Jumping", 1.0f);
+			}
+		}
 
 		}
+	
 
         
     }
-}
+
