@@ -16,11 +16,16 @@ public class Move2D : MonoBehaviour
 
 	//Giving the Program The Animator
 	public Animator PlayerAnimator;
+	//Incase i Need to Find the Animations
+	Animation PlayerAnimation;
 	//Getting The Animator
+	//Name Of Level
+	public string levelName;
 	void Start()
 	{
 		PlayerAnimator = GetComponent<Animator>();
 		isJumping = PlayerAnimator.GetFloat("Jumping");
+		PlayerAnimation = PlayerAnimator.GetComponent<Animation> ();
 	}
 
 
@@ -74,18 +79,25 @@ public class Move2D : MonoBehaviour
 	{
 		if (Input.GetButtonDown("Jump") && isGrounded == true)
 		{
-			PlayerAnimator.SetFloat("Jumping", 0.0f);
 			gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 8f), ForceMode2D.Impulse);
 			Debug.Log(PlayerAnimator.GetBool("IsGrounded"));
+			Debug.Log (PlayerAnimator.GetFloat("Jumping"));
 
 		}
 		else
 		{
-			if (Input.GetButtonUp("Jump"))
+			if (isGrounded == true)
 			{
-				PlayerAnimator.SetFloat("Jumping", 1.0f);
+				PlayerAnimator.SetBool ("IsGrounded", true);
+				PlayerAnimator.SetFloat ("Jumping", 0.0f);
+
 			}
 
+			if (Input.GetKey (KeyCode.Space) && isGrounded == true) {
+				PlayerAnimator.SetFloat ("Jumping", 0.5f);
+
+
+			} 
 
 
 		}
