@@ -44,7 +44,9 @@ public class Move2D : MonoBehaviour
 			}
 		}
 
-	}                               
+	}      
+	//Jumping Animation Perams
+                   
 	
     
 
