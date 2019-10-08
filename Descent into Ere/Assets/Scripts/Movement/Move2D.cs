@@ -17,15 +17,11 @@ public class Move2D : MonoBehaviour
 	//Giving the Program The Animator
 	public Animator PlayerAnimator;
 	//Incase i Need to Find the Animations
-	Animation PlayerAnimation;
 	//Getting The Animator
-	//Name Of Level
-	public string levelName;
 	void Start()
 	{
 		PlayerAnimator = GetComponent<Animator>();
-		isJumping = PlayerAnimator.GetFloat("Jumping");
-		PlayerAnimation = PlayerAnimator.GetComponent<Animation> ();
+		PlayerAnimator.SetBool("IsGrounded", isGrounded);
 	}
 
 
@@ -43,7 +39,7 @@ public class Move2D : MonoBehaviour
 		Jump();
 		Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
 		transform.position += movement * Time.deltaTime * moveSpeed;
-		//Walking Animation Perams
+		//Saying if Any Key: Left Arrow, A, D , or Right Arrow Will Make The Walking Peram Change
 		if (Input.GetButtonDown("Horizontal"))
 		{
 			OzulMoving();
@@ -57,49 +53,30 @@ public class Move2D : MonoBehaviour
 
 
 		}
-		//Telling the Animator When Ozul is Grounded
-		if (isGrounded == true)
-		{
-			PlayerAnimator.SetBool("IsGrounded", true);
-		}
-		else
-		{
-			if (isGrounded == false)
-			{
-				PlayerAnimator.SetBool("IsGrounded", false);
-			}
-		}
 	}
 
 
 
 
-	//Allows the player to jump, if they are on the ground
-	void Jump()
-	{
-		if (Input.GetButtonDown("Jump") && isGrounded == true)
+		//Allows the player to jump, if they are on the ground
+		void Jump()
 		{
-			gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 8f), ForceMode2D.Impulse);
-			Debug.Log(PlayerAnimator.GetBool("IsGrounded"));
-			Debug.Log (PlayerAnimator.GetFloat("Jumping"));
-
-		}
-		else
-		{
-			if (isGrounded == true)
+			if (Input.GetButtonDown("Jump") && isGrounded == true)
 			{
-				PlayerAnimator.SetBool ("IsGrounded", true);
-				PlayerAnimator.SetFloat ("Jumping", 0.0f);
+				gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 8f), ForceMode2D.Impulse);
 
 			}
+			
+				// Setting The Jump Peram
 
-			if (Input.GetKey (KeyCode.Space) && isGrounded == true) {
-				PlayerAnimator.SetFloat ("Jumping", 0.5f);
+				if (Input.GetButtonUp("Jump") && isGrounded == true)
+				{
+					PlayerAnimator.SetFloat("Jumping", 0.5f);
 
 
-			} 
+				}
 
 
+			}
 		}
-	}
-}
+	
