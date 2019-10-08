@@ -16,7 +16,7 @@ public class Sprint : MonoBehaviour
         /* Allows player to sprint if they
          * Press the left shift button
          */
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
 			PlayerAnimator.SetFloat ("Moving", 1.0f);
             Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
@@ -28,7 +28,7 @@ public class Sprint : MonoBehaviour
         /* Allows player to sprint if they
          * Press the right shift button
          */
-        if (Input.GetKey(KeyCode.RightShift))
+        if (Input.GetKeyDown(KeyCode.RightShift))
         {
 			PlayerAnimator.SetFloat ("Moving", 1.0f);	
             Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
