@@ -36,9 +36,21 @@ public class Move2D : MonoBehaviour
 
 	void Update()
 	{
+        
 		Jump();
 		Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
 		transform.position += movement * Time.deltaTime * moveSpeed;
+		//Flipping Sprites
+		if (Input.GetButtonDown("MoveLeft"))
+		{
+			transform.localxscale = -1;
+		}
+		else
+		{
+			if (Input.GetButtonDown("MoveRight")) {
+				transform.localxscale = 1;
+   }
+		}
 		//Saying if Any Key: Left Arrow, A, D , or Right Arrow Will Make The Walking Peram Change
 		if (Input.GetButtonDown("Horizontal"))
 		{
