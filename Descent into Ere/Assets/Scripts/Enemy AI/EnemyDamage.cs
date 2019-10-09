@@ -4,13 +4,29 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
+    GameObject Player;
 
-
-    void OnCollisionEnter2D(Collision2D _collision)
+    void Start()
     {
-        if (_collision.gameObject.tag=="Player")
+        Player = gameObject.transform.parent.gameObject;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log(collision.collider.tag == "Player");
+        if(collision.collider.tag == "Player")
         {
-            gameObject.GetComponent<PlayerHealth>().health = gameObject.GetComponent<PlayerHealth>().health - 1;
+            Player.GetComponent<PlayerHealth>().damaged = true;
         }
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Player")
+        {
+            Player.GetComponent<PlayerHealth>().damaged = false;
+        }
+    }
+
+   
 }

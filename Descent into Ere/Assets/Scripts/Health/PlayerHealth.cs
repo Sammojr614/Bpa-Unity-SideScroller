@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public int numOfHearts;
 
-    bool damaged;
+    public bool damaged;
 
     //Links the hearts to the script
     public SpriteRenderer[] hearts;
@@ -60,11 +60,5 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.transform.tag == "Enemy")
-        {
-            damaged = true;
-        }
-    }
+    
 }
