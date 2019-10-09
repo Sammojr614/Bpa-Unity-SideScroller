@@ -38,6 +38,7 @@ public class Move2D : MonoBehaviour
 
 	void Update()
 	{
+		PlayerAnimator.SetBool("IsGrounded", isGrounded);
         
 		Jump();
 		Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
@@ -74,7 +75,7 @@ public class Move2D : MonoBehaviour
 
 				if (Input.GetButtonUp("Jump") && isGrounded == true)
 				{
-					PlayerAnimator.SetFloat("Jumping", 0.5f);
+					PlayerAnimator.SetFloat("Jumping", 1.0f);
 
 
 				}
