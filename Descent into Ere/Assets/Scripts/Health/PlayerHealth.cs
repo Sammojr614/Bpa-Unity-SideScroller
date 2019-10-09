@@ -13,18 +13,19 @@ public class PlayerHealth : MonoBehaviour
     public static bool damaged;
 //Animator Stuff
 public Animator PlayerAnimator;
+Animation PlayerAnimation;
     //Links the hearts to the script
     public SpriteRenderer[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
     void Start(){
-        PlayerAnimator.GetComponent<Animator>();
+        PlayerAnimator = GetComponent<Animator>();
     }
 
     void Update()
     {  
-        PlayerAnimator.SetBool("Damaged", damaged);
-        Debug.Log(PlayerAnimator.GetBool("Damaged"));
+       
+         
         /*Makes sure the player's health
          * Doesn't exceed the number of hearts
          */
@@ -62,8 +63,10 @@ public Animator PlayerAnimator;
                 hearts[i].enabled = false;
             }
             if(damaged == true && health != 0 && health > 2){
-                health -= 1;
-                break;
+				health -= 1;
+				PlayerAnimator.SetBool("Damaged", damaged);
+				break;
+
             }
             if(health == 0)
             {
