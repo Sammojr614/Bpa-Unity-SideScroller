@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Sprites;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -58,10 +59,9 @@ public class PlayerHealth : MonoBehaviour
                 health -= 1;
                 break;
             }
-            if (damaged == true && health != 0 && health > 1)
+            if(health == 0)
             {
-                health -= 1;
-                break;
+                SceneManager.LoadScene("EnemyTesting");
             }
         }
     }
