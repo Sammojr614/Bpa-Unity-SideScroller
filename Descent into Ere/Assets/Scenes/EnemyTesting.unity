@@ -1061,7 +1061,7 @@ Transform:
   - {fileID: 1170792703}
   - {fileID: 34016799}
   m_Father: {fileID: 1956371240}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &518125418
 BoxCollider2D:
@@ -3260,8 +3260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcd74c4187cf4dbe94b51f1bfb61b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  numOfHearts: 3
+  PlayerAnimator: {fileID: 2120793610}
   hearts:
   - {fileID: 1659279627}
   - {fileID: 704412886}
@@ -3581,8 +3580,8 @@ Transform:
   m_LocalPosition: {x: -0.5662645, y: -0.70400435, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2120793605}
   - {fileID: 518125417}
+  - {fileID: 2120793605}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3865,7 +3864,7 @@ Transform:
   - {fileID: 228382416}
   - {fileID: 2053738519}
   m_Father: {fileID: 1956371240}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2120793606
 MonoBehaviour:

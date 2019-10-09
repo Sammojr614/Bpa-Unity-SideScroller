@@ -9,16 +9,22 @@ public class PlayerHealth : MonoBehaviour
     //Variables for health and number of hearts
     public static int health;
     int numOfHearts = 3;
-
+//Damage
     public static bool damaged;
-
+//Animator Stuff
+public Animator PlayerAnimator;
     //Links the hearts to the script
     public SpriteRenderer[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    void Start(){
+        PlayerAnimator.GetComponent<Animator>();
+    }
 
     void Update()
-    {   Debug.Log(health);
+    {  
+        PlayerAnimator.SetBool("Damaged", damaged);
+        Debug.Log(PlayerAnimator.GetBool("Damaged"));
         /*Makes sure the player's health
          * Doesn't exceed the number of hearts
          */
