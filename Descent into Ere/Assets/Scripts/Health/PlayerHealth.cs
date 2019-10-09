@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
 
-        for (int i = 0; i < hearts.Length; i++)
+        for (int i = health; i < hearts.Length; i++)
         {
             /* Makes the game display a full heart
              * when the player is at full health
@@ -55,7 +55,7 @@ public class PlayerHealth : MonoBehaviour
             }
             if(damaged == true)
             {
-                i--;
+                health -= health;
             }
         }
     }
