@@ -54,8 +54,14 @@ public class PlayerHealth : MonoBehaviour
             }else{
                 hearts[i].enabled = false;
             }
-            if(damaged == true && health != 0){
+            if(damaged == true && health != 0 && health > 2){
                 health -= 1;
+                break;
+            }
+            if (damaged == true && health != 0 && health > 1)
+            {
+                health -= 1;
+                break;
             }
         }
     }
