@@ -68,6 +68,9 @@ Animation PlayerAnimation;
 				break;
 
             }
+            if(health == 0){
+                SceneManager.LoadScene("GameOver");
+            }
           
         }
     }
