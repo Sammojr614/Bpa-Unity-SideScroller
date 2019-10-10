@@ -8,7 +8,7 @@ public class EnemyDamage : MonoBehaviour
    
     void Start()
     {
-        PlayerHealth.health = 3;
+        
         
         //Player = gameObject.transform.parent.gameObject;
     }

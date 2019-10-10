@@ -2920,8 +2920,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1495152766}
-  - component: {fileID: 1495152767}
   - component: {fileID: 1495152768}
+  - component: {fileID: 1495152767}
   m_Layer: 5
   m_Name: Health Bar
   m_TagString: Untagged
@@ -2963,12 +2963,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcd74c4187cf4dbe94b51f1bfb61b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  numOfHearts: 3
-  hearts:
-  - {fileID: 1478298272}
-  - {fileID: 1799086758}
-  - {fileID: 1939941023}
+  PlayerAnimator: {fileID: 0}
+  hearts: []
   fullHeart: {fileID: 21300000, guid: 369cea6a3be63406ab6c353715fbee3c, type: 3}
   emptyHeart: {fileID: 21300000, guid: 73cdfab6f85aa49bb9a12ab440117bb8, type: 3}
 --- !u!222 &1495152768

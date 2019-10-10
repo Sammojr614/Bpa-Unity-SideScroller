@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     //Variables for health and number of hearts
-    public static int health;
+    public static int health = 3;
     int numOfHearts = 3;
 //Damage
     public static bool damaged;
@@ -68,10 +68,7 @@ Animation PlayerAnimation;
 				break;
 
             }
-            if(health == 0)
-            {
-                SceneManager.LoadScene("EnemyTesting");
-            }
+          
         }
     }
 
