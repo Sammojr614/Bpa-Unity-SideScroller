@@ -38,6 +38,7 @@ Animation PlayerAnimation;
         for (int i = health; i < hearts.Length; i++)
         {
             
+            
             /* Makes the game display a full heart
              * when the player is at full health
              */
@@ -68,7 +69,7 @@ Animation PlayerAnimation;
 				break;
 
             }
-            if(health == 0){
+            if(PlayerLives.Lives == 0){
                 SceneManager.LoadScene("GameOver");
             }
           
