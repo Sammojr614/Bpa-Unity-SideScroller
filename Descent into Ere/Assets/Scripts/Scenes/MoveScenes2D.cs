@@ -21,10 +21,8 @@ public class MoveScenes2D : MonoBehaviour {
 			SceneManager.LoadScene(newLevel);
 
 		}
-    if(PlayerHealth.health == 0){
+    if(PlayerLives.Lives == 0){
       SceneManager.LoadScene("GameOver");
     }
-	
-
 	}
 }
