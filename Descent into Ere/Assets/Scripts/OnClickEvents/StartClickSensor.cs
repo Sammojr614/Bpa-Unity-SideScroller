@@ -16,6 +16,7 @@ public class StartClickSensor : MonoBehaviour {
 		if(Input.GetMouseButtonDown(0)){
 			clicked = true;
 			startButton.enabled = false;
+            Cursor.visible = false;
             SceneManager.LoadScene("MainHub");
 		}else{
 			if(Input.GetMouseButtonUp(0)){
