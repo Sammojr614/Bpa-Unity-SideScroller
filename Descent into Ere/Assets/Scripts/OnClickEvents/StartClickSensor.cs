@@ -12,13 +12,10 @@ public class StartClickSensor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButtonDown(0)){
+		if(Input.GetMouseButtonDown(0) && Input.mousePosition == startButton.transform.position){
 			clicked = true;
 			startButton.enabled = false;
-		}else{
-			if(Input.GetMouseButtonUp(0)){
-				clicked = false;
-			}
+		}
 		}
 	}
-}
+

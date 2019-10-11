@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class BeginGame : MonoBehaviour {
 	SpriteRenderer BeginGameSprite;
+	GameObject TitleStuff;
 	
 	void Start () {
 		BeginGameSprite = gameObject.GetComponent<SpriteRenderer>();
@@ -12,15 +13,13 @@ public class BeginGame : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		BeginGameSprite.enabled = false;
 			if(StartClickSensor.clicked == true){
 				BeginGameSprite.enabled = true;
-			}else{
-				if(StartClickSensor.clicked == false){
-					BeginGameSprite.enabled = false;
-				}
 			}
-			if(Input.GetMouseButtonDown(0)){
+			if(Input.GetMouseButtonDown(0) &&  Input.mousePosition == BeginGameSprite.transform.position){
 				SceneManager.LoadScene("MainHub");
 			}
-	}
+		}
 }
+
