@@ -6,7 +6,7 @@ public class PauseGame : MonoBehaviour {
 
     public bool gamePaused = false;
     public GameObject pauseMenu;
-
+    public static bool isGamePaused;
     private void Start()
     {
         pauseMenu.SetActive(false);
@@ -18,12 +18,14 @@ public class PauseGame : MonoBehaviour {
             if(gamePaused == false){
                 Time.timeScale = 0;
                 gamePaused = true;
+                isGamePaused = gamePaused;
                 Cursor.visible = true;
                 pauseMenu.SetActive(true);
             }else{
                 pauseMenu.SetActive(false);
                 Cursor.visible = false;
                 gamePaused = false;
+                isGamePaused = gamePaused;
                 Time.timeScale = 1;
             }
         }
