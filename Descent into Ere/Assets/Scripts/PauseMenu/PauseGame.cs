@@ -7,8 +7,13 @@ public class PauseGame : MonoBehaviour {
     public bool gamePaused = false;
     public GameObject pauseMenu;
 
+    private void Start()
+    {
+        pauseMenu.SetActive(false);
+    }
 
-	void Update () {
+
+    void Update () {
         if (Input.GetButtonDown("Cancel")) {
             if(gamePaused == false){
                 Time.timeScale = 0;
