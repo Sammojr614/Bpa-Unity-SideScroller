@@ -5,14 +5,12 @@ using UnityEngine.UI;
 
 public class Resume : MonoBehaviour {
 
-    public static bool clicked = false;
+    public static bool gameResumed;
 
-    GameObject resume;
-	
-	// Update is called once per frame
 	void Update () {
-        if(Input.GetMouseButtonDown(0)){
-            
+        if(Input.GetMouseButton(0)){
+            Debug.Log(gameResumed = true);
+            gameResumed = true;
         }
 	}
 }

@@ -7,6 +7,7 @@ public class LightBar : MonoBehaviour {
     private float x;
     private float y;
     private float sprint;
+    private GameObject lightBar;
 
     private Move2D controller;
 
@@ -22,6 +23,7 @@ public class LightBar : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         controller = GameObject.FindObjectOfType<Move2D>();
+        lightBar = GameObject.FindGameObjectWithTag("Light Bar");
 	}
 	
 	// Update is called once per frame

@@ -6,11 +6,14 @@ public class PauseGame : MonoBehaviour {
 
     public bool gamePaused = false;
     public GameObject pauseMenu;
-    public bool gameResumed;
+    public GameObject resumeButton;
+    public GameObject quitButton;
     public static bool isGamePaused;
     private void Start()
     {
         pauseMenu.SetActive(false);
+        resumeButton.SetActive(false);
+        quitButton.SetActive(false);
     }
 
 
@@ -23,14 +26,25 @@ public class PauseGame : MonoBehaviour {
                 isGamePaused = gamePaused;
                 Cursor.visible = true;
                 pauseMenu.SetActive(true);
+                resumeButton.SetActive(true);
+                quitButton.SetActive(true);
             }
-            else if (gameResumed == true){
+            
+        }
+        if(gamePaused == true)
+        {
+            if (Resume.gameResumed == true)
+            {
                 pauseMenu.SetActive(false);
+                resumeButton.SetActive(false);
+                quitButton.SetActive(false);
                 Cursor.visible = false;
                 gamePaused = false;
                 isGamePaused = gamePaused;
                 Time.timeScale = 1;
             }
         }
-	}
+        
+        
+    }
 }
