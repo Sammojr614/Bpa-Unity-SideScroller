@@ -14,10 +14,10 @@ public class PlayerLives : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		livesAnimator.SetFloat("SetLives",0.0f);
-		if(PlayerHealth.health == 0){
+        if(PlayerHealth.health == 0 && Lives > 0){
 			Lives--;
 			
-			PlayerHealth.health = 3;
+			PlayerHealth.health += 3;
 		}
 		if(Lives < 0){
 			Lives = 0;
