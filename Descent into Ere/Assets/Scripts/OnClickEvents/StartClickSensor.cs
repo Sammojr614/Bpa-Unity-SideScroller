@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StartClickSensor : MonoBehaviour {
 
@@ -12,10 +13,14 @@ public class StartClickSensor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetMouseButtonDown(0) && Input.mousePosition == startButton.transform.position){
+		if(Input.GetMouseButtonDown(0)){
 			clicked = true;
 			startButton.enabled = false;
-		}
+            SceneManager.LoadScene("MainHub");
+		}else{
+			if(Input.GetMouseButtonUp(0)){
+				clicked = false;
+			}
 		}
 	}
-
+}
