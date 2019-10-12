@@ -22,7 +22,7 @@ public class PauseGame : MonoBehaviour {
             if (gamePaused == false)
             {
                 Time.timeScale = 0;
-                gamePaused = true;
+				gamePaused = true;
                 isGamePaused = gamePaused;
                 Cursor.visible = true;
                 pauseMenu.SetActive(true);

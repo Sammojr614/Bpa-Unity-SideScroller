@@ -9,7 +9,6 @@ public class Resume : MonoBehaviour {
 
 	void Update () {
         if(Input.GetMouseButton(0)){
-            Debug.Log(gameResumed = true);
             gameResumed = true;
         }
 	}
