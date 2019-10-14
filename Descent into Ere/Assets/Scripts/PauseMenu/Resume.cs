@@ -6,10 +6,6 @@ using UnityEngine.UI;
 public class Resume : MonoBehaviour {
 
     public static bool gameResumed;
-    SpriteRenderer ResumeButton;
-void Start(){
-    ResumeButton = gameObject.GetComponent<SpriteRenderer>();
-}
 	void Update () {
        
         if(Input.GetMouseButtonDown(0)){
