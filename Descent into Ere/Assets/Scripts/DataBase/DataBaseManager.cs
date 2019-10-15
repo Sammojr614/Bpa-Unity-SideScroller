@@ -1,13 +1,18 @@
-﻿using UnityEngine;
-using UnityEditor;
-using System.Data;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.Data.SqlClient;
 using Mono.Data.SqliteClient;
-using System.IO;
 
+public class DatabaseManager : MonoBehaviour {
 
-public class DataBaseManager : MonoBehaviour {
-	void Start(){
-		string connectionString = Application.persistentDataPath + "Bpa-Project_database/DieDatabase.db";
-
-}
+	// Use this for initialization
+	void Start () {
+		string connectionString = new SqlConnection
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 }
