@@ -15,9 +15,13 @@ public class TitleData : MonoBehaviour {
 		 IDbConnection dbCon = new SqliteConnection(connectionString);
 		 dbCon.Open();
 		 IDbCommand dbCmd = dbCon.CreateCommand();
-		 string qury = "INSERT INTO LevelData(Level1,Level2,Level3) VALUES('Incomplete','Incomplete','Incomplete')";
-		 dbCmd.CommandText = qury;
+		 string levelQury = "INSERT INTO LevelData(Level1,Level2,Level3) VALUES('Incomplete','Incomplete','Incomplete')";
+		 dbCmd.CommandText = levelQury;
 		 dbCmd.ExecuteNonQuery();
+		 string playerQury = "INSERT INTO PlayerData(PlayerLocation,PlayerItems) VALUES('Title','None')";
+		 dbCmd.CommandText = playerQury;
+		 dbCmd.ExecuteNonQuery();
+		 dbCon.Close();
 		 
 		 
 		 
