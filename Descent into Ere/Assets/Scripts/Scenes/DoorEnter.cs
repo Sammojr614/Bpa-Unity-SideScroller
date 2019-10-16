@@ -8,13 +8,31 @@ public class DoorEnter : MonoBehaviour {
 
     [SerializeField] private string newLevel;
 
-
-    private void Update()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (Input.GetButtonDown("EnterDoor"))
+        if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(newLevel);
+            if (Input.GetButtonDown("EnterDoor"))
+            {
+                SceneManager.LoadScene(newLevel);
+            }
         }
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Input.GetButtonDown("EnterDoor"))
+            {
+                SceneManager.LoadScene(newLevel);
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+
     }
 
 }
