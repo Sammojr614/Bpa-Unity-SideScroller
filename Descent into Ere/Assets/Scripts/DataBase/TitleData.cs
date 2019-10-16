@@ -10,9 +10,19 @@ public class TitleData : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//Connecting to Database
-		string connectionString = "Data Soruce=file:" + Application.persistentDataPath + "/Bpa-Project_Database/DieDatabase.db";
+		string connectionString = "Data Source=DieDatabase.db";
 		 IDbConnection dbCon = new SqliteConnection(connectionString);
-		Debug.Log(connectionString);
+		dbCon.Open ();
+		//Commands
+		IDbCommand dbCmd = dbCon.CreateCommand ();
+		string findTable = "SELECT FROM PlayerSaveData";
+		dbCmd.CommandText = findTable;
+		//reader
+		//Inserting Data
+		string dataInsert = "INSERT INTO \"main\".\"LevelsComplete\"(\"PlayerDream\",\"Level2\",\"Level3\") VALUES (NULL,NULL,NULL)";
+		dbCmd.CommandText = dataInsert;
+
+
 		 
 		 
 	}
