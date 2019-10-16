@@ -5,48 +5,45 @@ using System.Data;
 using System.IO;
 using Mono.Data.Sqlite;
 
-public class PlayerDreamData : MonoBehaviour {
-	public static int LevelsComplete;
+public class LucidData : MonoBehaviour {
 
+	// Use this for initialization
 	void Start () {
 		IDbConnection dbCon = new SqliteConnection (TitleData.connectionString);
 		dbCon.Open ();
 		IDbCommand dbCmd = dbCon.CreateCommand ();
-		string updateLocation = "UPDATE PlayerSaveData SET PlayerLocation='PlayerDream'";
-		dbCmd.CommandText = updateLocation;
-		dbCmd.ExecuteNonQuery ();
-		bool PlayerDreamComplete = false;
-		if (PlayerDreamComplete == true) {
-			LevelsComplete = 1;
+		bool LucidComplete = false;
+		if (LucidComplete == true) {
+			PlayerDreamData.LevelsComplete = 2;
 		}
+		string UpdateLocation = "UPDATE PlayerSaveData SET PlayerLocation='Lucid'";
+		dbCmd.CommandText = UpdateLocation;
+		dbCmd.ExecuteNonQuery ();
 		IDbCommand levelCmd = dbCon.CreateCommand ();
-		//No Levels Complete
-		if (LevelsComplete == 0) {
+		if (PlayerDreamData.LevelsComplete == 0) {
 			string noLevelsComplete = "UPDATE LevelData SET Level1='Incomplete', Level2='Incomplete', Level3='Incomplete'";
 			levelCmd.CommandText = noLevelsComplete;
 			levelCmd.ExecuteNonQuery ();
 		} else {
-			//One Level Complete
-			if (LevelsComplete == 1) {
+			if (PlayerDreamData.LevelsComplete == 1) {
 				string oneLevelComplete = "UPDATE LevelData SET Level1='Complete',Level2='Incomplete', Level3='Incomplete'";
 				levelCmd.CommandText = oneLevelComplete;
 				levelCmd.ExecuteNonQuery ();
 			} else {
-				//Two Levels Complete
-				if (LevelsComplete == 2) {
+				if (PlayerDreamData.LevelsComplete == 2) {
 					string twoLevelsComplete = "UPDATE LevelData SET Level1='Complete',Level2='Complete',Level3='Incomplete'";
 					levelCmd.CommandText = twoLevelsComplete;
 					levelCmd.ExecuteNonQuery ();
 				} else {
-					//Three Levels Complete
-					if (LevelsComplete == 3) {
+					if (PlayerDreamData.LevelsComplete == 3) {
 						string threeLevelsComplete = "UPDATE LevelData SET Level1='Complete', Level2='Complete',Level3='Complete'";
 						levelCmd.CommandText = threeLevelsComplete;
 						levelCmd.ExecuteNonQuery ();
 					}
 				}
-			}
-		}
-		dbCon.Close ();
+
+	}
+
+}
 	}
 }
