@@ -13,20 +13,10 @@ void Start(){
 	fileOne = gameObject.GetComponent<SpriteRenderer>();
 }
 	private void OnMouseDown(){
+		StartClickSensor.clicked = true;
 		if(Input.GetMouseButtonDown(0)){
-			StartClickSensor.clicked = true;
-			IDbConnection dbCon = new SqliteConnection(TitleData.connectionString);
-			dbCon.Open();
-			IDbCommand readCmd = dbCon.CreateCommand();
-			IDataReader dbReader = readCmd.ExecuteReader();
-			string dataCheck = "SELECT*FROM PlayerSaveData";
-			readCmd.CommandText = dataCheck;
-			while(dbReader.Read()){
-				SceneManager.LoadScene(dbReader[0].ToString());
-			}
-			Cursor.visible = false;
-			fileOne.enabled = false;
-
+		 SceneManager.LoadScene("MainHub");
+		 Cursor.visible = false;
 		}else{
 			if(Input.GetMouseButtonUp(0)){
 				StartClickSensor.clicked = false;

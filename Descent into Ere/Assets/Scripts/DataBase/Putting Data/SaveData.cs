@@ -12,10 +12,6 @@ public static bool isThereData;
 		IDbConnection dbCon = new SqliteConnection(TitleData.connectionString);
 		dbCon.Open();
 		IDbCommand dbCmd = dbCon.CreateCommand();
-		//Setting PlayerLocation
-		string updateLocation = "UPDATE PlayerSaveData SET PlayerLocation='Saves'";
-		dbCmd.CommandText = updateLocation;
-		dbCmd.ExecuteNonQuery();
 		IDbCommand cmdRead = dbCon.CreateCommand();
 		string dataRead = "SELECT*FROM PlayerSaveData";
 		cmdRead.CommandText = dataRead;
