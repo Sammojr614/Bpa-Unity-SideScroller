@@ -11,7 +11,7 @@ public class PlayerLives : MonoBehaviour {
 		 livesAnimator= GetComponent<Animator>();
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
 		livesAnimator.SetFloat("SetLives",0.0f);
         if(PlayerHealth.health == 0 && Lives > 0){
