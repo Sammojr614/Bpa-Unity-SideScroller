@@ -18,7 +18,7 @@ public class FallingPlatform : MonoBehaviour {
          */
 		if (other.gameObject.tag.Equals("Player"))
         {
-            Invoke("DropPlatform", 0.5f);
+            Invoke("DropPlatform", 0.25f);
             Destroy(gameObject, 2f);
         }
     }
