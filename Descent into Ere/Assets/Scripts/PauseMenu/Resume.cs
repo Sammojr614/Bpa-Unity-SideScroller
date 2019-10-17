@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Resume : MonoBehaviour {
 
     public static bool gameResumed;
-	void Update () {
+	void OnMouseDown () {
        
         if(Input.GetMouseButtonDown(0)){
             gameResumed = true;
