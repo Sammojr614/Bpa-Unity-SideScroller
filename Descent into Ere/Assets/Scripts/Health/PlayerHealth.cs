@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     //Variables for health and number of hearts
-    public static int health = 3;
+    public static int health;
     int numOfHearts = 3;
 //Damage
     public static bool damaged;

@@ -19,8 +19,8 @@ public class StartClickSensor : MonoBehaviour
         {
             clicked = true;
             startButton.enabled = false;
-            Cursor.visible = false;
-            SceneManager.LoadScene("MainHub");
+            Cursor.visible = true;
+            SceneManager.LoadScene("Saves");
         }
         else
         {
