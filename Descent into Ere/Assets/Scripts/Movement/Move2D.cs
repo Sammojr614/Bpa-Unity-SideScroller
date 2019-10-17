@@ -18,14 +18,11 @@ public class Move2D : MonoBehaviour
 
 	//Giving the Program The Animator
 	public Animator PlayerAnimator;
-	//Incase i Need to Find the Animations
-	Animation PlayerAnimation;
 	//Getting The Animator
 	void Start()
 	{
 		PlayerAnimator = GetComponent<Animator>();
 		PlayerAnimator.SetBool("IsGrounded", isGrounded);
-		PlayerAnimation = PlayerAnimator.GetComponent<Animation> ();
 	}
 
 

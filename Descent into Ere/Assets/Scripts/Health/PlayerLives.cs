@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Data;
+using System.IO;
+using Mono.Data.Sqlite;
+using System;
 public class PlayerLives : MonoBehaviour {
 
 	public static int Lives;
 	public Animator livesAnimator;
 	void Start () {
-		 livesAnimator= GetComponent<Animator>();
+		Lives = 3;
+		livesAnimator= GetComponent<Animator>();
 	}
 	
 	
