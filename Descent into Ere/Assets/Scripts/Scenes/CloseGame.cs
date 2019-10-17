@@ -10,8 +10,30 @@ public class CloseGame : MonoBehaviour {
         //Checks if colliding object is the player
         if (other.CompareTag("Player"))
         {
-            //Quits Game
-            Application.Quit();
+            if (Input.GetButtonDown("EnterDoor"))
+            {
+                Application.Quit();
+            }
+
         }
+    }
+
+    //Activates after a collision trigger
+    void OnTriggerStay2D(Collider2D other)
+    {
+        //Checks if colliding object is the player
+        if (other.CompareTag("Player"))
+        {
+            if (Input.GetButtonDown("EnterDoor"))
+            {
+                Application.Quit();
+            }
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        
     }
 }
