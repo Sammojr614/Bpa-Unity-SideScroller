@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Mono.Data.Sqlite;
-using System.Data;
-using System.Data;
+using UnityEngine.SceneManagement;
 
-public class MainhubLocation : MonoBehaviour {
+public class LocationHandler : MonoBehaviour {
 	public static string PlayerLocation;
-
+	// Use this for initialization
 	void Start () {
-		PlayerLocation = "MainHub";
+		
 	}
 }

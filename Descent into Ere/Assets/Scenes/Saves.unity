@@ -122,6 +122,8 @@ GameObject:
   m_Component:
   - component: {fileID: 310650482}
   - component: {fileID: 310650483}
+  - component: {fileID: 310650485}
+  - component: {fileID: 310650484}
   m_Layer: 0
   m_Name: New Save
   m_TagString: Untagged
@@ -186,6 +188,42 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!61 &310650484
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310650481}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.09976423, y: -0.049880743}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8, y: 4}
+    newSize: {x: 8, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.8004713, y: 2.902596}
+  m_EdgeRadius: 0
+--- !u!114 &310650485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 310650481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905ebe2ed846e4a5db6e2b89632dcc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &652887246
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +235,7 @@ GameObject:
   - component: {fileID: 652887249}
   - component: {fileID: 652887248}
   - component: {fileID: 652887247}
+  - component: {fileID: 652887251}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -267,6 +306,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &652887251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 652887246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96626d0d2f6848d892c7fcafed5567c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &702570481
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,8 +399,8 @@ GameObject:
   m_Component:
   - component: {fileID: 880171663}
   - component: {fileID: 880171664}
+  - component: {fileID: 880171667}
   - component: {fileID: 880171665}
-  - component: {fileID: 880171666}
   m_Layer: 0
   m_Name: Flie 1
   m_TagString: Untagged
@@ -427,7 +477,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.28046346, y: 0.5889739}
+  m_Offset: {x: -0.38150632, y: 0.53859705}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -438,9 +488,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.09285, y: 2.1489491}
+  m_Size: {x: 5.800727, y: 1.6660806}
   m_EdgeRadius: 0
---- !u!114 &880171666
+--- !u!114 &880171667
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
