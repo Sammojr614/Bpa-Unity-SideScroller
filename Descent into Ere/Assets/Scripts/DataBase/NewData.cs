@@ -9,6 +9,19 @@ public class NewData : MonoBehaviour {
 	SpriteRenderer NewSave;
 	void Start(){
 		NewSave = gameObject.GetComponent<SpriteRenderer>();
+		IDbConnection dbCon = new SqliteConnection(connectionString);
+		dbCon.Open();
+		IDbCommand dbCmd  = dbCon.CreateCommand();
+		IDataReader dbReader;
+		string checkForTable = "SELECT name FROM sqlite_master WHERE type='table' AND name='PlayerSaveData';";
+		dbCmd.CommandText = checkForTable;
+		dbReader = dbCmd.ExecuteReader();
+		if(dbReader.Read()){
+			NewSave.enabled = false;
+		}else{
+			NewSave.enabled = true;
+		}
+		
 		
 	}
 	public static string connectionString = "Data Source=DieDataBase.db";
