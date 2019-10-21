@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LocationUpdatePlayerDream : MonoBehaviour {
-	
+public class LocateMainhub : MonoBehaviour {
+
 	// Use this for initialization
 	void Start () {
-		LocationHandler.PlayerLocation = "'PlayerDream'";
+		LocationHandler.PlayerLocation = "MainHub";
 	}
 }
