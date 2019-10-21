@@ -10,6 +10,8 @@ public class Resume : MonoBehaviour {
      */
     public static bool gameResumed;
 
+    public GameObject resume;
+
     //Method checks when resume is clicked
     void OnMouseDown () {
        
@@ -19,7 +21,7 @@ public class Resume : MonoBehaviour {
          * PauseGame script
          */
         if(Input.GetMouseButtonDown(0)){
-            gameResumed = true;
+            resume.GetComponent<PauseGame>().ResumeGame();
         }else{
             if(PauseGame.isGamePaused == false){
                 gameResumed = false;
