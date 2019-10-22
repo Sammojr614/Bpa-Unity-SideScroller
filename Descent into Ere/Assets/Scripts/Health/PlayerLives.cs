@@ -14,7 +14,7 @@ public class PlayerLives : MonoBehaviour {
 		dbCon.Open();
 		IDbCommand dbCmd = dbCon.CreateCommand();
 		IDataReader dbReader;
-		
+        Lives = 3;
 	}
 	
 	
