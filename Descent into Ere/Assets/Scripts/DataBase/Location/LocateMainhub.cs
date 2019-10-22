@@ -6,6 +6,6 @@ public class LocateMainhub : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		LocationHandler.PlayerLocation = "MainHub";
+		LocationHandler.PlayerLocation = "'MainHub'";
 	}
 }

@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Save : MonoBehaviour {
+public class LocateEnemyTesting : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		LocationHandler.PlayerLocation = "'EnemyTesting'";
 	}
 }

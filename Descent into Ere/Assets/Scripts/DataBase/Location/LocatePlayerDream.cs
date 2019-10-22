@@ -6,6 +6,6 @@ public class LocatePlayerDream : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		LocationHandler.PlayerLocation = "PlayerDream";
+		LocationHandler.PlayerLocation = "'PlayerDream'";
 	}
 }

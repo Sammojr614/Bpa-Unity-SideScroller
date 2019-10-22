@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LocateLucid : MonoBehaviour {
 	void Start () {
-		LocationHandler.PlayerLocation = "Lucid";
+		LocationHandler.PlayerLocation = "'Lucid'";
 	}
 
 }
