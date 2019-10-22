@@ -21,13 +21,21 @@ Animation PlayerAnimation;
 	SpriteRenderer[] Heart;
     void Start(){
 		PlayerAnimator = gameObject.GetComponent<Animator> ();
+		//Connection String
 		IDbConnection dbCon = new SqliteConnection (NewData.connectionString);
+		//Opening Database
 		dbCon.Open ();
+		//The Database Reader
 		IDataReader dbReader;
+		//SQL Commands
 		IDbCommand dbCmd = dbCon.CreateCommand ();
+		//Command Text
 		string checkHealth = "SELECT PlayerHealth FROM PlayerSaveData";
+		//Setting Command Text
 		dbCmd.CommandText = checkHealth;
+		//Reading From Database
 		dbReader = dbCmd.ExecuteReader ();
+		//What we Need the Reader to Do While it is Reading
 		while (dbReader.Read ()) {
 			health = Convert.ToInt32 (dbReader[0].ToString ());
 		}
@@ -36,6 +44,7 @@ Animation PlayerAnimation;
 
     void Update()
 	{  
+		Debug.Log(health);
 		if (health == 3) {
 			PlayerAnimator.SetFloat ("Health", 0.0f);
 		} else {
