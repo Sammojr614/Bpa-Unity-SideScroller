@@ -40,11 +40,11 @@ Animation PlayerAnimation;
 			health = Convert.ToInt32 (dbReader[0].ToString ());
 		}
 		dbReader.Close ();
+		dbCon.Close();
     }
 
     void Update()
 	{  
-		Debug.Log(health);
 		if (health == 3) {
 			PlayerAnimator.SetFloat ("Health", 0.0f);
 		} else {
