@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.51999944
+  m_Length: 0.5199997
   m_ChildTransform: {fileID: 337606268}
   m_AttachedIK: {fileID: 154280498}
 --- !u!1 &60663543
@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.4363984
+  m_Length: 0.43639845
   m_ChildTransform: {fileID: 1404551043}
   m_AttachedIK: {fileID: 1296933172}
 --- !u!1 &997597691
@@ -2128,7 +2128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.5800003
+  m_Length: 0.58000016
   m_ChildTransform: {fileID: 289513008}
   m_AttachedIK: {fileID: 1751925143}
 --- !u!1 &1275649991
@@ -2173,7 +2173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.47409052
+  m_Length: 0.47409084
   m_ChildTransform: {fileID: 430883747}
   m_AttachedIK: {fileID: 1085167284}
 --- !u!1 &1279276337
@@ -2185,6 +2185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1279276338}
   - component: {fileID: 1279276339}
+  - component: {fileID: 1279276340}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -2225,13 +2226,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcd74c4187cf4dbe94b51f1bfb61b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerAnimator: {fileID: 1060173281}
-  hearts:
-  - {fileID: 525018699}
-  - {fileID: 1280841170}
-  - {fileID: 1576625110}
-  fullHeart: {fileID: 21300000, guid: 369cea6a3be63406ab6c353715fbee3c, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 73cdfab6f85aa49bb9a12ab440117bb8, type: 3}
+  PlayerAnimator: {fileID: 1279276340}
+--- !u!95 &1279276340
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1279276337}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aabc76507a2a24a1196a614a0a9911c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1280841168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3961,6 +3973,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.4000007
+  m_Length: 0.4000002
   m_ChildTransform: {fileID: 991451529}
   m_AttachedIK: {fileID: 1296933172}

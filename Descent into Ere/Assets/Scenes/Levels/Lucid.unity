@@ -1299,6 +1299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 941256928}
   - component: {fileID: 941256929}
+  - component: {fileID: 941256930}
   m_Layer: 5
   m_Name: Healthbar
   m_TagString: Untagged
@@ -1339,13 +1340,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcd74c4187cf4dbe94b51f1bfb61b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerAnimator: {fileID: 0}
-  hearts:
-  - {fileID: 1607981311}
-  - {fileID: 1329836685}
-  - {fileID: 298193563}
-  fullHeart: {fileID: 21300000, guid: 369cea6a3be63406ab6c353715fbee3c, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 73cdfab6f85aa49bb9a12ab440117bb8, type: 3}
+  PlayerAnimator: {fileID: 941256930}
+--- !u!95 &941256930
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 941256927}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: aabc76507a2a24a1196a614a0a9911c3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &944669007
 GameObject:
   m_ObjectHideFlags: 0
