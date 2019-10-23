@@ -9,44 +9,21 @@ using UnityEngine.SceneManagement;
 
 public class LoadData : MonoBehaviour {
 	SpriteRenderer SaveFile;
+		DbManager dataManager = DbManager.Instance;
+	
 	void Start(){
-		SaveFile = gameObject.GetComponent<SpriteRenderer> ();
+	
 	}
 	void OnMouseDown(){
 		if (Input.GetMouseButtonDown (0)) {
-			readerQuery ("SELECT*FROM PlayerSaveData");
+			dataManager.getDataTypeInteger(dataManager.connectionString,"SELECT*FROM PLayerSaveData",PlayerLives.Lives, 3);
+			dataManager.getDataTypeString(dataManager.connectionString, "SELECT*FROM PlayerSaveData", LocateMainHub.PlayerLocation, 0);
+			dataManager.getDataTypeInteger(dataManager.connectionString, "SELECT*FROM PlayerSaveData", PlayerHealth.health, 2);
+			
 		}
 	}
 
 
 
-	public void runQuery(string sql){	
-		using(SqliteConnection dbCon = new SqliteConnection(NewData.connectionString)){
-			dbCon.Open();
-			using(SqliteCommand dbCmd = new SqliteCommand(sql, dbCon)){
-				dbCmd.ExecuteNonQuery();
-			}
-		}
-
-	}
-	public void readerQuery(string readText){
-		using(SqliteConnection DbCon = new SqliteConnection(NewData.connectionString)){
-			DbCon.Open();
-			using(SqliteCommand DbCmd = new SqliteCommand(readText, DbCon)){
-				using (SqliteDataReader dbReader = DbCmd.ExecuteReader ()) {
-					if (dbReader.Read ()) {
-						while (dbReader.Read ()) {
-							SaveFile.enabled = true;
-							PlayerHealth.health = Convert.ToInt32 (dbReader [2].ToString ());
-							PlayerLives.Lives = Convert.ToInt32 (dbReader [3].ToString ());
-							SceneManager.LoadScene (dbReader [0].ToString ());
-						}
-					} else {
-						SaveFile.enabled = false;
-					}
-					
-				}	
-			}
-	}
-}
+	
 }

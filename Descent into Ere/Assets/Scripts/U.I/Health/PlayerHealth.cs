@@ -21,7 +21,7 @@ Animation PlayerAnimation;
 	SpriteRenderer[] Heart;
 
 	public void commandQuery(string commandText){
-		using (SqliteConnection dbCon = new SqliteConnection (NewData.connectionString)) {
+		using (SqliteConnection dbCon = new SqliteConnection (DatabaseStatics.connectionString)) {
 			dbCon.Open ();
 			using (SqliteCommand dbCmd = new SqliteCommand (commandText, dbCon)) {
 				dbCmd.ExecuteNonQuery ();
@@ -29,7 +29,7 @@ Animation PlayerAnimation;
 		}
 	}
 	public void readerQuery(string readText){
-		using(SqliteConnection dbCon = new SqliteConnection(NewData.connectionString)){
+		using(SqliteConnection dbCon = new SqliteConnection(DatabaseStatics.connectionString)){
 			dbCon.Open ();
 			using(SqliteCommand dbCmd = new SqliteCommand(readText,dbCon)){
 				using (SqliteDataReader dbReader = dbCmd.ExecuteReader ()) {

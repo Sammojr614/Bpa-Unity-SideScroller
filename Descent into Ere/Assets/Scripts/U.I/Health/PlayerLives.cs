@@ -10,7 +10,7 @@ public class PlayerLives : MonoBehaviour {
 	public static int Lives;
 	public Animator livesAnimator;
 	void Start () {
-		IDbConnection dbCon = new SqliteConnection(NewData.connectionString);
+		IDbConnection dbCon = new SqliteConnection(DatabaseStatics.connectionString);
 		dbCon.Open();
 		IDbCommand dbCmd = dbCon.CreateCommand();
 		IDataReader dbReader;

@@ -7,22 +7,9 @@ using Mono.Data.Sqlite;
 
 public class SaveData : MonoBehaviour {
 	void OnMouseDown(){
-		if (Input.GetMouseButtonDown(0)) {
-			//updating Location
-			UpdateQuery ("UPDATE PlayerSaveData SET PlayerLocation="+ LocateMainHub.PlayerLocation);
-			//Updating Health
-			UpdateQuery ("UPDATE PlayerSaveData SET PlayerHealth="+PlayerHealth.health);
-			//Updating Lives
-			UpdateQuery("UPDATE PlayerSaveData SET PlayerLives="+PlayerLives.Lives);
+		if(Input.GetMouseButtonDown(0)){
+			
+		}
 		}
 
 	}
-	public void UpdateQuery(string commandText){
-		using(SqliteConnection dbCon = new SqliteConnection(NewData.connectionString)){
-			dbCon.Open ();
-			using (SqliteCommand dbCmd = new SqliteCommand (commandText, dbCon)) {
-				dbCmd.ExecuteNonQuery ();
-			}
-		}
-	}
-}
