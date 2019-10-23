@@ -19,28 +19,29 @@ public class PlayerHealth : MonoBehaviour
 public Animator PlayerAnimator;
 Animation PlayerAnimation;
 	SpriteRenderer[] Heart;
-    void Start(){
-		PlayerAnimator = gameObject.GetComponent<Animator> ();
-		//Connection String
-		IDbConnection dbCon = new SqliteConnection (NewData.connectionString);
-		//Opening Database
-		dbCon.Open ();
-		//The Database Reader
-		IDataReader dbReader;
-		//SQL Commands
-		IDbCommand dbCmd = dbCon.CreateCommand ();
-		//Command Text
-		string checkHealth = "SELECT PlayerHealth FROM PlayerSaveData";
-		//Setting Command Text
-		dbCmd.CommandText = checkHealth;
-		//Reading From Database
-		dbReader = dbCmd.ExecuteReader ();
-		//What we Need the Reader to Do While it is Reading
-		while (dbReader.Read ()) {
-			health = Convert.ToInt32 (dbReader[0].ToString ());
+
+	public void commandQuery(string commandText){
+		using (SqliteConnection dbCon = new SqliteConnection (NewData.connectionString)) {
+			dbCon.Open ();
+			using (SqliteCommand dbCmd = new SqliteCommand (commandText, dbCon)) {
+				dbCmd.ExecuteNonQuery ();
+			}
 		}
-		dbReader.Close ();
-		dbCon.Close();
+	}
+	public void readerQuery(string readText){
+		using(SqliteConnection dbCon = new SqliteConnection(NewData.connectionString)){
+			dbCon.Open ();
+			using(SqliteCommand dbCmd = new SqliteCommand(readText,dbCon)){
+				using (SqliteDataReader dbReader = dbCmd.ExecuteReader ()) {
+					while (dbReader.Read ()) {
+						health = Convert.ToInt32 (dbReader [2].ToString ());
+					}
+				}
+			}
+		}
+	}
+    void Start(){
+		readerQuery ("SELECT*FROM PlayerSaveData");
     }
 
     void Update()
@@ -51,7 +52,7 @@ Animation PlayerAnimation;
 			if (health == 2) {
 				PlayerAnimator.SetFloat ("Health", 0.5f);
 			} else {
-				if (health == 1) {
+				if (health == 1) { 
 					PlayerAnimator.SetFloat ("Health", 1.0f);
 					
 				} else {

@@ -14,9 +14,6 @@ public class PlayerLives : MonoBehaviour {
 		dbCon.Open();
 		IDbCommand dbCmd = dbCon.CreateCommand();
 		IDataReader dbReader;
-<<<<<<< Updated upstream
-        Lives = 3;
-=======
 		string checklives = "SELECT PlayerLives FROM PlayerSaveData";
 		dbCmd.CommandText = checklives;
 		dbReader = dbCmd.ExecuteReader();
@@ -25,7 +22,7 @@ public class PlayerLives : MonoBehaviour {
 		}
 		dbReader.Close();
 		dbCon.Close();
->>>>>>> Stashed changes
+
 	}
 	
 	

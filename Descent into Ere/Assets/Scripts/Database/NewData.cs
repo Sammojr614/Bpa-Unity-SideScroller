@@ -7,9 +7,11 @@ using Mono.Data.Sqlite;
 
 public class NewData : MonoBehaviour {
  public static string connectionString = "Data Source=DieDataBase.db";
-	void Start(){
-		Debug.Log("here");
-		runQuery("CREATE TABLE PlayerSaveData");
+	void OnMouseDown(){
+		if (Input.GetMouseButtonDown (0)) {
+			runQuery("CREATE TABLE PlayerSaveData(PlayerLocation TEXT,PlayerProgress TEXT,PlayerHealth INTEGER,PlayerLives INTEGER)");
+			runQuery("INSERT INTO PlayerSaveData(PlayerLocation,PlayerProgress,PlayerHealth,PlayerLives) VALUES('MainHub','0%','3','3')");
+		}
 	}
 
 	public void runQuery(string sql){	
