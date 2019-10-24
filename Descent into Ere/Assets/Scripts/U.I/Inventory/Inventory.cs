@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour {
     public GameObject inventoryMenu;
     public GameObject itemSlot1;
     public bool inventoryOpen = false;
-
+public static int NumberOfItems;
 
 	void Start () {
         inventoryMenu.SetActive(false);

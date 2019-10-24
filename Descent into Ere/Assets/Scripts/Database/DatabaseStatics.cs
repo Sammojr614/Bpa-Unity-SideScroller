@@ -68,6 +68,18 @@ public static DbManager Instance {
             }
         }
     }
+    //Loading Normal Strings
+    public void loadStringFromDb(string connectionString, string commandText, string VarName, int readerIndex){
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+            using(SqliteCommand dbComd = new SqliteCommand(commandText,dbCon)){
+                using(SqliteDataReader dbReader = dbComd.ExecuteReader()){
+                    while(dbReader.Read()){
+                        VarName = dbReader[readerIndex].ToString();
+                    }
+                }
+            }
+        }
+    }
     //Loading Lives
     public void getLivesFromDb(string connectionString,string commandText){
         using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
