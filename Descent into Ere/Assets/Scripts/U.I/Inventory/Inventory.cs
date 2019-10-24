@@ -5,11 +5,13 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
 
     public GameObject inventoryMenu;
+    public GameObject itemSlot1;
     public bool inventoryOpen = false;
 
 
 	void Start () {
         inventoryMenu.SetActive(false);
+        itemSlot1.SetActive(false);
 	}
 	
 	
@@ -26,6 +28,7 @@ public class Inventory : MonoBehaviour {
                 inventoryOpen = true;
                 Cursor.visible = true;
                 inventoryMenu.SetActive(true);
+                itemSlot1.SetActive(true);
             }
         }
     }
@@ -36,5 +39,6 @@ public class Inventory : MonoBehaviour {
         inventoryOpen = false;
         Cursor.visible = false;
         inventoryMenu.SetActive(false);
+        itemSlot1.SetActive(false);
     }
 }
