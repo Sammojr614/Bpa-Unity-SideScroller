@@ -13,6 +13,7 @@ public class collectItem : MonoBehaviour {
 		if(itemCollider.CompareTag("Player")){
 			Inventory.NumberOfItems++;
 			Item.SetActive(false);
+            Debug.Log(Inventory.NumberOfItems);
 			
 		}
 	}

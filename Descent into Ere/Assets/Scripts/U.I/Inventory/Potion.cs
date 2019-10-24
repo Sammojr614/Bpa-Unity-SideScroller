@@ -11,6 +11,7 @@ public class Potion : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             health.GetComponent<PlayerHealth>().Heal();
+            Inventory.NumberOfItems--;
         }
     }
 }
