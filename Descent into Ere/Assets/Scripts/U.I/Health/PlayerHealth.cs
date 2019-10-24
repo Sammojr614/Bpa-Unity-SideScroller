@@ -57,5 +57,11 @@ Animation PlayerAnimation;
 			}
 		}
 
-	}   
+	}
+
+    public void Heal()
+    {
+        health += 1;
+        PlayerAnimator.SetFloat("Health", 0.0f);
+    }
 }
