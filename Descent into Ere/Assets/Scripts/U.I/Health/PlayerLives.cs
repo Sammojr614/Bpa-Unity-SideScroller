@@ -7,22 +7,11 @@ using Mono.Data.Sqlite;
 using System;
 public class PlayerLives : MonoBehaviour {
 
-	public static int Lives;
+    public static int Lives = 3;
 	public Animator livesAnimator;
+    DbManager dataManager = DbManager.Instance;
 	void Start () {
-		IDbConnection dbCon = new SqliteConnection(DatabaseStatics.connectionString);
-		dbCon.Open();
-		IDbCommand dbCmd = dbCon.CreateCommand();
-		IDataReader dbReader;
-		string checklives = "SELECT PlayerLives FROM PlayerSaveData";
-		dbCmd.CommandText = checklives;
-		dbReader = dbCmd.ExecuteReader();
-		while(dbReader.Read()){
-			Lives = Convert.ToInt32(dbReader[0].ToString());
-		}
-		dbReader.Close();
-		dbCon.Close();
-
+        dataManager.dbFindIntData(dataManager.connectionString, "SELECT*FROM PlayerSaveData", Lives, 3);
 	}
 	
 	

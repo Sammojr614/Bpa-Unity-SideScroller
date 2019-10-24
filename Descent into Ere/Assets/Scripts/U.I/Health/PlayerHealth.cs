@@ -11,7 +11,7 @@ using System;
 public class PlayerHealth : MonoBehaviour
 {
     //Variables for health and number of hearts
-	public static int health;
+    public static int health = 3;
     int numOfHearts = 3;
 //Damage
     public static bool damaged;
@@ -19,31 +19,12 @@ public class PlayerHealth : MonoBehaviour
 public Animator PlayerAnimator;
 Animation PlayerAnimation;
 	SpriteRenderer[] Heart;
+    DbManager dataManager = DbManager.Instance;
 
-	public void commandQuery(string commandText){
-		using (SqliteConnection dbCon = new SqliteConnection (DatabaseStatics.connectionString)) {
-			dbCon.Open ();
-			using (SqliteCommand dbCmd = new SqliteCommand (commandText, dbCon)) {
-				dbCmd.ExecuteNonQuery ();
-			}
-		}
-	}
-	public void readerQuery(string readText){
-		using(SqliteConnection dbCon = new SqliteConnection(DatabaseStatics.connectionString)){
-			dbCon.Open ();
-			using(SqliteCommand dbCmd = new SqliteCommand(readText,dbCon)){
-				using (SqliteDataReader dbReader = dbCmd.ExecuteReader ()) {
-					while (dbReader.Read ()) {
-						health = Convert.ToInt32 (dbReader [2].ToString ());
-					}
-				}
-			}
-		}
-	}
-    void Start(){
-		readerQuery ("SELECT*FROM PlayerSaveData");
+    void Start()
+    {
+        dataManager.dbFindIntData(dataManager.connectionString, "SELECT*FROM PlayerSaveData", health, 2);
     }
-
     void Update()
 	{  
 		if (health == 3) {

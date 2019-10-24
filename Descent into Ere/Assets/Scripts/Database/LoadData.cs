@@ -10,15 +10,19 @@ using UnityEngine.SceneManagement;
 public class LoadData : MonoBehaviour {
 	SpriteRenderer SaveFile;
 		DbManager dataManager = DbManager.Instance;
-	
+	    
 	void Start(){
 	
 	}
 	void OnMouseDown(){
 		if (Input.GetMouseButtonDown (0)) {
-			dataManager.getDataTypeInteger(dataManager.connectionString,"SELECT*FROM PLayerSaveData",PlayerLives.Lives, 3);
-			dataManager.getDataTypeString(dataManager.connectionString, "SELECT*FROM PlayerSaveData", LocateMainHub.PlayerLocation, 0);
-			dataManager.getDataTypeInteger(dataManager.connectionString, "SELECT*FROM PlayerSaveData", PlayerHealth.health, 2);
+            //Location Assignment
+            dataManager.dbFindStringData(dataManager.connectionString, "SELECT*FROM PlayerSaveData", LocateMainHub.PlayerLocation, 0);
+            //Health Assignment
+            dataManager.dbFindIntData(dataManager.connectionString, "SELECT*FROM PlayerSaveData", PlayerHealth.health, 2);
+            //Lives Assignment
+            dataManager.dbFindIntData(dataManager.connectionString, "SELECT*FROM PlayerSaveData", PlayerLives.Lives, 3);
+            SceneManager.LoadScene("MainHub");
 			
 		}
 	}
