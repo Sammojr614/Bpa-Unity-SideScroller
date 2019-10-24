@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Potion : MonoBehaviour {
 
-    public GameObject potion;
+    public Animator health;
 
     public void OnMouseDown()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            potion.GetComponent<PlayerHealth>().Heal();
+            health.GetComponent<PlayerHealth>().Heal();
         }
     }
 }
