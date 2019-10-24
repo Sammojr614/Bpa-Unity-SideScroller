@@ -5,6 +5,7 @@ using System.Data;
 using System.IO;
 using Mono.Data.Sqlite;
 using System;
+using UnityEngine.SceneManagement;
 
 public class DbManager {
 	private static DbManager dbMgr;
@@ -48,29 +49,53 @@ public static DbManager Instance {
                     while (dbReader.Read())
                     {
                         getStringData = dbReader[readerIndex].ToString();
+                        
                     }
                 }
             }
         }
     }
-    //finding Int Data
-    public void dbFindIntData(string connectionString, string commandText, int getIntData , int ReaderIndex)
-    {
-        using (SqliteConnection dbCon = new SqliteConnection(connectionString))
-        {
+    //Loading Health
+    public void getHealthFromDb(string connectionString, string commandText){
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
             dbCon.Open();
-            using (SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
-            { 
-                using (SqliteDataReader dbReader = dbCmd.ExecuteReader())
-                {
-                    while (dbReader.Read())
-                    {
-                        getIntData = Convert.ToInt32(dbReader[ReaderIndex].ToString());
+            using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+                using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+                    while(dbReader.Read()){
+                        PlayerHealth.health = Convert.ToInt32(dbReader[2].ToString());
                     }
                 }
             }
         }
     }
+    //Loading Lives
+    public void getLivesFromDb(string connectionString,string commandText){
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+            using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+                dbCon.Open();
+                using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+                    while(dbReader.Read()){
+                        PlayerLives.Lives = Convert.ToInt32(dbReader[3].ToString());
+                    }
+                }
+            }
+        }
+    }
+    //Loading all Of the Int data
+  public void loadIntData(string connectionString, string commandText){
+	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+		using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+            dbCon.Open();
+			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+				while(dbReader.Read()){
+					PlayerHealth.health = Convert.ToInt32(dbReader[2].ToString());
+					PlayerLives.Lives = Convert.ToInt32(dbReader[3].ToString());
+				}
+			}
+		}
+	}
+}
+  
     //Testing if The reader is Reading the Data
     public void dbReaderTest(string connectionString, string commandText)
     {
@@ -88,6 +113,35 @@ public static DbManager Instance {
                     else
                     {
                         Debug.Log("ERROR: Data not Found");
+                    }
+                }
+            }
+        }
+    }
+    //For Loading Scene Names From The DataBase
+    public void loadSceneFromDB(string connectionString, string commandText, string SceneName){
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+            dbCon.Open();
+            using(SqliteCommand dbCmd = new SqliteCommand(commandText,dbCon)){
+                using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+                    while(dbReader.Read()){
+                        SceneName = dbReader[0].ToString();
+                        SceneManager.LoadScene(SceneName);
+                    }
+                }
+            }
+        }
+    }
+    //Changing Renderer State
+    public void RendererState(string connectionString, string commandText, SpriteRenderer spriteRenderer,bool ifReaderisReading, bool ifReaderisntReading){
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+            dbCon.Open();
+            using(SqliteCommand dbCmd = new SqliteCommand(commandText,dbCon)){
+                using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+                    if(dbReader.Read()){
+                        spriteRenderer.enabled = ifReaderisReading;
+                    }else{
+                        spriteRenderer.enabled = ifReaderisntReading;
                     }
                 }
             }

@@ -11,6 +11,7 @@ public class NewData : MonoBehaviour {
     DbManager dataManager = DbManager.Instance;
  void Start(){
 	 CreateData = gameObject.GetComponent<SpriteRenderer>();
+	 dataManager.RendererState(dataManager.connectionString, "SELECT*FROM PlayerSaveData", CreateData, false,true);
  }
 	void OnMouseDown(){
 		if (Input.GetMouseButtonDown (0)) {

@@ -7,11 +7,11 @@ using Mono.Data.Sqlite;
 using System;
 public class PlayerLives : MonoBehaviour {
 
-    public static int Lives = 3;
+    public static int Lives;
 	public Animator livesAnimator;
     DbManager dataManager = DbManager.Instance;
 	void Start () {
-        dataManager.dbFindIntData(dataManager.connectionString, "SELECT*FROM PlayerSaveData", Lives, 3);
+        dataManager.getLivesFromDb(dataManager.connectionString,"SELECT*FROM PlayerSaveData");
 	}
 	
 	
