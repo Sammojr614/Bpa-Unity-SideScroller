@@ -8,11 +8,13 @@ public class PlayerPos : MonoBehaviour {
  public static float SpawnPointX;
  public static float SpawnPointY;
  public static float SpawnPointZ;
+ 
 	void Start () {
 		PlayerTrans = gameObject.GetComponent<Transform>();
 		SpawnPointX = PlayerTrans.position.x;
 		SpawnPointY = PlayerTrans.position.y;
 		SpawnPointZ = PlayerTrans.position.z;
+		
 		
 	}
 	

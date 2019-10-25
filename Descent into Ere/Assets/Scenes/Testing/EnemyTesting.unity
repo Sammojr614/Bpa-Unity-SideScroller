@@ -961,6 +961,7 @@ GameObject:
   - component: {fileID: 422932448}
   - component: {fileID: 422932450}
   - component: {fileID: 422932449}
+  - component: {fileID: 422932451}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -1049,6 +1050,17 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 589603041}
   - {fileID: 1693941759}
+--- !u!114 &422932451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 422932447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4623096416694b36b6cca8ac14f3cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &437033904
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,6 +2359,7 @@ GameObject:
   - component: {fileID: 1064477838}
   - component: {fileID: 1064477840}
   - component: {fileID: 1064477839}
+  - component: {fileID: 1064477841}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -2433,6 +2446,17 @@ MonoBehaviour:
   m_SortingOrder: 2
   m_BoneTransforms:
   - {fileID: 993383550}
+--- !u!114 &1064477841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064477837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4623096416694b36b6cca8ac14f3cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1119894541
 GameObject:
   m_ObjectHideFlags: 0
@@ -3653,6 +3677,8 @@ GameObject:
   - component: {fileID: 1492111822}
   - component: {fileID: 1492111824}
   - component: {fileID: 1492111823}
+  - component: {fileID: 1492111826}
+  - component: {fileID: 1492111825}
   m_Layer: 0
   m_Name: Right Arm
   m_TagString: Untagged
@@ -3741,6 +3767,28 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 1159333494}
   - {fileID: 1125355989}
+--- !u!114 &1492111825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1492111821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4623096416694b36b6cca8ac14f3cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1492111826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1492111821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4623096416694b36b6cca8ac14f3cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1603406398
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,6 +4323,7 @@ GameObject:
   - component: {fileID: 1848644926}
   - component: {fileID: 1848644928}
   - component: {fileID: 1848644927}
+  - component: {fileID: 1848644929}
   m_Layer: 0
   m_Name: Left Arm
   m_TagString: Untagged
@@ -4363,6 +4412,17 @@ MonoBehaviour:
   m_BoneTransforms:
   - {fileID: 437033905}
   - {fileID: 101625866}
+--- !u!114 &1848644929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1848644925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4623096416694b36b6cca8ac14f3cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1855146764
 GameObject:
   m_ObjectHideFlags: 0
@@ -4831,6 +4891,7 @@ GameObject:
   - component: {fileID: 2000815608}
   - component: {fileID: 2000815610}
   - component: {fileID: 2000815609}
+  - component: {fileID: 2000815611}
   m_Layer: 0
   m_Name: Left Leg
   m_TagString: Untagged
@@ -4921,6 +4982,17 @@ MonoBehaviour:
   - {fileID: 907555680}
   - {fileID: 2093747408}
   - {fileID: 589008862}
+--- !u!114 &2000815611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2000815607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4623096416694b36b6cca8ac14f3cab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2052930390
 GameObject:
   m_ObjectHideFlags: 0
@@ -5204,6 +5276,7 @@ GameObject:
   - component: {fileID: 2120793608}
   - component: {fileID: 2120793607}
   - component: {fileID: 2120793606}
+  - component: {fileID: 2120793611}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -5323,6 +5396,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &2120793611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2120793604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4877a0a846c174414a648b800a264b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2146903410
 GameObject:
   m_ObjectHideFlags: 0
