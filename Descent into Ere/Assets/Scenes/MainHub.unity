@@ -936,6 +936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLevel: PlayerDream
+  DoorLocked: 0
 --- !u!61 &343439845
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1771,6 +1772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLevel: Lucid
+  DoorLocked: 1
 --- !u!61 &817514217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2174,6 +2176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLevel: Title
+  DoorLocked: 0
 --- !u!1 &975946985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2398,6 +2401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprintSpeed: 8
   PlayerAnimator: {fileID: 993585924}
+  isGrounded: 0
 --- !u!1 &1004146747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,6 +2973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLevel: EnemyTesting
+  DoorLocked: 0
 --- !u!212 &1177088710
 SpriteRenderer:
   m_ObjectHideFlags: 0
