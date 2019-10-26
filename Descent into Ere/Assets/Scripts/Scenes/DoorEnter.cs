@@ -12,7 +12,9 @@ public class DoorEnter : MonoBehaviour {
      */
     [SerializeField] private string newLevel;
 
-    public bool DoorLocked;
+
+    //Determines if door is locked or not
+    public bool DoorLocked = false;
 
     //Method for when the player enters the trigger
     void OnTriggerEnter2D(Collider2D other)
@@ -23,7 +25,8 @@ public class DoorEnter : MonoBehaviour {
         if (other.CompareTag("Player"))
         {
             /* If the player presses the EnterDoor button
-             * (W or Up Arrow) after collision with the trigger
+             * (W or Up Arrow), and the door is unlocked,
+             * After collision with the trigger
              * It will load the desired scene
              */            
             if (Input.GetButtonDown("EnterDoor") && DoorLocked == false)
@@ -41,7 +44,8 @@ public class DoorEnter : MonoBehaviour {
          */
         if (other.CompareTag("Player"))
         {
-            /* If the player presses the EnterDoor button
+            /* If the player presses the EnterDoor button,
+             * And the door is unlocked
              * While colliding with the trigger
              * It will load the desired scene
              */            
