@@ -15,7 +15,9 @@ public class LevelDoorController : MonoBehaviour {
 		if(LucidLocked == true){
 			LucidDoorCollider.enabled = false;
 		}else{
-			
+			if(LucidLocked == false){
+				LucidDoorCollider.enabled = true;
+			}
 		}
 	}
 }

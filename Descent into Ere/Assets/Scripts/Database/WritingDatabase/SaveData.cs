@@ -8,7 +8,8 @@ using System;
 
 public class SaveData : MonoBehaviour {
     void OnMouseDown(){
-             DbManager dataManager = DbManager.Instance;
+        
+            DbManager dataManager = DbManager.Instance;
 		if(Input.GetMouseButtonDown(0)){
             //Saving the Scene Name of Where the Player is
             dataManager.dbCommand(dataManager.connectionString,"UPDATE PlayerSaveData SET PlayerLocation=" + LocateMainHub.PlayerLocation);
