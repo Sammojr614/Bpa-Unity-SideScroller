@@ -8,7 +8,7 @@ public class LevelDoorController : MonoBehaviour {
 	public GameObject LucidDoor;
 	Collider2D LucidDoorCollider;
 	Collider2D PlayerDreamDoorCollider;
-	public static bool LucidLocked;
+	public static bool LucidLocked = true;
 	void Start () {
 		LucidDoorCollider = gameObject.GetComponent<BoxCollider2D>();
 		PlayerDreamDoorCollider = gameObject.GetComponent<BoxCollider2D>();

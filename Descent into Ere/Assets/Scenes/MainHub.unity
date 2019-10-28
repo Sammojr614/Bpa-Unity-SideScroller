@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.5400004
+  m_Length: 0.54000014
   m_ChildTransform: {fileID: 1632058834}
   m_AttachedIK: {fileID: 1704127115}
 --- !u!1 &168164535
@@ -753,7 +753,6 @@ GameObject:
   - component: {fileID: 273392182}
   - component: {fileID: 273392186}
   - component: {fileID: 273392187}
-  - component: {fileID: 273392188}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -850,19 +849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd4c3d493b23444dafd09f223ce6e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &273392188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 273392181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba17a67b111eb424aafed3b8a2924cde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerDreamDoor: {fileID: 343439841}
-  LucidDoor: {fileID: 817514214}
 --- !u!1 &343439841
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,6 +860,7 @@ GameObject:
   - component: {fileID: 343439843}
   - component: {fileID: 343439845}
   - component: {fileID: 343439844}
+  - component: {fileID: 343439846}
   m_Layer: 0
   m_Name: DoorToLevel1
   m_TagString: Untagged
@@ -975,6 +962,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5002804, y: 3.5435638}
   m_EdgeRadius: 0
+--- !u!114 &343439846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 343439841}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba17a67b111eb424aafed3b8a2924cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDreamDoor: {fileID: 343439841}
+  LucidDoor: {fileID: 817514214}
 --- !u!1 &403677285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.2987929
+  m_Length: 0.29879272
   m_ChildTransform: {fileID: 498236793}
   m_AttachedIK: {fileID: 873128344}
 --- !u!1 &443439259
@@ -1753,6 +1753,7 @@ GameObject:
   - component: {fileID: 817514218}
   - component: {fileID: 817514217}
   - component: {fileID: 817514216}
+  - component: {fileID: 817514219}
   m_Layer: 0
   m_Name: DoorToSecondLevel
   m_TagString: Untagged
@@ -1854,6 +1855,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &817514219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 817514214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba17a67b111eb424aafed3b8a2924cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDreamDoor: {fileID: 343439841}
+  LucidDoor: {fileID: 817514214}
 --- !u!1 &865809410
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,7 +3117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.44436312
+  m_Length: 0.44436258
   m_ChildTransform: {fileID: 1900977886}
   m_AttachedIK: {fileID: 778394073}
 --- !u!1 &1327540378
@@ -3547,6 +3561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryMenu: {fileID: 975946985}
   itemSlot1: {fileID: 168164535}
+  itemSlot2: {fileID: 0}
   inventoryOpen: 0
 --- !u!222 &1582795653
 CanvasRenderer:
@@ -4165,7 +4180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.5500002
+  m_Length: 0.55000055
   m_ChildTransform: {fileID: 77617042}
   m_AttachedIK: {fileID: 681003118}
 --- !u!1 &1900977885
@@ -4210,7 +4225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.40242243
+  m_Length: 0.40242264
   m_ChildTransform: {fileID: 1961510045}
   m_AttachedIK: {fileID: 778394073}
 --- !u!1 &1903369138
