@@ -81,6 +81,17 @@ public static DbManager Instance {
             }
         }
     }
+    //Loading Level
+    public void loadLevelFromDb(string commandText) {
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+            dbCon.Open();
+            using(SqliteCommand dbCmd = new SqliteCommand(commandText,dbCon)){
+                using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+                    LoadData.PlayerProgress = dbReader[0].ToString();
+                }
+            }
+        }
+    }
     //Loading Lives
     public void getLivesFromDb(string connectionString,string commandText){
         using(SqliteConnection dbCon = new SqliteConnection(connectionString)){

@@ -26,11 +26,16 @@ public class SaveData : MonoBehaviour {
                 dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='None'");
             }
 		}
-        if(LevelDoorController.LucidLocked == true){
-            dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET PlayerProgress='33%'");
+        //For Keeping Track of Complete Levels
+        if(LevelCompletion.LevelComplete == 1){
+            dataManager.dbCommand(dataManager.connectionString,"UPDATE LevelIndex SET PlayerDream='Complete'");
         }else{
-            if(LevelDoorController.LucidLocked == true){
-                dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET PlayerProgress='66%'");
+            if(LevelCompletion.LevelComplete == 2){
+                dataManager.dbCommand(dataManager.connectionString, "UPDATE LevelIndex SET Lucid='Complete'");
+            }else{
+                if(LevelCompletion.LevelComplete == 3){
+                    dataManager.dbCommand(dataManager.connectionString, "UPDATE LevelIndex SET Level3='Complete'");
+                }
             }
         }
 		}

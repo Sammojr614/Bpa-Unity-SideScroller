@@ -7,9 +7,9 @@ public class LevelCompletion : MonoBehaviour
 {
      public GameObject key;
     public GameObject ExitDoor;
+    public static int LevelComplete;
     void Start(){
         ExitDoor.SetActive(false);
-        
     }
     
 
@@ -20,6 +20,7 @@ public class LevelCompletion : MonoBehaviour
             LevelDoorController.LucidLocked = false;
             key.SetActive(false);
             ExitDoor.SetActive(true);
+            LevelComplete++;
         }
     }
 
@@ -30,6 +31,8 @@ public class LevelCompletion : MonoBehaviour
            LevelDoorController.LucidLocked = false;
             key.SetActive(false);
             ExitDoor.SetActive(true);
+            LevelComplete++;
+           
            }
         }
     }

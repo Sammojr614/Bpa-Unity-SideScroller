@@ -11,18 +11,12 @@ public class LoadData : MonoBehaviour {
 	SpriteRenderer SaveFile;
 		DbManager dataManager = DbManager.Instance;
 		public static string PlayerProgress;
+
 	    
 		
 	void Start(){
 		SaveFile = gameObject.GetComponent<SpriteRenderer>();
 		dataManager.RendererState(dataManager.connectionString,"SELECT*FROM PlayerSaveData", SaveFile, true, false);
-		if(PlayerProgress == "33%"){
-			LevelDoorController.LucidLocked = true;
-		}else{
-			if(PlayerProgress == "66"){
-				LevelDoorController.LucidLocked = false;
-			}
-		}
 	}
 	void OnMouseDown(){
 		if (Input.GetMouseButtonDown (0)) {
@@ -32,6 +26,22 @@ public class LoadData : MonoBehaviour {
 		   dataManager.loadIntData(dataManager.connectionString,"SELECT*FROM PlayerSaveData");
 		   //Telliong the Game About the Player's Progress
 		   dataManager.loadStringFromDb(dataManager.connectionString,"SELECT*FROM PlayerSaveData", PlayerProgress, 1);
+		                     /*LevelIndex*/
+		   //This One is For PlayerDream
+		   dataManager.loadLevelFromDb("SELECT PlayerDream FROM LevelIndex");
+		   if(PlayerProgress == "Complete"){
+			   LevelCompletion.LevelComplete = 1;
+		   }
+		   //This One is For Lucid
+		   dataManager.loadLevelFromDb("SELECT Lucid FROM LevelIndex");
+		   if(PlayerProgress == "Complete"){
+			   LevelCompletion.LevelComplete = 2;
+		   }
+		   //This one is For The Third Level
+		   dataManager.loadLevelFromDb("SELECT Level3 FROM LevelIndex");
+		   if(PlayerProgress == "Complete"){
+			   LevelCompletion.LevelComplete = 3;
+		   }
 		}
 	}
 

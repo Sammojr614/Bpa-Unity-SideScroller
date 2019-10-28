@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour {
     public GameObject itemSlot2;
     public bool inventoryOpen = false;
 public static int NumberOfItems;
-public static int LevelsComplete;
+
 
 	void Start () {
         inventoryMenu.SetActive(false);
@@ -38,21 +38,20 @@ public static int LevelsComplete;
                 {
                     itemSlot1.SetActive(true);
                 }
-                if(LevelsComplete == 1){
-                    itemSlot2.SetActive(true);
-                }
                 else
                 {
                     if (NumberOfItems == 0)
                     {
                         itemSlot1.SetActive(false);
                     }
+
                 }
 
             }
         }
     }
-
+    
+    
     public void ResumeGame()
     {
         Time.timeScale = 1;
