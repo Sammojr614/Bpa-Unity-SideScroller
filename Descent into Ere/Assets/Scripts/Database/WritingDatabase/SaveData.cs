@@ -7,8 +7,8 @@ using Mono.Data.Sqlite;
 using System;
 
 public class SaveData : MonoBehaviour {
-        DbManager dataManager = DbManager.Instance;
     void OnMouseDown(){
+             DbManager dataManager = DbManager.Instance;
 		if(Input.GetMouseButtonDown(0)){
             //Saving the Scene Name of Where the Player is
             dataManager.dbCommand(dataManager.connectionString,"UPDATE PlayerSaveData SET PlayerLocation=" + LocateMainHub.PlayerLocation);
@@ -26,6 +26,14 @@ public class SaveData : MonoBehaviour {
                 dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='None'");
             }
 		}
+        if(LevelDoorController.LucidLocked == true){
+            dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET PlayerProgress='33%'");
+        }else{
+            if(LevelDoorController.LucidLocked == true){
+                dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET PlayerProgress='66%'");
+            }
+        }
 		}
-
 	}
+  
+    

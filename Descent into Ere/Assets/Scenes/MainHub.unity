@@ -753,6 +753,7 @@ GameObject:
   - component: {fileID: 273392182}
   - component: {fileID: 273392186}
   - component: {fileID: 273392187}
+  - component: {fileID: 273392188}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -849,6 +850,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd4c3d493b23444dafd09f223ce6e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &273392188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 273392181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba17a67b111eb424aafed3b8a2924cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerDreamDoor: {fileID: 343439841}
+  LucidDoor: {fileID: 817514214}
 --- !u!1 &343439841
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +950,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLevel: PlayerDream
-  DoorLocked: 0
 --- !u!61 &343439845
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1772,7 +1785,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLevel: Lucid
-  DoorLocked: 1
 --- !u!61 &817514217
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2176,7 +2188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLevel: Title
-  DoorLocked: 0
 --- !u!1 &975946985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2973,7 +2984,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLevel: EnemyTesting
-  DoorLocked: 0
 --- !u!212 &1177088710
 SpriteRenderer:
   m_ObjectHideFlags: 0

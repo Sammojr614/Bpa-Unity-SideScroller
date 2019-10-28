@@ -71,6 +71,7 @@ public static DbManager Instance {
     //Loading Normal Strings
     public void loadStringFromDb(string connectionString, string commandText, string VarName, int readerIndex){
         using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+            dbCon.Open();
             using(SqliteCommand dbComd = new SqliteCommand(commandText,dbCon)){
                 using(SqliteDataReader dbReader = dbComd.ExecuteReader()){
                     while(dbReader.Read()){

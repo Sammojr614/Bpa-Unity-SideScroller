@@ -5,14 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class LevelCompletion : MonoBehaviour
 {
-    public GameObject key;
+     public GameObject key;
+    public GameObject ExitDoor;
+    void Start(){
+        ExitDoor.SetActive(false);
+        
+    }
+    
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("MainHub");
-            key.GetComponent<DoorEnter>().DoorLocked = false;
+            LevelDoorController.LucidLocked = false;
+            key.SetActive(false);
+            ExitDoor.SetActive(true);
         }
     }
 
@@ -20,15 +27,10 @@ public class LevelCompletion : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene("MainHub");
-            key.GetComponent<DoorEnter>().DoorLocked = false;
+           LevelDoorController.LucidLocked = false;
+            key.SetActive(false);
+            ExitDoor.SetActive(true);
+           }
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-
-    }
-
-
-}

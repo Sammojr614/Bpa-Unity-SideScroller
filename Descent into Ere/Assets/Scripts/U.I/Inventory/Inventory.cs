@@ -6,8 +6,11 @@ public class Inventory : MonoBehaviour {
 
     public GameObject inventoryMenu;
     public GameObject itemSlot1;
+
+    public GameObject itemSlot2;
     public bool inventoryOpen = false;
 public static int NumberOfItems;
+public static int LevelsComplete;
 
 	void Start () {
         inventoryMenu.SetActive(false);
@@ -35,6 +38,9 @@ public static int NumberOfItems;
                 {
                     itemSlot1.SetActive(true);
                 }
+                if(LevelsComplete == 1){
+                    itemSlot2.SetActive(true);
+                }
                 else
                 {
                     if (NumberOfItems == 0)
@@ -54,5 +60,6 @@ public static int NumberOfItems;
         Cursor.visible = false;
         inventoryMenu.SetActive(false);
         itemSlot1.SetActive(false);
+        itemSlot2.SetActive(false);
     }
 }

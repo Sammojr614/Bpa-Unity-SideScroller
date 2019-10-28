@@ -16,6 +16,7 @@ public class PlayerPos : MonoBehaviour {
 		SpawnPointZ = PlayerTrans.position.z;
 		
 		
+		
 	}
 	
 	// Update is called once per frame

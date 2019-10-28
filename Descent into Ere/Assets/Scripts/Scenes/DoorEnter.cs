@@ -14,7 +14,7 @@ public class DoorEnter : MonoBehaviour {
 
 
     //Determines if door is locked or not
-    public bool DoorLocked = false;
+    public static bool DoorLocked = false;
 
     //Method for when the player enters the trigger
     void OnTriggerEnter2D(Collider2D other)
@@ -56,11 +56,6 @@ public class DoorEnter : MonoBehaviour {
         }
     }
 
-    //Method for while the player has left the trigger
-    void OnTriggerExit2D(Collider2D other)
-    {
-
-    }
 
 }
 
