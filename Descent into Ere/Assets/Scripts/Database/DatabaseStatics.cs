@@ -114,6 +114,7 @@ public static DbManager Instance {
 				while(dbReader.Read()){
 					PlayerHealth.health = Convert.ToInt32(dbReader[2].ToString());
 					PlayerLives.Lives = Convert.ToInt32(dbReader[3].ToString());
+                        LevelCompletion.LevelComplete = Convert.ToInt32(dbReader[1].ToString());
 				}
 			}
 		}

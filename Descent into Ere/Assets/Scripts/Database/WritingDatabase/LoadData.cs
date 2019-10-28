@@ -22,10 +22,11 @@ public class LoadData : MonoBehaviour {
 		if (Input.GetMouseButtonDown (0)) {
             //Location Assignment
            dataManager.loadSceneFromDB(dataManager.connectionString,"SELECT*FROM PlayerSaveData", LocateMainHub.PlayerLocation);
-		   //Getting Health and Lives
+		   //Getting Health and Lives, and Levels Complete
 		   dataManager.loadIntData(dataManager.connectionString,"SELECT*FROM PlayerSaveData");
 		   //Telliong the Game About the Player's Progress
 		   dataManager.loadStringFromDb(dataManager.connectionString,"SELECT*FROM PlayerSaveData", PlayerProgress, 1);
+        
 		                     /*LevelIndex*/
 		   //This One is For PlayerDream
 		   dataManager.loadLevelFromDb("SELECT PlayerDream FROM LevelIndex");

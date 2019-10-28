@@ -22,8 +22,8 @@ public class NewData : MonoBehaviour {
  	void OnMouseDown(){
 		if (Input.GetMouseButtonDown (0)) {
 			//Creating the Table for The Main Player Save Data
-            dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE PlayerSaveData(PlayerLocation TEXT,PlayerProgress TEXT,PlayerHealth INTEGER,PlayerLives INTEGER)");
-            dataManager.dbCommand(dataManager.connectionString, "INSERT INTO PlayerSaveData(PlayerLocation,PlayerProgress,PlayerHealth,PlayerLives) VALUES('MainHub','0%','3','3')");
+            dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE PlayerSaveData(PlayerLocation TEXT,LevelsComplete INTEGER,PlayerHealth INTEGER,PlayerLives INTEGER)");
+            dataManager.dbCommand(dataManager.connectionString, "INSERT INTO PlayerSaveData(PlayerLocation,LevelsComplete,PlayerHealth,PlayerLives) VALUES('MainHub','0','3','3')");
 			//Loading the Mainhub on First Save
 			dataManager.loadSceneFromDB(dataManager.connectionString,"SELECT*FROM PlayerSaveData", LocateMainHub.PlayerLocation);
 			//Making the Table For The Inventory

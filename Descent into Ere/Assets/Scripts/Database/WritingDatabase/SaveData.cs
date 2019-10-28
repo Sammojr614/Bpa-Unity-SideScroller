@@ -18,6 +18,8 @@ public class SaveData : MonoBehaviour {
             //Saving Lives As Well
             dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET PlayerLives=" + Convert.ToInt32(PlayerLives.Lives));
             //This Is For Saving Inventory Items
+            //Saving Levels Complete
+            dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET LevelsComplete=" + Convert.ToInt32(LevelCompletion.LevelComplete));
             if(Inventory.NumberOfItems >= 1 && Inventory.NumberOfItems <= 3)
             {
                 dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='Potion'");
