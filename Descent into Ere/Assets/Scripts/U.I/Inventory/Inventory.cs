@@ -13,6 +13,7 @@ public static int NumberOfItems;
 
 
 	void Start () {
+        
         inventoryMenu.SetActive(false);
        if(NumberOfItems == 0)
         {
@@ -59,6 +60,6 @@ public static int NumberOfItems;
         Cursor.visible = false;
         inventoryMenu.SetActive(false);
         itemSlot1.SetActive(false);
-        itemSlot2.SetActive(false);
+       
     }
 }

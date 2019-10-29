@@ -11,6 +11,7 @@ public class SaveData : MonoBehaviour {
         
             DbManager dataManager = DbManager.Instance;
 		if(Input.GetMouseButtonDown(0)){
+                                                        /* Main Player Save Data */
             //Saving the Scene Name of Where the Player is
             dataManager.dbCommand(dataManager.connectionString,"UPDATE PlayerSaveData SET PlayerLocation=" + LocateMainHub.PlayerLocation);
             //Saving The Players Health
@@ -20,6 +21,9 @@ public class SaveData : MonoBehaviour {
             //This Is For Saving Inventory Items
             //Saving Levels Complete
             dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET LevelsComplete=" + Convert.ToInt32(LevelCompletion.LevelComplete));
+            //Number Of Inventory Items
+            dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET ItemsInInventory=" + Convert.ToInt32(Inventory.NumberOfItems));
+                                /* Inventory Table */
             if(Inventory.NumberOfItems >= 1 && Inventory.NumberOfItems <= 3)
             {
                 dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='Potion'");
@@ -29,7 +33,7 @@ public class SaveData : MonoBehaviour {
                 dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='None'");
             }
 		}
-        //For Keeping Track of Complete Levels
+                                     /* Level Index */
         if(LevelCompletion.LevelComplete == 1){
             dataManager.dbCommand(dataManager.connectionString,"UPDATE LevelIndex SET PlayerDream='Complete'");
         }else{

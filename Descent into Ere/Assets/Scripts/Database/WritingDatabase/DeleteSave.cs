@@ -9,7 +9,7 @@ public class DeleteSave : MonoBehaviour {
 	SpriteRenderer DeleteFile;
 	void Start(){
 		DeleteFile = gameObject.GetComponent<SpriteRenderer>();
-		dataManager.RendererState(dataManager.connectionString,"SELECT*FROM PlayerSaveData",DeleteFile, true,false);
+		dataManager.RendererState(dataManager.connectionString,"SELECT sql FROM main.sqlite_master",DeleteFile, true,false);
 	}
 	void OnMouseDown(){
 		if(Input.GetMouseButtonDown(0)){

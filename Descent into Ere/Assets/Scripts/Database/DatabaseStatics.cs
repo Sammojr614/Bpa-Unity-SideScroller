@@ -62,7 +62,7 @@ public static DbManager Instance {
             using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
                 using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
                     while(dbReader.Read()){
-                        PlayerHealth.health = Convert.ToInt32(dbReader[2].ToString());
+                        PlayerHealth.health = Convert.ToInt32(dbReader[3].ToString());
                     }
                 }
             }
@@ -81,17 +81,6 @@ public static DbManager Instance {
             }
         }
     }
-    //Loading Level
-    public void loadLevelFromDb(string commandText) {
-        using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
-            dbCon.Open();
-            using(SqliteCommand dbCmd = new SqliteCommand(commandText,dbCon)){
-                using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
-                    LoadData.PlayerProgress = dbReader[0].ToString();
-                }
-            }
-        }
-    }
     //Loading Lives
     public void getLivesFromDb(string connectionString,string commandText){
         using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
@@ -99,7 +88,7 @@ public static DbManager Instance {
                 dbCon.Open();
                 using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
                     while(dbReader.Read()){
-                        PlayerLives.Lives = Convert.ToInt32(dbReader[3].ToString());
+                        PlayerLives.Lives = Convert.ToInt32(dbReader[4].ToString());
                     }
                 }
             }
@@ -112,9 +101,14 @@ public static DbManager Instance {
             dbCon.Open();
 			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
 				while(dbReader.Read()){
-					PlayerHealth.health = Convert.ToInt32(dbReader[2].ToString());
-					PlayerLives.Lives = Convert.ToInt32(dbReader[3].ToString());
+                    //Getting health
+					PlayerHealth.health = Convert.ToInt32(dbReader[3].ToString());
+                    //Getting Lives
+					PlayerLives.Lives = Convert.ToInt32(dbReader[4].ToString());
+                    //Levels Complete
                         LevelCompletion.LevelComplete = Convert.ToInt32(dbReader[1].ToString());
+                        //NumberOfItemsIn Inventory
+                        Inventory.NumberOfItems = Convert.ToInt32(dbReader[2].ToString());
 				}
 			}
 		}
@@ -133,7 +127,7 @@ public static DbManager Instance {
                 {
                     if (dbReader.Read())
                     {
-                        Debug.Log(dbReader[0].ToString());
+                        Debug.Log("SUCCESS!: Data Found!");
                     }
                     else
                     {
