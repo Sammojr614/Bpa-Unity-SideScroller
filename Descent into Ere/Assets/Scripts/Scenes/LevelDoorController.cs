@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class LevelDoorController : MonoBehaviour {
 
-	public GameObject PlayerDreamDoor;
-	public GameObject LucidDoor;
+
+	GameObject LucidDoor;
 	Collider2D LucidDoorCollider;
-	Collider2D PlayerDreamDoorCollider;
 	public static bool LucidLocked = true;
 	void Start () {
 		LucidDoorCollider = gameObject.GetComponent<BoxCollider2D>();
-		PlayerDreamDoorCollider = gameObject.GetComponent<BoxCollider2D>();
+		//If Lucid Door is Locked
 		if(LucidLocked == true){
 			LucidDoorCollider.enabled = false;
 		}else{
@@ -19,5 +18,14 @@ public class LevelDoorController : MonoBehaviour {
 				LucidDoorCollider.enabled = true;
 			}
 		}
+		
+		//How They Lock
+	if(LevelCompletion.LevelComplete == 1){
+		LucidLocked = false;
+	}else{
+		LucidLocked = true;
 	}
-}
+		}
+			}
+		
+	

@@ -13,15 +13,16 @@ void Start(){
 }
 void Update(){
     if(Input.GetButton("Sprint")){
+        LighBarAnimator.SetInteger("Sprinting", 5);
         SprintLeft--;
-        LighBarAnimator.SetFloat("Sprinting", 0.0f);
     }else{
         if(Input.GetButtonUp("Sprint")){
             while(SprintLeft < 20){
                 SprintLeft++;
-                LighBarAnimator.SetFloat("Sprinting", 1.0f);
+               LighBarAnimator.SetInteger("Sprinting", 10);
+              
             }
-           
+           LighBarAnimator.SetInteger("Sprinting", 0);
         }
     }
     }
