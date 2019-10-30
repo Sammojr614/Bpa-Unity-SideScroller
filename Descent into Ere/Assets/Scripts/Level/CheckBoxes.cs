@@ -12,7 +12,7 @@ public static bool CheckBoxisChecked;
 	
 	// Update is called once per frame
 	void Update () {
-		CheckBoxisChecked = CheckBoxAnimator.GetBool("Checked");
+		CheckBoxisChecked = CheckBoxAnimator.GetBool("PlayerDreamComplete");
 		if(LevelCompletion.LevelComplete == 0){
 			CheckBoxAnimator.SetBool("PlayerDreamComplete", false);
 		}else{

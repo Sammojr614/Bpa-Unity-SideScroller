@@ -9,7 +9,7 @@ public static  float MPdrain;
 void Start(){
      SprintLeft = 20;
      LighBarAnimator = gameObject.GetComponent<Animator>();
-      LighBarAnimator.SetFloat("Sprinting", 0.5f);
+      LighBarAnimator.SetInteger("Sprinting", 0);
 }
 void Update(){
     if(Input.GetButton("Sprint")){

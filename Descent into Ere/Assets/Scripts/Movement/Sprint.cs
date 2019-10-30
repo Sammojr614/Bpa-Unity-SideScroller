@@ -19,9 +19,15 @@ public class Sprint : MonoBehaviour
          */
         if (Input.GetButton("Sprint") && isGrounded == true)
         {
-			PlayerAnimator.SetFloat ("Moving", 1.0f);
             Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
             transform.position += movement * Time.deltaTime * sprintSpeed;
+            if(Input.GetButtonDown("Sprint")){
+                PlayerAnimator.SetFloat ("Moving", 1.0f);
+            }else{
+                if(Input.GetButtonUp("Sprint")){
+                    PlayerAnimator.SetFloat("Moving", 0.0f);
+                }
+            }
 		
         }
 		
