@@ -874,10 +874,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76df91e215c80f64fa8a68a9d8a1d835, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowSpeed: 3
-  amount: 100
-  drainAmount: 5
-  regenAmount: 5
 --- !u!1 &306028430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,7 +1145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLevel: MainHub
-  DoorLocked: 0
 --- !u!61 &480246521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4578,6 +4573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryMenu: {fileID: 1119894541}
   itemSlot1: {fileID: 626195691}
+  itemSlot2: {fileID: 0}
   inventoryOpen: 0
 --- !u!222 &1902365351
 CanvasRenderer:
