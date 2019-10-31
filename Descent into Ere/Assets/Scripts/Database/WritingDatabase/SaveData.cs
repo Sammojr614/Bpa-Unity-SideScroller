@@ -24,15 +24,18 @@ public class SaveData : MonoBehaviour {
             //Number Of Inventory Items
             dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET ItemsInInventory=" + Convert.ToInt32(Inventory.NumberOfItems));
                                 /* Inventory Table */
-            if(Inventory.NumberOfItems >= 1 && Inventory.NumberOfItems == 3)
-            {
-                dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='Potion'");
+            if(Inventory.NumberOfItems == 1 && Inventory.NumberOfPotions >= 1 || Inventory.NumberOfPotions <= 3){
+                dataManager.dbCommand(dataManager.connectionString, "UPDATE FROM PlayerInventory SET ItemSlot1='Potion'");
+            }else{
+                if(Inventory.NumberOfItems == 1 && Inventory.haveKey == true){
+                    dataManager.dbCommand(dataManager.connectionString, "UPDATE FROM PlayerInventory SET ItemSlot1='Key'");
+                }else{
+                    if(Inventory.NumberOfPotions >= 1 && Inventory.haveKey == true){
+                        dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='Potion'");
+                        dataManager.dbCommand(dataManager.connectionString, "UPDATE  PlayerInventory SET ItemSlot2='Key'");
+                    }
+                }
             }
-            else
-            {
-                dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='None'");
-            }
-		}
                                      /* Level Index */
         if(LevelCompletion.LevelComplete == 1){
             dataManager.dbCommand(dataManager.connectionString,"UPDATE LevelIndex SET PlayerDream='Complete'");
@@ -48,4 +51,4 @@ public class SaveData : MonoBehaviour {
 		}
 	}
   
-    
+}    

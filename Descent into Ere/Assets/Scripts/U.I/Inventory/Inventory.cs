@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour {
     public GameObject itemSlot2;
     public bool inventoryOpen = false;
 public static int NumberOfItems;
+public static int NumberOfPotions;
+public static bool haveKey;
 
 
 	void Start () {

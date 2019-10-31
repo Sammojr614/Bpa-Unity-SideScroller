@@ -12,6 +12,10 @@ public class collectItem : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D itemCollider){
 		if(itemCollider.CompareTag("Player")){
 			Inventory.NumberOfItems++;
+			Inventory.NumberOfPotions++;
+			if(Inventory.NumberOfPotions > 3){
+				Inventory.NumberOfPotions = 3;
+			}
 			Item.SetActive(false);
             Debug.Log(Inventory.NumberOfItems);
 			

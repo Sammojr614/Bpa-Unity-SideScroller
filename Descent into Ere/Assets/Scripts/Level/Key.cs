@@ -6,8 +6,8 @@ public class Key : MonoBehaviour {
 
     //The key and obsticle in the level
     public GameObject key;
-    public GameObject Obsticle;
-
+    
+   
     /* When the player collides with
      * the key, the key dissapears
      * and the obsticle is destroyed
@@ -16,8 +16,8 @@ public class Key : MonoBehaviour {
     {
         if (collision.CompareTag("Player"))
         {
-            DestroyObject(Obsticle);
             key.SetActive(false);
+            Inventory.haveKey = true;
         }
     }
 
@@ -29,8 +29,8 @@ public class Key : MonoBehaviour {
     {
         if (collision.CompareTag("Player"))
         {
-            DestroyObject(Obsticle);
             key.SetActive(false);
+            Inventory.haveKey = true;
         }
     }
 
@@ -38,8 +38,9 @@ public class Key : MonoBehaviour {
      * the key has vanished, and the 
      * obsticle is gone
      */    
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        
-    }
+    
+   
+
+
+
 }
