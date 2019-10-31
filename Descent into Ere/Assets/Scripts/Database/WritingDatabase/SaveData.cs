@@ -24,7 +24,7 @@ public class SaveData : MonoBehaviour {
             //Number Of Inventory Items
             dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET ItemsInInventory=" + Convert.ToInt32(Inventory.NumberOfItems));
                                 /* Inventory Table */
-            if(Inventory.NumberOfItems >= 1 && Inventory.NumberOfItems <= 3)
+            if(Inventory.NumberOfItems >= 1 && Inventory.NumberOfItems == 3)
             {
                 dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='Potion'");
             }
