@@ -47,6 +47,9 @@ public static bool haveKey;
                     {
                         itemSlot1.SetActive(false);
                     }
+					if (haveKey == true) {
+						itemSlot2.SetActive (true);
+					}
 
                 }
 
