@@ -4,9 +4,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DeathPlain : MonoBehaviour {
-void OnTriggerEnter(){
-	if(CompareTag("Player")){
-		PlayerHealth.health = 0;
+	public string sceneName;
+	DbManager dataManager = DbManager.Instance;
+	
+void OnTriggerEnter2D(Collider2D collsion){
+	if(collsion.CompareTag("Player")){
+		PlayerLives.Lives--;
+	}
+}
+void OnTriggerExit2D(Collider2D collsion){
+	if(collsion.CompareTag("Player")){
+		SceneManager.LoadScene(sceneName);
 	}
 }
 }

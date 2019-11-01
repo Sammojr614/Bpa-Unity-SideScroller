@@ -10,9 +10,6 @@ public class PlayerLives : MonoBehaviour {
     public static int Lives;
 	public Animator livesAnimator;
     DbManager dataManager = DbManager.Instance;
-	void Start () {
-        dataManager.getLivesFromDb(dataManager.connectionString,"SELECT*FROM PlayerSaveData");
-	}
 	
 	
 	void Update () {

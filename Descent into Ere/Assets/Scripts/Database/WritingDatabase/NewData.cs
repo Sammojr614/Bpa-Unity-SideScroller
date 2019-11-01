@@ -20,8 +20,10 @@ void OnMouseOver(){
  	void OnMouseDown(){
 		if (Input.GetMouseButtonDown (0)) {
 			//Creating the Table for The Main Player Save Data
-            dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE PlayerSaveData(PlayerLocation TEXT,LevelsComplete INTEGER,ItemsInInventory INTEGER,PlayerHealth INTEGER,PlayerLives INTEGER)");
-            dataManager.dbCommand(dataManager.connectionString, "INSERT INTO PlayerSaveData(PlayerLocation,LevelsComplete,ItemsInInventory,PlayerHealth,PlayerLives) VALUES('MainHub','0','0','3','3')");
+            dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE PlayerSaveData(PlayerLocation TEXT,LevelsComplete INTEGER,ItemsInInventory INTEGER,KeyInInventory INTEGER,PlayerHealth INTEGER,PlayerLives INTEGER)");
+            dataManager.dbCommand(dataManager.connectionString, "INSERT INTO PlayerSaveData(PlayerLocation,LevelsComplete,ItemsInInventory,KeyInInventory,PlayerHealth,PlayerLives) VALUES('MainHub','0','0','0','3','3')");
+			//Setting Lives 
+			dataManager.getLivesFromDb(dataManager.connectionString,"SELECT*FROM PlayerSaveData");
 			//Loading the Mainhub on First Save
 			dataManager.loadSceneFromDB(dataManager.connectionString,"SELECT*FROM PlayerSaveData", LocateMainHub.PlayerLocation);
 			//Making the Table For The Inventory

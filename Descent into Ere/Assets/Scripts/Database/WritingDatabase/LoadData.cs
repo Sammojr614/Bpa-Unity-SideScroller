@@ -23,6 +23,14 @@ public class LoadData : MonoBehaviour {
            dataManager.loadSceneFromDB(dataManager.connectionString,"SELECT*FROM PlayerSaveData", LocateMainHub.PlayerLocation);
 		   //Getting Health and Lives, and Levels Complete
 		   dataManager.loadIntData(dataManager.connectionString,"SELECT*FROM PlayerSaveData");
+		   //Saying what Happens if You Have a Key
+		   if(dataManager.TrueOrFalseFromdb == 0){
+			   Inventory.haveKey = false;
+		   }else{
+			   if(dataManager.TrueOrFalseFromdb == 1){
+				   Inventory.haveKey = true;
+			   }
+		   }
 		   
 		}
 	}

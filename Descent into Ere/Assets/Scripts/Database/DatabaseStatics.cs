@@ -23,7 +23,7 @@ public static DbManager Instance {
 	}
 
     public string connectionString = "Data Source= DieDataBase.db";
-
+    public int TrueOrFalseFromdb;
 
     //General Commands
     public void dbCommand(string connectionString, string commandText) {
@@ -33,6 +33,23 @@ public static DbManager Instance {
             using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
             {
                 dbCmd.ExecuteNonQuery();
+            }
+        }
+    }
+    //Seeing if a String is Equal
+    public void dbFindEqualString(string commandText,string lookingForThisString,bool ItemInSlot1){
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+            dbCon.Open();
+            using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+                using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+                    while(dbReader.Read()){
+                        if(dbReader[0].ToString() == lookingForThisString){
+                            ItemInSlot1 = true;
+                        }else{
+                            ItemInSlot1 = false;
+                        }
+                    }
+                }
             }
         }
     }
@@ -62,7 +79,7 @@ public static DbManager Instance {
             using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
                 using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
                     while(dbReader.Read()){
-                        PlayerHealth.health = Convert.ToInt32(dbReader[3].ToString());
+                        PlayerHealth.health = Convert.ToInt32(dbReader[4].ToString());
                     }
                 }
             }
@@ -88,7 +105,7 @@ public static DbManager Instance {
                 dbCon.Open();
                 using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
                     while(dbReader.Read()){
-                        PlayerLives.Lives = Convert.ToInt32(dbReader[4].ToString());
+                        PlayerLives.Lives = Convert.ToInt32(dbReader[5].ToString());
                     }
                 }
             }
@@ -102,9 +119,10 @@ public static DbManager Instance {
 			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
 				while(dbReader.Read()){
                     //Getting health
-					PlayerHealth.health = Convert.ToInt32(dbReader[3].ToString());
+					PlayerHealth.health = Convert.ToInt32(dbReader[4].ToString());
                     //Getting Lives
-					PlayerLives.Lives = Convert.ToInt32(dbReader[4].ToString());
+					PlayerLives.Lives = Convert.ToInt32(dbReader[5].ToString());
+                    TrueOrFalseFromdb = Convert.ToInt32(dbReader[3].ToString());
                     //Levels Complete
                         LevelCompletion.LevelComplete = Convert.ToInt32(dbReader[1].ToString());
                         //NumberOfItemsIn Inventory
@@ -116,7 +134,7 @@ public static DbManager Instance {
 }
   
     //Testing if The reader is Reading the Data
-    public void dbReaderTest(string connectionString, string commandText)
+    public void dbReaderTest(string connectionString, string commandText, int readerIndex)
     {
         using(SqliteConnection dbCon = new SqliteConnection(connectionString))
         {
@@ -127,7 +145,8 @@ public static DbManager Instance {
                 {
                     if (dbReader.Read())
                     {
-                        Debug.Log("SUCCESS!: Data Found!");
+                        Debug.Log("SUCCESS!: Data Found! Here's What is There: "+ dbReader[readerIndex].ToString());
+                        
                     }
                     else
                     {
