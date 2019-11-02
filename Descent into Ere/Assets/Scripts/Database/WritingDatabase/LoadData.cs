@@ -29,6 +29,7 @@ public class LoadData : MonoBehaviour {
 		   }else{
 			   if(dataManager.TrueOrFalseFromdb == 1){
 				   Inventory.haveKey = true;
+					Inventory.NumberOfItems++;
 			   }
 		   }
 		   
