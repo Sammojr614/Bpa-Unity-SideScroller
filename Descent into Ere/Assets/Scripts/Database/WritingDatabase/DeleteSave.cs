@@ -16,6 +16,7 @@ public class DeleteSave : MonoBehaviour {
 			// As the Name of the Script Implies It Deletes the data
 			dataManager.dbCommand(dataManager.connectionString, "DROP TABLE PlayerSaveData");
 			dataManager.dbCommand(dataManager.connectionString, "DROP TABLE PlayerInventory");
+			dataManager.dbCommand (dataManager.connectionString, "DROP TABLE LevelIndex");
 		}
 	}
 }

@@ -80,7 +80,7 @@ public static DbManager Instance {
             using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
                 using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
                     while(dbReader.Read()){
-                        PlayerHealth.health = Convert.ToInt32(dbReader[6].ToString());
+                        PlayerHealth.health = Convert.ToInt32(dbReader[5].ToString());
                     }
                 }
             }
@@ -106,7 +106,7 @@ public static DbManager Instance {
                 dbCon.Open();
                 using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
                     while(dbReader.Read()){
-                        PlayerLives.Lives = Convert.ToInt32(dbReader[7].ToString());
+                        PlayerLives.Lives = Convert.ToInt32(dbReader[6].ToString());
                     }
                 }
             }
@@ -120,9 +120,9 @@ public static DbManager Instance {
 			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
 				while(dbReader.Read()){
                     //Getting health
-					PlayerHealth.health = Convert.ToInt32(dbReader[6].ToString());
+					PlayerHealth.health = Convert.ToInt32(dbReader[5].ToString());
                     //Getting Lives
-					PlayerLives.Lives = Convert.ToInt32(dbReader[7].ToString());
+					PlayerLives.Lives = Convert.ToInt32(dbReader[6].ToString());
                     //Getting if player has Key
                     TrueOrFalseFromdb = Convert.ToInt32(dbReader[3].ToString());
                     //Levels Complete

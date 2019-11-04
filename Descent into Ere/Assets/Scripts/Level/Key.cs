@@ -18,6 +18,7 @@ public class Key : MonoBehaviour {
         {
             key.SetActive(false);
             Inventory.haveKey = true;
+			Inventory.NumberOfItems++;
         }
     }
 

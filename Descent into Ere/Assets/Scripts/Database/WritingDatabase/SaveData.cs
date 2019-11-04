@@ -11,7 +11,7 @@ public class SaveData : MonoBehaviour {
         
             DbManager dataManager = DbManager.Instance;
 		if(Input.GetMouseButtonDown(0)){
-            dataManager.dbReaderTest(dataManager.connectionString,"SELECT*FROM PlayerSaveData",1);
+			Debug.Log (Inventory.haveBossKey);
                                                         /* Main Player Save Data */
             //Saving the Scene Name of Where the Player is
             dataManager.dbCommand(dataManager.connectionString,"UPDATE PlayerSaveData SET PlayerLocation=" + LocateMainHub.PlayerLocation);
@@ -25,24 +25,39 @@ public class SaveData : MonoBehaviour {
             //Number Of Inventory Items
             dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET ItemsInInventory='" + Convert.ToInt32(Inventory.NumberOfItems) + "'");
                                 /* Inventory Table */
-            if(Inventory.NumberOfItems == 1 && Inventory.NumberOfPotions >= 1 || Inventory.NumberOfPotions <= 3){
-                dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='Potion'");
-            }else{
-                if(Inventory.NumberOfItems == 1 && Inventory.haveKey == true){
-                    dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='Key'");
-                }else{
-                    if(Inventory.NumberOfPotions >= 1 && Inventory.haveKey == true){
-                        dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='Potion'");
-                        dataManager.dbCommand(dataManager.connectionString, "UPDATE  PlayerInventory SET ItemSlot2='Key'");
-                    }
-                }
-            }
+			//Potion
+			if (Inventory.NumberOfItems > 1 && Inventory.NumberOfPotions > 1) {
+				dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='Potion");
+					}else{
+						if(Inventory.NumberOfItems == 0 || Inventory.NumberOfPotions == 0){
+							dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='None'");
+						}
+					} 
+			//Normal Key
+			if ( Inventory.haveKey == true) {
+				dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot2 ='NormalKey'");
+			} else {
+					dataManager.dbCommand(dataManager.connectionString,"UPDATE PlayerInventory SET ItemSlot2 ='None'");
+			}
+			//Boss Key
+			if (Inventory.haveBossKey == true) {
+				dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot3='Boss Key'");
+			} else {
+				dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot3='None'");
+			}
             /* Key Management */
+			//Normal Key
             if(Inventory.haveKey == true){
                 dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET KeyInInventory='1'");
             }else{
                 dataManager.dbCommand(dataManager.connectionString,"UPDATE PlayerSaveData SET KeyInInventory='0'");
             }
+			//Boss Key
+			if (Inventory.haveBossKey == true) {
+				dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerSaveData SET HaveBossKey='1' ");
+			} else {
+				dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerSaveData SET HaveBossKey ='0'");
+			}
                                      /* Level Index */
        if(LevelCompletion.LevelComplete == 0){
            dataManager.dbCommand(dataManager.connectionString, "UPDATE LevelIndex SET PlayerDream='Incomplete'");

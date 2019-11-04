@@ -7,7 +7,13 @@ public class BossKey : MonoBehaviour {
     //The key and obsticle in the level
     public GameObject BossKeyGameObject;
     
-   
+	void Update(){
+		if (Inventory.haveBossKey == true) {
+			BossKeyGameObject.SetActive (false);
+		} else {
+			BossKeyGameObject.SetActive (true);
+		}
+	}
     /* When the player collides with
      * the key, the key dissapears
      * and the obsticle is destroyed
@@ -18,7 +24,9 @@ public class BossKey : MonoBehaviour {
         {
             BossKeyGameObject.SetActive(false);
             Inventory.haveBossKey = true;
+			Inventory.NumberOfItems++;
         }
+
     }
 
     /* While the player is colliding with

@@ -5,15 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class BossDoor : MonoBehaviour {
 public GameObject BossDoorOpen;
-	// Use this for initialization
-	
-	void OnTriggerEnter2D(Collider2D collider){
-		if(collider.CompareTag("Player") && Inventory.haveBossKey == true){
-			SceneManager.LoadScene("PlayerDreamPt2");
+	void OnTriggerStay2D(Collider2D collision){
+		if (collision.CompareTag ("Player")) {
+			if (Input.GetButton ("EnterDoor") && Inventory.haveBossKey == true) {
+				SceneManager.LoadScene ("PlayerDreamPt2");
+				Inventory.haveBossKey = false;
+			}
 		}
 	}
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
