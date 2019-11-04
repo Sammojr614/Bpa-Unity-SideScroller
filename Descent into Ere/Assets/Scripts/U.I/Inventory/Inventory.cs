@@ -13,6 +13,7 @@ public class Inventory : MonoBehaviour {
 public static int NumberOfItems;
 public static int NumberOfPotions;
 public static bool haveKey;
+public static bool haveBossKey;
 
 
 	void Start () {
