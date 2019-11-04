@@ -24,6 +24,7 @@ public static DbManager Instance {
 
     public string connectionString = "Data Source= DieDataBase.db";
     public int TrueOrFalseFromdb;
+    public int BosskeyTrueOrFalse;
 
     //General Commands
     public void dbCommand(string connectionString, string commandText) {
@@ -79,7 +80,7 @@ public static DbManager Instance {
             using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
                 using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
                     while(dbReader.Read()){
-                        PlayerHealth.health = Convert.ToInt32(dbReader[4].ToString());
+                        PlayerHealth.health = Convert.ToInt32(dbReader[6].ToString());
                     }
                 }
             }
@@ -105,7 +106,7 @@ public static DbManager Instance {
                 dbCon.Open();
                 using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
                     while(dbReader.Read()){
-                        PlayerLives.Lives = Convert.ToInt32(dbReader[5].ToString());
+                        PlayerLives.Lives = Convert.ToInt32(dbReader[7].ToString());
                     }
                 }
             }
@@ -119,14 +120,18 @@ public static DbManager Instance {
 			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
 				while(dbReader.Read()){
                     //Getting health
-					PlayerHealth.health = Convert.ToInt32(dbReader[4].ToString());
+					PlayerHealth.health = Convert.ToInt32(dbReader[6].ToString());
                     //Getting Lives
-					PlayerLives.Lives = Convert.ToInt32(dbReader[5].ToString());
+					PlayerLives.Lives = Convert.ToInt32(dbReader[7].ToString());
+                    //Getting if player has Key
                     TrueOrFalseFromdb = Convert.ToInt32(dbReader[3].ToString());
                     //Levels Complete
                         LevelCompletion.LevelComplete = Convert.ToInt32(dbReader[1].ToString());
                         //NumberOfItemsIn Inventory
                         Inventory.NumberOfItems = Convert.ToInt32(dbReader[2].ToString());
+                        //getting if player has Boss key
+                        BosskeyTrueOrFalse = Convert.ToInt32(dbReader[4].ToString());
+
 				}
 			}
 		}

@@ -29,7 +29,16 @@ public class LoadData : MonoBehaviour {
 		   }else{
 			   if(dataManager.TrueOrFalseFromdb == 1){
 				   Inventory.haveKey = true;
-					Inventory.NumberOfItems++;
+					Inventory.NumberOfItems = Inventory.NumberOfItems+1;
+			   }
+		   }if(dataManager.BosskeyTrueOrFalse == 0){
+			   Inventory.haveBossKey = false;
+
+		   }else{
+			   if(dataManager.BosskeyTrueOrFalse == 1){
+				   Inventory.haveBossKey = true;
+				   Inventory.NumberOfItems = Inventory.NumberOfItems+1;
+
 			   }
 		   }
 		   
