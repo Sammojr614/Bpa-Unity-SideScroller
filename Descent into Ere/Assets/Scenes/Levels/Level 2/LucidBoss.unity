@@ -1592,8 +1592,8 @@ GameObject:
   - component: {fileID: 1130685188}
   - component: {fileID: 1130685187}
   - component: {fileID: 1130685186}
-  - component: {fileID: 1130685190}
   - component: {fileID: 1130685191}
+  - component: {fileID: 1130685190}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1635,7 +1635,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.968615
+  orthographic size: 11.717039
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1675,7 +1675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb14c12061341614482feb1d4d7aec89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xMin: -5
+  xMin: 0
   xMax: 10
   yMin: 0
   yMax: 0
@@ -2164,6 +2164,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1424974146}
   - component: {fileID: 1424974147}
+  - component: {fileID: 1424974149}
+  - component: {fileID: 1424974148}
   m_Layer: 0
   m_Name: Hangman
   m_TagString: Untagged
@@ -2228,6 +2230,42 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!61 &1424974148
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1424974145}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07840729, y: -0.7213595}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 21, y: 15}
+    newSize: {x: 21, y: 15}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 13.880499, y: 13.5572815}
+  m_EdgeRadius: 0
+--- !u!114 &1424974149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1424974145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61209924b368f427aa36dccb27f03ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1491372677
 GameObject:
   m_ObjectHideFlags: 0
