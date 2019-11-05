@@ -24,6 +24,8 @@ public class SaveData : MonoBehaviour {
             dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET LevelsComplete='" + Convert.ToInt32(LevelCompletion.LevelComplete) + "'");
             //Number Of Inventory Items
             dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET ItemsInInventory='" + Convert.ToInt32(Inventory.NumberOfItems) + "'");
+            //NumberOfPotions in Main PlayerSave Data
+            dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET NumberOfPotions='" + Convert.ToInt32(Inventory.NumberOfPotions) + "'");
                                 /* Inventory Table */
 			//Potion
 			if (Inventory.NumberOfItems > 1 && Inventory.NumberOfPotions > 1) {
