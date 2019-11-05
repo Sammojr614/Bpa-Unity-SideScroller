@@ -18,22 +18,10 @@ public static bool haveBossKey;
 
 
 	void Start () {
-        if(NumberOfItems < 0){
-            NumberOfItems = 0;
-        }
-        inventoryMenu.SetActive(false);
-       if(NumberOfItems == 0)
-        {
-            itemSlot1.SetActive(false);
-        }
-        if(haveKey == true) {
-            NumberOfItems++;
-        }else{
-            if(NumberOfPotions !=1 && Inventory.NumberOfItems !=0){
-                NumberOfItems--;
-
-            }
-        }
+		inventoryMenu.SetActive (false);
+		itemSlot1.SetActive (false);
+		itemSlot2.SetActive (false);
+		itemSlot3.SetActive (false);
 	}
 	
 	

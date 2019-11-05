@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.5400004
+  m_Length: 0.54000014
   m_ChildTransform: {fileID: 1632058834}
   m_AttachedIK: {fileID: 1704127115}
 --- !u!1 &186519868
@@ -664,23 +664,20 @@ RectTransform:
   m_AnchoredPosition: {x: -18, y: 22}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &239633996
-Animator:
-  serializedVersion: 3
+--- !u!114 &239633996
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 239633994}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4ca0e56e0ee0d4289ad3f6b5da4d8d91, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3631587f5394ee7a825f93bff09532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  X1: {fileID: 2037324098}
+  X2: {fileID: 443439259}
+  X3: {fileID: 1925394009}
 --- !u!1 &273392181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,7 +1040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.2987929
+  m_Length: 0.29879272
   m_ChildTransform: {fileID: 498236793}
   m_AttachedIK: {fileID: 873128344}
 --- !u!1 &443439259
@@ -3583,7 +3580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.44436312
+  m_Length: 0.44436258
   m_ChildTransform: {fileID: 1900977886}
   m_AttachedIK: {fileID: 778394073}
 --- !u!1 &1318873971
@@ -4816,7 +4813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.5500002
+  m_Length: 0.55000055
   m_ChildTransform: {fileID: 77617042}
   m_AttachedIK: {fileID: 681003118}
 --- !u!1 &1900977885
@@ -4861,7 +4858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Length: 0.40242243
+  m_Length: 0.40242264
   m_ChildTransform: {fileID: 1961510045}
   m_AttachedIK: {fileID: 778394073}
 --- !u!1 &1903369138
@@ -5084,6 +5081,7 @@ MonoBehaviour:
   itemSlot1: {fileID: 1646380151}
   itemSlot2: {fileID: 866675724}
   itemSlot3: {fileID: 359310645}
+  ItemCounter: {fileID: 0}
   inventoryOpen: 0
 --- !u!222 &1918861865
 CanvasRenderer:

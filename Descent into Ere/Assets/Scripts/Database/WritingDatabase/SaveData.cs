@@ -53,11 +53,14 @@ public class SaveData : MonoBehaviour {
                 dataManager.dbCommand(dataManager.connectionString,"UPDATE PlayerSaveData SET KeyInInventory='0'");
             }
 			//Boss Key
-			if (Inventory.haveBossKey == true) {
-				dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerSaveData SET HaveBossKey='1' ");
-			} else {
-				dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerSaveData SET HaveBossKey ='0'");
-			}
+			string flag = Inventory.haveBossKey ? "1" : "0";
+			dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerSaveData SET HaveBossKey='" + flag + "' ");
+
+//			if (Inventory.haveBossKey == true) {
+//				dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerSaveData SET HaveBossKey='1' ");
+//			} else {
+//				dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerSaveData SET HaveBossKey ='0'");
+//			}
                                      /* Level Index */
        if(LevelCompletion.LevelComplete == 0){
            dataManager.dbCommand(dataManager.connectionString, "UPDATE LevelIndex SET PlayerDream='Incomplete'");

@@ -634,6 +634,7 @@ MonoBehaviour:
   itemSlot1: {fileID: 1719245613}
   itemSlot2: {fileID: 184670138}
   itemSlot3: {fileID: 1769432136}
+  ItemCounter: {fileID: 0}
   inventoryOpen: 0
 --- !u!222 &247192989
 CanvasRenderer:
@@ -4597,23 +4598,20 @@ RectTransform:
   m_AnchoredPosition: {x: 14, y: 24}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1927212538
-Animator:
-  serializedVersion: 3
+--- !u!114 &1927212538
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1927212536}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4ca0e56e0ee0d4289ad3f6b5da4d8d91, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3631587f5394ee7a825f93bff09532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  X1: {fileID: 1004654676}
+  X2: {fileID: 862872713}
+  X3: {fileID: 1959967876}
 --- !u!1 &1959967876
 GameObject:
   m_ObjectHideFlags: 0

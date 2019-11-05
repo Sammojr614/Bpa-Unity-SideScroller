@@ -10,6 +10,9 @@ public GameObject BossDoorOpen;
 			if (Input.GetButton ("EnterDoor") && Inventory.haveBossKey == true) {
 				SceneManager.LoadScene ("PlayerDreamPt2");
 				Inventory.haveBossKey = false;
+				if (Inventory.NumberOfItems < 0) {
+					Inventory.NumberOfItems--;
+				}
 			}
 		}
 	}
