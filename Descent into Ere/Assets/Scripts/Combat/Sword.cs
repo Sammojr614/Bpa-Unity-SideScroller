@@ -21,7 +21,7 @@ public class Sword : MonoBehaviour {
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
-
+                    enemiesToDamage[i].GetComponent<EnemyHealth>().enemyHealth -= damage;
                 }
             }
             timeBtwAttack = startTimeBtwAttack;
@@ -30,5 +30,11 @@ public class Sword : MonoBehaviour {
         {
             timeBtwAttack -= Time.deltaTime;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRange);
     }
 }
