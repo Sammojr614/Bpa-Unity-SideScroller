@@ -2472,6 +2472,7 @@ GameObject:
   - component: {fileID: 1060173278}
   - component: {fileID: 1060173277}
   - component: {fileID: 1060173282}
+  - component: {fileID: 1060173283}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -2603,6 +2604,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   livesAnimator: {fileID: 1060173281}
+--- !u!114 &1060173283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1060173275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcd74c4187cf4dbe94b51f1bfb61b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerAnimator: {fileID: 1279276340}
 --- !u!1 &1061938656
 GameObject:
   m_ObjectHideFlags: 0

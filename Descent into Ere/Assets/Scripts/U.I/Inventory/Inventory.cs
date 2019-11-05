@@ -22,6 +22,7 @@ public static bool haveBossKey;
 		itemSlot1.SetActive (false);
 		itemSlot2.SetActive (false);
 		itemSlot3.SetActive (false);
+        ItemCounter.SetActive(false);
 	}
 	
 	

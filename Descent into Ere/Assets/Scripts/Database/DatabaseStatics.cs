@@ -80,7 +80,7 @@ public static DbManager Instance {
             using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
                 using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
                     while(dbReader.Read()){
-                        PlayerHealth.health = Convert.ToInt32(dbReader[5].ToString());
+                        PlayerHealth.health = Convert.ToInt32(dbReader[6].ToString());
                     }
                 }
             }
@@ -106,7 +106,7 @@ public static DbManager Instance {
                 dbCon.Open();
                 using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
                     while(dbReader.Read()){
-                        PlayerLives.Lives = Convert.ToInt32(dbReader[6].ToString());
+                        PlayerLives.Lives = Convert.ToInt32(dbReader[7].ToString());
                     }
                 }
             }

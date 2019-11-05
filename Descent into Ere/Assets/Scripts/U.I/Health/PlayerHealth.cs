@@ -28,6 +28,7 @@ Animation PlayerAnimation;
     }
     void Update()
 	{  
+		Debug.Log(damaged);
 		if (health == 3) {
 			PlayerAnimator.SetFloat ("Health", 0.0f);
 		} else {

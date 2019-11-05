@@ -1824,7 +1824,7 @@ MonoBehaviour:
   itemSlot1: {fileID: 649592474}
   itemSlot2: {fileID: 2096151728}
   itemSlot3: {fileID: 2053006451}
-  ItemCounter: {fileID: 0}
+  ItemCounter: {fileID: 1267658876}
   inventoryOpen: 0
 --- !u!222 &1093010915
 CanvasRenderer:
@@ -2688,6 +2688,7 @@ GameObject:
   - component: {fileID: 1521687375}
   - component: {fileID: 1521687374}
   - component: {fileID: 1521687373}
+  - component: {fileID: 1521687379}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -2819,6 +2820,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1521687379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1521687371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcd74c4187cf4dbe94b51f1bfb61b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerAnimator: {fileID: 741026686}
 --- !u!1 &1533709347
 GameObject:
   m_ObjectHideFlags: 0

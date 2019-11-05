@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 59685347}
   - component: {fileID: 59685346}
   - component: {fileID: 59685345}
+  - component: {fileID: 59685351}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -404,6 +405,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &59685351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 59685343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcd74c4187cf4dbe94b51f1bfb61b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerAnimator: {fileID: 2140254078}
 --- !u!1 &92559814
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,6 +739,7 @@ MonoBehaviour:
   ThreePotions: {fileID: 1412554643}
   TwoPotions: {fileID: 444273}
   OnePotion: {fileID: 658041993}
+  potions: []
 --- !u!1 &206143877
 GameObject:
   m_ObjectHideFlags: 0
