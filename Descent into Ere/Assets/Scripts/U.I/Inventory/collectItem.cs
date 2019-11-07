@@ -17,7 +17,6 @@ public class collectItem : MonoBehaviour {
 				Inventory.NumberOfPotions = 3;
 			}
 			Item.SetActive(false);
-            Debug.Log(Inventory.NumberOfItems);
 			
 		}
 	}

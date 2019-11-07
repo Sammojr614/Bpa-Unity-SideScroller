@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour {
     public GameObject itemSlot2;
 	public GameObject itemSlot3;
 	public GameObject ItemCounter;
-    public bool inventoryOpen = false;
+    public static bool inventoryOpen = false;
 public static int NumberOfItems;
 public static int NumberOfPotions;
 public static bool haveKey;
@@ -23,6 +23,7 @@ public static bool haveBossKey;
 		itemSlot2.SetActive (false);
 		itemSlot3.SetActive (false);
         ItemCounter.SetActive(false);
+        
 	}
 	
 	
@@ -58,15 +59,16 @@ public static bool haveBossKey;
 					}
 				}
 				//Potion Rendering 
-					if (NumberOfItems >= 1 && NumberOfPotions > 1)
+					if (NumberOfItems >= 1 && NumberOfPotions >= 1)
                 {
                     itemSlot1.SetActive(true);
+                    ItemCounter.SetActive(true);
                 }
                 else
                 {
                     if (NumberOfItems == 0)
                     {
-                        itemSlot1.SetActive(false);
+                        ItemCounter.SetActive(false);
                     }
 
                 }
@@ -85,7 +87,7 @@ public static bool haveBossKey;
         itemSlot1.SetActive(false);
 		itemSlot2.SetActive (false);
 		itemSlot3.SetActive (false);
-		ItemCounter.SetActive (false);
+        ItemCounter.SetActive(false);
        
     }
 }

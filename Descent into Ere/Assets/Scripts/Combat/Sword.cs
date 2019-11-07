@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class Sword : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class Sword : MonoBehaviour {
     public float startTimeBtwAttack;
 
     public Transform attackPos;
+    public Animator PlayerAnimator;
     public LayerMask whatIsEnemies;
     public float attackRange;
     public int damage;
@@ -18,6 +20,7 @@ public class Sword : MonoBehaviour {
         {
             if (Input.GetButton("SwordAttack"))
             {
+                PlayerAnimator.SetBool("Attacking", true);
                 Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
                 for (int i = 0; i < enemiesToDamage.Length; i++)
                 {
@@ -25,10 +28,12 @@ public class Sword : MonoBehaviour {
                 }
             }
             timeBtwAttack = startTimeBtwAttack;
+        
         }
         else
         {
             timeBtwAttack -= Time.deltaTime;
+            PlayerAnimator.SetBool("Attacking", false);
         }
     }
 
