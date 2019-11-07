@@ -12,9 +12,14 @@ public class Potion : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            health.GetComponent<PlayerHealth>().Heal();
-            Inventory.NumberOfItems--;
-            potion.SetActive(false);
+			if (PlayerHealth.health < 3) {
+				PlayerHealth.Heal (health);
+				Inventory.NumberOfItems--;
+				Inventory.NumberOfPotions--;
+			}
+			if (Inventory.NumberOfPotions == 0) {
+				potion.SetActive (true);
+			}
         }
     }
 }

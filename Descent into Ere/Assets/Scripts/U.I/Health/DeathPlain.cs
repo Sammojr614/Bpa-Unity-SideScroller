@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class DeathPlain : MonoBehaviour {
 	public string sceneName;
-	DbManager dataManager = DbManager.Instance;
 	
 void OnTriggerEnter2D(Collider2D collsion){
 	if(collsion.CompareTag("Player")){

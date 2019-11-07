@@ -54,15 +54,23 @@ Animation PlayerAnimation;
 				if (PlayerLives.Lives == 0) {
 					SceneManager.LoadScene ("GameOver");
 				}
+				if (health > 3) {
+					health = 3;
+				}
           
 			}
 		}
 
 	}
 
-    public void Heal()
+	public static void Heal(Animator PlayerAnimator)
     {
-        health += 1;
-        PlayerAnimator.SetFloat("Health", 0.0f);
+		if (health < 3) {
+			health += 1;
+			PlayerAnimator.SetFloat ("Health", 0.0f);
+		}
+	
+
+		
     }
 }
