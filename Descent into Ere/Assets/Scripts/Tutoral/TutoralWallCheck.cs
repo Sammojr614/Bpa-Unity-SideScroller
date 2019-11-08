@@ -6,7 +6,7 @@ public class TutoralWallCheck : MonoBehaviour {
 	public GameObject Wall;
 	public static int TimesPlayed;
 	void Start(){
-		if(TimesPlayed > 1){
+		if(TimesPlayed >= 1){
 			Wall.SetActive(false);
 		}else if(TimesPlayed == 0){
 			Wall.SetActive(true);
