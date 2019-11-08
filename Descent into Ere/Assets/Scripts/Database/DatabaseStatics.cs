@@ -112,7 +112,7 @@ public static DbManager Instance {
             }
         }
     }
-    //Loading all Of the Int data
+    //Loading all Of the Int data From PlayerSave Data
   public void loadIntData(string connectionString, string commandText){
 	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
 		using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
@@ -133,12 +133,15 @@ public static DbManager Instance {
                         BosskeyTrueOrFalse = Convert.ToInt32(dbReader[5].ToString());
                         //Getting NumberOf Potions
                         Inventory.NumberOfPotions = Convert.ToInt32(dbReader[3].ToString());
+                        //Getting Number of Times Played
+                        TutoralWallCheck.TimesPlayed = Convert.ToInt32(dbReader[8].ToString());
 
 				}
 			}
 		}
 	}
 }
+
   
     //Testing if The reader is Reading the Data
     public void dbReaderTest(string connectionString, string commandText, int readerIndex)

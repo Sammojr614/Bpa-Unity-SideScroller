@@ -20,8 +20,8 @@ void OnMouseOver(){
  	void OnMouseDown(){
 		if (Input.GetMouseButtonDown (0)) {
 			//Creating the Table for The Main Player Save Data
-            dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE PlayerSaveData(PlayerLocation TEXT,LevelsComplete INTEGER,ItemsInInventory INTEGER,NumberOfPotions INTEGER,KeyInInventory INTEGER,HaveBossKey INTEGER,PlayerHealth INTEGER,PlayerLives INTEGER)");
-            dataManager.dbCommand(dataManager.connectionString, "INSERT INTO PlayerSaveData(PlayerLocation,LevelsComplete,ItemsInInventory,NumberOfPotions,KeyInInventory,HaveBossKey,PlayerHealth,PlayerLives) VALUES('MainHub','0','0','0','0','0','3','3')");
+            dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE PlayerSaveData(PlayerLocation TEXT,LevelsComplete INTEGER,ItemsInInventory INTEGER,NumberOfPotions INTEGER,KeyInInventory INTEGER,HaveBossKey INTEGER,PlayerHealth INTEGER,PlayerLives INTEGER, TimesPlayed INTEGER)");
+            dataManager.dbCommand(dataManager.connectionString, "INSERT INTO PlayerSaveData(PlayerLocation,LevelsComplete,ItemsInInventory,NumberOfPotions,KeyInInventory,HaveBossKey,PlayerHealth,PlayerLives, TimesPlayed) VALUES('MainHub','0','0','0','0','0','3','3','0')");
 			//Setting Lives 
 			dataManager.getLivesFromDb(dataManager.connectionString,"SELECT*FROM PlayerSaveData");
 			//Loading the Mainhub on First Save
@@ -32,6 +32,7 @@ void OnMouseOver(){
 			//Making a LevelIndex
 			dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE LevelIndex(PlayerDream TEXT, Lucid TEXT, Level3 TEXT)");
 			dataManager.dbCommand(dataManager.connectionString, "INSERT INTO LevelIndex(PlayerDream,Lucid,Level3) VALUES('Incomplete','Incomplete','Incomplete')");
+			
 			
 		}
 	}
