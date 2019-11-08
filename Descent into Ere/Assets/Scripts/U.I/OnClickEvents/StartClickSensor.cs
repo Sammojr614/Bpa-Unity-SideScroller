@@ -12,10 +12,15 @@ public class StartClickSensor : MonoBehaviour
     {
         startButton = gameObject.GetComponent<SpriteRenderer>();
     }
+	void Update(){
+		if(Input.GetButton("Jump")){
+			SceneManager.LoadScene("Saves");
+		}
+	}
 
     private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0))
         {
             clicked = true;
             startButton.enabled = false;
