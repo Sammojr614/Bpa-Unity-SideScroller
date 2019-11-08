@@ -18,7 +18,7 @@ public class Potion : MonoBehaviour {
 				Inventory.NumberOfPotions--;
 			}
 			if (Inventory.NumberOfPotions == 0) {
-				potion.SetActive (true);
+				potion.SetActive (false);
 			}
         }
     }
