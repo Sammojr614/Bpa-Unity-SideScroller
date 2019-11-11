@@ -11,8 +11,8 @@ public class Inventory : MonoBehaviour {
 	public GameObject itemSlot3;
 	public GameObject ItemCounter;
     public static bool inventoryOpen = false;
-public static int NumberOfItems;
-public static int NumberOfPotions;
+public static int NumberOfItems = 0;
+public static int NumberOfPotions = 0;
 public static bool haveKey;
 public static bool haveBossKey;
 
@@ -66,9 +66,10 @@ public static bool haveBossKey;
                 }
                 else
                 {
-                    if (NumberOfItems == 0)
+                    if (NumberOfItems <= 0 && NumberOfPotions <= 0)
                     {
                         ItemCounter.SetActive(false);
+                        itemSlot1.SetActive(false);
                     }
 
                 }

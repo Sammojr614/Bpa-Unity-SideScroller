@@ -10,12 +10,12 @@ public class Potion : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
         {
 				PlayerHealth.Heal (health);
 				Inventory.NumberOfItems--;
 				Inventory.NumberOfPotions--;
-			if (Inventory.NumberOfPotions == 0) {
+			if (Inventory.NumberOfPotions <= 0) {
 				potion.SetActive (false);
 			}
         }
