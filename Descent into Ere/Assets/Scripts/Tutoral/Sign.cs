@@ -10,17 +10,16 @@ public class Sign : MonoBehaviour {
 	}
 void OnTriggerEnter2D(Collider2D collider){
 	playerInBox = true;
-	if(Input.GetButton("EnterDoor")){
-		TurtoralText.SetActive(true);
+	TurtoralText.SetActive(true);
 
-	}
+
 }
 void OnTriggerStay2D(Collider2D collider){
 	playerInBox = true;
 }
 void OnTriggerExit2D(Collider2D collider){
 	TurtoralText.SetActive(false);
-	playerInBox = true;
+		playerInBox = false;
 
 }
 }

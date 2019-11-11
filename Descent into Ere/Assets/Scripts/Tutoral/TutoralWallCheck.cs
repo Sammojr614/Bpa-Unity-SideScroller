@@ -14,7 +14,13 @@ public class TutoralWallCheck : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D collider){
 		if(collider.CompareTag("Player") && Inventory.haveKey == true){
+			Debug.Log (TimesPlayed);
+			TimesPlayed++;
+			Debug.Log (TimesPlayed);
 			Wall.SetActive(false);
+			Inventory.haveKey = false;
+			Inventory.NumberOfItems--;
+
 		}
 	}
 }

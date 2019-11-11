@@ -1347,6 +1347,7 @@ GameObject:
   - component: {fileID: 548800317}
   - component: {fileID: 548800320}
   - component: {fileID: 548800318}
+  - component: {fileID: 548800319}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -1392,6 +1393,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &548800319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 548800316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c34a144d9bbc44b499ff1339143f3f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wall: {fileID: 548800316}
 --- !u!212 &548800320
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1552,7 +1565,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 00147b51754a8426b8dba93e5bea4379, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2064,9 +2077,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 759283188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15612c93dc03b43e697abc564232f224, type: 3}
+  m_Script: {fileID: 11500000, guid: ad4048a768a2c48e59a39cc9a9a8b8ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Door: {fileID: 759283188}
   newLevel: Tutoral1
 --- !u!61 &759283191
 BoxCollider2D:
@@ -3994,7 +4008,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 369cea6a3be63406ab6c353715fbee3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4568,7 +4582,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 369cea6a3be63406ab6c353715fbee3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5421,7 +5435,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 369cea6a3be63406ab6c353715fbee3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -27,21 +27,10 @@ public class Key : MonoBehaviour {
      * and the obsticle will be destroyed
      */    
     private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            key.SetActive(false);
-            Inventory.haveKey = true;
-        }
-    }
-
-    /* After the player exits the trigger,
-     * the key has vanished, and the 
-     * obsticle is gone
-     */    
-    
-   
-
-
-
+	{
+		if (collision.CompareTag ("Player")) {
+			key.SetActive (false);
+			Inventory.haveKey = true;
+		}
+	}
 }
