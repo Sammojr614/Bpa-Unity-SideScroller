@@ -39,7 +39,7 @@ public class PotionCounter : MonoBehaviour
         }else if(Inventory.inventoryOpen == false){
             OnePotion.SetActive(false);
         }
-        else if (Inventory.NumberOfPotions == 0)
+        else if (Inventory.NumberOfPotions <= 0)
         {
             ThreePotions.SetActive(false);
             TwoPotions.SetActive(false);

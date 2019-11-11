@@ -13,7 +13,7 @@ public class collectItem : MonoBehaviour {
 		if(itemCollider.CompareTag("Player")){
 			Inventory.NumberOfItems++;
 			Inventory.NumberOfPotions++;
-			if(Inventory.NumberOfPotions > 3){
+			if(Inventory.NumberOfPotions >= 3){
 				Inventory.NumberOfPotions = 3;
 			}
 			Item.SetActive(false);
