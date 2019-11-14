@@ -6,6 +6,7 @@ public class Switch : MonoBehaviour {
 
     public GameObject TrapDoor;
     public GameObject Button;
+    public GameObject Floor;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -13,6 +14,7 @@ public class Switch : MonoBehaviour {
         {
             Button.SetActive(false);
             DestroyObject(TrapDoor);
+            DestroyObject(Floor);
         }
     }
 }
