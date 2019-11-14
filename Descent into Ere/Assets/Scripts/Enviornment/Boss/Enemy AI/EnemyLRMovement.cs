@@ -5,11 +5,7 @@ using UnityEngine;
 public class EnemyLRMovement : MonoBehaviour
 {
     private Vector3 MovingDirection = Vector3.left;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
