@@ -32,6 +32,10 @@ void OnMouseOver(){
 			//Making a LevelIndex
 			dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE LevelIndex(PlayerDream TEXT, Lucid TEXT, Level3 TEXT)");
 			dataManager.dbCommand(dataManager.connectionString, "INSERT INTO LevelIndex(PlayerDream,Lucid,Level3) VALUES('Incomplete','Incomplete','Incomplete')");
+			//Making a Switch Index
+			dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE SwitchIndex(SwitchId INTEGER,SwitchLocation TEXT,SwitchActive INTEGER, SwitchType TEXT)");
+			
+			
 			
 			
 		}
