@@ -8,9 +8,9 @@ public class Switch : MonoBehaviour {
     public GameObject Button;
     public GameObject Floor;
 
-    private void OnTriggerEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             Button.SetActive(false);
             DestroyObject(TrapDoor);
