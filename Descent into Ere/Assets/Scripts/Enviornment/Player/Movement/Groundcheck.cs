@@ -5,11 +5,11 @@ using UnityEngine;
 public class Groundcheck : MonoBehaviour
 {
 	
-    GameObject Player;
+     GameObject Player;
 
     void Start()
     {
-        Player = gameObject.transform.parent.gameObject;
+     Player = gameObject.transform.parent.gameObject;
     }
 
     /* If the player is on the ground

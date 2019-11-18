@@ -9,9 +9,11 @@ public class Sprint : MonoBehaviour
     public float sprintSpeed = 8f;
 	public Animator PlayerAnimator;
     public bool isGrounded;
+
 	void Start(){
 		PlayerAnimator = GetComponent<Animator> ();
 	}    
+    
 	void Update()
     {
         /* Allows player to sprint if they
