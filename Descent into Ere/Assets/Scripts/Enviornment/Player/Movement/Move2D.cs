@@ -43,14 +43,7 @@ public class Move2D : MonoBehaviour
 		Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
 		transform.position += movement * Time.deltaTime * moveSpeed;
 		//Saying if Any Key: Left Arrow, A, D , or Right Arrow Will Make The Walking Peram Change
-		if(Input.GetKeyDown(KeyCode.E)){
-			PlayerAnimator.SetFloat("Moving", 1.5f);
-
-		}else{
-			if(Input.GetKeyUp(KeyCode.E)){
-				PlayerAnimator.SetFloat("Moving", 0.0f);
-			}
-		}
+		
 		if (Input.GetButtonDown("Horizontal"))
 		{
 			OzulMoving();
