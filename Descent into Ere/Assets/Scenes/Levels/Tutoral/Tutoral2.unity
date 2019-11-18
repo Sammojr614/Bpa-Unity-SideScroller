@@ -805,6 +805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 146425344}
   - component: {fileID: 146425345}
+  - component: {fileID: 146425346}
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
@@ -850,6 +851,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.41380978, y: 0.04260254}
   m_EdgeRadius: 0
+--- !u!114 &146425346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 146425343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641d78daf9aba1d4f9888a7099657994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &153960695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3499,6 +3511,9 @@ GameObject:
   - component: {fileID: 728831051}
   - component: {fileID: 728831050}
   - component: {fileID: 728831049}
+  - component: {fileID: 728831055}
+  - component: {fileID: 728831054}
+  - component: {fileID: 728831053}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -3593,6 +3608,50 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5225053, y: 1.4666348}
   m_EdgeRadius: 0
+--- !u!114 &728831053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728831047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f11823659d4c495fbad5f239e1a4e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  livesAnimator: {fileID: 1370720758}
+--- !u!114 &728831054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728831047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afcd74c4187cf4dbe94b51f1bfb61b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerAnimator: {fileID: 1370720758}
+--- !u!50 &728831055
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 728831047}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &752767929
 GameObject:
   m_ObjectHideFlags: 0
