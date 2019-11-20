@@ -8,6 +8,9 @@ public class LightSwitch : MonoBehaviour {
     public GameObject Switch;
     //Darkness in the level
     public GameObject Darkness;
+    //Outlines for the platforms
+    public GameObject PlatformOutline;
+    public GameObject PlatformOutline1;
 	
     /* When the player enters the trigger
      * of the switch, the switch disapears
@@ -19,6 +22,8 @@ public class LightSwitch : MonoBehaviour {
         {
             Switch.SetActive(false);
             DestroyObject(Darkness);
+            DestroyObject(PlatformOutline);
+            DestroyObject(PlatformOutline1);
         }
     }
 }
