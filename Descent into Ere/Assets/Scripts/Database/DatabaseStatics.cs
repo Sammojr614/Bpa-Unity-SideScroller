@@ -135,6 +135,8 @@ public static DbManager Instance {
                         Inventory.NumberOfPotions = Convert.ToInt32(dbReader[3].ToString());
                         //Getting Number of Times Played
                         TutoralWallCheck.TimesPlayed = Convert.ToInt32(dbReader[8].ToString());
+                        //Gettin Them Moneys
+                       
 
 				}
 			}
