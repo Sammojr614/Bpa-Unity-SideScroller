@@ -4,6 +4,8 @@ using UnityEngine;
 
 
 public class CrystalCounter : MonoBehaviour {
-	int[] NumbCoin;
+	void Start(){
+		
+	}
 }
 
