@@ -5,7 +5,6 @@ using UnityEngine;
 public class ShopTable : MonoBehaviour {
 	public static int amountOfPlayerCurrency;
 	public static bool ShopContainsPotion;
-	DbManager dataManager = DbManager.Instance;
 	void Start () {	
 	List<ShopItemsList> ShopStock = new List<ShopItemsList>();
 	/* Potion Item in the Shop Stock */
