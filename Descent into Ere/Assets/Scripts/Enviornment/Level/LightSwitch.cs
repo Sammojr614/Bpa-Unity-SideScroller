@@ -11,10 +11,14 @@ public class LightSwitch : MonoBehaviour {
     //Outlines for the platforms
     public GameObject PlatformOutline;
     public GameObject PlatformOutline1;
+    //Screenfollow
+    public GameObject Screenfollow;
 	
     /* When the player enters the trigger
      * of the switch, the switch disapears
-     * and the darkness is destroyed
+     * and the darkness is destroyed.
+     * Additionally, the platform outlines are
+     * destroyed, and the HUD is turned back on
      */
 	void OnTriggerEnter2D(Collider2D collision)
     {
@@ -24,6 +28,7 @@ public class LightSwitch : MonoBehaviour {
             DestroyObject(Darkness);
             DestroyObject(PlatformOutline);
             DestroyObject(PlatformOutline1);
+            Screenfollow.SetActive(true);
         }
     }
 }
