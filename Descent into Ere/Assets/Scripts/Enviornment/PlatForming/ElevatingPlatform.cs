@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ElevatingPlatform : MonoBehaviour {
 
+    //Minimum and Maximum position
+    public float min;
+    public float max;
     //Direction the platform is moving
     private Vector3 MovingDirection = Vector3.up;
 
@@ -21,10 +24,10 @@ public class ElevatingPlatform : MonoBehaviour {
      */
     void UpdateMovement()
     {
-        if (this.transform.position.y >= 5f)
+        if (this.transform.position.y >= max)
         {
             MovingDirection = Vector3.down;
-        }else if(this.transform.position.y <= 0f)
+        }else if(this.transform.position.y <= min)
         {
             MovingDirection = Vector3.up;
         }
