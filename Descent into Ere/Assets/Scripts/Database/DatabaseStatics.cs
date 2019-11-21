@@ -124,7 +124,7 @@ public static DbManager Instance {
                     //Getting Lives
 					PlayerLives.Lives = Convert.ToInt32(dbReader[7].ToString());
                     //Getting if player has Key
-                    TrueOrFalseFromdb = Convert.ToInt32(dbReader[5].ToString());
+                    TrueOrFalseFromdb = Convert.ToInt32(dbReader[4].ToString());
                     //Levels Complete
                         LevelCompletion.LevelComplete = Convert.ToInt32(dbReader[1].ToString());
                         //NumberOfItemsIn Inventory
@@ -136,7 +136,7 @@ public static DbManager Instance {
                         //Getting Number of Times Played
                         TutoralWallCheck.TimesPlayed = Convert.ToInt32(dbReader[8].ToString());
                         //Gettin Them Moneys
-                       
+                       ShopTable.amountOfPlayerCurrency = Convert.ToInt32(dbReader[9].ToString());
 
 				}
 			}

@@ -49,7 +49,6 @@ public static bool haveBossKey;
 						itemSlot3.SetActive (true);
 					}
 				}
-
 				//Normal Key Rendering 
 				if (inventoryOpen == false || haveKey == false) {
 					itemSlot2.SetActive (false);

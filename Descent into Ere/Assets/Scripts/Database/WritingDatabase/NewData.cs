@@ -21,7 +21,7 @@ void OnMouseOver(){
 		if (Input.GetMouseButtonDown (0)) {
 			//Creating the Table for The Main Player Save Data
             dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE PlayerSaveData(PlayerLocation TEXT,LevelsComplete INTEGER,ItemsInInventory INTEGER,NumberOfPotions INTEGER,KeyInInventory INTEGER,HaveBossKey INTEGER,PlayerHealth INTEGER,PlayerLives INTEGER, TimesPlayed INTEGER, PlayerCurrency INTEGER)");
-            dataManager.dbCommand(dataManager.connectionString, "INSERT INTO PlayerSaveData(PlayerLocation,LevelsComplete,ItemsInInventory,NumberOfPotions,KeyInInventory,HaveBossKey,PlayerHealth,PlayerLives, TimesPlayed) VALUES('MainHub','0','0','0','0','0','3','3','0',)");
+            dataManager.dbCommand(dataManager.connectionString, "INSERT INTO PlayerSaveData(PlayerLocation,LevelsComplete,ItemsInInventory,NumberOfPotions,KeyInInventory,HaveBossKey,PlayerHealth,PlayerLives, TimesPlayed,PlayerCurrency) VALUES('Tutoral1','0','0','0','0','0','3','3','0','0')");
 			//Setting Lives 
 			dataManager.getLivesFromDb(dataManager.connectionString,"SELECT*FROM PlayerSaveData");
 			//Loading the Mainhub on First Save
@@ -35,7 +35,7 @@ void OnMouseOver(){
 			//Making a Switch Index
 			dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE SwitchIndex(SwitchId INTEGER,SwitchLocation TEXT,SwitchActive INTEGER, SwitchType TEXT)");
 			//Whats In The Shop
-			dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE ShopStock(Items TEXT, NumberOfItems INTEGER, CostOfItem INTEGER)");
+			dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE ShopStock(Items TEXT, NumberOfItems INTEGER, CostOfItem INTEGER )");
 
 			
 			

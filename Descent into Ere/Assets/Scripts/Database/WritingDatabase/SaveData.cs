@@ -27,10 +27,16 @@ public class SaveData : MonoBehaviour {
             dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData SET NumberOfPotions='" + Convert.ToInt32(Inventory.NumberOfPotions) + "'");
 				//Saving the Amount of times played
 				dataManager.dbCommand(dataManager.connectionString,"UPDATE PlayerSaveData SET TimesPlayed='"+ Convert.ToInt32(TutoralWallCheck.TimesPlayed) + "'");
+                //Player Currency
+                dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData Set PlayerCurrency='" + Convert.ToInt32(ShopTable.amountOfPlayerCurrency) + "'");
+
+
+
+
                                 /* Inventory Table */
 			//Potion
 			if (Inventory.NumberOfItems > 1 && Inventory.NumberOfPotions > 1) {
-				dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='Potion");
+				dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='Potion'");
 					}else{
 						if(Inventory.NumberOfItems == 0 || Inventory.NumberOfPotions == 0){
 							dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1='None'");
@@ -59,11 +65,6 @@ public class SaveData : MonoBehaviour {
 			string flag = Inventory.haveBossKey ? "1" : "0";
 			dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerSaveData SET HaveBossKey='" + flag + "' ");
 
-//			if (Inventory.haveBossKey == true) {
-//				dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerSaveData SET HaveBossKey='1' ");
-//			} else {
-//				dataManager.dbCommand (dataManager.connectionString, "UPDATE PlayerSaveData SET HaveBossKey ='0'");
-//			}
                                      /* Level Index */
        if(LevelCompletion.LevelComplete == 0){
            dataManager.dbCommand(dataManager.connectionString, "UPDATE LevelIndex SET PlayerDream='Incomplete'");
@@ -79,10 +80,6 @@ public class SaveData : MonoBehaviour {
                 }
             }
         }
-       }
-       /* Saving Player Inventory */
-       if(Inventory.NumberOfItems == 2 && Inventory.NumberOfPotions >= 1){
-           dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerInventory SET ItemSlot1 ='Potion'");
        }
         }
     }
