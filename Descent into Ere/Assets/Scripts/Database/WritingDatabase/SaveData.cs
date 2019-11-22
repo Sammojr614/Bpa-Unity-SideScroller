@@ -29,6 +29,10 @@ public class SaveData : MonoBehaviour {
 				dataManager.dbCommand(dataManager.connectionString,"UPDATE PlayerSaveData SET TimesPlayed='"+ Convert.ToInt32(TutoralWallCheck.TimesPlayed) + "'");
                 //Player Currency
                 dataManager.dbCommand(dataManager.connectionString, "UPDATE PlayerSaveData Set PlayerCurrency='" + Convert.ToInt32(ShopTable.amountOfPlayerCurrency) + "'");
+			/* Counter Table For The Currency */
+			dataManager.dbCommand (dataManager.connectionString, "UPDATE Counter SET ThirdDidget='" + Convert.ToInt32(CrystalCounter.ThirdDiget) + "'");
+			dataManager.dbCommand (dataManager.connectionString, "UPDATE Counter SET SecondDidget='" + Convert.ToInt32 (CrystalCounter.SecndDigt) + "'");
+			dataManager.dbCommand (dataManager.connectionString, "UPDATE Counter SET FirstDidget='" + Convert.ToInt32 (CrystalCounter.FirstDigt) + "'");
 
 
 

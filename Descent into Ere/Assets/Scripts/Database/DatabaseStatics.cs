@@ -25,6 +25,9 @@ public static DbManager Instance {
     public string connectionString = "Data Source= DieDataBase.db";
     public int TrueOrFalseFromdb;
     public int BosskeyTrueOrFalse;
+	public string NameOfItem;
+	public int CostofItem;
+	public int NumberOfItem;
 
     //General Commands
     public void dbCommand(string connectionString, string commandText) {
@@ -112,6 +115,21 @@ public static DbManager Instance {
             }
         }
     }
+	//Getting Shop Stuff
+	public void getShopStockFromDb(string commandText){
+		using (SqliteConnection dbCon = new SqliteConnection (connectionString)) {
+			dbCon.Open ();
+			using (SqliteCommand dbCmd = new SqliteCommand (commandText, dbCon)) {
+				using (SqliteDataReader dbReader = dbCmd.ExecuteReader ()) {
+					while (dbReader.Read ()) {
+						ShopTable.NameOfItem = dbReader [0].ToString ();
+						ShopTable.CostOfItem = Convert.ToInt32 (dbReader [2].ToString ());
+						ShopTable.NumberOfItems = Convert.ToInt32 (dbReader [1].ToString ());
+					}
+				}
+			}
+		}
+	}
     //Loading all Of the Int data From PlayerSave Data
   public void loadIntData(string connectionString, string commandText){
 	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
@@ -137,6 +155,8 @@ public static DbManager Instance {
                         TutoralWallCheck.TimesPlayed = Convert.ToInt32(dbReader[8].ToString());
                         //Gettin Them Moneys
                        ShopTable.amountOfPlayerCurrency = Convert.ToInt32(dbReader[9].ToString());
+						//Saying what is In the Shop And What the Cost
+
 
 				}
 			}
