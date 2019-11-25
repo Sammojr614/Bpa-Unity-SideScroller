@@ -10,12 +10,13 @@ public class CrystalCounter: MonoBehaviour{
 	public static int ThirdDiget;
 
 	void Start(){
-		//Deactivating all The Numbers
+		//First Didget Deactivation, At least the ones not needed on Scene Load
 		foreach (var firstNumber in FirstDidget) {
 			for (var i = 0; i < FirstDidget.Length; i++) {
 				FirstDidget [i].SetActive (false);
 			}
 		}
+		//When Changing Scenes Disabling the Numbers that aren't needed
 		foreach (var secondNumber in SecondDidget) {
 			for(var i = 0; i < SecondDidget.Length; i++){
 				SecondDidget [i].SetActive (false);
@@ -41,14 +42,11 @@ public class CrystalCounter: MonoBehaviour{
 		//Changing the Numbers Before 10
 		if (ThirdDiget < 9 && SecndDigt <= 0) {
 			SecondDidget [ThirdDiget].SetActive (true);
-			SecondDidget [ThirdDiget -1].SetActive (false);
+			SecondDidget [ThirdDiget - 1].SetActive (false);
 
-		} else {
-			if (ThirdDiget <= 9 && SecndDigt >= 10) {
-				FirstDidget [1].SetActive (true);
-				SecondDidget [SecndDigt].SetActive (true);
-				SecondDidget [SecndDigt - 1].SetActive (false);
-			}
+		} else if (ThirdDiget > 9) {
+			SecndDigt = 0;
+			FirstDigt = 1;
 		}
 	}
 }
