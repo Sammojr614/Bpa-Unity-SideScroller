@@ -40,6 +40,7 @@ public class LoadData : MonoBehaviour {
 				   Inventory.NumberOfItems = Inventory.NumberOfItems+1;
 
 			   }
+				dataManager.CountingFromDb ("SELECT*FROM Counter");
 		   }
 		   
 		}

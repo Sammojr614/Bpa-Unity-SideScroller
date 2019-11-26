@@ -24,19 +24,19 @@ public class CrystalCounter: MonoBehaviour{
 		}
 	}
 	void Update(){
-		if (ShopTable.amountOfPlayerCurrency <= 9 && ShopTable.amountOfPlayerCurrency >= 0) {
-			ThirdDiget = ShopTable.amountOfPlayerCurrency;
+		if (Coin.CrystalCollected == true) {
+			ThirdDiget++;
 		}
 		//Setting the Numbers
-		if (ThirdDiget > 9) {
+		if (ThirdDiget >= 9) {
 			ThirdDiget = 0;
 			SecndDigt++;
 		}
-		if (SecndDigt > 9) {
+		if (SecndDigt >= 9) {
 			SecndDigt = 0;
 			FirstDigt++;
 		}
-		if (FirstDigt > 9) {
+		if (FirstDigt >= 9) {
 			ThirdDiget = 9;
 		}
 		//Changing the Numbers Before 10
@@ -44,9 +44,6 @@ public class CrystalCounter: MonoBehaviour{
 			SecondDidget [ThirdDiget].SetActive (true);
 			SecondDidget [ThirdDiget - 1].SetActive (false);
 
-		} else if (ThirdDiget > 9) {
-			SecndDigt = 0;
-			FirstDigt = 1;
 		}
 	}
 }

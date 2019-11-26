@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour {
 	public GameObject Currency;
+	public static bool CrystalCollected;
 	void OnTriggerEnter2D(Collider2D collider){
 		Currency.SetActive(false);
-		ShopTable.amountOfPlayerCurrency ++;
+		CrystalCounter.ThirdDiget++;
+		ShopTable.amountOfPlayerCurrency++;
 	}
 }

@@ -130,6 +130,20 @@ public static DbManager Instance {
 			}
 		}
 	}
+	public void CountingFromDb(string commandText){
+		using (SqliteConnection dbCon = new SqliteConnection (connectionString)) {
+			dbCon.Open ();
+			using (SqliteCommand dbCmd = new SqliteCommand (commandText, dbCon)) {
+				using (SqliteDataReader dbReader = dbCmd.ExecuteReader ()) {
+					while (dbReader.Read ()) {
+						CrystalCounter.FirstDigt = Convert.ToInt32 (dbReader [0].ToString ());
+						CrystalCounter.SecndDigt = Convert.ToInt32 (dbReader [1].ToString ());
+						CrystalCounter.ThirdDiget = Convert.ToInt32 (dbReader [2].ToString ());
+					}
+				}
+			}
+		}
+	}
     //Loading all Of the Int data From PlayerSave Data
   public void loadIntData(string connectionString, string commandText){
 	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
