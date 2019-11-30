@@ -15,7 +15,6 @@ public class Move2D : MonoBehaviour
 	float isJumping;
 	// Moving Float
 	float isMoving;
-
 	//Giving the Program The Animator
 	public Animator PlayerAnimator;
 	//Getting The Animator
@@ -43,7 +42,6 @@ public class Move2D : MonoBehaviour
 		Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
 		transform.position += movement * Time.deltaTime * moveSpeed;
 		//Saying if Any Key: Left Arrow, A, D , or Right Arrow Will Make The Walking Peram Change
-		
 		if (Input.GetButtonDown("Horizontal"))
 		{
 			OzulMoving();
@@ -83,4 +81,5 @@ public class Move2D : MonoBehaviour
 
 			}
 		}
+
 	

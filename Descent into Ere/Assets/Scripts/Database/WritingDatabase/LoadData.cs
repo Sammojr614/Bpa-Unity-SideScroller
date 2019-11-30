@@ -24,6 +24,7 @@ public class LoadData : MonoBehaviour {
 		   //Getting Health and Lives, and Levels Complete
 		   dataManager.loadIntData(dataManager.connectionString,"SELECT*FROM PlayerSaveData");
 		   //Saying what Happens if You Have a Key
+			dataManager.CountingFromDb("SELECT*FROM Counter");
 		   if(dataManager.TrueOrFalseFromdb == 0){
 			   Inventory.haveKey = false;
 		   }else{

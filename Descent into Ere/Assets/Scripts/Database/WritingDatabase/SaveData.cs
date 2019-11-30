@@ -34,8 +34,6 @@ public class SaveData : MonoBehaviour {
 			dataManager.dbCommand (dataManager.connectionString, "UPDATE Counter SET SecondDidget='" + Convert.ToInt32 (CrystalCounter.SecndDigt) + "'");
 			dataManager.dbCommand (dataManager.connectionString, "UPDATE Counter SET FirstDidget='" + Convert.ToInt32 (CrystalCounter.FirstDigt) + "'");
 
-			dataManager.dbReaderTest (dataManager.connectionString, "SELECT*FROM PlayerSaveData", 9);
-
 
                                 /* Inventory Table */
 			//Potion
