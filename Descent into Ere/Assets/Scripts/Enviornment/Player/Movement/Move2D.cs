@@ -39,8 +39,11 @@ public class Move2D : MonoBehaviour
 		PlayerAnimator.SetBool("IsGrounded", isGrounded);
         
 		Jump();
-		Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-		transform.position += movement * Time.deltaTime * moveSpeed;
+		Vector3 movementRight = new Vector3(Input.GetAxis("MoveRight"), 0f, 0f);
+		transform.position += movementRight * Time.deltaTime * moveSpeed;
+
+		Vector3 movementLeft = new Vector3(Input.GetAxis("MoveLeft"), 0f, 0f);
+		transform.position += movementLeft * Time.deltaTime * moveSpeed;
 		//Saying if Any Key: Left Arrow, A, D , or Right Arrow Will Make The Walking Peram Change
 		if (Input.GetButtonDown("Horizontal"))
 		{
