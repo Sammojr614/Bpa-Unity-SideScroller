@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class BuyingStuff : MonoBehaviour {
 	public GameObject[] VisibleShop;
+	public GameObject SoldOutSign;
 	DbManager dataManager = DbManager.Instance;
-	void OnMouseButtonDown(){
-		if (Input.GetMouseButtonDown (0)) {
-			if (ShopTable.amountOfPlayerCurrency >= dataManager.CostofItem){
-				int NewCurrencyValue = ShopTable.amountOfPlayerCurrency - dataManager.CostofItem;
-				ShopTable.amountOfPlayerCurrency = NewCurrencyValue;
-				dataManager.NumberOfItem--;
-		}
+	public static int NumberOfItemsTotal;
+	public static bool SoldOut;
+	public static bool NotEnoughMoney;
+	void Start(){
+		dataManager.getShopStockFromDb ("SELECT*FROM ShopStock");
+		Cursor.visible = true;
 	}
-}
 	void Update(){
-		if (dataManager.NumberOfItem == 0) {
-			VisibleShop [0].SetActive (false);
-		} else {
-			VisibleShop [0].SetActive (true);
-		}
+	if(ShopTable.NumberOfItems >= 0){
+		VisibleShop[0].SetActive(true);
+		SoldOut = false;
+		SoldOutSign.SetActive(false);
+	}else if(ShopTable.NumberOfItems < 1){
+		SoldOut = true;
+		SoldOutSign.SetActive(true);
+
+	}
+	if(ShopTable.amountOfPlayerCurrency < ShopTable.CostOfItem){
+		NotEnoughMoney = true;
+	}else if(ShopTable.amountOfPlayerCurrency >= ShopTable.CostOfItem){
+		NotEnoughMoney =false;
+	}
 	}
 }

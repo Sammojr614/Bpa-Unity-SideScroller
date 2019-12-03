@@ -36,6 +36,7 @@ void OnMouseOver(){
 			dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE SwitchIndex(SwitchId INTEGER,SwitchLocation TEXT,SwitchActive INTEGER, SwitchType TEXT)");
 			//Whats In The Shop
 			dataManager.dbCommand(dataManager.connectionString, "CREATE TABLE ShopStock(Items TEXT, NumberOfItems INTEGER, CostOfItem INTEGER )");
+			dataManager.dbCommand(dataManager.connectionString, "INSERT INTO ShopStock(Items,NumberOfItems,CostOfItem) VALUES('Potion','3', '5') ");
 			//Small Table for Help to keep track of the Amount of Crystals
 			dataManager.dbCommand(dataManager.connectionString,"CREATE TABLE Counter(FirstDidget INTEGER, SecondDidget INTEGER, ThirdDidget INTEGER)");
 			dataManager.dbCommand(dataManager.connectionString, "INSERT INTO Counter(FirstDidget,SecondDidget, ThirdDidget) VALUES('0','0','0')");

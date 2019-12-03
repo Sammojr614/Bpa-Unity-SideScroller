@@ -26,16 +26,33 @@ public class CrystalCounter: MonoBehaviour{
 			}
 		}
 		//Setting the Numbers
+		//If the Ones Place is Bigger than 9
 		if (ThirdDiget > 9) {
 			ThirdDiget = 0;
 			SecndDigt++;
+			//If the Ones Place is Less Than 0
+		}else if(ThirdDiget < 0){
+			ThirdDiget = 9;
+			if(SecndDigt > 0){
+			SecndDigt--;
+			}
 		}
+		//if the Tens Place is Greater then 9
 		if (SecndDigt >= 9) {
 			SecndDigt = 0;
 			FirstDigt++;
+			//if the Tens Place is Less than 0
+		}else if(SecndDigt < 0){
+			SecndDigt = 9;
+			if(FirstDigt > 0){ 
+			FirstDigt--;
+			}
+			
 		}
 		if (FirstDigt >= 9) {
 			ThirdDiget = 9;
+		}else if(FirstDigt < 0){
+			FirstDigt = 0;
 		}
 		if (FirstDigt < 1) {
 			SecondDidget [ThirdDiget].SetActive (true);
