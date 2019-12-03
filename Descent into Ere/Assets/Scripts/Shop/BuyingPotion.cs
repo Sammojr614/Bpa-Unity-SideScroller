@@ -6,7 +6,6 @@ using System;
 public class BuyingPotion : MonoBehaviour {
 	public int CostOfItem;
 	public string NameOfIndex;
-	public DbManager dataManager = DbManager.Instance;
 	
 void OnMouseDown(){
 	if(Input.GetMouseButtonDown(0) && BuyingStuff.NotEnoughMoney == false){
