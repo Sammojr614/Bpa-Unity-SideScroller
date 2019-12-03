@@ -5,7 +5,10 @@ using System;
 
 public class BuyingPotion : MonoBehaviour {
 	public int CostOfItem;
-	public string NameOfIndex;
+	public GameObject Price;
+	void Start(){
+		Price.SetActive (false);
+	}
 	
 void OnMouseDown(){
 	if(Input.GetMouseButtonDown(0) && BuyingStuff.NotEnoughMoney == false){
@@ -17,7 +20,12 @@ void OnMouseDown(){
 		Inventory.NumberOfItems++;
 		ShopTable.NumberOfItems--;
 		Debug.Log(ShopTable.NumberOfItems);
-
 	}
 }
+	void OnMouseEnter(){
+		Price.SetActive (true);
+	}
+	void OnMouseExit(){
+		Price.SetActive (false);
+	}
 }
