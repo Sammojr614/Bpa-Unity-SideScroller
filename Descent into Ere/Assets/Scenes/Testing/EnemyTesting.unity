@@ -1735,6 +1735,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731996328}
   - component: {fileID: 731996329}
+  - component: {fileID: 731996330}
   m_Layer: 0
   m_Name: LeftLeg
   m_TagString: Untagged
@@ -1799,6 +1800,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &731996330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 731996327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1943ed12c05d4467a79f17e1ce3cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRenderer: {fileID: 731996329}
 --- !u!1 &810203893
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,6 +2328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1169844638}
   - component: {fileID: 1169844639}
+  - component: {fileID: 1169844640}
   m_Layer: 0
   m_Name: Right Arm
   m_TagString: Untagged
@@ -2379,6 +2393,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1169844640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1169844637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1943ed12c05d4467a79f17e1ce3cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRenderer: {fileID: 1169844639}
 --- !u!1 &1170792702
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,6 +2805,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1334400896}
   - component: {fileID: 1334400897}
+  - component: {fileID: 1334400898}
   m_Layer: 0
   m_Name: AttackPos
   m_TagString: Untagged
@@ -2843,6 +2870,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1334400898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1334400895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1943ed12c05d4467a79f17e1ce3cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRenderer: {fileID: 1334400897}
 --- !u!1 &1349772985
 GameObject:
   m_ObjectHideFlags: 0
@@ -3029,6 +3068,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1409234450}
   - component: {fileID: 1409234451}
+  - component: {fileID: 1409234452}
   m_Layer: 0
   m_Name: RightLeg
   m_TagString: Untagged
@@ -3093,6 +3133,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1409234452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1409234449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1943ed12c05d4467a79f17e1ce3cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRenderer: {fileID: 1409234451}
 --- !u!1 &1420123938
 GameObject:
   m_ObjectHideFlags: 0
@@ -3848,6 +3900,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1706985942}
   - component: {fileID: 1706985943}
+  - component: {fileID: 1706985944}
   m_Layer: 0
   m_Name: Left Arm
   m_TagString: Untagged
@@ -3912,6 +3965,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1706985944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706985941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1943ed12c05d4467a79f17e1ce3cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRenderer: {fileID: 1706985943}
 --- !u!1 &1727027656
 GameObject:
   m_ObjectHideFlags: 0
@@ -4034,6 +4099,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1782596785}
   - component: {fileID: 1782596786}
+  - component: {fileID: 1782596787}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -4099,6 +4165,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1782596787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1782596784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1943ed12c05d4467a79f17e1ce3cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRenderer: {fileID: 1782596786}
 --- !u!1 &1807861103
 GameObject:
   m_ObjectHideFlags: 0
@@ -4343,6 +4421,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1841422437}
   - component: {fileID: 1841422438}
+  - component: {fileID: 1841422439}
   m_Layer: 0
   m_Name: Pupil
   m_TagString: Untagged
@@ -4407,6 +4486,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1841422439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1841422436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1943ed12c05d4467a79f17e1ce3cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRenderer: {fileID: 1841422438}
 --- !u!1 &1876922501
 GameObject:
   m_ObjectHideFlags: 0
@@ -4416,6 +4507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1876922502}
   - component: {fileID: 1876922503}
+  - component: {fileID: 1876922504}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -4482,6 +4574,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1876922504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1876922501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1943ed12c05d4467a79f17e1ce3cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRenderer: {fileID: 1876922503}
 --- !u!1 &1925654387
 GameObject:
   m_ObjectHideFlags: 0
@@ -4714,6 +4818,7 @@ GameObject:
   - component: {fileID: 2038999752}
   - component: {fileID: 2038999751}
   - component: {fileID: 2038999758}
+  - component: {fileID: 2038999759}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -4864,14 +4969,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8565ea0df8f469189112cd6010856f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startTimeBtwAttack: 0.5
+  startTimeBtwAttack: 0.25
   attackPos: {fileID: 1334400896}
   PlayerAnimator: {fileID: 2038999754}
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 512
-  attackRange: 1
+  attackRange: 1.5
   damage: 1
+--- !u!114 &2038999759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2038999749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdce559e391dd4233a7ede73cf833d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerAnimator: {fileID: 2038999754}
 --- !u!1 &2052930390
 GameObject:
   m_ObjectHideFlags: 0
@@ -4915,6 +5032,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2082483241}
   - component: {fileID: 2082483242}
+  - component: {fileID: 2082483243}
   m_Layer: 0
   m_Name: Eyeball
   m_TagString: Untagged
@@ -4980,6 +5098,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &2082483243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2082483240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1943ed12c05d4467a79f17e1ce3cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRenderer: {fileID: 2082483242}
 --- !u!1 &2104680877
 GameObject:
   m_ObjectHideFlags: 0
