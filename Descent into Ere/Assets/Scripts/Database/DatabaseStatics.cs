@@ -90,7 +90,7 @@ public static DbManager Instance {
         }
     }
     //Loading Normal Strings
-    public void loadStringFromDb(string connectionString, string commandText, string VarName, int readerIndex){
+     public void loadStringFromDb(string connectionString, string commandText, string VarName, int readerIndex){
         using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
             dbCon.Open();
             using(SqliteCommand dbComd = new SqliteCommand(commandText,dbCon)){
@@ -102,6 +102,20 @@ public static DbManager Instance {
             }
         }
     }
+    //loading Previous Scenes
+    public void loadPrevScene(string commandText){
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+            dbCon.Open();
+            using(SqliteCommand dbCmd = new SqliteCommand(commandText,dbCon)){
+                using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+                    while(dbReader.Read()){
+                        MoveScenesWithButton2D.PrevScene = dbReader[0].ToString();
+                    }
+                }
+            }
+        }
+    }
+
     //Loading Lives
     public void getLivesFromDb(string connectionString,string commandText){
         using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
