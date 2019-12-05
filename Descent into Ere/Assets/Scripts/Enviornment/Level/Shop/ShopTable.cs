@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ShopTable : MonoBehaviour {
-	DbManager dataManager = DbManager.Instance;
 	public GameObject PressUp;
 	public static int amountOfPlayerCurrency;
 	public static bool ShopContainsPotion;
