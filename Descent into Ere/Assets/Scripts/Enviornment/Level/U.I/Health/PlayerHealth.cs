@@ -23,8 +23,7 @@ Animation PlayerAnimation;
 
     void Start()
     {
-       dataManager.getHealthFromDb(dataManager.connectionString,"SELECT*FROM PlayerSaveData");
-		
+       dataManager.gettingSavedIntData("SELECT*FROM PlayerSaveData");
     }
     void Update()
 	{  

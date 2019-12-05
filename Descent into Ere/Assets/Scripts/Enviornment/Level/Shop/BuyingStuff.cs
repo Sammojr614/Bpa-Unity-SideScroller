@@ -10,7 +10,7 @@ public class BuyingStuff : MonoBehaviour {
 	public static bool SoldOut;
 	public static bool NotEnoughMoney;
 	void Start(){
-		dataManager.getShopStockFromDb ("SELECT*FROM ShopStock");
+		
 		Cursor.visible = true;
 	}
 	void Update(){

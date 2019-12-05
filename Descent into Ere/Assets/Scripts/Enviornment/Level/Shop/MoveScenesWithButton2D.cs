@@ -12,12 +12,12 @@ public class MoveScenesWithButton2D : MonoBehaviour {
 	}
 	void OnMouseDown(){
 		if(Input.GetMouseButtonDown(0)){
-			dataManager.loadPrevScene("SELECT*FROM PlayerSaveData");
+			dataManager.GetSceneNameFromDb("SELECT*FROM PlayerSaveData");
 			Debug.Log(PrevScene);
 			SceneManager.LoadScene(PrevScene);
 			string insertThis = string.Format("UPDATE ShopStock SET NumberOfItems={0} WHERE Items='Potion'", ShopTable.NumberOfItems);
 			Debug.Log(ShopTable.NumberOfItems);
-			dataManager.dbCommand(dataManager.connectionString,insertThis);
+			dataManager.normalDbCommand(insertThis);
 			Cursor.visible = false;
 		}
 	}

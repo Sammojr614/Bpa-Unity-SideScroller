@@ -10,8 +10,10 @@ public class PlayerLives : MonoBehaviour {
 
     public static int Lives;
 	public Animator livesAnimator;
-	
-	
+	DbManager dataManager = DbManager.Instance;
+	void Start(){
+		dataManager.gettingSavedIntData("SELECT*FROM PlayerSaveData");
+	}
 	void Update () {
         if(PlayerHealth.health == 0 && Lives > 0){
 			Lives--;
