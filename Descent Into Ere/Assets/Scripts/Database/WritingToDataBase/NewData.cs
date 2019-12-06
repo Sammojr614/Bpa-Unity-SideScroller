@@ -34,9 +34,13 @@ void Start(){
 			dataManger.normalDbCommand("INSERT INTO Money(FirstDidget, SecondDidget, ThirdDidget) VALUES('0','0','0')");
 			SceneManager.LoadScene("Tutoral1");
 											/*Key Manager */
-			dataManger.normalDbCommand("CREATE TABLE KeyTracker(KeyType TEXT, HaveKey INTEGER");
+			dataManger.normalDbCommand("CREATE TABLE KeyTracker(KeyType TEXT, HaveKey INTEGER)");
 			dataManger.normalDbCommand("INSERT INTO KeyTracker(KeyType, HaveKey) VALUES('NormalKey','0')");
-			dataManger.normalDbCommand("INSERT INTO KeyTracker(KeyTracker, HaveKey) VALUES('BossKey','0'");
+			dataManger.normalDbCommand("INSERT INTO KeyTracker(KeyType, HaveKey) VALUES('BossKey','0')");
+								/*Other Player Save Stuff */
+			dataManger.normalDbCommand("CREATE TABLE PlayerPerams(NumberOfPotions INTEGER, TimesPlayed INTEGER)");
+			dataManger.normalDbCommand("INSERT INTO PlayerPerams(NumberOfPotions, TimesPlayed) VALUES('0','0')");
+
 
 		}
 	}

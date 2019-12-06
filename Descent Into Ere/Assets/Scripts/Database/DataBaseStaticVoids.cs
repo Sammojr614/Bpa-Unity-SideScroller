@@ -20,6 +20,7 @@ public static DbManager Instance{
 	
 }
 public string connectionString = "Data Source = DieDataBase.db";
+public string PlayerLocation;
 //Use this Void to Get All The int Data From PlayerSave Data And Set it Too
 public void gettingSavedIntData(string commandText){
 using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
@@ -48,6 +49,20 @@ public void getHealth(string commandText){
 			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
 				while(dbReader.Read()){
 					PlayerHealth.health = Convert.ToInt32(dbReader[3].ToString());
+				}
+			}
+		}
+	}
+}
+//Working With Other Int Perams
+public void setFromPlayerPerams(string commandText){
+	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+		dbCon.Open();
+		using(SqliteCommand dbCmd = new SqliteCommand(commandText,dbCon)){
+			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+				while(dbReader.Read()){
+					Inventory.NumberOfPotions = Convert.ToInt32(dbReader[0].ToString());
+					TutoralWallCheck.TimesPlayed = Convert.ToInt32(dbReader[1].ToString());
 				}
 			}
 		}

@@ -11,6 +11,7 @@ public static string LoadScene;
 			dataManager.GetSceneNameFromDb("SELECT*FROM PlayerSaveData");
 			SceneManager.LoadScene(LoadScene);
 			dataManager.gettingSavedIntData("SELECT*FROM PlayerSaveData");
+			dataManager.setFromPlayerPerams("SELECT*FROM PlayerPerams");
 		}
 	}
 }

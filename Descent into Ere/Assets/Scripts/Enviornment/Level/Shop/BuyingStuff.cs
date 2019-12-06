@@ -5,12 +5,10 @@ using UnityEngine;
 public class BuyingStuff : MonoBehaviour {
 	public GameObject[] VisibleShop;
 	public GameObject SoldOutSign;
-	DbManager dataManager = DbManager.Instance;
 	public static int NumberOfItemsTotal;
 	public static bool SoldOut;
 	public static bool NotEnoughMoney;
 	void Start(){
-		
 		Cursor.visible = true;
 	}
 	void Update(){
