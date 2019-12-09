@@ -54,6 +54,22 @@ public void getHealth(string commandText){
 		}
 	}
 }
+public void levelCheck(string commandText){
+	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+		dbCon.Open();
+		using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+				while(dbReader.Read()){
+					if(Convert.ToInt32(dbReader[0].ToString()) == 1){
+						LevelCompletion.LevelComplete = 1;
+					}else if(Convert.ToInt32(dbReader[1].ToString())== 1){
+						LevelCompletion.LevelComplete = 2;
+					}
+				}
+			}
+		}
+	}
+}
 //Working With Other Int Perams
 public void setFromPlayerPerams(string commandText){
 	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
@@ -107,6 +123,7 @@ public void GetSceneNameFromDb(string commandText){
 	}
 	
 }
+//For Loading the Counter
 public void DbCounting( string commandText){
 	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
 		dbCon.Open();
@@ -121,6 +138,7 @@ public void DbCounting( string commandText){
 		}
 	}
 }
+//For Testing For data
 public void TestForData(string commandText, int readerIndex){
 	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
 		dbCon.Open();

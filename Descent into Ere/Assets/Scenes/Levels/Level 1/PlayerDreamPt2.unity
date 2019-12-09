@@ -1002,6 +1002,7 @@ GameObject:
   - component: {fileID: 141533534}
   - component: {fileID: 141533533}
   - component: {fileID: 141533532}
+  - component: {fileID: 141533535}
   m_Layer: 0
   m_Name: Falling Floater 4
   m_TagString: Ground
@@ -1102,6 +1103,26 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!50 &141533535
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 141533530}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &144843539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,6 +1988,7 @@ GameObject:
   - component: {fileID: 370560890}
   - component: {fileID: 370560889}
   - component: {fileID: 370560888}
+  - component: {fileID: 370560891}
   m_Layer: 0
   m_Name: Falling Floater 1
   m_TagString: Ground
@@ -2067,6 +2089,26 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!50 &370560891
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 370560886}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &383441823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3584,7 +3626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afcd74c4187cf4dbe94b51f1bfb61b2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerAnimator: {fileID: 0}
+  PlayerAnimator: {fileID: 151693273}
 --- !u!114 &644006005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3596,7 +3638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f11823659d4c495fbad5f239e1a4e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  livesAnimator: {fileID: 0}
+  livesAnimator: {fileID: 151693273}
 --- !u!95 &644006006
 Animator:
   serializedVersion: 3
@@ -3805,6 +3847,7 @@ GameObject:
   - component: {fileID: 829472646}
   - component: {fileID: 829472645}
   - component: {fileID: 829472644}
+  - component: {fileID: 829472647}
   m_Layer: 0
   m_Name: Falling Floater 2
   m_TagString: Ground
@@ -3905,6 +3948,26 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!50 &829472647
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 829472642}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &836053167
 GameObject:
   m_ObjectHideFlags: 0
@@ -4458,6 +4521,7 @@ GameObject:
   - component: {fileID: 918602970}
   - component: {fileID: 918602969}
   - component: {fileID: 918602968}
+  - component: {fileID: 918602971}
   m_Layer: 0
   m_Name: Falling Floater 5
   m_TagString: Ground
@@ -4558,6 +4622,26 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!50 &918602971
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 918602966}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &943273215
 GameObject:
   m_ObjectHideFlags: 0
@@ -5428,6 +5512,7 @@ GameObject:
   - component: {fileID: 1155576633}
   - component: {fileID: 1155576632}
   - component: {fileID: 1155576631}
+  - component: {fileID: 1155576634}
   m_Layer: 0
   m_Name: Falling Floater 3
   m_TagString: Ground
@@ -5528,6 +5613,26 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!50 &1155576634
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1155576629}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1187139037
 GameObject:
   m_ObjectHideFlags: 0
@@ -6343,8 +6448,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xMin: -1
   xMax: 35
-  yMin: 0
-  yMax: 3
+  yMin: -1
+  yMax: 7
 --- !u!20 &1413747808
 Camera:
   m_ObjectHideFlags: 0
@@ -6842,7 +6947,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1643133157}
   - component: {fileID: 1643133161}
-  - component: {fileID: 1643133160}
   - component: {fileID: 1643133159}
   - component: {fileID: 1643133158}
   m_Layer: 0
@@ -6902,17 +7006,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7, y: 1.86}
   m_EdgeRadius: 0
---- !u!114 &1643133160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1643133156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 456b146a0c3ab4ecdbe1ae35591f5456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1643133161
 SpriteRenderer:
   m_ObjectHideFlags: 0

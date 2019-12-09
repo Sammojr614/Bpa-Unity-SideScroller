@@ -13,6 +13,7 @@ public static string LoadScene;
 			dataManager.gettingSavedIntData("SELECT*FROM PlayerSaveData");
 			dataManager.setFromPlayerPerams("SELECT*FROM PlayerPerams");
 			dataManager.DbCounting("SELECT*FROM Money");
+			dataManager.levelCheck("SELECT*FROM Levels");
 		}
 	}
 }
