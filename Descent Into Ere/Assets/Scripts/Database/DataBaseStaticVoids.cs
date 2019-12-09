@@ -107,5 +107,33 @@ public void GetSceneNameFromDb(string commandText){
 	}
 	
 }
+public void DbCounting( string commandText){
+	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+		dbCon.Open();
+		using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+				while(dbReader.Read()){
+					CrystalCounter.ThirdDiget = Convert.ToInt32(dbReader[2].ToString());
+					CrystalCounter.SecndDigt = Convert.ToInt32(dbReader[1].ToString());
+					CrystalCounter.FirstDigt = Convert.ToInt32(dbReader[0].ToString());
+				}
+			}
+		}
+	}
+}
+public void TestForData(string commandText, int readerIndex){
+	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+		dbCon.Open();
+		using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+				if(dbReader.Read()){
+					Debug.Log("SUCCESS! Here's What Was Found: " + dbReader[readerIndex].ToString());
+				}else if(!dbReader.Read()){
+					Debug.Log("ERROR! There is Nothing Here. Try Restarting the Game and Clicking New Save");
+				}
+			}
+		}
+	}
+}
 }
 

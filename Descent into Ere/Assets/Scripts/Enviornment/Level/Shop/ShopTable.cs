@@ -10,6 +10,7 @@ public class ShopTable : MonoBehaviour {
 	public static string NameOfItem;
 	public static int CostOfItem;
 	public static int NumberOfItems;
+	DbManager dataManager = DbManager.Instance;
 
 	void Start(){
 		PressUp.SetActive(false);

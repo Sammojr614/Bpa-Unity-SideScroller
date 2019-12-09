@@ -12,6 +12,7 @@ public static string LoadScene;
 			SceneManager.LoadScene(LoadScene);
 			dataManager.gettingSavedIntData("SELECT*FROM PlayerSaveData");
 			dataManager.setFromPlayerPerams("SELECT*FROM PlayerPerams");
+			dataManager.DbCounting("SELECT*FROM Money");
 		}
 	}
 }

@@ -20,8 +20,9 @@ void Start(){
 			dataManger.normalDbCommand("UPDATE PlayerSaveData SET PlayerHealth='"+ Convert.ToInt32(PlayerHealth.health) + "'");
 			//Lives
 			dataManger.normalDbCommand("UPDATE PlayerSaveData SET PlayerLives='" + Convert.ToInt32(PlayerLives.Lives) + "'");
+			//Total Currency
 			dataManger.normalDbCommand("UPDATE PlayerSaveData SET PlayerCurrency='" + Convert.ToInt32(ShopTable.amountOfPlayerCurrency) + "'");
-			Debug.Log(ShopTable.amountOfPlayerCurrency);
+			dataManger.normalDbCommand("UPDATE PlayerSaveData SET ItemsInInventory='" + Convert.ToInt32(Inventory.NumberOfItems) + "'");
 											/* Currency Counter */
 			dataManger.normalDbCommand("UPDATE Money SET FirstDidget='" + Convert.ToInt32(CrystalCounter.FirstDigt) + "'");
 			dataManger.normalDbCommand("UPDATE Money SET SecondDidget='" + Convert.ToInt32(CrystalCounter.SecndDigt) + "'");

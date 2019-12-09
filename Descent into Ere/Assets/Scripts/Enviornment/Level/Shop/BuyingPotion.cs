@@ -19,7 +19,6 @@ void OnMouseDown(){
 		Inventory.NumberOfPotions++;
 		Inventory.NumberOfItems++;
 		ShopTable.NumberOfItems--;
-		Debug.Log(ShopTable.NumberOfItems);
 	}
 }
 	void OnMouseEnter(){

@@ -8,6 +8,8 @@ public class Coin : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collider){
 		Currency.SetActive(false);
 		CrystalCounter.ThirdDiget++;
+		Debug.Log("Player Currency: " + ShopTable.amountOfPlayerCurrency);
 		ShopTable.amountOfPlayerCurrency++;
+		Debug.Log("Player Currency: " + ShopTable.amountOfPlayerCurrency);
 	}
 }

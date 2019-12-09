@@ -5,14 +5,16 @@ using System.Collections.Generic;
 public class CrystalCounter: MonoBehaviour{
 	public GameObject[] FirstDidget;
 	public GameObject[] SecondDidget;
+	DbManager dataManager = DbManager.Instance;
 	public static int FirstDigt;
 	public static  int SecndDigt;
 	public static int ThirdDiget;
 
 	void Start(){
-		
+
 	}
 	void Update(){
+		
 		//First Didget Deactivation, At least the ones not needed on Scene Load
 		foreach (var firstNumber in FirstDidget) {
 			for (var i = 0; i < FirstDidget.Length; i++) {
