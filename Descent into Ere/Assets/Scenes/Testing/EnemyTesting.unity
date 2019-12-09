@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 34016799}
   - component: {fileID: 34016800}
   - component: {fileID: 34016801}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Right Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +710,7 @@ GameObject:
   - component: {fileID: 169975963}
   - component: {fileID: 169975964}
   - component: {fileID: 169975965}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1138,7 +1138,7 @@ GameObject:
   - component: {fileID: 485522627}
   - component: {fileID: 485522628}
   - component: {fileID: 485522629}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1226,7 +1226,7 @@ GameObject:
   - component: {fileID: 518125420}
   - component: {fileID: 518125421}
   - component: {fileID: 518125422}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Clown
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2145,7 +2145,7 @@ GameObject:
   - component: {fileID: 1126313160}
   - component: {fileID: 1126313161}
   - component: {fileID: 1126313162}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Left Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2415,7 +2415,7 @@ GameObject:
   - component: {fileID: 1170792703}
   - component: {fileID: 1170792704}
   - component: {fileID: 1170792705}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Left Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3351,7 +3351,7 @@ GameObject:
   - component: {fileID: 1476493590}
   - component: {fileID: 1476493591}
   - component: {fileID: 1476493592}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Right Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4262,7 +4262,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83b906a2ae56041a1b2ad9870efbdd4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SwitchonList: 0
 --- !u!1 &1813047600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4819,6 +4818,7 @@ GameObject:
   - component: {fileID: 2038999751}
   - component: {fileID: 2038999758}
   - component: {fileID: 2038999759}
+  - component: {fileID: 2038999760}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -4974,7 +4974,7 @@ MonoBehaviour:
   PlayerAnimator: {fileID: 2038999754}
   whatIsEnemies:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 768
   attackRange: 1.5
   damage: 1
 --- !u!114 &2038999759
@@ -4989,6 +4989,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 2038999754}
+--- !u!114 &2038999760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2038999749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf64208c2af3bd1498e5dabcbae32b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButterKnife: {fileID: 1334400895}
+  KnifeDrawn: 0
 --- !u!1 &2052930390
 GameObject:
   m_ObjectHideFlags: 0
