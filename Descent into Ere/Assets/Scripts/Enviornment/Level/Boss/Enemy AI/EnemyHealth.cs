@@ -6,6 +6,7 @@ using UnityEngine.Sprites;
 public class EnemyHealth : MonoBehaviour {
 
     public Animator EnemyHearts;
+    public SpriteRenderer[] hearts;
 
     public int enemyHealth;
     public static int enemyHealthStat;
@@ -17,9 +18,42 @@ public class EnemyHealth : MonoBehaviour {
     }
 	// Update is called once per frame
 	void Update () {
-        if (Knife.damaged == true && enemyHealth != 0 || enemyHealth < 3 && enemyHealth > 1)
+        if (enemyHealth == 3)
+        {
+            EnemyHearts.SetFloat("EnemyHealth", 0.0f);
+        }
+        else
+        {
+            if (enemyHealth == 2)
+            {
+                EnemyHearts.SetFloat("EnemyHealth", 0.5f);
+            }
+            else
+            {
+                if (enemyHealth == 1)
+                {
+                    EnemyHearts.SetFloat("EnemyHealth", 1.0f);
+
+                }
+                else
+                {
+                    if (enemyHealth < 1)
+                    {
+                        enemyHealth = 0;
+                        EnemyHearts.SetFloat("EnemyHealth", 1.5f);
+                    }
+                }
+            }
+            if(enemyHealth > 3)
+            {
+                enemyHealth = 3;
+            }
+        }
+
+        if (Knife.damaged == true && enemyHealth != 0 && enemyHealth > 2)
         {
             enemyHealth -= Knife.knifeDamage;
+            EnemyHearts.SetBool("Damaged", Knife.damaged);
         }
         if (enemyHealth <= 0)
         {
