@@ -208,6 +208,8 @@ GameObject:
   m_Component:
   - component: {fileID: 116111390}
   - component: {fileID: 116111391}
+  - component: {fileID: 116111393}
+  - component: {fileID: 116111392}
   m_Layer: 5
   m_Name: Stamina
   m_TagString: Untagged
@@ -275,6 +277,35 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &116111392
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 116111389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 17de7d85ad33346b196441de3953c761, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &116111393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 116111389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c293e3580c14e454ea8d78d2fbf79ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StaminaAnimator: {fileID: 116111392}
 --- !u!1 &227916133
 GameObject:
   m_ObjectHideFlags: 0
@@ -1164,6 +1195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 478875806}
   - component: {fileID: 478875807}
+  - component: {fileID: 478875808}
   m_Layer: 5
   m_Name: Mana
   m_TagString: Untagged
@@ -1232,6 +1264,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &478875808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 478875805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f370c915ae4490e8349fbd768706e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Charges:
+  - {fileID: 1955848352}
+  - {fileID: 1610260988}
+  - {fileID: 2113035320}
+  - {fileID: 293406433}
 --- !u!1 &506038016
 GameObject:
   m_ObjectHideFlags: 0
