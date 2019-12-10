@@ -12,14 +12,19 @@ public class Knife : MonoBehaviour {
     public bool isAttacking = false;
     //Damage player deals with weapon
     public int damage;
+    public static int knifeDamage;
 
     /* Time between attacks, 
      * to prevent attacking more than once.
      */
     public float timeBtwAttack;
 
+    public static bool damaged;
+
     void Start()
     {
+        damaged = false;
+        knifeDamage = damage;
     }
     /* When an enemy enters the trigger,
      * of the players knife, the attack button,
@@ -30,10 +35,51 @@ public class Knife : MonoBehaviour {
      */
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Enemy") && Input.GetButton("SwordAttack"))
+        Debug.Log(timeBtwAttack);
+        if(timeBtwAttack <= 0)
         {
-            enemy.GetComponent<EnemyHealth>().enemyHealth -= damage;
-            
+            if (collision.CompareTag("Enemy"))
+            {
+                if (Input.GetButton("SwordAttack"))
+                {
+                    damaged = true;
+                }
+                else
+                {
+                    damaged = false;
+                }
+            }
         }
+        else
+        {
+            timeBtwAttack -= Time.deltaTime;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (timeBtwAttack <= 0)
+        {
+            if (collision.CompareTag("Enemy"))
+            {
+                if (Input.GetButton("SwordAttack"))
+                {
+                    damaged = true;
+                }
+                else
+                {
+                    damaged = false;
+                }
+            }
+        }
+        else
+        {
+            timeBtwAttack -= Time.deltaTime;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+
     }
 }
