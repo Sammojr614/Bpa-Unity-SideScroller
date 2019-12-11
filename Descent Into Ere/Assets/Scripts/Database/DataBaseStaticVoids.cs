@@ -166,5 +166,19 @@ public void refeshShop(string commandText){
 		}
 	}
 }
+public void dbReaderTest(string commandText, int readerIndex){
+	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+		dbCon.Open();
+		using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+				if(dbReader.Read()){
+					Debug.Log("SUCCESS! Here's What was Found: " + dbReader[readerIndex].ToString());
+				}else if(!dbReader.Read()){
+					Debug.Log("ERROR!: DataBase Reader Couldn't Find Anything There.");
+				}
+			}
+		}
+	}
+}
 }
 

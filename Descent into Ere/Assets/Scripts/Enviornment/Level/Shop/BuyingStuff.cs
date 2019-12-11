@@ -13,7 +13,6 @@ public class BuyingStuff : MonoBehaviour {
 		Cursor.visible = true;
 	}
 	void Update(){
-		dataManager.refeshShop("SELECT*FROM ShopStock");
 	if(ShopTable.NumberOfItems >= 0){
 		VisibleShop[0].SetActive(true);
 		SoldOut = false;
@@ -21,7 +20,7 @@ public class BuyingStuff : MonoBehaviour {
 	}else if(ShopTable.NumberOfItems < 1){
 		SoldOut = true;
 		SoldOutSign.SetActive(true);
-
+	
 	}
 	if(ShopTable.amountOfPlayerCurrency < ShopTable.CostOfItem){
 		NotEnoughMoney = true;

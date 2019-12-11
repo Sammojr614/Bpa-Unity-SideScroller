@@ -17,6 +17,7 @@ public class MoveScenesWithButton2D : MonoBehaviour {
 			SceneManager.LoadScene(PrevScene);
 			string insertThis = string.Format("UPDATE ShopStock SET amountOfItem='{0}' WHERE Item='Potion'", Convert.ToInt32(ShopTable.NumberOfItems));
 			dataManager.normalDbCommand(insertThis);
+			dataManager.normalDbCommand("UPDATE PlayerSaveData SET PlayerCurrency='" + Convert.ToInt32(ShopTable.amountOfPlayerCurrency) + "'");
 			Cursor.visible = false;
 		}
 	}

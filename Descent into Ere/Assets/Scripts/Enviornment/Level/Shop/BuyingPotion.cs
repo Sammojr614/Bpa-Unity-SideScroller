@@ -12,7 +12,7 @@ public class BuyingPotion : MonoBehaviour {
 	}
 
 void OnMouseDown(){
-	if(Input.GetMouseButtonDown(0) && BuyingStuff.NotEnoughMoney == false){
+	if(Input.GetMouseButtonDown(0) && ShopTable.amountOfPlayerCurrency >= CostOfItem){
 		//Player Currency
 		int newPlayerCurrency = ShopTable.amountOfPlayerCurrency - CostOfItem;
 		ShopTable.amountOfPlayerCurrency =  newPlayerCurrency;
@@ -21,8 +21,9 @@ void OnMouseDown(){
 		CrystalCounter.ThirdDiget = newCounterValue;
 		Inventory.NumberOfPotions++;
 		Inventory.NumberOfItems++;
+		dataManager.normalDbCommand("UPDATE PlayerSaveData SET ItemsInInventory='" + Convert.ToInt32(Inventory.NumberOfPotions) + "'");
 		ShopTable.NumberOfItems--;
-		dataManager.normalDbCommand("UPDATE ShopStock SET amountOfItem='"+ Convert.ToInt32(ShopTable.NumberOfItems) + "'");
+		dataManager.normalDbCommand("UPDATE ShopStock SET amountOfItem='"+ Convert.ToInt32(ShopTable.NumberOfItems) + "' WHERE Item='Potion'");
 	}
 }
 	void OnMouseEnter(){
