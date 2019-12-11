@@ -4,21 +4,39 @@ using UnityEngine;
 
 public class StaminaManager : MonoBehaviour {
 	public Animator StaminaAnimator;
-	int Drain = TotalStamina - DrainofStamina;
-	public static int DrainofStamina = 1;
-	public static int TotalStamina = 10;
-	int Replenish = TotalStamina + DrainofStamina;
+	float Drain = TotalStamina - DrainofStamina;
+	public static float DrainofStamina = 0.1f;
+	public static float TotalStamina = 10f;
+	float Replenish = TotalStamina + DrainofStamina;
 	
 	void Update(){
-		if(Input.GetButtonDown("Sprint")){
-			if(TotalStamina != 0){
-				TotalStamina = Drain;
+        Debug.Log(TotalStamina);
+
+		if(Input.GetButton("Sprint")){
+			if(TotalStamina != 0f){
+                TotalStamina -= DrainofStamina; 
 			}
-		}else if(Input.GetButtonUp("Sprint")){
-			while(TotalStamina <= 10){
-				TotalStamina = Replenish;
-			}
-		}
-	}
+        }
+        else
+        {
+            if(TotalStamina < 10f)
+            {
+                TotalStamina += Replenish;
+            }
+            else
+            {
+                TotalStamina = 10f;
+            }
+        }
+        if(TotalStamina <= 0f)
+        {
+            Sprint.canSprint = false;
+        }
+        else
+        {
+            Sprint.canSprint = true;
+        }
+
+    }
 
 }
