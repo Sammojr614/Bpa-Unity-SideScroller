@@ -52,7 +52,7 @@ public class EnemyHealth : MonoBehaviour {
 
         if (Knife.damaged == true && enemyHealth != 0 && enemyHealth > 2)
         {
-            enemyHealth -= Knife.knifeDamage;
+            enemyHealth--;
             EnemyHearts.SetBool("Damaged", Knife.damaged);
         }
         if (enemyHealth <= 0)

@@ -40,7 +40,7 @@ public class Knife : MonoBehaviour {
         {
             if (collision.CompareTag("Enemy"))
             {
-                if (Input.GetButton("SwordAttack"))
+                if (Input.GetButtonDown("SwordAttack"))
                 {
                     damaged = true;
                 }
@@ -62,7 +62,7 @@ public class Knife : MonoBehaviour {
         {
             if (collision.CompareTag("Enemy"))
             {
-                if (Input.GetButton("SwordAttack"))
+                if (Input.GetButtonDown("SwordAttack"))
                 {
                     damaged = true;
                 }
