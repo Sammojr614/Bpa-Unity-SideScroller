@@ -8,14 +8,13 @@ public class BuyingStuff : MonoBehaviour {
 	public static int NumberOfItemsTotal;
 	public static bool SoldOut;
 	public static bool NotEnoughMoney;
-	public static int priceOfItem;
 	DbManager dataManager = DbManager.Instance;
 	void Start(){
 		Cursor.visible = true;
 	}
 	void Update(){
+		dataManager.refeshShop("SELECT*FROM ShopStock");
 	if(ShopTable.NumberOfItems >= 0){
-		dataManager.shopStockFromDb("SELECT*FROM ShopStock");
 		VisibleShop[0].SetActive(true);
 		SoldOut = false;
 		SoldOutSign.SetActive(false);
