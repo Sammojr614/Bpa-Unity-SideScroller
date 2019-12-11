@@ -153,5 +153,18 @@ public void TestForData(string commandText, int readerIndex){
 		}
 	}
 }
+public void shopStockFromDb(string commandText){
+	using (SqliteConnection dbCon = new SqliteConnection(connectionString)){
+		dbCon.Open();
+		using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+				while(dbReader.Read()){
+					ShopTable.CostOfItem = Convert.ToInt32(dbReader[3].ToString());
+					BuyingStuff.priceOfItem = Convert.ToInt32(dbReader[2].ToString());
+				}
+			}
+		}
+	}
+}
 }
 

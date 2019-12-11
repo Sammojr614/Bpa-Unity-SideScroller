@@ -10,6 +10,9 @@ public class BuyingPotion : MonoBehaviour {
 		Price.SetActive (false);
 	}
 	
+	void Update(){
+		CostOfItem = BuyingStuff.priceOfItem;
+	}
 void OnMouseDown(){
 	if(Input.GetMouseButtonDown(0) && BuyingStuff.NotEnoughMoney == false){
 		int newPlayerCurrency = ShopTable.amountOfPlayerCurrency - CostOfItem;
@@ -19,6 +22,7 @@ void OnMouseDown(){
 		Inventory.NumberOfPotions++;
 		Inventory.NumberOfItems++;
 		ShopTable.NumberOfItems--;
+		
 	}
 }
 	void OnMouseEnter(){
