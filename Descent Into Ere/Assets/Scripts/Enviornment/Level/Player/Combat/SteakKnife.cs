@@ -2,33 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Knife : MonoBehaviour {
+public class SteakKnife : MonoBehaviour {
 
-    //Knife the player uses
-    public GameObject knife;
+    public GameObject steakKnife;
 
-    GameObject enemy;
-    //Tells the game if player is attacking
-    public bool isAttacking = false;
-    //Damage player deals with weapon
-    public int damage;
-    public static int knifeDamage;
-
-    /* Time between attacks, 
-     * to prevent attacking more than once.
-     */
     public static float timeBtwAttack = 1f;
 
-    public static bool damaged;
+    public static bool damagedSteak;
 
     public static bool canAttack;
 
-    void Start()
-    {
-        damaged = false;
-        knifeDamage = damage;
+	void Start () {
+        damagedSteak = false;
         canAttack = true;
-    }
+	}
+
     /* When an enemy enters the trigger,
      * of the players knife, the attack button,
      * e, is pressed, and the player is not already attacking,
@@ -39,17 +27,17 @@ public class Knife : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collision)
     {
         Debug.Log(timeBtwAttack);
-        if(timeBtwAttack <= 0)
+        if (timeBtwAttack <= 0)
         {
             if (collision.CompareTag("Enemy"))
             {
                 if (Input.GetButtonDown("SwordAttack") && canAttack == true)
                 {
-                    damaged = true;
+                    damagedSteak = true;
                 }
                 else
                 {
-                    damaged = false;
+                    damagedSteak = false;
                 }
             }
         }
@@ -67,11 +55,11 @@ public class Knife : MonoBehaviour {
             {
                 if (Input.GetButtonDown("SwordAttack") && canAttack == true)
                 {
-                    damaged = true;
+                    damagedSteak = true;
                 }
                 else
                 {
-                    damaged = false;
+                    damagedSteak = false;
                 }
             }
         }

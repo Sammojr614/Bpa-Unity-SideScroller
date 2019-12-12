@@ -27,6 +27,7 @@ public class EnemyHealth : MonoBehaviour {
     }
 
 	void Update () {
+        Debug.Log(invincibilityTime);
         if(Knife.damaged == true && hasHeart1 == true)
         {
             invincibilityTime++;
@@ -41,6 +42,17 @@ public class EnemyHealth : MonoBehaviour {
         {
             hasHeart3 = false;
             Knife.damaged = false;
+        }
+        if(SteakKnife.damagedSteak == true && hasHeart1 == true && hasHeart2 == true)
+        {
+            invincibilityTime++;
+            hasHeart1 = false;
+            hasHeart2 = false;
+        }
+        if(SteakKnife.damagedSteak == true && invincibilityTime < 1f && hasHeart3 == true)
+        {
+            hasHeart3 = false;
+            SteakKnife.damagedSteak = false;
         }
         else if(invincibilityTime <= 1f || invincibilityTime >= 1f)
         {
