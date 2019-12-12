@@ -6,12 +6,15 @@ public class WeaponActive : MonoBehaviour {
 
     //Knife used by the player
     public GameObject ButterKnife;
+    //SteakKnife used by the player
+    public GameObject SteakKnife;
     //Checks if knife is drawn
     public bool KnifeDrawn;
 
     //On Start, the knife is equipped
 	void Start () {
         ButterKnife.SetActive(true);
+        SteakKnife.SetActive(true);
         KnifeDrawn = true;
     }
 	
@@ -26,11 +29,13 @@ public class WeaponActive : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.F) && KnifeDrawn == true)
         {
             ButterKnife.SetActive(false);
+            SteakKnife.SetActive(false);
             KnifeDrawn = false;
         }
         else if(Input.GetKeyDown(KeyCode.F) && KnifeDrawn == false)
         {
             ButterKnife.SetActive(true);
+            SteakKnife.SetActive(true);
             KnifeDrawn = true;
         }
 	}
