@@ -6,59 +6,64 @@ using UnityEngine.Sprites;
 public class EnemyHealth : MonoBehaviour {
 
     public Animator EnemyHearts;
-    public SpriteRenderer[] hearts;
 
     public int enemyHealth;
     public static int enemyHealthStat;
     public GameObject enemy;
+    public GameObject Heart1;
+    public GameObject Heart2;
+    public GameObject Heart3;
+    public bool hasHeart1;
+    public bool hasHeart2;
+    public bool hasHeart3;
+    public float invincibilityTime;
 	
     void Start()
     {
         enemyHealthStat = enemyHealth;
+        hasHeart1 = true;
+        hasHeart2 = true;
+        hasHeart3 = true;
     }
-	// Update is called once per frame
+
 	void Update () {
-        if (enemyHealth == 3)
+        if(Knife.damaged == true && hasHeart1 == true)
         {
-            EnemyHearts.SetFloat("EnemyHealth", 0.0f);
+            invincibilityTime++;
+            hasHeart1 = false;
         }
-        else
+        if (Knife.damaged == true && invincibilityTime < 1f && hasHeart2 == true)
         {
-            if (enemyHealth == 2)
+            invincibilityTime++;
+            hasHeart2 = false;
+        }
+        if (Knife.damaged == true && invincibilityTime < 1f && hasHeart3 == true)
+        {
+            hasHeart3 = false;
+        }
+        else if(invincibilityTime <= 1f || invincibilityTime >= 1f)
+        {
+            invincibilityTime -= 0.5f * Time.deltaTime;
+            if(invincibilityTime <= 0f)
             {
-                EnemyHearts.SetFloat("EnemyHealth", 0.5f);
-            }
-            else
-            {
-                if (enemyHealth == 1)
-                {
-                    EnemyHearts.SetFloat("EnemyHealth", 1.0f);
-
-                }
-                else
-                {
-                    if (enemyHealth < 1)
-                    {
-                        enemyHealth = 0;
-                        EnemyHearts.SetFloat("EnemyHealth", 1.5f);
-                    }
-                }
-            }
-            if(enemyHealth > 3)
-            {
-                enemyHealth = 3;
+                invincibilityTime = 0f;
             }
         }
-
-        if (Knife.damaged == true && enemyHealth != 0 && enemyHealth > 2)
+        if (hasHeart1 == false)
         {
-            enemyHealth--;
-            EnemyHearts.SetBool("Damaged", Knife.damaged);
+            DestroyObject(Heart1);
         }
-        if (enemyHealth <= 0)
+        if(hasHeart2 == false)
+        {
+            DestroyObject(Heart2);
+        }
+        if (hasHeart3 == false)
         {
             DestroyObject(enemy);
         }
 
+
+
     }
 }
+

@@ -1356,12 +1356,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyHearts: {fileID: 2111539169}
-  hearts:
-  - {fileID: 1402714292}
-  - {fileID: 1915790804}
-  - {fileID: 1491468074}
   enemyHealth: 3
   enemy: {fileID: 518125416}
+  Heart1: {fileID: 1402714289}
+  Heart2: {fileID: 1915790802}
+  Heart3: {fileID: 1491468072}
+  hasHeart1: 0
+  hasHeart2: 0
+  hasHeart3: 0
+  invincibilityTime: 1
 --- !u!1 &664213702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,7 +1932,7 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &879932356
 GameObject:
@@ -2680,7 +2683,7 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &1322738511
 GameObject:
@@ -2929,7 +2932,6 @@ MonoBehaviour:
   knife: {fileID: 1334400895}
   isAttacking: 0
   damage: 1
-  timeBtwAttack: 1
 --- !u!1 &1349772985
 GameObject:
   m_ObjectHideFlags: 0
@@ -3882,7 +3884,7 @@ SpriteRenderer:
   m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!1 &1631177542
 GameObject:

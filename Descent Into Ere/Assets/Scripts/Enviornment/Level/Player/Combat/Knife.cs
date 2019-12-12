@@ -17,7 +17,7 @@ public class Knife : MonoBehaviour {
     /* Time between attacks, 
      * to prevent attacking more than once.
      */
-    public float timeBtwAttack;
+    public static float timeBtwAttack = 1f;
 
     public static bool damaged;
 
