@@ -62,6 +62,7 @@ public class StaminaManager : MonoBehaviour {
             Sprint.canSprint = false;
             EndTip.SetActive(false);
             Knife.canAttack = false;
+            SteakKnife.canAttack = false;
         }
         /* When the player's stamina bar is no longer empty,
          * the player can sprint and attack again,
@@ -72,6 +73,7 @@ public class StaminaManager : MonoBehaviour {
             Sprint.canSprint = true;
             EndTip.SetActive(true);
             Knife.canAttack = true;
+            SteakKnife.canAttack = true;
         }
         /* If the player loses some of it's stamina,
          * the first part of the stamina bar,
@@ -100,7 +102,7 @@ public class StaminaManager : MonoBehaviour {
         {
             Main.SetActive(true);
         }
-        if(Knife.damaged == true)
+        if(Knife.damaged == true || SteakKnife.damagedSteak == true)
         {
             TotalStamina -= 5f;
         }
