@@ -40,6 +40,9 @@ void Start(){
 								/*Other Player Save Stuff */
 			dataManger.normalDbCommand("CREATE TABLE PlayerPerams(NumberOfPotions INTEGER, TimesPlayed INTEGER)");
 			dataManger.normalDbCommand("INSERT INTO PlayerPerams(NumberOfPotions, TimesPlayed) VALUES('0','0')");
+									/* Upgrades */
+			dataManger.normalDbCommand("CREATE TABLE Upgrades(NameOfUpgrade TEXT, ItemUpgraded TEXT, ItemUpgradeIncrease INTEGER, PlayerHave INTEGER)");
+			dataManger.normalDbCommand("INSERT INTO Upgrades(NameOfUpgrade,ItemUpgraded,ItemUpgradeIncrease, PlayerHave) VALUES('KnifeUpgrade', 'ButterKnife', '2', '0')");
 
 
 		}

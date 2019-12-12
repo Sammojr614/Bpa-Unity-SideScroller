@@ -6,30 +6,33 @@ using System;
 public class BuyingPotion : MonoBehaviour {
 	public int CostOfItem;
 	public GameObject Price;
+	public GameObject NotenoughMoney;
 	DbManager dataManager = DbManager.Instance;
 	void Start(){
-		Price.SetActive (false);
+		Price.SetActive(false);
+		NotenoughMoney.SetActive(false);
 	}
-
-void OnMouseDown(){
-	if(Input.GetMouseButtonDown(0) && ShopTable.amountOfPlayerCurrency >= CostOfItem){
-		//Player Currency
-		int newPlayerCurrency = ShopTable.amountOfPlayerCurrency - CostOfItem;
-		ShopTable.amountOfPlayerCurrency =  newPlayerCurrency;
-		//Counter 
-		int newCounterValue = CrystalCounter.ThirdDiget - CostOfItem;
-		CrystalCounter.ThirdDiget = newCounterValue;
-		Inventory.NumberOfPotions++;
-		Inventory.NumberOfItems++;
-		dataManager.normalDbCommand("UPDATE PlayerSaveData SET ItemsInInventory='" + Convert.ToInt32(Inventory.NumberOfPotions) + "'");
-		ShopTable.NumberOfItems--;
-		dataManager.normalDbCommand("UPDATE ShopStock SET amountOfItem='"+ Convert.ToInt32(ShopTable.NumberOfItems) + "' WHERE Item='Potion'");
+	void OnMouseDown(){
+		if(Input.GetMouseButtonDown(0)){
+			if(ShopTable.amountOfPlayerCurrency >= CostOfItem){
+				int newCurrency = ShopTable.amountOfPlayerCurrency - CostOfItem;
+				int newCounter = CrystalCounter.ThirdDiget - CostOfItem;
+				if(newCurrency > CostOfItem){
+					dataManager.normalDbCommand("UPDATE PlayerSaveData SET PlayerCurrency='" + Convert.ToInt32(newCurrency) + "'");
+				}
+				if(newCounter > CostOfItem){
+					dataManager.normalDbCommand("UPDATE Money SET ThirDidget='"+ Convert.ToInt32(newCounter) + "'");
+				}
+			}
+		}
 	}
-}
 	void OnMouseEnter(){
-		Price.SetActive (true);
+		Price.SetActive(true);
+		if(ShopTable.CostOfItem < CostOfItem){
+			NotenoughMoney.SetActive(true);
+		}
 	}
 	void OnMouseExit(){
-		Price.SetActive (false);
+		Price.SetActive(false);
 	}
 }
