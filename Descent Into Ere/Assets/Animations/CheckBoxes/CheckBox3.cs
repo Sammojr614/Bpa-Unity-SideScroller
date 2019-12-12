@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class CheckBox3 : MonoBehaviour {
 	public GameObject Check;
-	GameObject EmptyCheck;
-void Start(){
-	EmptyCheck = gameObject.GetComponent<GameObject>();
-}
+	public GameObject EmptyCheck;
+
 	void Update(){
 		if(LevelCompletion.LevelComplete == 3){
 			Check.SetActive(true);
