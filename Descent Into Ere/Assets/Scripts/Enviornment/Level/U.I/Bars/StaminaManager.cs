@@ -27,7 +27,9 @@ public class StaminaManager : MonoBehaviour {
     }
 
     void Update(){
+        /*
         Debug.Log(TotalStamina);
+        */       
 
         // If the player is sprinting, they will lose stamina
 		if(Input.GetButton("Sprint")){
@@ -52,22 +54,24 @@ public class StaminaManager : MonoBehaviour {
             }
         }
         /* If the player's stamina bar is empty,
-         * the player is unable to sprint,
+         * the player is unable to sprint, or attack,
          * and the end of the stamina bar becomes empty
          */        
         if(TotalStamina <= 0f)
         {
             Sprint.canSprint = false;
             EndTip.SetActive(false);
+            Knife.canAttack = false;
         }
         /* When the player's stamina bar is no longer empty,
-         * the player can sprint,
+         * the player can sprint and attack again,
          * and the end of the stamina bar becomes visible again
          */        
         else
         {
             Sprint.canSprint = true;
             EndTip.SetActive(true);
+            Knife.canAttack = true;
         }
         /* If the player loses some of it's stamina,
          * the first part of the stamina bar,
@@ -96,6 +100,11 @@ public class StaminaManager : MonoBehaviour {
         {
             Main.SetActive(true);
         }
+        if(Knife.damaged == true)
+        {
+            TotalStamina -= 5f;
+        }
+
 
     }
 

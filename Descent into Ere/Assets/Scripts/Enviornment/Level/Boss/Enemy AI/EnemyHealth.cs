@@ -40,6 +40,7 @@ public class EnemyHealth : MonoBehaviour {
         if (Knife.damaged == true && invincibilityTime < 1f && hasHeart3 == true)
         {
             hasHeart3 = false;
+            Knife.damaged = false;
         }
         else if(invincibilityTime <= 1f || invincibilityTime >= 1f)
         {

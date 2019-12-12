@@ -21,10 +21,13 @@ public class Knife : MonoBehaviour {
 
     public static bool damaged;
 
+    public static bool canAttack;
+
     void Start()
     {
         damaged = false;
         knifeDamage = damage;
+        canAttack = true;
     }
     /* When an enemy enters the trigger,
      * of the players knife, the attack button,
@@ -40,7 +43,7 @@ public class Knife : MonoBehaviour {
         {
             if (collision.CompareTag("Enemy"))
             {
-                if (Input.GetButtonDown("SwordAttack"))
+                if (Input.GetButtonDown("SwordAttack") && canAttack == true)
                 {
                     damaged = true;
                 }
@@ -62,7 +65,7 @@ public class Knife : MonoBehaviour {
         {
             if (collision.CompareTag("Enemy"))
             {
-                if (Input.GetButtonDown("SwordAttack"))
+                if (Input.GetButtonDown("SwordAttack") && canAttack == true)
                 {
                     damaged = true;
                 }
