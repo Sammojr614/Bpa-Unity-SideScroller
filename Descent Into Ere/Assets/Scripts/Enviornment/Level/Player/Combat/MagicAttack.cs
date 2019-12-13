@@ -21,12 +21,100 @@ public class MagicAttack : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(timeBtwAttack <= 0f)
+        if (Input.GetButtonDown("ManaAttack") && canAttack == true)
         {
-            if(Input.GetButtonDown("ManaAttack") && canAttack == true)
+            for (int i = 0; i < 200; i++)
             {
-                
+                if (this.transform.position.x >= -4f)
+                {
+                    MovingDirection = Vector3.right;
+                }
+                this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
+                if (collision.CompareTag("Enemy"))
+                {
+                    magicDamage = true;
+                    magicBall.SetActive(false);
+
+                }
+                else
+                {
+                    magicDamage = false;
+                    magicBall.SetActive(true);
+                }
             }
         }
     }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (Input.GetButtonDown("ManaAttack") && canAttack == true)
+        {
+            for (int i = 0; i < 200; i++)
+            {
+                if (this.transform.position.x >= -4f)
+                {
+                    MovingDirection = Vector3.right;
+                }
+                this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
+                if (collision.CompareTag("Enemy"))
+                {
+                    magicDamage = true;
+                    magicBall.SetActive(false);
+
+                }
+                else
+                {
+                    magicDamage = false;
+                    magicBall.SetActive(true);
+                }
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+
+    }
+
+
+    void Update()
+    {
+        UpdateMovement();
+        if (magicBall.CompareTag("Enemy"))
+        {
+            magicDamage = true;
+            if(magicDamage == true)
+            {
+                magicBall.SetActive(false);
+            }
+        }
+    }
+
+    void UpdateMovement()
+    {
+        if (Input.GetButton("ManaAttack"))
+        {
+            for (int i = 0; i < 105; i++)
+            {
+                if (this.transform.position.x >= -4f)
+                {
+                    MovingDirection = Vector3.right;
+                }
+                this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
+                /*
+                if (magicBall.CompareTag("Enemy"))
+                {
+                    magicDamage = true;
+                    magicBall.SetActive(false);
+                }
+                else
+                {
+                    magicDamage = false;
+                    magicBall.SetActive(true);
+                }
+                */
+            }
+        }
+    }
+
 }

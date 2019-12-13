@@ -54,6 +54,23 @@ public class EnemyHealth : MonoBehaviour {
             hasHeart3 = false;
             SteakKnife.damagedSteak = false;
         }
+        if (MagicAttack.magicDamage == true && hasHeart1 == true)
+        {
+            invincibilityTime++;
+            hasHeart1 = false;
+            MagicAttack.magicDamage = false;
+        }
+        if (MagicAttack.magicDamage == true && invincibilityTime < 1f && hasHeart2 == true)
+        {
+            invincibilityTime++;
+            hasHeart2 = false;
+            MagicAttack.magicDamage = false;
+        }
+        if (MagicAttack.magicDamage == true && invincibilityTime < 1f && hasHeart3 == true)
+        {
+            hasHeart3 = false;
+            MagicAttack.magicDamage = false;
+        }
         else if(invincibilityTime <= 1f || invincibilityTime >= 1f)
         {
             invincibilityTime -= 0.5f * Time.deltaTime;
