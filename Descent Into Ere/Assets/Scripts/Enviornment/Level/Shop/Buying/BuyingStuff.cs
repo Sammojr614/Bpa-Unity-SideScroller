@@ -13,6 +13,11 @@ public class BuyingStuff : MonoBehaviour {
 		Cursor.visible = true;
 	}
 	void Update(){
+		if(LoadData.PlayerHaveKnifeUpgrade == true){
+			VisibleShop[1].SetActive(false);
+		}else{
+			VisibleShop[1].SetActive(true);
+		}
 	if(ShopTable.NumberOfItems >= 0){
 		VisibleShop[0].SetActive(true);
 		SoldOut = false;

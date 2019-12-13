@@ -180,5 +180,17 @@ public void dbReaderTest(string commandText, int readerIndex){
 		}
 	}
 }
+public void UpgradeCheck(string commandText,int transferBool){
+	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+		dbCon.Open();
+		using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+				while(dbReader.Read()){
+					transferBool = Convert.ToInt32(dbReader[3].ToString());
+				}
+			}
+		}
+	}
+}
 }
 

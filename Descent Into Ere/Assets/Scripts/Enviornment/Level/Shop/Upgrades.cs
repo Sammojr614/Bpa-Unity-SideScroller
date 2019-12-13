@@ -7,10 +7,10 @@ public class Upgrades : MonoBehaviour {
 	public static bool PlayerHasKnifeUpgrade;
 	// Use this for initialization
 	void Start () {
-		if(PlayerHasKnifeUpgrade == true){
+		if(LoadData.PlayerHaveKnifeUpgrade == true){
 			Upgrade[0].SetActive(false);
-		}else{
+		}else if(LoadData.PlayerHaveKnifeUpgrade == false){
 			Upgrade[0].SetActive(true);
 		}
-	}	
+	}
 }

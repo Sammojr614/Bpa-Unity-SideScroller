@@ -34,5 +34,6 @@ public class BuyingPotion : MonoBehaviour {
 	}
 	void OnMouseExit(){
 		Price.SetActive(false);
+		NotenoughMoney.SetActive(false);
 	}
 }

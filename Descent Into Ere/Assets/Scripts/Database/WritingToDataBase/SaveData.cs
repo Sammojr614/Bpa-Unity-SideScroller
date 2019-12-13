@@ -43,6 +43,12 @@ void Start(){
 			}else{
 				dataManger.normalDbCommand("UPDATE KeyTracker SET HaveKey='0' WHERE KeyType='NormalKey'");
 			}
+											/* Upgrades */
+			if(LoadData.PlayerHaveKnifeUpgrade == true){
+				dataManger.normalDbCommand("UPDATE Upgrades SET PlayerHave='1' WHERE NameOfUpgrade='KnifeUpgrade'");
+			}else{
+				dataManger.normalDbCommand("UPDATE Upgrades SET PlayerHave='0' WHERE NameOfUpgrade='KnifeUpgrade'");
+			}
 
 		}
 	}
