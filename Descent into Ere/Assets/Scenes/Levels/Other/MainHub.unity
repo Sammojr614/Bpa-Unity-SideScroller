@@ -3046,6 +3046,8 @@ GameObject:
   m_Component:
   - component: {fileID: 952795901}
   - component: {fileID: 952795902}
+  - component: {fileID: 952795904}
+  - component: {fileID: 952795903}
   m_Layer: 0
   m_Name: Butter
   m_TagString: Untagged
@@ -3060,8 +3062,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 952795900}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.524, y: -4.609, z: 0.064084664}
-  m_LocalScale: {x: 0.37487942, y: 0.37487942, z: 0.37487942}
+  m_LocalPosition: {x: -7.526, y: -4.611, z: 0.06408466}
+  m_LocalScale: {x: 0.37487942, y: 0.3748794, z: 0.3748794}
   m_Children: []
   m_Father: {fileID: 1297704067}
   m_RootOrder: 0
@@ -3110,6 +3112,45 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &952795903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952795900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2595560b5a7bbd349b63529031a6d285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knife: {fileID: 952795900}
+  isAttacking: 0
+  damage: 1
+--- !u!61 &952795904
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952795900}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.37549233, y: 0.34733203}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.64, y: 1.62}
+    newSize: {x: 1.64, y: 1.62}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8890152, y: 0.92533606}
+  m_EdgeRadius: 0
 --- !u!1 &992386684
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,7 +3254,7 @@ Transform:
   - {fileID: 112432997}
   - {fileID: 758154244}
   m_Father: {fileID: 1921481321}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1004538804
 SpriteRenderer:
@@ -3499,6 +3540,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1027960310}
   - component: {fileID: 1027960311}
+  - component: {fileID: 1027960312}
+  - component: {fileID: 1027960313}
   m_Layer: 0
   m_Name: Steak
   m_TagString: Untagged
@@ -3513,7 +3556,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1027960309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.495, y: -4.608, z: 0}
+  m_LocalPosition: {x: -7.529, y: -4.615, z: 0}
   m_LocalScale: {x: 0.6538674, y: 0.6538674, z: 0.6538674}
   m_Children: []
   m_Father: {fileID: 1297704067}
@@ -3563,6 +3606,43 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1027960312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1027960309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bd34e481fcc6a41bd62a6151d33d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  steakKnife: {fileID: 1027960309}
+--- !u!61 &1027960313
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1027960309}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1974502, y: 0.18705823}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.79, y: 0.81}
+    newSize: {x: 0.79, y: 0.81}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.39509955, y: 0.4358836}
+  m_EdgeRadius: 0
 --- !u!1 &1031866627
 GameObject:
   m_ObjectHideFlags: 0
@@ -4287,7 +4367,7 @@ Transform:
   m_Children:
   - {fileID: 1402200273}
   m_Father: {fileID: 1921481321}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1233208691
 SpriteRenderer:
@@ -4504,6 +4584,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1297704067}
+  - component: {fileID: 1297704069}
+  - component: {fileID: 1297704068}
   m_Layer: 0
   m_Name: Wepons
   m_TagString: Untagged
@@ -4517,15 +4599,44 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1297704066}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.04, y: 1.37, z: -0.064084664}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 952795901}
   - {fileID: 1027960310}
-  m_Father: {fileID: 1327540379}
-  m_RootOrder: 1
+  m_Father: {fileID: 1921481321}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1297704068
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297704066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b841d02bcc9dc41d1a186cc675d8d3ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1297704069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297704066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c251a3a014f6f4868b9fb5152e1988a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeponAnimation: {fileID: 1297704068}
 --- !u!1 &1318873971
 GameObject:
   m_ObjectHideFlags: 0
@@ -4655,7 +4766,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1921481321}
-  - {fileID: 1297704067}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7081,6 +7191,8 @@ GameObject:
   - component: {fileID: 1921481326}
   - component: {fileID: 1921481328}
   - component: {fileID: 1921481329}
+  - component: {fileID: 1921481330}
+  - component: {fileID: 1921481331}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -7098,10 +7210,11 @@ Transform:
   m_LocalPosition: {x: -4.04, y: -1.37, z: 0.064084664}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1233208690}
   - {fileID: 1004538803}
+  - {fileID: 1233208690}
   - {fileID: 909042865}
   - {fileID: 1373195158}
+  - {fileID: 1297704067}
   m_Father: {fileID: 1327540379}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7231,6 +7344,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerAnimator: {fileID: 1921481322}
+--- !u!114 &1921481330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1921481320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf64208c2af3bd1498e5dabcbae32b22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButterKnife: {fileID: 952795900}
+  SteakKnife: {fileID: 1027960309}
+--- !u!114 &1921481331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1921481320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c251a3a014f6f4868b9fb5152e1988a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeponAnimation: {fileID: 0}
 --- !u!1 &1925394009
 GameObject:
   m_ObjectHideFlags: 0

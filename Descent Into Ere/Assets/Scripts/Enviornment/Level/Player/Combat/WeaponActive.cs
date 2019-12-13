@@ -9,12 +9,18 @@ public class WeaponActive : MonoBehaviour {
     //SteakKnife used by the player
     public GameObject SteakKnife;
     //Checks if knife is drawn
-    public bool KnifeDrawn;
+    public static bool KnifeDrawn;
 
     //On Start, the knife is equipped
 	void Start () {
-        ButterKnife.SetActive(true);
+        if(LoadData.PlayerHaveKnifeUpgrade == true){
+        ButterKnife.SetActive(false);
         SteakKnife.SetActive(true);
+        }else{
+            ButterKnife.SetActive(true);
+            SteakKnife.SetActive(false);
+        }
+        
         KnifeDrawn = true;
     }
 	
@@ -34,8 +40,13 @@ public class WeaponActive : MonoBehaviour {
         }
         else if(Input.GetKeyDown(KeyCode.F) && KnifeDrawn == false)
         {
+            if(LoadData.PlayerHaveKnifeUpgrade == false){
+            SteakKnife.SetActive(false);
             ButterKnife.SetActive(true);
-            SteakKnife.SetActive(true);
+            }else if(LoadData.PlayerHaveKnifeUpgrade == true){
+                SteakKnife.SetActive(true);
+                ButterKnife.SetActive(false);
+            }
             KnifeDrawn = true;
         }
 	}
