@@ -3048,6 +3048,7 @@ GameObject:
   - component: {fileID: 952795902}
   - component: {fileID: 952795904}
   - component: {fileID: 952795903}
+  - component: {fileID: 952795905}
   m_Layer: 0
   m_Name: Butter
   m_TagString: Untagged
@@ -3151,6 +3152,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8890152, y: 0.92533606}
   m_EdgeRadius: 0
+--- !u!114 &952795905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 952795900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1943ed12c05d4467a79f17e1ce3cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRenderer: {fileID: 952795902}
 --- !u!1 &992386684
 GameObject:
   m_ObjectHideFlags: 0
@@ -3542,6 +3555,7 @@ GameObject:
   - component: {fileID: 1027960311}
   - component: {fileID: 1027960312}
   - component: {fileID: 1027960313}
+  - component: {fileID: 1027960314}
   m_Layer: 0
   m_Name: Steak
   m_TagString: Untagged
@@ -3643,6 +3657,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.39509955, y: 0.4358836}
   m_EdgeRadius: 0
+--- !u!114 &1027960314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1027960309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1943ed12c05d4467a79f17e1ce3cd00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerRenderer: {fileID: 1027960311}
 --- !u!1 &1031866627
 GameObject:
   m_ObjectHideFlags: 0
