@@ -20,7 +20,6 @@ public class CameraFollow : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
-	// Update is called once per frame
 	void Update () {
         //Makes the camera change position, as the player moves
         float x = Mathf.Clamp(player.transform.position.x, xMin, xMax);

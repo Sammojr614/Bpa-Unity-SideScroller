@@ -32,8 +32,17 @@ public static int chargesUsed;
 					chargesUsed--;
 				}
 			}
-			
-		}
+
+            if(chargesUsed == 4)
+            {
+                MagicAttack.canAttack = false;
+            }
+            else
+            {
+                MagicAttack.canAttack = true;
+            }
+
+        }
 	}
 }
 
