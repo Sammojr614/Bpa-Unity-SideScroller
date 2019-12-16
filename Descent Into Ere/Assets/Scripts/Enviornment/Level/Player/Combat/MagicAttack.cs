@@ -4,79 +4,34 @@ using UnityEngine;
 
 public class MagicAttack : MonoBehaviour {
 
+    //Magic ball used by the player
     public GameObject magicBall;
 
+    //Not being used, will be removed
     public static float timeBtwAttack = 0f;
 
+    //Boolean that tells when the player deals magicDamage
     public static bool magicDamage;
 
+    //Determines whether the player can attack or not
     public static bool canAttack;
 
+    //Moving direction for the ball
     private Vector3 MovingDirection = Vector3.right;
 
+    /* On start, the player is not dealing any damage,
+     * so magicDamage is set to false, and they can attack
+     */
 	void Start () {
         magicDamage = false;
         canAttack = true;
 	}
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (Input.GetButtonDown("ManaAttack") && canAttack == true)
-        {
-            for (int i = 0; i < 200; i++)
-            {
-                if (this.transform.position.x >= -4f)
-                {
-                    MovingDirection = Vector3.right;
-                }
-                this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
-                if (collision.CompareTag("Enemy"))
-                {
-                    magicDamage = true;
-                    magicBall.SetActive(false);
-
-                }
-                else
-                {
-                    magicDamage = false;
-                    magicBall.SetActive(true);
-                }
-            }
-        }
-    }
-
-    void OnTriggerStay2D(Collider2D collision)
-    {
-        if (Input.GetButtonDown("ManaAttack") && canAttack == true)
-        {
-            for (int i = 0; i < 200; i++)
-            {
-                if (this.transform.position.x >= -4f)
-                {
-                    MovingDirection = Vector3.right;
-                }
-                this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
-                if (collision.CompareTag("Enemy"))
-                {
-                    magicDamage = true;
-                    magicBall.SetActive(false);
-
-                }
-                else
-                {
-                    magicDamage = false;
-                    magicBall.SetActive(true);
-                }
-            }
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-
-    }
-
-
+    /* Whenever the player uses the magicBall, 
+     * It's position will be updated using UpdateMovement();
+     * and if it collides with the enemy,
+     * it will dissapear, and deal magicDamage to the enemy
+     */
     void Update()
     {
         UpdateMovement();
@@ -90,29 +45,24 @@ public class MagicAttack : MonoBehaviour {
         }
     }
 
+    /* When the player presses q, the magic ball's position
+     * will move to right x times (this will probably change later),
+     */
     void UpdateMovement()
     {
-        if (Input.GetButton("ManaAttack"))
+        if (Input.GetButtonDown("ManaAttack"))
         {
-            for (int i = 0; i < 105; i++)
+            for (int i = 0; i < 300; i++)
             {
-                if (this.transform.position.x >= -4f)
-                {
-                    MovingDirection = Vector3.right;
-                }
+                MovingDirection = Vector3.right;
                 this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
-                /*
-                if (magicBall.CompareTag("Enemy"))
-                {
-                    magicDamage = true;
-                    magicBall.SetActive(false);
-                }
-                else
-                {
-                    magicDamage = false;
-                    magicBall.SetActive(true);
-                }
-                */
+            }
+        }else if (Input.GetButtonUp("ManaAttack"))
+        {
+            for (int i = 0; i < 300; i++)
+            {
+                MovingDirection = Vector3.left;
+                this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
             }
         }
     }
