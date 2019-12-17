@@ -27,6 +27,30 @@ public class MagicAttack : MonoBehaviour {
         canAttack = true;
 	}
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            magicDamage = true;
+        }
+        else
+        {
+            magicDamage = false;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            magicDamage = true;
+        }
+        else
+        {
+            magicDamage = false;
+        }
+    }
+
     /* Whenever the player uses the magicBall, 
      * It's position will be updated using UpdateMovement();
      * and if it collides with the enemy,
@@ -35,14 +59,6 @@ public class MagicAttack : MonoBehaviour {
     void Update()
     {
         UpdateMovement();
-        if (magicBall.CompareTag("Enemy"))
-        {
-            magicDamage = true;
-            if(magicDamage == true)
-            {
-                magicBall.SetActive(false);
-            }
-        }
     }
 
     /* When the player presses q, the magic ball's position

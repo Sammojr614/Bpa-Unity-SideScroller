@@ -72,13 +72,15 @@ public class EnemyHealth : MonoBehaviour {
         }
         if (MagicAttack.magicDamage == true && hasHeart1 == true)
         {
-            invincibilityTime++;
+            invincibilityTime += 2;
             hasHeart1 = false;
+            MagicAttack.magicDamage = false;
         }
         if (MagicAttack.magicDamage == true && invincibilityTime < 1f && hasHeart2 == true)
         {
             invincibilityTime++;
             hasHeart2 = false;
+            MagicAttack.magicDamage = false;
         }
         if (MagicAttack.magicDamage == true && invincibilityTime < 1f && hasHeart3 == true)
         {
