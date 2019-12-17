@@ -4,13 +4,28 @@ using UnityEngine;
 
 public class MovingWall : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public float speed;
+    public float stoppingDistance;
+
+    private Transform target;
+
+
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(CursedPlatform.canFollow == true)
+        {
+            if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            }
+        }
+    }
 }
