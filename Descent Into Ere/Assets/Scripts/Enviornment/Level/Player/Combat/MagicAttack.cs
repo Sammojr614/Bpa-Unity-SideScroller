@@ -44,10 +44,12 @@ public class MagicAttack : MonoBehaviour {
         if (collision.CompareTag("Enemy"))
         {
             magicDamage = true;
+            canAttack = false;
         }
         else
         {
             magicDamage = false;
+            canAttack = true;
         }
     }
 
@@ -66,7 +68,7 @@ public class MagicAttack : MonoBehaviour {
      */
     void UpdateMovement()
     {
-        if (Input.GetButtonDown("ManaAttack"))
+        if (Input.GetButtonDown("ManaAttack") && canAttack == true)
         {
             for (int i = 0; i < 300; i++)
             {
