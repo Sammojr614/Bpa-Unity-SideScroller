@@ -4,33 +4,18 @@ using UnityEngine;
 
 public class SpikeActive : MonoBehaviour
 {
-
-    public GameObject spike;
-
-    //On start, the spike is hidden
-    void Start()
-    {
-        spike.SetActive(false);
-    }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            spike.SetActive(true);
+    public SpriteRenderer SpikeRenderer;
+void Start(){
+   SpikeRenderer.enabled = false;
+}
+    void OnTriggerEnter2D(Collider2D collider){
+        if(collider.CompareTag("Player")){
+            SpikeRenderer.enabled = true;
         }
     }
-
-    void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            spike.SetActive(true);
+    void OnTriggerExit2D(Collider2D collider){
+        if(collider.CompareTag("Player")){
+            SpikeRenderer.enabled = false;
         }
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        spike.SetActive(false);
     }
 }
