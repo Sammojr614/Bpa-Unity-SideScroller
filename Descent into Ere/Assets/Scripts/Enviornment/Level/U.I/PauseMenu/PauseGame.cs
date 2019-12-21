@@ -19,22 +19,27 @@ public class PauseGame : MonoBehaviour {
 
     void Update () {
         if (Input.GetButtonDown("Cancel")) {
-            if (isGamePaused)
+            if (isGamePaused == true)
             {
                 ResumeGame();
             }
-            else
+            else if (isGamePaused == false)
             {
-                Time.timeScale = 0;
-                gamePaused = true;
-                isGamePaused = gamePaused;
-                Cursor.visible = true;
-                pauseMenu.SetActive(true);
-                resumeButton.SetActive(true);
-                quitButton.SetActive(true);
+                PausedGame();
             }
 
         }
+    }
+
+    public void PausedGame()
+    {
+        Time.timeScale = 0;
+        gamePaused = true;
+        isGamePaused = gamePaused;
+        Cursor.visible = true;
+        pauseMenu.SetActive(true);
+        resumeButton.SetActive(true);
+        quitButton.SetActive(true);
     }
 
     public void ResumeGame()
