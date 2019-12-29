@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 17967213}
   m_Layer: 0
   m_Name: Elevating Platform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,8 +311,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de5e99783918d4925833192625198d8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: 7
-  max: 18
+  min: 5
+  max: 17
 --- !u!212 &17967212
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3266,6 +3266,8 @@ GameObject:
   - component: {fileID: 682456356}
   - component: {fileID: 682456358}
   - component: {fileID: 682456357}
+  - component: {fileID: 682456359}
+  - component: {fileID: 682456360}
   m_Layer: 0
   m_Name: Ice Platform (1)
   m_TagString: Ground
@@ -3362,6 +3364,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &682456359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682456355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf4cb2a08ae8874789256f9dd148926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 880596570}
+  facingLeft: 0
+--- !u!61 &682456360
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682456355}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06402969, y: 0.30922672}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6160803, y: 0.99769396}
+  m_EdgeRadius: 0
 --- !u!1 &690415490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3590,9 +3632,11 @@ GameObject:
   - component: {fileID: 728899051}
   - component: {fileID: 728899050}
   - component: {fileID: 728899049}
+  - component: {fileID: 728899053}
+  - component: {fileID: 728899054}
   m_Layer: 0
   m_Name: Cracked Ice Platform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3719,6 +3763,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &728899053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728899047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf4cb2a08ae8874789256f9dd148926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 880596570}
+  facingLeft: 0
+--- !u!61 &728899054
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728899047}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.063216686, y: 0.27925682}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6232705, y: 1.0467529}
+  m_EdgeRadius: 0
 --- !u!1 &749021493
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,9 +4103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xMin: 0
-  xMax: 35
+  xMax: 37
   yMin: -5
-  yMax: 10
+  yMax: 40
 --- !u!1 &774026960
 GameObject:
   m_ObjectHideFlags: 0
@@ -5624,6 +5708,8 @@ GameObject:
   - component: {fileID: 1108652226}
   - component: {fileID: 1108652228}
   - component: {fileID: 1108652227}
+  - component: {fileID: 1108652229}
+  - component: {fileID: 1108652230}
   m_Layer: 0
   m_Name: Ice Platform
   m_TagString: Ground
@@ -5720,6 +5806,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1108652229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108652225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf4cb2a08ae8874789256f9dd148926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 880596570}
+  facingLeft: 0
+--- !u!61 &1108652230
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108652225}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0945034, y: 0.2924099}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6229362, y: 1.1286583}
+  m_EdgeRadius: 0
 --- !u!1 &1124842753
 GameObject:
   m_ObjectHideFlags: 0
@@ -8096,6 +8222,8 @@ GameObject:
   - component: {fileID: 1595314504}
   - component: {fileID: 1595314503}
   - component: {fileID: 1595314502}
+  - component: {fileID: 1595314506}
+  - component: {fileID: 1595314507}
   m_Layer: 0
   m_Name: Cracked Ice Platform (1)
   m_TagString: Untagged
@@ -8225,6 +8353,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1595314506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595314500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf4cb2a08ae8874789256f9dd148926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 880596570}
+  facingLeft: 0
+--- !u!61 &1595314507
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595314500}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.063216686, y: 0.29222488}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6232705, y: 1.072689}
+  m_EdgeRadius: 0
 --- !u!1 &1597943726
 GameObject:
   m_ObjectHideFlags: 0
@@ -8236,6 +8404,8 @@ GameObject:
   - component: {fileID: 1597943727}
   - component: {fileID: 1597943729}
   - component: {fileID: 1597943728}
+  - component: {fileID: 1597943730}
+  - component: {fileID: 1597943731}
   m_Layer: 0
   m_Name: Ice Platform (2)
   m_TagString: Ground
@@ -8332,6 +8502,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1597943730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597943726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf4cb2a08ae8874789256f9dd148926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 880596570}
+  facingLeft: 0
+--- !u!61 &1597943731
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597943726}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07174504, y: 0.30832928}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.604221, y: 0.9984894}
+  m_EdgeRadius: 0
 --- !u!1 &1600739539
 GameObject:
   m_ObjectHideFlags: 0
@@ -8660,6 +8870,8 @@ GameObject:
   - component: {fileID: 1715624397}
   - component: {fileID: 1715624399}
   - component: {fileID: 1715624398}
+  - component: {fileID: 1715624400}
+  - component: {fileID: 1715624401}
   m_Layer: 0
   m_Name: Ice Platform (3)
   m_TagString: Ground
@@ -8694,7 +8906,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07174504, y: 0.25651425}
+  m_Offset: {x: -0.07174504, y: 0.28242177}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8705,7 +8917,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.604221, y: 0.8948593}
+  m_Size: {x: 2.604221, y: 0.94667435}
   m_EdgeRadius: 0
 --- !u!212 &1715624399
 SpriteRenderer:
@@ -8756,6 +8968,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1715624400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715624396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf4cb2a08ae8874789256f9dd148926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 880596570}
+  facingLeft: 0
+--- !u!61 &1715624401
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715624396}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.07174504, y: 0.32775944}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.604221, y: 1.0373497}
+  m_EdgeRadius: 0
 --- !u!1 &1741895565
 GameObject:
   m_ObjectHideFlags: 0
