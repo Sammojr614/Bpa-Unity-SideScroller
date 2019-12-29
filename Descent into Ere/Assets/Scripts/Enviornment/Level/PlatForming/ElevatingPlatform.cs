@@ -10,6 +10,8 @@ public class ElevatingPlatform : MonoBehaviour {
     //Direction the platform is moving
     private Vector3 MovingDirection = Vector3.up;
 
+    public GameObject player;
+
     //Used to update movement
 	void Update () {
         UpdateMovement();
@@ -32,5 +34,13 @@ public class ElevatingPlatform : MonoBehaviour {
             MovingDirection = Vector3.up;
         }
         this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            player.transform.Translate(MovingDirection * Time.smoothDeltaTime);
+        }
     }
 }
