@@ -22,19 +22,25 @@ public class HangmanHealth : MonoBehaviour
 
     //Hangman
     public GameObject hangman;
+    //Exit that appears after hangman is defeated
+    public GameObject exit;
 
     //Hangman has 16 health, and invicibility time is 0f on start
     void Start()
     {
         invincibilityTime = 0f;
         totalHealth = 16;
+        exit.SetActive(false);
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         Debug.Log(totalHealth);
+        /* If the player attacks with a knife, or magic,
+         * Hangman will take one damage, and invincibility time will incriment by one.
+         * If the player attacks with the steak knife,
+         * Hangman will take two damage, and invincibility time will incriment by one.
+         */
         if(Knife.damaged == true && invincibilityTime <= 0f)
         {
             invincibilityTime++;
@@ -60,12 +66,22 @@ public class HangmanHealth : MonoBehaviour
             invincibilityTime = 0f;
         }
 
+        /* When hangman reaches zero health,
+         * he will die, and the final healthbar charge will be disabled.
+         * Also, the Knife, SteakKnife, and MagicAttack will stop doing damage,
+         * to not continously drain stamina/mana from the player
+         */
         if(totalHealth <= 0)
         {
             DestroyObject(hangman);
             charge8.SetActive(false);
+            Knife.damaged = false;
+            SteakKnife.damagedSteak = false;
+            MagicAttack.magicDamage = false;
+            exit.SetActive(true);
         }
 
+        //Every 2 health hangman loses, a charge is disabled
         if (totalHealth <= 14)
         {
             charge1.SetActive(false);
