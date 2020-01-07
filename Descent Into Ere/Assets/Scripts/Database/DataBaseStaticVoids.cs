@@ -54,6 +54,7 @@ public void getHealth(string commandText){
 		}
 	}
 }
+//For Seeing What Levels Have Been Completed
 public void levelCheck(string commandText){
 	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
 		dbCon.Open();

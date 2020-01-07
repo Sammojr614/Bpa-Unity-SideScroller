@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TitleClickEvent : MonoBehaviour {
-
-	public Animator TitleAnimator;
-	void Start () {
-		TitleAnimator = GetComponent<Animator>();
+	
+	public SpriteRenderer ButtonRenderer;
+	void OnMouseEnter(){
+	ButtonRenderer.color = Color.gray;
+	}
+	void OnMouseExit(){
+		ButtonRenderer.color = Color.white;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if(StartClickSensor.clicked == true){
-			TitleAnimator.SetBool("StartButtonClicked", true);
-		}
-	}
-}
+}	
