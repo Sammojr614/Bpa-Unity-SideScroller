@@ -6,11 +6,14 @@ public class Coin : MonoBehaviour {
 	public GameObject Currency;
 	public static bool CrystalCollected;
 	DbManager dataManager = DbManager.Instance;
-	void OnTriggerEnter2D(Collider2D collider){
-		Currency.SetActive(false);
-		CrystalCounter.ThirdDiget++;
-		ShopTable.amountOfPlayerCurrency++;
-		dataManager.normalDbCommand("UPDATE PlayerSaveData SET PlayerCurrency='" + Convert.ToInt32(ShopTable.amountOfPlayerCurrency) + "'");
-		
+	void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player"))
+        {
+            Currency.SetActive(false);
+            CrystalCounter.ThirdDiget++;
+            ShopTable.amountOfPlayerCurrency++;
+            dataManager.normalDbCommand("UPDATE PlayerSaveData SET PlayerCurrency='" + Convert.ToInt32(ShopTable.amountOfPlayerCurrency) + "'");
+        }
 	}
 }
