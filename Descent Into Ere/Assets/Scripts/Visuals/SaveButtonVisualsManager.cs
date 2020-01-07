@@ -8,11 +8,13 @@ public class SaveButtonVisualsManager : MonoBehaviour
     public GameObject SizeBig;
     public GameObject LoadButton;
     public GameObject ExitoutofSaveButton;
+    public GameObject Location;
     void Start(){
         SizeSmall.SetActive(true);
         SizeBig.SetActive(false);
         LoadButton.SetActive(false);
         ExitoutofSaveButton.SetActive(false);
+        Location.SetActive(false);
     }
    void OnMouseDown(){
        if(Input.GetMouseButtonDown(0)){
@@ -20,6 +22,7 @@ public class SaveButtonVisualsManager : MonoBehaviour
            SizeSmall.SetActive(false);
            LoadButton.SetActive(true);
            ExitoutofSaveButton.SetActive(true);
+           Location.SetActive(true);
        }
    }
 }
