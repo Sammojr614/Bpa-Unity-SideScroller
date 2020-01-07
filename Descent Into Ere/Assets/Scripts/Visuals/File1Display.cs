@@ -13,6 +13,8 @@ public class File1Display : MonoBehaviour
     public Text Health;
   void Start(){
     GetPlayerLocationFromDb("SELECT*FROM PlayerSaveData");
+        GettingHealthForFileDisplay("SELECT*FROM PlayerSaveData");
+        GettingLivesForFileDisplay("SELECT*FROM PlayerSaveData");
   }
   //Getting the Player Location
   public void GetPlayerLocationFromDb(string commandText){
