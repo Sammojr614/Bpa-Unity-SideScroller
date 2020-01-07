@@ -6,11 +6,17 @@ public class GameOverStuff : MonoBehaviour
 {
     public GameObject ContinueButton;
     public GameObject QuitButton;
-     void OnMouseDown()
+    void Start()
+    {
+        ContinueButton.SetActive(false);
+        QuitButton.SetActive(false);
+    }
+    void OnMouseDown()
     {
         if (Input.GetMouseButtonDown(0))
         {
-
+            ContinueButton.SetActive(true);
+            QuitButton.SetActive(true);
         }
     }
 }
