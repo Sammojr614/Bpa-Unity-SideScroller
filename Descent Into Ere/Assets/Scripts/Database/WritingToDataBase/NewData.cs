@@ -6,10 +6,7 @@ using UnityEngine.SceneManagement;
 public class NewData : MonoBehaviour {
 	SpriteRenderer NewDataRenderer;
 DbManager dataManger = DbManager.Instance;
-void Start(){
-	NewDataRenderer = gameObject.GetComponent<SpriteRenderer>();
-	dataManger.TableCheckforRenderer("SELECT*FROM PlayerSaveData",NewDataRenderer, false, true);
-}
+
 	void OnMouseDown(){
 		if(Input.GetMouseButtonDown(0)){
 													/*Main PlayerSave */
