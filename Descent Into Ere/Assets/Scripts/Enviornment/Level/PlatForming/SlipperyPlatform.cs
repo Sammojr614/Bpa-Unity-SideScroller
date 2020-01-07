@@ -4,39 +4,26 @@ using UnityEngine;
 
 public class SlipperyPlatform : MonoBehaviour
 {
-
+    //Player
     public GameObject player;
 
-    public bool facingLeft;
-
+    //Direction the player will slide
     private Vector3 MovingDirection;
 
-    void Start()
-    {
-        facingLeft = false;
-    }
-
-    void Update()
-    {
-        if (Input.GetButton("MoveRight"))
-        {
-            facingLeft = false;
-        }
-        else if (Input.GetButton("MovingLeft"))
-        {
-            facingLeft = true;
-        }
-    }
-
+    /* Upon entering the slippery platform trigger,
+     * if the player is facing left, they will begin to slide left.
+     * Conversly, if the player is facing right,
+     * they will begin to slide right.
+     */
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if(facingLeft == true)
+            if(Flipper.facingLeft == true)
             {
                 MovingDirection = Vector3.left;
             }
-            else if(facingLeft == false)
+            else if(Flipper.facingLeft == false)
             {
                 MovingDirection = Vector3.right;
             }
@@ -44,15 +31,20 @@ public class SlipperyPlatform : MonoBehaviour
         }
     }
 
+    /* While colliding with the slippery platform trigger,
+     * if the player is facing left, they will begin to slide left.
+     * Conversly, if the player is facing right,
+     * they will begin to slide right.
+     */
     void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (facingLeft == true)
+            if (Flipper.facingLeft == true)
             {
                 MovingDirection = Vector3.left;
             }
-            else if (facingLeft == false)
+            else if (Flipper.facingLeft == false)
             {
                 MovingDirection = Vector3.right;
             }
@@ -60,6 +52,7 @@ public class SlipperyPlatform : MonoBehaviour
         }
     }
 
+    //When the player exits the trigger, they will stop sliding
     void OnTriggerExit2D(Collider2D collision)
     {
         
