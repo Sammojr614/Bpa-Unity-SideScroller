@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SteakKnife : MonoBehaviour {
 
-    public GameObject steakKnife;
+    public GameObject steakKnifeRight;
+    public GameObject steakKnifeLeft;
 
     public static float timeBtwAttack = 1f;
 

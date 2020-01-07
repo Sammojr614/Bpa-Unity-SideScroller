@@ -36,7 +36,7 @@ public class Arrow : MonoBehaviour
             this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
             if(this.transform.position.x <= xMax)
             {
-                this.transform.position.x.Equals(startingPosX);
+                arrow.transform.position.Equals(startingPosX);
             }
         }
         /*

@@ -5,20 +5,29 @@ using UnityEngine;
 public class WeaponActive : MonoBehaviour {
 
     //Knife used by the player
-    public GameObject ButterKnife;
+    public GameObject ButterKnifeRight;
+    public GameObject ButterKnifeLeft;
     //SteakKnife used by the player
-    public GameObject SteakKnife;
+    public GameObject SteakKnifeRight;
+    public GameObject SteakKnifeLeft;
     //Checks if knife is drawn
     public static bool KnifeDrawn;
 
     //On Start, the knife is equipped
 	void Start () {
-        if(LoadData.PlayerHaveKnifeUpgrade == true){
-        ButterKnife.SetActive(false);
-        SteakKnife.SetActive(true);
-        }else{
-            ButterKnife.SetActive(true);
-            SteakKnife.SetActive(false);
+        if(LoadData.PlayerHaveKnifeUpgrade == true)
+        {
+            ButterKnifeRight.SetActive(false);
+            ButterKnifeLeft.SetActive(false);
+            SteakKnifeRight.SetActive(true);
+            SteakKnifeLeft.SetActive(true);
+        }
+        else
+        {
+            ButterKnifeRight.SetActive(true);
+            ButterKnifeLeft.SetActive(true);
+            SteakKnifeRight.SetActive(false);
+            SteakKnifeLeft.SetActive(false);
         }
         
         KnifeDrawn = true;
@@ -34,18 +43,41 @@ public class WeaponActive : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.F) && KnifeDrawn == true)
         {
-            ButterKnife.SetActive(false);
-            SteakKnife.SetActive(false);
+            if(Flipper.facingLeft == true)
+            {
+                ButterKnifeLeft.SetActive(false);
+                SteakKnifeLeft.SetActive(false);
+            }
+            else
+            {
+                ButterKnifeRight.SetActive(false);
+                SteakKnifeRight.SetActive(false);
+            }
             KnifeDrawn = false;
         }
         else if(Input.GetKeyDown(KeyCode.F) && KnifeDrawn == false)
         {
-            if(LoadData.PlayerHaveKnifeUpgrade == false){
-            SteakKnife.SetActive(false);
-            ButterKnife.SetActive(true);
-            }else if(LoadData.PlayerHaveKnifeUpgrade == true){
-                SteakKnife.SetActive(true);
-                ButterKnife.SetActive(false);
+            if(LoadData.PlayerHaveKnifeUpgrade == false)
+            {
+                if(Flipper.facingLeft == true)
+                {
+                    ButterKnifeLeft.SetActive(true);
+                }
+                else
+                {
+                    ButterKnifeRight.SetActive(true);
+                }
+            }
+            else if(LoadData.PlayerHaveKnifeUpgrade == true)
+            {
+                if(Flipper.facingLeft == true)
+                {
+                    SteakKnifeLeft.SetActive(true);
+                }
+                else
+                {
+                    SteakKnifeRight.SetActive(true);
+                }
             }
             KnifeDrawn = true;
         }

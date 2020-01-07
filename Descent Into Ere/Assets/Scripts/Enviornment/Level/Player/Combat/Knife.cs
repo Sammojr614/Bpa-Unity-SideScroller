@@ -5,7 +5,8 @@ using UnityEngine;
 public class Knife : MonoBehaviour {
 
     //Knife the player uses
-    public GameObject knife;
+    public GameObject knifeRight;
+    public GameObject knifeLeft;
 
     GameObject enemy;
     //Tells the game if player is attacking
