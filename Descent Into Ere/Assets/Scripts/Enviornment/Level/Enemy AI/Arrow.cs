@@ -14,6 +14,9 @@ public class Arrow : MonoBehaviour
     //Starting x value
     public float startingPosX;
 
+    //Checks if the arrow is firing left
+    public bool fireLeft;
+
     //Direction the arrow is moving
     private Vector3 MovingDirection;
 
@@ -35,15 +38,31 @@ public class Arrow : MonoBehaviour
      */
     void UpdateMovement()
     {
-        if(this.transform.position.x < xMax)
+        if(fireLeft == false)
         {
-            MovingDirection = Vector3.right;
-            this.transform.Translate(MovingDirection * Time.smoothDeltaTime * 2.5f);
+            if (this.transform.position.x < xMax)
+            {
+                MovingDirection = Vector3.right;
+                this.transform.Translate(MovingDirection * Time.smoothDeltaTime * 2.5f);
+            }
+            else
+            {
+                MovingDirection = Vector3.left;
+                this.transform.Translate(MovingDirection * 10);
+            }
         }
         else
         {
-            MovingDirection = Vector3.left;
-            this.transform.Translate(MovingDirection * 10);
+            if (this.transform.position.x < xMax)
+            {
+                MovingDirection = Vector3.left;
+                this.transform.Translate(MovingDirection * Time.smoothDeltaTime * 2.5f);
+            }
+            else
+            {
+                MovingDirection = Vector3.right;
+                this.transform.Translate(MovingDirection * 10);
+            }
         }
 
     }
