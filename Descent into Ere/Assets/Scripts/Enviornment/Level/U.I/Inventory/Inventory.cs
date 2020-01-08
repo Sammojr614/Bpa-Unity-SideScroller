@@ -63,6 +63,11 @@ public static bool haveBossKey;
                 }else if(inventoryOpen == false){
                     itemSlot1.SetActive(false);
                 }
+                if(NumberOfPotions <= 0 && inventoryOpen == true){
+                    YouCantUseThatItem.enabled = true;
+                }else if(NumberOfPotions > 0){
+                    YouCantUseThatItem.enabled = false;
+                }
     }
         }
     }
