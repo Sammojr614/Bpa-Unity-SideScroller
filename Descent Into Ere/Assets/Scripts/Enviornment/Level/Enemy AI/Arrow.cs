@@ -17,36 +17,34 @@ public class Arrow : MonoBehaviour
     //Direction the arrow is moving
     private Vector3 MovingDirection;
 
+    //On start, the arrow is fired
     void Start()
     {
         arrow.SetActive(true);
     }
 
-    // Update is called once per frame
+    // Updates movement of the arrow
     void Update()
     {
         UpdateMovement();
     }
 
+    /* Once the arrow shoots, it moves to the right,
+     * until it reaches a cerain point (xMax),
+     * then, it goes back to the starting position, and fires again to the right
+     */
     void UpdateMovement()
     {
-        if(this.transform.position.x > startingPosX)
+        if(this.transform.position.x < xMax)
         {
             MovingDirection = Vector3.right;
-            this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
-            if(this.transform.position.x <= xMax)
-            {
-                arrow.transform.position.Equals(startingPosX);
-            }
+            this.transform.Translate(MovingDirection * Time.smoothDeltaTime * 2.5f);
         }
-        /*
         else
         {
-            this.transform.position.x.Equals(startingPosX);
+            MovingDirection = Vector3.left;
+            this.transform.Translate(MovingDirection * 10);
         }
-        
-        this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
-        */
 
     }
 }
