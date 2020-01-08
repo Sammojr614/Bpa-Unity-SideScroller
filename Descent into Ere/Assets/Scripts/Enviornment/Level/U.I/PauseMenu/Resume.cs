@@ -21,7 +21,7 @@ public class Resume : MonoBehaviour {
          * PauseGame script
          */
         if(Input.GetMouseButtonDown(0)){
-            resume.GetComponent<PauseGame>().ResumeGame();
+            resume.GetComponent<PauseMenu>().ResumeGame();
         }else{
             if(PauseGame.isGamePaused == false){
                 gameResumed = false;

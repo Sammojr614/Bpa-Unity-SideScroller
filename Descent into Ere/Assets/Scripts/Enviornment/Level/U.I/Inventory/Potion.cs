@@ -7,6 +7,13 @@ public class Potion : MonoBehaviour {
     public Animator health;
 
     public GameObject potion;
+    void Start(){
+        if(Inventory.NumberOfPotions <= 0){
+            potion.SetActive(false);
+        }else if(Inventory.NumberOfItems > 0){
+            potion.SetActive(true);
+        }
+    }
 
     public void OnMouseDown()
     {
