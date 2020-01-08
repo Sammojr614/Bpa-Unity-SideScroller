@@ -53,7 +53,7 @@ public class Arrow : MonoBehaviour
         }
         else
         {
-            if (this.transform.position.x < xMax)
+            if (this.transform.position.x > xMax)
             {
                 MovingDirection = Vector3.left;
                 this.transform.Translate(MovingDirection * Time.smoothDeltaTime * 2.5f);

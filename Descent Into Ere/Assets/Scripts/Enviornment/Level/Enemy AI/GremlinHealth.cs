@@ -16,18 +16,15 @@ public class GremlinHealth : MonoBehaviour
     {
         if (collision.CompareTag("Player") && Knife.damaged == true)
         {
-            DestroyObject(gremlin);
-            Knife.damaged = false;
+            gremlin.SetActive(false);
         }
         else if(collision.CompareTag("Player") && SteakKnife.damagedSteak == true)
         {
-            DestroyObject(gremlin);
-            SteakKnife.damagedSteak = false;
+            gremlin.SetActive(false);
         }
         else if(collision.CompareTag("Player") && MagicAttack.magicDamage == true)
         {
-            DestroyObject(gremlin);
-            MagicAttack.magicDamage = false;
+            gremlin.SetActive(false);
         }
     }
 
@@ -35,23 +32,22 @@ public class GremlinHealth : MonoBehaviour
     {
         if (collision.CompareTag("Player") && Knife.damaged == true)
         {
-            DestroyObject(gremlin);
-            Knife.damaged = false;
+            gremlin.SetActive(false);
         }
         else if (collision.CompareTag("Player") && SteakKnife.damagedSteak == true)
         {
-            DestroyObject(gremlin);
-            SteakKnife.damagedSteak = false;
+            gremlin.SetActive(false);
         }
         else if (collision.CompareTag("Player") && MagicAttack.magicDamage == true)
         {
-            DestroyObject(gremlin);
-            MagicAttack.magicDamage = false;
+            gremlin.SetActive(false);
         }
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        
+        Knife.damaged = false;
+        SteakKnife.damagedSteak = false;
+        MagicAttack.magicDamage = false;
     }
 }
