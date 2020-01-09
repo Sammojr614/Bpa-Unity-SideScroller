@@ -2943,7 +2943,6 @@ MonoBehaviour:
   itemSlot1: {fileID: 702027558}
   itemSlot2: {fileID: 2051220205}
   itemSlot3: {fileID: 1199377329}
-  YouCantUseThatItem: {fileID: 0}
 --- !u!222 &603331953
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3159,7 +3158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 1867429131}
-  potion: {fileID: 702027558}
+  useButton: {fileID: 0}
+  CantUseText: {fileID: 0}
 --- !u!61 &702027561
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6459,7 +6459,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magicBall: {fileID: 2014187090}
-  startPos: -3.646
 --- !u!1 &1380970804
 GameObject:
   m_ObjectHideFlags: 0
@@ -7793,6 +7792,53 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0819724, y: 0.05413246}
   m_EdgeRadius: 0
+--- !u!1 &1772095488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1772095489}
+  - component: {fileID: 1772095490}
+  m_Layer: 5
+  m_Name: ManaManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1772095489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772095488}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1976530080}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1772095490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772095488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f370c915ae4490e8349fbd768706e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Charge1: {fileID: 940915256}
+  Charge2: {fileID: 2051166966}
+  Charge3: {fileID: 368471334}
+  Charge4: {fileID: 1226868475}
 --- !u!1 &1774911947
 GameObject:
   m_ObjectHideFlags: 0
@@ -8579,6 +8625,7 @@ Transform:
   - {fileID: 2051166967}
   - {fileID: 368471335}
   - {fileID: 1226868476}
+  - {fileID: 1772095489}
   m_Father: {fileID: 1323670992}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8589,16 +8636,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976530079}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18f370c915ae4490e8349fbd768706e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Charges:
-  - {fileID: 940915256}
-  - {fileID: 2051166966}
-  - {fileID: 368471334}
-  - {fileID: 1226868475}
+  Charge1: {fileID: 940915256}
+  Charge2: {fileID: 2051166966}
+  Charge3: {fileID: 368471334}
+  Charge4: {fileID: 1226868475}
 --- !u!212 &1976530082
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8734,7 +8780,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magicBall: {fileID: 2014187090}
-  startPos: -3.646
 --- !u!61 &2014187093
 BoxCollider2D:
   m_ObjectHideFlags: 0

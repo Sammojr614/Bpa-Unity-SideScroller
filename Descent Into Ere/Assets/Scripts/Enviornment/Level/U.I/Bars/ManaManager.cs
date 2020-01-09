@@ -3,9 +3,91 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ManaManager : MonoBehaviour {
-public GameObject[] Charges;
-public static int chargesUsed;
 
+    //Charges of mana the player can use
+    public GameObject Charge1;
+    public GameObject Charge2;
+    public GameObject Charge3;
+    public GameObject Charge4;
+
+    //Amount of charges used
+    public static int chargesUsed;
+
+    /* Amount of mana regenered when the player is not using mana
+     * and the mana bar is not full
+     */
+    private float regenTime = 0.5f;
+
+    //Total amount of mana the player can use
+    private float totalMana = 10f;
+
+    void Start()
+    {
+        totalMana = 10f;
+    }
+
+    void Update()
+    {
+        Debug.Log(totalMana);
+        if (Input.GetButtonDown("ManaAttack"))
+        {
+            if(totalMana != 0f && MagicAttack.canAttack == true)
+            {
+                totalMana -= 2.5f;
+            }
+        }
+        else
+        {
+            if (totalMana < 10f)
+            {
+                totalMana += regenTime * Time.deltaTime * 5;
+            }
+            else
+            {
+                totalMana = 10f;
+            }
+        }
+
+        if (totalMana <= 7.5f)
+        {
+            Charge1.SetActive(false);
+        }
+        else if (totalMana > 7.5f)
+        {
+            Charge1.SetActive(true);
+        }
+
+        if (totalMana <= 5f)
+        {
+            Charge2.SetActive(false);
+        }
+        else if (totalMana > 5f)
+        {
+            Charge2.SetActive(true);
+        }
+
+        if (totalMana <= 2.5f)
+        {
+            Charge3.SetActive(false);
+        }
+        else if (totalMana > 2.5f)
+        {
+            Charge3.SetActive(true);
+        }
+
+        if (totalMana <= 0f)
+        {
+            Charge4.SetActive(false);
+            MagicAttack.canAttack = false;
+        }
+        else if (totalMana > 0f)
+        {
+            Charge4.SetActive(true);
+            MagicAttack.canAttack = true;
+        }
+    }
+
+    /*
 	void Update(){
 		if(Input.GetButtonDown("ManaAttack")){
 			chargesUsed++;
@@ -44,5 +126,6 @@ public static int chargesUsed;
 
         }
 	}
+	*/
 }
 

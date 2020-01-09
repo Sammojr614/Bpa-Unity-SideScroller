@@ -47,12 +47,10 @@ public class MagicAttack : MonoBehaviour {
         if (collision.CompareTag("Enemy"))
         {
             magicDamage = true;
-            canAttack = false;
         }
         else
         {
             magicDamage = false;
-            canAttack = true;
         }
     }
 
@@ -75,7 +73,7 @@ public class MagicAttack : MonoBehaviour {
     {
         if(Flipper.facingLeft == false)
         {
-            if (Input.GetButtonDown("ManaAttack"))
+            if (Input.GetButtonDown("ManaAttack") && canAttack == true)
             {
                 magicBall.SetActive(true);
                 MovingDirection = Vector3.right;
@@ -91,7 +89,7 @@ public class MagicAttack : MonoBehaviour {
         }
         else
         {
-            if (Input.GetButtonDown("ManaAttack"))
+            if (Input.GetButtonDown("ManaAttack") && canAttack == true)
             {
                 magicBall.SetActive(true);
                 MovingDirection = Vector3.left;
