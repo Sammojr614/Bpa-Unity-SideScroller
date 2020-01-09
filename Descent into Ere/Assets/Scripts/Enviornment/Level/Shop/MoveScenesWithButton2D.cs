@@ -6,7 +6,7 @@ using System;
 
 public class MoveScenesWithButton2D : MonoBehaviour {
 	DbManager dataManager = DbManager.Instance;
-	public string SceneName;
+	string SceneName;
 	public static string PrevScene;
 	
 	void Start(){

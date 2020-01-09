@@ -9,6 +9,9 @@ public class PotionButton : MonoBehaviour
    public SpriteRenderer PotionButtonGameObject;
    public Text UseButtonText;
   void Update(){
+      if(Inventory.inventoryOpen == false){
+          CantUseText.enabled = false;
+      }
       if(Input.GetMouseButtonDown(0)){
           if(Inventory.NumberOfPotions >= 0){
               CantUseText.enabled = true;
