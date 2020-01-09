@@ -19,12 +19,18 @@ public class MagicAttack : MonoBehaviour {
     //Moving direction for the ball
     private Vector3 MovingDirection = Vector3.right;
 
+    public float startPos;
+
+    private float endPos;
+
     /* On start, the player is not dealing any damage,
      * so magicDamage is set to false, and they can attack
      */
 	void Start () {
+        magicBall.SetActive(false);
         magicDamage = false;
         canAttack = true;
+        endPos = startPos + 30f;
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -68,20 +74,21 @@ public class MagicAttack : MonoBehaviour {
      */
     void UpdateMovement()
     {
-        if (Input.GetButtonDown("ManaAttack") && canAttack == true)
+        if(Flipper.facingLeft == false)
         {
-            for (int i = 0; i < 300; i++)
+            if (Input.GetButtonDown("ManaAttack"))
             {
+                magicBall.SetActive(true);
                 MovingDirection = Vector3.right;
-                this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
+                magicBall.transform.Translate(MovingDirection * 10f);
             }
-        }else if (Input.GetButtonUp("ManaAttack"))
-        {
-            for (int i = 0; i < 300; i++)
+            else if (Input.GetButtonUp("ManaAttack"))
             {
                 MovingDirection = Vector3.left;
-                this.transform.Translate(MovingDirection * Time.smoothDeltaTime);
+                magicBall.transform.Translate(MovingDirection * 10f);
+                magicBall.SetActive(false);             
             }
+
         }
     }
 
