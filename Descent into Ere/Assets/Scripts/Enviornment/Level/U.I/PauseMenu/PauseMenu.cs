@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour {
 
-	public bool gamePaused = false;
+	public static bool gamePaused = false;
     public GameObject pauseMenu;
     public GameObject resumeButton;
     public GameObject quitButton;
+    public static bool resume;
    
     private void Start()
     {
@@ -27,7 +28,6 @@ public class PauseMenu : MonoBehaviour {
             {
                 PausedGame();
             }
-
         }
     }
 
@@ -35,7 +35,7 @@ public class PauseMenu : MonoBehaviour {
     {
         Time.timeScale = 0;
         gamePaused = true;
-         PauseGame.isGamePaused = gamePaused;
+        PauseGame.isGamePaused = gamePaused;
         Cursor.visible = true;
         pauseMenu.SetActive(true);
         resumeButton.SetActive(true);
