@@ -10,7 +10,6 @@ public class Inventory : MonoBehaviour {
 	public GameObject itemSlot1;
     public GameObject itemSlot2;
 	public GameObject itemSlot3;
-    public Text YouCantUseThatItem;
     public static bool inventoryOpen = false;
 public static int NumberOfItems = 0;
 public static int NumberOfPotions = 0;
@@ -62,11 +61,6 @@ public static bool haveBossKey;
                     itemSlot1.SetActive(true);
                 }else if(inventoryOpen == false){
                     itemSlot1.SetActive(false);
-                }
-                if(NumberOfPotions <= 0 && inventoryOpen == true){
-                    YouCantUseThatItem.enabled = true;
-                }else if(NumberOfPotions > 0){
-                    YouCantUseThatItem.enabled = false;
                 }
     }
         }
