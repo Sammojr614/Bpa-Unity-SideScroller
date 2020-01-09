@@ -3893,6 +3893,7 @@ GameObject:
   - component: {fileID: 797959999}
   - component: {fileID: 797959998}
   - component: {fileID: 797959997}
+  - component: {fileID: 797960002}
   m_Layer: 0
   m_Name: Use Button
   m_TagString: Untagged
@@ -3914,7 +3915,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 921498066}
   useButton: {fileID: 797959996}
-  CantUseText: {fileID: 1304665301}
 --- !u!61 &797959998
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4011,13 +4011,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797959996}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5512419, y: -4.6943855, z: 0}
-  m_LocalScale: {x: 0.7691938, y: 0.25446585, z: 1}
+  m_LocalPosition: {x: -0.401, y: -4.7, z: 0}
+  m_LocalScale: {x: 0.7200916, y: 0.3490699, z: 1}
   m_Children:
   - {fileID: 1671525426}
   m_Father: {fileID: 1433158839}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &797960002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797959996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a46f77fdebd404e6cb0a0ef9b6f6b2d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CantUseText: {fileID: 1304665301}
+  PotionButtonGameObject: {fileID: 797960000}
+  UseButtonText: {fileID: 1671525427}
 --- !u!1 &807603000
 GameObject:
   m_ObjectHideFlags: 0
@@ -6142,7 +6157,7 @@ GameObject:
   - component: {fileID: 1304665300}
   - component: {fileID: 1304665302}
   - component: {fileID: 1304665301}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Can't use Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6158,14 +6173,14 @@ RectTransform:
   m_GameObject: {fileID: 1304665299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.92246, y: 0.71355313, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2037825548}
-  m_RootOrder: 4
+  m_Father: {fileID: 1443833767}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.96, y: -0.72}
+  m_AnchoredPosition: {x: 1.3752493, y: -1.0490341}
   m_SizeDelta: {x: 3.991, y: 2.581}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1304665301
@@ -7295,6 +7310,7 @@ Transform:
   m_LocalScale: {x: 28.34188, y: 28.34188, z: 28.34188}
   m_Children:
   - {fileID: 2037825548}
+  - {fileID: 1304665300}
   m_Father: {fileID: 244115282}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7954,8 +7970,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1, y: -0.61}
-  m_SizeDelta: {x: 6.57, y: 6.32}
+  m_AnchoredPosition: {x: 0.42, y: -0.9}
+  m_SizeDelta: {x: 4.73, y: 4.398}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1671525427
 MonoBehaviour:
@@ -7982,7 +7998,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -10173,7 +10189,6 @@ Transform:
   - {fileID: 1433158839}
   - {fileID: 156645716}
   - {fileID: 1699649289}
-  - {fileID: 1304665300}
   m_Father: {fileID: 1443833767}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
