@@ -19,20 +19,17 @@ public class MagicAttack : MonoBehaviour {
     //Moving direction for the ball
     private Vector3 MovingDirection = Vector3.right;
 
-    public float startPos;
-
-    private float endPos;
-
     /* On start, the player is not dealing any damage,
-     * so magicDamage is set to false, and they can attack
+     * so magicDamage is set to false, and they can attack,
+     * and the magicBall is set to false    
      */
 	void Start () {
         magicBall.SetActive(false);
         magicDamage = false;
         canAttack = true;
-        endPos = startPos + 30f;
 	}
 
+    // If the magic ball collides with the enemy, it will take damage
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
@@ -69,8 +66,10 @@ public class MagicAttack : MonoBehaviour {
         UpdateMovement();
     }
 
-    /* When the player presses q, the magic ball's position
-     * will move to right x times (this will probably change later),
+    /* When the player presses q, the magic ball is activated and fired
+     * If the player is facing left, the magic ball will be fired left,
+     * and if the player is not facing left, the magic ball will be fired right.
+     * After it is fired, it will return to the player and be turned off.    
      */
     void UpdateMovement()
     {
@@ -89,6 +88,21 @@ public class MagicAttack : MonoBehaviour {
                 magicBall.SetActive(false);             
             }
 
+        }
+        else
+        {
+            if (Input.GetButtonDown("ManaAttack"))
+            {
+                magicBall.SetActive(true);
+                MovingDirection = Vector3.left;
+                magicBall.transform.Translate(MovingDirection * 10f);
+            }
+            else if (Input.GetButtonUp("ManaAttack"))
+            {
+                MovingDirection = Vector3.right;
+                magicBall.transform.Translate(MovingDirection * 10f);
+                magicBall.SetActive(false);
+            }
         }
     }
 
