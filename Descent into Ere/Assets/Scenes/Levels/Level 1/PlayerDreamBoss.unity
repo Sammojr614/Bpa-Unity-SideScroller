@@ -441,10 +441,12 @@ GameObject:
   m_Component:
   - component: {fileID: 131712210}
   - component: {fileID: 131712211}
-  - component: {fileID: 131712212}
+  - component: {fileID: 131712213}
+  - component: {fileID: 131712215}
+  - component: {fileID: 131712214}
   m_Layer: 0
   m_Name: BossBottle
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -461,7 +463,7 @@ Transform:
   m_LocalScale: {x: 0.4510017, y: 0.4510017, z: 0.4510017}
   m_Children: []
   m_Father: {fileID: 890828052}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &131712211
 SpriteRenderer:
@@ -512,7 +514,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &131712212
+--- !u!114 &131712213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -521,11 +523,49 @@ MonoBehaviour:
   m_GameObject: {fileID: 131712209}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b69225d4ebdaa4c90bb7de74a9d9ca33, type: 3}
+  m_Script: {fileID: 11500000, guid: 2036a2c100d224c8982ea213469ae38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BossBottle: {fileID: 1308380912}
-  Boss: {fileID: 1308380912}
+  speed: 1
+  stoppingDistance: 0.5
+--- !u!114 &131712214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131712209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61209924b368f427aa36dccb27f03ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &131712215
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131712209}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.022176266, y: 0.84109664}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8, y: 8}
+    newSize: {x: 8, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.5663176, y: 5.176941}
+  m_EdgeRadius: 0
 --- !u!1 &146714127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1671,6 +1711,8 @@ GameObject:
   m_Component:
   - component: {fileID: 408440086}
   - component: {fileID: 408440085}
+  - component: {fileID: 408440088}
+  - component: {fileID: 408440087}
   m_Layer: 0
   m_Name: Exit BossDoor
   m_TagString: Untagged
@@ -1716,7 +1758,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: be23024d3905c45188a755eb90c2f375, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b90c3b6e9c1424e3ca3c5099aa07914b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1735,12 +1777,51 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408440084}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.28, y: -1.73, z: 0}
+  m_LocalPosition: {x: 17.59, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 858504521}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &408440087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408440084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15612c93dc03b43e697abc564232f224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newLevel: MainHub
+--- !u!61 &408440088
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408440084}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.23874474, y: -0.25207758}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.3765411, y: 3.4958448}
+  m_EdgeRadius: 0
 --- !u!1 &432372209
 GameObject:
   m_ObjectHideFlags: 0
@@ -2321,6 +2402,133 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &653930869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653930870}
+  - component: {fileID: 653930871}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653930870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653930869}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 858504521}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &653930871
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653930869}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b13362bb58e6846ba8a81803fb77d87b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &670895090
 GameObject:
   m_ObjectHideFlags: 0
@@ -3130,6 +3338,7 @@ Transform:
   - {fileID: 770259594}
   - {fileID: 1387505183}
   - {fileID: 408440086}
+  - {fileID: 653930870}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3423,9 +3632,10 @@ GameObject:
   m_Component:
   - component: {fileID: 890828052}
   - component: {fileID: 890828053}
+  - component: {fileID: 890828054}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3441,8 +3651,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 131712210}
   - {fileID: 1308380913}
+  - {fileID: 131712210}
   m_Father: {fileID: 851791829}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3455,13 +3665,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 890828051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fea4a53bd2e847e4bc6224f5a0a6e41, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ec6b386bcfeb46aaa426223236ad7f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boss: {fileID: 1308380912}
-  Bottle: {fileID: 131712209}
-  LevelComplete: {fileID: 1387505182}
-  LevelExitDoor: {fileID: 408440084}
+  charge1: {fileID: 0}
+  charge2: {fileID: 0}
+  charge3: {fileID: 0}
+  charge4: {fileID: 0}
+  charge5: {fileID: 0}
+  charge6: {fileID: 0}
+  executioner: {fileID: 890828051}
+  exit: {fileID: 408440084}
+  bossMain: {fileID: 1308380912}
+  bossBottle: {fileID: 131712209}
+--- !u!61 &890828054
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890828051}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 15.78267, y: -1.3976264}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.846262, y: 6.8812017}
+  m_EdgeRadius: 0
 --- !u!1 &918182207
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,11 +5443,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1308380913}
   - component: {fileID: 1308380914}
-  - component: {fileID: 1308380915}
+  - component: {fileID: 1308380917}
   - component: {fileID: 1308380916}
+  - component: {fileID: 1308380915}
   m_Layer: 0
   m_Name: BossMain
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5217,12 +5460,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308380912}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.84, y: -0.33, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.84, y: -0.32999992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 890828052}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1308380914
 SpriteRenderer:
@@ -5282,14 +5525,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 1308380912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fea4a53bd2e847e4bc6224f5a0a6e41, type: 3}
+  m_Script: {fileID: 11500000, guid: 61209924b368f427aa36dccb27f03ad3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boss: {fileID: 1308380912}
-  Bottle: {fileID: 131712209}
-  LevelComplete: {fileID: 1387505182}
-  LevelExitDoor: {fileID: 408440084}
---- !u!114 &1308380916
+--- !u!61 &1308380916
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308380912}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.365932}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.44, y: 4.62}
+    newSize: {x: 2.44, y: 4.62}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.44, y: 3.888136}
+  m_EdgeRadius: 0
+--- !u!114 &1308380917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5298,19 +5563,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1308380912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a7ebbaa790a04ed6b1e0d7736a93889, type: 3}
+  m_Script: {fileID: 11500000, guid: 2036a2c100d224c8982ea213469ae38b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyHearts: {fileID: 0}
-  enemyHealth: 15
-  enemy: {fileID: 1308380912}
-  Heart1: {fileID: 0}
-  Heart2: {fileID: 0}
-  Heart3: {fileID: 0}
-  hasHeart1: 0
-  hasHeart2: 0
-  hasHeart3: 0
-  invincibilityTime: 0
+  speed: 2
+  stoppingDistance: 1
 --- !u!1 &1371951062
 GameObject:
   m_ObjectHideFlags: 0
@@ -7794,7 +8051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a54c4cb993c04f95be3c24136b9b60e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamePaused: 0
   pauseMenu: {fileID: 1239185962}
   resumeButton: {fileID: 749144611}
   quitButton: {fileID: 735279}

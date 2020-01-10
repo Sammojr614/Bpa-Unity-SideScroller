@@ -29,7 +29,6 @@ public class ManaManager : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log(totalMana);
         /* When the player attacks with the magic ball,
          * they will lose a quarter of the totalMana
          */
