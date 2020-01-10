@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class DevSceneButtons : MonoBehaviour
 {
-    public GameObject SmallButton;
-    public GameObject BigScreen;
-    public GameObject SmallinButton;
-    void Start(){
-        SmallButton.SetActive(true);
-        BigScreen.SetActive(false);
-        SmallButton.SetActive(false);
-    }
-    void OnMouseDown(){
-        if(Input.GetMouseButtonDown(0)){
-            BigScreen.SetActive(true);
-            SmallButton.SetActive(false);
-            SmallinButton.SetActive(true);
-        }
-    }
+   public GameObject SmallButton;
+   public GameObject BigScreen;
+   public GameObject ExitButton;
+   void Start(){
+       SmallButton.SetActive(true);
+       BigScreen.SetActive(false);
+       ExitButton.SetActive(false);
+   }
+   void OnMouseDown(){
+       if(Input.GetMouseButtonDown(0)){
+           SmallButton.SetActive(false);
+           BigScreen.SetActive(true);
+           ExitButton.SetActive(true);
+       }
+   }
 }
