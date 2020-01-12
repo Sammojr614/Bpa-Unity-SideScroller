@@ -97,6 +97,7 @@ public class ExecutionerHealth : MonoBehaviour
         {
             charge3.SetActive(false);
             bossMain.SetActive(true);
+            bossBottle.SetActive(false);
         }
 
         if(totalHealth <= 4)
