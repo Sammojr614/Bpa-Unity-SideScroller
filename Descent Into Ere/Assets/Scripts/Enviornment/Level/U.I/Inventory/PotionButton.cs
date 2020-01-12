@@ -8,25 +8,27 @@ public class PotionButton : MonoBehaviour
    public Text CantUseText;
    public SpriteRenderer PotionButtonGameObject;
    public Text UseButtonText;
+     void Start()
+    {
+        CantUseText.enabled = false; 
+    }
     void Update() {
         if (Inventory.inventoryOpen == false) {
             CantUseText.enabled = false;
         }
         if (Input.GetMouseButtonDown(0)) {
-            if (Inventory.NumberOfPotions >= 0) {
+            if (Inventory.NumberOfPotions >= 0 && Inventory.inventoryOpen == true) {
                 CantUseText.enabled = true;
                 PotionButtonGameObject.enabled = false;
                 UseButtonText.enabled = false;
             }
         }
         if (Input.GetMouseButtonUp(0)) {
-            CantUseText.enabled = false;
-            PotionButtonGameObject.enabled = true;
-            UseButtonText.enabled = true;
+                CantUseText.enabled = false;
+                PotionButtonGameObject.enabled = true;
+                UseButtonText.enabled = true;
+            
         }
-        if (Inventory.inventoryOpen == false)
-        {
-            CantUseText.enabled = false;
-        }
+       
   }
 }
