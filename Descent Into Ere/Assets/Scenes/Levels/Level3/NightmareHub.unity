@@ -1949,8 +1949,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1025159196}
   - component: {fileID: 1025159206}
-  - component: {fileID: 1025159205}
-  - component: {fileID: 1025159204}
   - component: {fileID: 1025159203}
   - component: {fileID: 1025159202}
   - component: {fileID: 1025159201}
@@ -1958,6 +1956,7 @@ GameObject:
   - component: {fileID: 1025159199}
   - component: {fileID: 1025159198}
   - component: {fileID: 1025159197}
+  - component: {fileID: 1025159204}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -2100,27 +2099,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1025159195}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8a710f54c1f0ec40a546a02d5262604, type: 3}
+  m_Script: {fileID: 11500000, guid: f012444e9f3d146418d2fe7a4154e612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprintSpeed: 8
-  PlayerAnimator: {fileID: 1025159203}
-  isGrounded: 0
---- !u!114 &1025159205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1025159195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a25d62af9cdbc34ab4d77b27f9458a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  isGrounded: 0
-  PlayerAnimator: {fileID: 1025159203}
 --- !u!61 &1025159206
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2991,7 +2972,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 30392aaf7f5f244809645eeee80f7530, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 74d3e6363bafc4c4e927233af787796d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4044,6 +4025,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1923317197}
   - component: {fileID: 1923317198}
+  - component: {fileID: 1923317199}
   m_Layer: 0
   m_Name: NightmareFog
   m_TagString: Untagged
@@ -4114,6 +4096,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1923317199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923317196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41bd6f97aed45fa469302e7e4ae830bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 1923317196}
 --- !u!1 &1969540607
 GameObject:
   m_ObjectHideFlags: 0
