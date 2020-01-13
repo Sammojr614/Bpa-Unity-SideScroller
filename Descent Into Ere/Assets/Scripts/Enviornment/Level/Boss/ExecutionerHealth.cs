@@ -79,11 +79,11 @@ public class ExecutionerHealth : MonoBehaviour
         if(totalHealth <= 0)
         {
             DestroyObject(executioner);
+            exit.SetActive(true);
             charge6.SetActive(false);
             Knife.damaged = false;
             SteakKnife.damagedSteak = false;
             MagicAttack.magicDamage = false;
-            exit.SetActive(true);
             bossDestroyed = true;
             totalHealth = 0;
         }
