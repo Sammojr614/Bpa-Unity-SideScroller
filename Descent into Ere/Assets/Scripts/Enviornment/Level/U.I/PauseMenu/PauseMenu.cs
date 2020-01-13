@@ -8,7 +8,6 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
     public GameObject resumeButton;
     public GameObject quitButton;
-    public GameObject ShopButton;
     public static bool resume;
    
     private void Start()
@@ -16,7 +15,6 @@ public class PauseMenu : MonoBehaviour {
         pauseMenu.SetActive(false);
         resumeButton.SetActive(false);
         quitButton.SetActive(false);
-        ShopButton.SetActive(false);
     }
 
 
@@ -42,7 +40,6 @@ public class PauseMenu : MonoBehaviour {
         pauseMenu.SetActive(true);
         resumeButton.SetActive(true);
         quitButton.SetActive(true);
-        ShopButton.SetActive(true);
     }
 
     public void ResumeGame()
@@ -50,7 +47,6 @@ public class PauseMenu : MonoBehaviour {
         pauseMenu.SetActive(false);
         resumeButton.SetActive(false);
         quitButton.SetActive(false);
-        ShopButton.SetActive(false);
         Cursor.visible = false;
         gamePaused = false;
         PauseGame.isGamePaused = gamePaused;
