@@ -31,16 +31,19 @@ public class ExecutionerHealth : MonoBehaviour
     //Bottle boss
     public GameObject bossBottle;
 
+    public static bool bossDestroyed;
+
     /* On start, the executioner has 12 total health,
      * invincibility time is set to 0f,
      * and the exit door is disabled
-     */    
+     */
     void Start()
     {
         invincibilityTime = 0f;
         totalHealth = 12;
         exit.SetActive(false);
         bossMain.SetActive(false);
+        bossDestroyed = false;
     }
 
     // Update is called once per frame
@@ -81,6 +84,8 @@ public class ExecutionerHealth : MonoBehaviour
             SteakKnife.damagedSteak = false;
             MagicAttack.magicDamage = false;
             exit.SetActive(true);
+            bossDestroyed = true;
+            totalHealth = 0;
         }
 
         if(totalHealth <= 10)
