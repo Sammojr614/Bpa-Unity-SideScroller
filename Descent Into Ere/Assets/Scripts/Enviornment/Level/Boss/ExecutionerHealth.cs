@@ -12,12 +12,14 @@ public class ExecutionerHealth : MonoBehaviour
     public GameObject charge4;
     public GameObject charge5;
     public GameObject charge6;
+    public GameObject charge7;
+    public GameObject charge8;
 
     //Invinicbility time after each attack
     private float invincibilityTime;
 
     //Total health executioner has
-    private int totalHealth;
+    private float totalHealth;
 
     //Executioner
     public GameObject executioner;
@@ -25,13 +27,6 @@ public class ExecutionerHealth : MonoBehaviour
     //Exit door after the boss dies
     public GameObject exit;
 
-    //Main boss
-    public GameObject bossMain;
-
-    //Bottle boss
-    public GameObject bossBottle;
-
-    public static bool bossDestroyed;
 
     /* On start, the executioner has 12 total health,
      * invincibility time is set to 0f,
@@ -40,10 +35,8 @@ public class ExecutionerHealth : MonoBehaviour
     void Start()
     {
         invincibilityTime = 0f;
-        totalHealth = 12;
+        totalHealth = 12f;
         exit.SetActive(false);
-        bossMain.SetActive(false);
-        bossDestroyed = false;
     }
 
     // Update is called once per frame
@@ -80,39 +73,45 @@ public class ExecutionerHealth : MonoBehaviour
         {
             DestroyObject(executioner);
             exit.SetActive(true);
-            charge6.SetActive(false);
+            charge8.SetActive(false);
             Knife.damaged = false;
             SteakKnife.damagedSteak = false;
             MagicAttack.magicDamage = false;
-            bossDestroyed = true;
-            totalHealth = 0;
         }
 
-        if(totalHealth <= 10)
+        if(totalHealth <= 10.5f)
         {
             charge1.SetActive(false);
         }
 
-        if(totalHealth <= 8)
+        if(totalHealth <= 9f)
         {
             charge2.SetActive(false);
         }
 
-        if(totalHealth <= 6)
+        if(totalHealth <= 7.5f)
         {
             charge3.SetActive(false);
-            bossMain.SetActive(true);
-            bossBottle.SetActive(false);
         }
 
-        if(totalHealth <= 4)
+        if(totalHealth <= 6f)
         {
             charge4.SetActive(false);
         }
 
-        if(totalHealth <= 2)
+        if(totalHealth <= 4.5f)
         {
             charge5.SetActive(false);
+        }
+
+        if(totalHealth <= 3f)
+        {
+            charge6.SetActive(false);
+        }
+
+        if(totalHealth <= 1.5f)
+        {
+            charge7.SetActive(false);
         }
     }
 }
