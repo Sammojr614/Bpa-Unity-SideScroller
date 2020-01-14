@@ -72,6 +72,7 @@ public class ExecutionerHealth : MonoBehaviour
         if(totalHealth <= 0)
         {
             DestroyObject(executioner);
+            LevelCompletion.playerDreamComplete = true;
             exit.SetActive(true);
             charge8.SetActive(false);
             Knife.damaged = false;
