@@ -85,6 +85,30 @@ public void setFromPlayerPerams(string commandText){
 		}
 	}
 }
+
+//Getting Shop Stuff
+public void getShopStockFromDb(string commandText){
+	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+		dbCon.Open();
+		using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
+				while(dbReader.Read()){
+					BuyingStuff.PriceOfItem = Convert.ToInt32(dbReader[2].ToString());
+					BuyingStuff.NumberOfItems = Convert.ToInt32(dbReader[3].ToString());
+				}
+			}
+		}
+	}
+}
+//Setting Shop Stuff
+public void setShop(string commandText){
+	using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+		dbCon.Open();
+		using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon)){
+			dbCmd.ExecuteNonQuery();
+		}
+	}
+}
 //RendererState
 public void TableCheckforRenderer(string commandText, SpriteRenderer spriteRenderer, bool ifReaderReads, bool ifReaderDoesntRead){
 using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
@@ -117,7 +141,6 @@ public void GetSceneNameFromDb(string commandText){
 			using(SqliteDataReader dbReader = dbCmd.ExecuteReader()){
 				while(dbReader.Read()){
 					LoadData.LoadScene = dbReader[0].ToString();
-					MoveScenesWithButton2D.PrevScene = dbReader[0].ToString();
 				}
 			}
 		}
