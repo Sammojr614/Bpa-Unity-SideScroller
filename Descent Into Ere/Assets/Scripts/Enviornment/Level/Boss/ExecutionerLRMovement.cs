@@ -34,6 +34,6 @@ public class ExecutionerLRMovement : MonoBehaviour
             MovingDirection = Vector3.right;
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
-        this.transform.Translate(MovingDirection * Time.smoothDeltaTime * 5);
+        this.transform.Translate(MovingDirection * Time.smoothDeltaTime * 2);
     }
 }

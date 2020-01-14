@@ -8,9 +8,6 @@ public class PlayerDreamExit : MonoBehaviour
 
     void Update()
     {
-        if(ExecutionerHealth.bossDestroyed == true)
-        {
-            exit.SetActive(true);
-        }
+
     }
 }
