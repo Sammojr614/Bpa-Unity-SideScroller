@@ -64,7 +64,6 @@ public class AlpusHealth : MonoBehaviour
         if(totalHealth <= 0f)
         {
             DestroyObject(alpus);
-            LevelCompletion.nightmareComplete = true;
             charge8.SetActive(false);
             Knife.damaged = false;
             SteakKnife.damagedSteak = false;
