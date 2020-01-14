@@ -5,26 +5,47 @@ using UnityEngine.SceneManagement;
 
 public class LucidDoor : MonoBehaviour {
 
+    //Newlevel set in unity
     public string newLevel;
+    //Locked gameobject that appears over door
+    public GameObject locked;
 
+    //On start, the door is locked, and will have the locked gameobject enabled
+    void Start()
+    {
+        locked.SetActive(true);
+    }
+
+    /* Once the player completes playerdream,
+     * the locked gameobject will dissapear,
+     * and the door will be unlocked
+     */
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if(LevelCompletion.playerDreamComplete == true)
         {
-            if (Input.GetButtonDown("EnterDoor"))
+            locked.SetActive(false);
+            if (collision.CompareTag("Player"))
             {
-                SceneManager.LoadScene(newLevel);
+                if (Input.GetButtonDown("EnterDoor"))
+                {
+                    SceneManager.LoadScene(newLevel);
+                }
             }
         }
     }
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (LevelCompletion.playerDreamComplete == true)
         {
-            if (Input.GetButtonDown("EnterDoor"))
+            locked.SetActive(false);
+            if (collision.CompareTag("Player"))
             {
-                SceneManager.LoadScene(newLevel);
+                if (Input.GetButtonDown("EnterDoor"))
+                {
+                    SceneManager.LoadScene(newLevel);
+                }
             }
         }
     }

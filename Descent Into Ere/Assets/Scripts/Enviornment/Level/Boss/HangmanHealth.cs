@@ -74,6 +74,7 @@ public class HangmanHealth : MonoBehaviour
         if(totalHealth <= 0)
         {
             DestroyObject(hangman);
+            LevelCompletion.lucidComplete = true;
             charge8.SetActive(false);
             Knife.damaged = false;
             SteakKnife.damagedSteak = false;
