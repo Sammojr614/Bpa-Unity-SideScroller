@@ -68,7 +68,7 @@ public class AlpusHealth : MonoBehaviour
             Knife.damaged = false;
             SteakKnife.damagedSteak = false;
             MagicAttack.magicDamage = false;
-            SceneManager.LoadScene("FinalCutscene");
+            SceneManager.LoadScene("DevCreditScene");
         }
 
         if(totalHealth <= 17.5f)
