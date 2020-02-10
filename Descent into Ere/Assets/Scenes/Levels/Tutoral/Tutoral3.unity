@@ -4139,6 +4139,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 769405657}
   resumeButton: {fileID: 922847750}
   quitButton: {fileID: 530061843}
+  ShopButton: {fileID: 0}
 --- !u!222 &1007093956
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8539,6 +8540,7 @@ GameObject:
   - component: {fileID: 2030616898}
   - component: {fileID: 2030616899}
   - component: {fileID: 2030616900}
+  - component: {fileID: 2030616901}
   m_Layer: 0
   m_Name: Sign 2
   m_TagString: Untagged
@@ -8636,6 +8638,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.674469, y: 5.111255}
   m_EdgeRadius: 0
+--- !u!114 &2030616901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030616897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28482846a3417441d8b4db0af5de153f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TextBox: {fileID: 1339901226}
 --- !u!1 &2046278223
 GameObject:
   m_ObjectHideFlags: 0
