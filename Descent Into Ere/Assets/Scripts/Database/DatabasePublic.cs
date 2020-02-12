@@ -73,6 +73,7 @@ public class DbManager{
                         PlayerHealth = Convert.ToInt32(dbReader[1]);
                         PlayerLives = Convert.ToInt32(dbReader[2]);
                         PlayerCurrency = Convert.ToInt32(dbReader[3]);
+                        Health.health = Convert.ToInt32(dbReader[1]);
                     }
                 }
             }
@@ -90,6 +91,23 @@ public class DbManager{
                     while (dbReader.Read())
                     {
                         SceneManager.LoadScene(dbReader[0].ToString());
+                    }
+                }
+            }
+        }
+    }
+    public void getSpesificIntData(string commandText, int IntVar)
+    {
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString))
+        {
+            dbCon.Open();
+            using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
+            {
+                using(SqliteDataReader dbReader = dbCmd.ExecuteReader())
+                {
+                    while (dbReader.Read())
+                    {
+                        IntVar = Convert.ToInt32(dbReader[0]);
                     }
                 }
             }
