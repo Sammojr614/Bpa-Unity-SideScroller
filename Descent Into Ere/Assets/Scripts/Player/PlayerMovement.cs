@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     //Player moves by using wsad or arrow keys
     void Update()
     {
-        Debug.Log(isGrounded);
+        
 
         Jump();
         Vector3 Movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);

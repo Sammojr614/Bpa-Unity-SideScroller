@@ -70,10 +70,10 @@ public class DbManager{
                     while (dbReader.Read())
                     {
                         PlayerLocation = dbReader[0].ToString();
+                        Health.lives = Convert.ToInt32(dbReader[2]);
+                        Health.health = Convert.ToInt32(dbReader[1]);
                         PlayerHealth = Convert.ToInt32(dbReader[1]);
                         PlayerLives = Convert.ToInt32(dbReader[2]);
-                        PlayerCurrency = Convert.ToInt32(dbReader[3]);
-                        Health.health = Convert.ToInt32(dbReader[1]);
                     }
                 }
             }
