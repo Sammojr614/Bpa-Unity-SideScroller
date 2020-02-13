@@ -8,6 +8,7 @@ public class QuitGame : MonoBehaviour
     public Button QuitButton;
     void Start()
     {
+        Time.timeScale = 1;
         QuitButton.onClick.AddListener(TaskOnClick);
     }
 

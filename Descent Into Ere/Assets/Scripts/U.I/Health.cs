@@ -24,8 +24,6 @@ public class Health : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log("PlayerLives: " + lives);
-        Debug.Log("PlayerHealth: " + health);
         //Putting the Current amount of Health into the Db all The Time
         string insertThis = string.Format("UPDATE PlayerSaveData SET PlayerHealth='{0}'", health);
         dataManager.normalDbCommand(insertThis);
@@ -50,6 +48,11 @@ public class Health : MonoBehaviour
                 {
                     charge.SetActive(true);
                 }
+                break;
+            case -1: health = 0;
+                break;
+            case 0: lives--;
+                health = 4;
                 break;
         }
         //Displaying the Amount of Lives
