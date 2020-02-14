@@ -6,14 +6,19 @@ using System.Data;
 using System;
 using UnityEngine.SceneManagement;
 
-public class DbManager{
+public class DbManager
+{
     private static DbManager dbMgr;
-    private DbManager(){
+    private DbManager()
+    {
 
     }
-    public static DbManager Instance{
-        get{
-            if(dbMgr == null){
+    public static DbManager Instance
+    {
+        get
+        {
+            if (dbMgr == null)
+            {
                 dbMgr = new DbManager();
             }
             return dbMgr;
@@ -25,24 +30,28 @@ public class DbManager{
     public int PlayerHealth;
     public int PlayerLives;
     public int PlayerCurrency;
+    public bool slotThere;
     //Normal Database Sqlite Commands
-    public void normalDbCommand(string commandText){
-        using(SqliteConnection dbCon = new SqliteConnection(connectionString)){
+    public void normalDbCommand(string commandText)
+    {
+        using (SqliteConnection dbCon = new SqliteConnection(connectionString))
+        {
             dbCon.Open();
-            using(SqliteCommand dbCmd = new SqliteCommand(commandText,dbCon)){
+            using (SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
+            {
                 dbCmd.ExecuteNonQuery();
             }
         }
     }
     //Checking for data/Tables
-    public void  DataCheck(string commandText)
+    public void DataCheck(string commandText)
     {
-        using(SqliteConnection dbCon = new SqliteConnection(connectionString))
+        using (SqliteConnection dbCon = new SqliteConnection(connectionString))
         {
             dbCon.Open();
-            using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
+            using (SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
             {
-                using(SqliteDataReader dbReader = dbCmd.ExecuteReader())
+                using (SqliteDataReader dbReader = dbCmd.ExecuteReader())
                 {
                     if (dbReader.Read())
                     {
@@ -60,12 +69,12 @@ public class DbManager{
     }
     public void ReadingData(string commandText)
     {
-        using(SqliteConnection dbCon = new SqliteConnection(connectionString))
+        using (SqliteConnection dbCon = new SqliteConnection(connectionString))
         {
             dbCon.Open();
-            using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
+            using (SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
             {
-                using(SqliteDataReader dbReader = dbCmd.ExecuteReader())
+                using (SqliteDataReader dbReader = dbCmd.ExecuteReader())
                 {
                     while (dbReader.Read())
                     {
@@ -74,6 +83,8 @@ public class DbManager{
                         Health.health = Convert.ToInt32(dbReader[1]);
                         PlayerHealth = Convert.ToInt32(dbReader[1]);
                         PlayerLives = Convert.ToInt32(dbReader[2]);
+                        Shop.PlayerCrystals = Convert.ToInt32(dbReader[3]);
+                        PlayerCurrency = Convert.ToInt32(dbReader[3]);
                     }
                 }
             }
@@ -81,12 +92,12 @@ public class DbManager{
     }
     public void LoadSceneFromDb(string commandText)
     {
-        using(SqliteConnection dbCon = new SqliteConnection(connectionString))
+        using (SqliteConnection dbCon = new SqliteConnection(connectionString))
         {
             dbCon.Open();
-            using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
+            using (SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
             {
-                using(SqliteDataReader dbReader = dbCmd.ExecuteReader())
+                using (SqliteDataReader dbReader = dbCmd.ExecuteReader())
                 {
                     while (dbReader.Read())
                     {
@@ -98,18 +109,59 @@ public class DbManager{
     }
     public void getSpesificIntData(string commandText, int IntVar)
     {
-        using(SqliteConnection dbCon = new SqliteConnection(connectionString))
+        using (SqliteConnection dbCon = new SqliteConnection(connectionString))
         {
             dbCon.Open();
-            using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
+            using (SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
             {
-                using(SqliteDataReader dbReader = dbCmd.ExecuteReader())
+                using (SqliteDataReader dbReader = dbCmd.ExecuteReader())
                 {
                     while (dbReader.Read())
                     {
                         IntVar = Convert.ToInt32(dbReader[0]);
                     }
                 }
+            }
+        }
+    }
+    public void InventoryFromDb(string commandText)
+    {
+        using (SqliteConnection dbCon = new SqliteConnection(connectionString))
+        {
+            dbCon.Open();
+            using (SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
+            {
+                using (SqliteDataReader dbReader = dbCmd.ExecuteReader())
+                {
+                    while (dbReader.Read())
+                    {
+                        Inventory.NumberOfPotions = Convert.ToInt32(dbReader[2]);
+                    }
+                }
+            }
+        }
+    }
+    public void CheckInventory(string commandText)
+    {
+        using (SqliteConnection dbCon = new SqliteConnection(connectionString))
+        {
+            dbCon.Open();
+            using (SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
+            {
+                using (SqliteDataReader dbReader = dbCmd.ExecuteReader())
+                {
+                    if (dbReader.Read())
+                    {
+                        slotThere = true;
+                    }
+                    else
+                    {
+                        slotThere = false;
+                    }
+                }
+            }
+            {
+
             }
         }
     }

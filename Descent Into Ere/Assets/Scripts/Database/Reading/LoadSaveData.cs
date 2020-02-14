@@ -11,6 +11,7 @@ public class LoadSaveData : MonoBehaviour
     public Text LivesDisplay;
     public Button LoadButton;
     public Text Buttontext;
+    public Text DreamCoinText;
     public static string SceneToBeLoaded;
     DbManager datamanager = DbManager.Instance;
     void Start()
@@ -31,11 +32,13 @@ public class LoadSaveData : MonoBehaviour
             LocationDisplay.text = "Location: " + datamanager.PlayerLocation;
             LivesDisplay.text = "Lives: " + datamanager.PlayerLives.ToString();
             HealthDisplay.text = "Health: " + datamanager.PlayerHealth.ToString();
+            DreamCoinText.text = "Dream Coins: " + datamanager.PlayerCurrency.ToString();
         }else if(datamanager.isDataHere != true)
         {
             LocationDisplay.text = "Location: Unknown";
             LivesDisplay.text = "Lives: Unknown";
             HealthDisplay.text = "Health: Unknown";
+            DreamCoinText.text = "Dream Coins: Unknown";
             Buttontext.text = "No Save Data";
             LoadButton.enabled = false;
         }

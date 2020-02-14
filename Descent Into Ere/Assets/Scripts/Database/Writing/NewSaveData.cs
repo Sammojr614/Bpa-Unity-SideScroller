@@ -14,11 +14,12 @@ public class NewSaveData : MonoBehaviour
     }
     void taskOnClick()
     {
-        dataManager.DataCheck("SELECT name FROM sqlite_master WHERE name = 'PlayerSaveData'");
+        dataManager.DataCheck("SELECT name FROM sqlite_master");
         if (dataManager.isDataHere == false)
         {
             dataManager.normalDbCommand("CREATE TABLE PlayerSaveData(PlayerLocation TEXT, PlayerHealth INT, PlayerLives INT, PlayerCurrency INT)");
             dataManager.normalDbCommand("INSERT INTO PlayerSaveData(PlayerLocation, PlayerHealth,PlayerLives,PlayerCurrency)VALUES('MainHub','4','3','0')");
+            dataManager.normalDbCommand("CREATE TABLE PlayerInventory(SlotNumber INT, ItemInSlot TEXT, NumberOfItem INT)");
         }
     }
 }
