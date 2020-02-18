@@ -49,11 +49,10 @@ public class Health : MonoBehaviour
                     charge.SetActive(true);
                 }
                 break;
-            case -1: health = 0;
-                break;
-            case 0: lives--;
-                health = 4;
-                break;
+        }
+        if(lives > 0)
+        {
+            lives--;
         }
         //Displaying the Amount of Lives
         switch (lives)

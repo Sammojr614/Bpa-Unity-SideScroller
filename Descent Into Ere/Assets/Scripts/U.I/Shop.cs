@@ -25,30 +25,26 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        afterBuy = PlayerCrystals - priceOfPotion;
-        if (Input.GetButtonDown("Shop"))
+        dataMgr.CheckInventory("SELECT*FROM PlayerInventory");
+        if(dataMgr.slotThere == false)
         {
-            ShopMenu.SetActive(true);
-            Cursor.visible = true;
+            dataMgr.normalDbCommand("INSERT INTO PlayerInventory(SlotNumber, ItemInSlot, NumberOfItemInSlot) VALUES('1','Potion',")
         }
+        
     }
     void CloseOnClick()
     {
-       
         ShopMenu.SetActive(false);
-        Cursor.visible = false;
     }
     void BuyOnClick()
     {
-        string insertThis = string.Format("UPDATE PlayerSaveData SET PlayerCurrency='{0}'", afterBuy);
-        if (PlayerCrystals >= priceOfPotion)
+        if(PlayerCrystals >= priceOfPotion && Inventory.NumberOfPotions >= 3)
         {
+            afterBuy = PlayerCrystals - priceOfPotion;
             PlayerCrystals = afterBuy;
+            string insertThis = string.Format("UPDATE PlayerInventory SET NumberOfItemsInSlot = '{0}'", PlayerCrystals);
             dataMgr.normalDbCommand(insertThis);
-        }
-        else
-        {
-            ButtonText.text = "Can't Afford";
+
         }
     }
 }

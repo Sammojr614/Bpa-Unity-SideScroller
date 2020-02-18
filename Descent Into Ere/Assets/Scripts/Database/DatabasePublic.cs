@@ -31,6 +31,7 @@ public class DbManager
     public int PlayerLives;
     public int PlayerCurrency;
     public bool slotThere;
+    public int PotionsForDisplay;
     //Normal Database Sqlite Commands
     public void normalDbCommand(string commandText)
     {
@@ -162,6 +163,24 @@ public class DbManager
             }
             {
 
+            }
+        }
+    }
+    public void KeepingTrackOfNumbers(string commandText)
+    {
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString))
+        {
+            dbCon.Open();
+            using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
+            {
+                using(SqliteDataReader dbReader = dbCmd.ExecuteReader())
+                {
+                    while (dbReader.Read())
+                    {
+                        Inventory.NumberOfPotions = Convert.ToInt32(dbReader[2]);
+                        PotionsForDisplay = Convert.ToInt32(dbReader[2]);
+                    }
+                }
             }
         }
     }
