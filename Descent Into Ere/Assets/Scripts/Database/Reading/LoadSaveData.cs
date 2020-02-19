@@ -12,6 +12,7 @@ public class LoadSaveData : MonoBehaviour
     public Button LoadButton;
     public Text Buttontext;
     public Text DreamCoinText;
+    public Text NumberOfTimesPlayed;
     public static string SceneToBeLoaded;
     DbManager datamanager = DbManager.Instance;
     void Start()
@@ -33,6 +34,7 @@ public class LoadSaveData : MonoBehaviour
             LivesDisplay.text = "Lives: " + datamanager.PlayerLives.ToString();
             HealthDisplay.text = "Health: " + datamanager.PlayerHealth.ToString();
             DreamCoinText.text = "Dream Coins: " + datamanager.PlayerCurrency.ToString();
+            NumberOfTimesPlayed.text = "Times Played: " + OpenThingy.TimesPlayed.ToString();
         }else if(datamanager.isDataHere != true)
         {
             LocationDisplay.text = "Location: Unknown";
@@ -41,6 +43,7 @@ public class LoadSaveData : MonoBehaviour
             DreamCoinText.text = "Dream Coins: Unknown";
             Buttontext.text = "No Save Data";
             LoadButton.enabled = false;
+            NumberOfTimesPlayed.text = "0";
         }
     }
     void TaskOnClick()

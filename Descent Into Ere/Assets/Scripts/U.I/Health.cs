@@ -58,6 +58,9 @@ public class Health : MonoBehaviour
         {
             lives = 0;
             gameOver = true;
+        }else if(lives > 0)
+        {
+            gameOver = false;
         }
         //Displaying the Amount of Lives
         switch (lives)

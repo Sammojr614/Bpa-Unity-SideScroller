@@ -12,7 +12,7 @@ public class CollectCrystals : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Crystal"))
+        if (collision.CompareTag("Player"))
         {
             Shop.PlayerCrystals++;
             Crystal.SetActive(false);

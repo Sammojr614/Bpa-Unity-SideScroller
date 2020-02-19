@@ -20,7 +20,7 @@ public class Shop : MonoBehaviour
         dataMgr.CheckInventory("SELECT*FROM PlayerInventory WHERE SlotNumber = '1'");
         if(dataMgr.slotThere == false)
         {
-            dataMgr.normalDbCommand("INSERT INTO PlayerInventory(SlotNumber, ItemInSlot, NumberOfItemsInSlot) VALUES('1','Potion','1')");
+            dataMgr.normalDbCommand("INSERT INTO PlayerInventory(SlotNumber, ItemInSlot, NumberOfItem) VALUES('1','Potion','1')");
         }
         CloseButton.onClick.AddListener(CloseOnClick);
         BuyButton.onClick.AddListener(BuyOnClick);
@@ -42,7 +42,7 @@ public class Shop : MonoBehaviour
             dataMgr.normalDbCommand(newPlayerCurrecny);
             Inventory.NumberOfPotions++;
             Inventory.NumberOfItems++;
-            string morePotions = string.Format("UPDATE PlayerInventory SET NumberOfItemsInSlot = '{0}'", Inventory.NumberOfPotions);
+            string morePotions = string.Format("UPDATE PlayerInventory SET NumberOfItem = '{0}'", Inventory.NumberOfPotions);
             dataMgr.normalDbCommand(morePotions);
         }
     }
