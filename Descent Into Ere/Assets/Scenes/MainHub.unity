@@ -853,8 +853,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389242072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.17, y: -0.11, z: 0}
-  m_LocalScale: {x: 57.23685, y: 32.352676, z: 1}
+  m_LocalPosition: {x: 6.241, y: -0.11, z: 0}
+  m_LocalScale: {x: 125.450356, y: 32.352676, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2125,8 +2125,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272883593}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.106, y: -4.463, z: 0}
-  m_LocalScale: {x: 18.271723, y: 1.153438, z: 1}
+  m_LocalPosition: {x: 6.249, y: -4.589, z: 0}
+  m_LocalScale: {x: 40.177383, y: 1.4060409, z: 1}
   m_Children: []
   m_Father: {fileID: 643528897}
   m_RootOrder: 0
@@ -3324,6 +3324,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1955030902}
+  - component: {fileID: 1955030903}
   m_Layer: 0
   m_Name: Doors
   m_TagString: Untagged
@@ -3346,6 +3347,19 @@ Transform:
   m_Father: {fileID: 643528897}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1955030903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955030901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8069d8f63ed54160a0d05e985fa21fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: 
 --- !u!1 &1957729612
 GameObject:
   m_ObjectHideFlags: 0
@@ -3515,6 +3529,7 @@ GameObject:
   - component: {fileID: 2069318623}
   - component: {fileID: 2069318622}
   - component: {fileID: 2069318625}
+  - component: {fileID: 2069318626}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -3546,7 +3561,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 17.790731
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -3555,7 +3570,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 68
   orthographic: 1
   orthographic size: 5
   m_Depth: 0
@@ -3599,6 +3614,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca12f9bffdfd4b4ab51605e9726d3f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2069318626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069318621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a343d4f34c8523144875718480b75b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xMin: -2
+  xMax: 5
+  yMin: 0
+  yMax: 2
+  player: {fileID: 999839012}
 --- !u!1 &2077250421
 GameObject:
   m_ObjectHideFlags: 0
