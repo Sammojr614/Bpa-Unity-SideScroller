@@ -68,6 +68,7 @@ public class DbManager
             }
         }
     }
+    //Getting all The Data
     public void ReadingData(string commandText)
     {
         using (SqliteConnection dbCon = new SqliteConnection(connectionString))
@@ -91,6 +92,7 @@ public class DbManager
             }
         }
     }
+    //Getting Scene Name Strings From DB
     public void LoadSceneFromDb(string commandText)
     {
         using (SqliteConnection dbCon = new SqliteConnection(connectionString))
@@ -108,6 +110,7 @@ public class DbManager
             }
         }
     }
+    //For Getting Data From That Database that is an Int
     public void getSpesificIntData(string commandText, int IntVar)
     {
         using (SqliteConnection dbCon = new SqliteConnection(connectionString))
@@ -125,6 +128,7 @@ public class DbManager
             }
         }
     }
+    //Getting the Number of Potions.. For Now 
     public void InventoryFromDb(string commandText)
     {
         using (SqliteConnection dbCon = new SqliteConnection(connectionString))
@@ -142,6 +146,7 @@ public class DbManager
             }
         }
     }
+    //Checking if The Slot is There
     public void CheckInventory(string commandText)
     {
         using (SqliteConnection dbCon = new SqliteConnection(connectionString))
@@ -166,6 +171,7 @@ public class DbManager
             }
         }
     }
+    //For the Number of Potions and it's Display
     public void KeepingTrackOfNumbers(string commandText)
     {
         using(SqliteConnection dbCon = new SqliteConnection(connectionString))

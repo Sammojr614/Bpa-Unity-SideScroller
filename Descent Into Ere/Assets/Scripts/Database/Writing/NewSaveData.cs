@@ -18,7 +18,7 @@ public class NewSaveData : MonoBehaviour
         if (dataManager.isDataHere == false)
         {
             dataManager.normalDbCommand("CREATE TABLE PlayerSaveData(PlayerLocation TEXT, PlayerHealth INT, PlayerLives INT, PlayerCurrency INT)");
-            dataManager.normalDbCommand("INSERT INTO PlayerSaveData(PlayerLocation, PlayerHealth,PlayerLives,PlayerCurrency)VALUES('MainHub','4','3','0')");
+            dataManager.normalDbCommand("INSERT INTO PlayerSaveData(PlayerLocation, PlayerHealth,PlayerLives,PlayerCurrency, TimesPlayed)VALUES('MainHub','4','3','0','1')");
             dataManager.normalDbCommand("CREATE TABLE PlayerInventory(SlotNumber INT, ItemInSlot TEXT, NumberOfItem INT)");
         }
     }

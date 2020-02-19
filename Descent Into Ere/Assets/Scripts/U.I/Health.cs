@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     public Text LivesDisplay;
     public GameObject[] healthBarCharges;
     DbManager dataManager = DbManager.Instance;
+    public static bool gameOver;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,10 +50,14 @@ public class Health : MonoBehaviour
                     charge.SetActive(true);
                 }
                 break;
+            case 0: lives--;
+                health = 4;
+                break;
         }
-        if(lives > 0)
+        if(lives == -1)
         {
-            lives--;
+            lives = 0;
+            gameOver = true;
         }
         //Displaying the Amount of Lives
         switch (lives)

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
+                                            /*Zach!, DON'T Interpolate My SQLite!*/
     public static int PlayerCrystals;
     DbManager dataMgr = DbManager.Instance;
     public Button BuyButton;
@@ -13,38 +14,41 @@ public class Shop : MonoBehaviour
     public Button CloseButton;
     public Text ButtonText;
     int afterBuy;
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         ShopMenu.SetActive(false);
-        CloseButton.onClick.AddListener(CloseOnClick);
-        BuyButton.onClick.AddListener(BuyOnClick);
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        dataMgr.CheckInventory("SELECT*FROM PlayerInventory");
+        dataMgr.CheckInventory("SELECT*FROM PlayerInventory WHERE SlotNumber = '1'");
         if(dataMgr.slotThere == false)
         {
-            dataMgr.normalDbCommand("INSERT INTO PlayerInventory(SlotNumber, ItemInSlot, NumberOfItemInSlot) VALUES('1','Potion',")
+            dataMgr.normalDbCommand("INSERT INTO PlayerInventory(SlotNumber, ItemInSlot, NumberOfItemsInSlot) VALUES('1','Potion','1')");
         }
-        
+        CloseButton.onClick.AddListener(CloseOnClick);
+        BuyButton.onClick.AddListener(BuyOnClick);
+    }
+    private void Update()
+    {
+        if (Input.GetButtonDown("Shop"))
+        {
+            ShopMenu.SetActive(true);
+            Cursor.visible = true;
+        }
+    }
+    void BuyOnClick()
+    {
+        if(PlayerCrystals >= priceOfPotion && Inventory.NumberOfPotions <= 3)
+        {
+            afterBuy = PlayerCrystals - priceOfPotion;
+            string newPlayerCurrecny = string.Format("UPDATE PlayerSaveData SET PlayerCurrency = '{0}'", afterBuy);
+            dataMgr.normalDbCommand(newPlayerCurrecny);
+            Inventory.NumberOfPotions++;
+            Inventory.NumberOfItems++;
+            string morePotions = string.Format("UPDATE PlayerInventory SET NumberOfItemsInSlot = '{0}'", Inventory.NumberOfPotions);
+            dataMgr.normalDbCommand(morePotions);
+        }
     }
     void CloseOnClick()
     {
         ShopMenu.SetActive(false);
-    }
-    void BuyOnClick()
-    {
-        if(PlayerCrystals >= priceOfPotion && Inventory.NumberOfPotions >= 3)
-        {
-            afterBuy = PlayerCrystals - priceOfPotion;
-            PlayerCrystals = afterBuy;
-            string insertThis = string.Format("UPDATE PlayerInventory SET NumberOfItemsInSlot = '{0}'", PlayerCrystals);
-            dataMgr.normalDbCommand(insertThis);
-
-        }
+        Cursor.visible = false;
     }
 }
