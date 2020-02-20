@@ -15,6 +15,7 @@ public class LoadSaveData : MonoBehaviour
     public Text NumberOfTimesPlayed;
     public static string SceneToBeLoaded;
     DbManager datamanager = DbManager.Instance;
+    public static int TimesPlayed;
     void Start()
     {
         datamanager.DataCheck("SELECT name FROM sqlite_master WHERE name = 'PlayerSaveData'");
@@ -34,7 +35,7 @@ public class LoadSaveData : MonoBehaviour
             LivesDisplay.text = "Lives: " + datamanager.PlayerLives.ToString();
             HealthDisplay.text = "Health: " + datamanager.PlayerHealth.ToString();
             DreamCoinText.text = "Dream Coins: " + datamanager.PlayerCurrency.ToString();
-            NumberOfTimesPlayed.text = "Times Played: " + OpenThingy.TimesPlayed.ToString();
+            NumberOfTimesPlayed.text = "Times Played: " + TimesPlayed.ToString();
         }else if(datamanager.isDataHere != true)
         {
             LocationDisplay.text = "Location: Unknown";
@@ -49,5 +50,8 @@ public class LoadSaveData : MonoBehaviour
     void TaskOnClick()
     {
         datamanager.LoadSceneFromDb("SELECT*FROM PlayerSaveData");
+        TimesPlayed++;
+        string InsertingTimesPlayied = string.Format("UPDATE PlayerSaveData SET TimesPlayed = '{0}'", TimesPlayed);
+        datamanager.normalDbCommand(InsertingTimesPlayied);
     }
 }

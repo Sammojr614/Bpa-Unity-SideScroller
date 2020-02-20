@@ -87,7 +87,7 @@ public class DbManager
                         PlayerLives = Convert.ToInt32(dbReader[2]);
                         Shop.PlayerCrystals = Convert.ToInt32(dbReader[3]);
                         PlayerCurrency = Convert.ToInt32(dbReader[3]);
-                        OpenThingy.TimesPlayed = Convert.ToInt32(dbReader[4]);
+                        LoadSaveData.TimesPlayed = Convert.ToInt32(dbReader[4]);
                     }
                 }
             }
