@@ -5,6 +5,10 @@ using UnityEngine;
 public class Lamp : MonoBehaviour
 {
     public GameObject LampLight;
+    private void Start()
+    {
+        LampLight.SetActive(false);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -16,7 +20,7 @@ public class Lamp : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            LampLight.SetActive(false);
+            LampLight.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
