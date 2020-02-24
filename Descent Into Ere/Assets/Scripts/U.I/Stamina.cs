@@ -5,47 +5,75 @@ using UnityEngine;
 public class Stamina : MonoBehaviour
 {
     const int totalStamina = 10;
-    public GameObject[] StaminaCharges;
+    public SpriteRenderer[] StaminaCharges;
     private void Update()
     {
-        if(Sprint.stamina == 10)
+        //For when Stamina is Full
+        if (Sprint.stamina >= 10)
         {
-            foreach(GameObject charge in StaminaCharges)
+            foreach (SpriteRenderer charges in StaminaCharges)
             {
-                charge.SetActive(true);
+                charges.enabled = true;
             }
         }
-        
-        //First Charge Gone
-        if (Sprint.stamina <= 8.5) 
-        {
-            StaminaCharges[0].SetActive(false);
-        }else if(Sprint.stamina <= 7)
-        {
-            //Second Charge Gone
-            StaminaCharges[1].SetActive(false);
-        }else if(Sprint.stamina <= 6.5)
-        { //Third Charge Gone
-            StaminaCharges[2].SetActive(false);
-        }else if(Sprint.stamina <= 3)
-        {
-            //Forth Charge Gone
-            StaminaCharges[3].SetActive(false);
-        }else if(Sprint.stamina <= 2.5)
-        {
-            //Fifth Charge Gone
-            StaminaCharges[4].SetActive(false);
-        }else if(Sprint.stamina <= 1)
-        {
-            //Last Charge Gone
-            StaminaCharges[5].SetActive(false);
-        }
+        //For When Stamina is Empty
         if (Sprint.stamina <= 0)
         {
-            foreach (GameObject charge in StaminaCharges)
+            foreach (SpriteRenderer charges in StaminaCharges)
             {
-                charge.SetActive(false);
+                charges.enabled = false;
             }
+        }
+                                                /* The Specific Number Display Manager */
+        // 9
+        if(Sprint.stamina <= 9)
+        {
+            StaminaCharges[0].enabled = false;
+        }else if(Sprint.stamina >= 9)
+        {
+            StaminaCharges[0].enabled = true;
+        }
+        // 7.5
+        if(Sprint.stamina <= 8.5)
+        {
+            
+            StaminaCharges[1].enabled = false;
+        }else if(Sprint.stamina >= 8.5)
+        {
+           
+            StaminaCharges[1].enabled = true;
+        }
+        //4.5
+        if(Sprint.stamina <= 7.5)
+        {
+            StaminaCharges[2].enabled = false;
+        }else if(Sprint.stamina >= 7.5)
+        {
+            StaminaCharges[2].enabled = true;
+        }
+        // 3
+        if(Sprint.stamina <= 6)
+        {
+            StaminaCharges[3].enabled = false;
+        }else if(Sprint.stamina >= 6)
+        {
+            StaminaCharges[3].enabled = true;
+        }
+        //2.5
+        if(Sprint.stamina <= 4.5)
+        {
+            StaminaCharges[4].enabled = false;
+        }else if(Sprint.stamina >= 4.5)
+        {
+            StaminaCharges[4].enabled = true;
+        }
+        // 1
+        if(Sprint.stamina <= 1)
+        {
+            StaminaCharges[5].enabled = false;
+        }else if(Sprint.stamina >= 1)
+        {
+            StaminaCharges[5].enabled = true;
         }
     }
 }
