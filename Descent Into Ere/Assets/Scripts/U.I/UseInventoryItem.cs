@@ -10,10 +10,12 @@ public class UseInventoryItem : MonoBehaviour
     DbManager dbMgr = DbManager.Instance;
     private void Start()
     {
+        //Use Button Call
         UseButton.onClick.AddListener(UseOnClick);
     }
     private void Update()
     {
+        //If you Have No Potions the UseButton Doesn't Work
         if(Inventory.NumberOfPotions == 0)
         {
             UseButton.enabled = false;
@@ -23,6 +25,7 @@ public class UseInventoryItem : MonoBehaviour
             UseButton.enabled = true;
         }
     }
+        /*Use Button Function*/
     void UseOnClick()
     {
         if(Inventory.NumberOfPotions != 0 && Health.health != 4)
@@ -35,6 +38,7 @@ public class UseInventoryItem : MonoBehaviour
             dbMgr.normalDbCommand(insertThis);
 
         }
+        //if you have Full health, You can't use the Potions
         else
         {
             ButtonText.text = "Full Health";

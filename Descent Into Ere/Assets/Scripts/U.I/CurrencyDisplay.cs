@@ -7,13 +7,14 @@ public class CurrencyDisplay : MonoBehaviour
 {
     public Text CurrencyDisplayText;
     DbManager dataMgr = DbManager.Instance;
-    // Update is called once per frame
+    
     private void Start()
     {
         dataMgr.ReadingData("SELECT*FROM PlayerSaveData");
     }
     void Update()
     {
+        //This just makes it so The Int From the database is changed into a string so the Text Feild can Use it
         CurrencyDisplayText.text = dataMgr.PlayerCurrency.ToString();
     }
 }

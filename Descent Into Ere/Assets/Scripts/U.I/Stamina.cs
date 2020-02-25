@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stamina : MonoBehaviour
 {
+                                            /* This Whole Script is for Displaying the Amount of Stamina Left */
     const int totalStamina = 10;
     public SpriteRenderer[] StaminaCharges;
     private void Update()

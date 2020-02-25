@@ -5,6 +5,7 @@ using UnityEngine;
 public class DoDamage : MonoBehaviour
 {
     public Collider2D DamageDoer;
+    //My Attempt at a Damage Script 
      void Start()
     {
         DamageDoer.enabled = false;

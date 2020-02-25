@@ -6,12 +6,14 @@ public class CollectCrystals : MonoBehaviour
 {
     public GameObject Crystal;
     DbManager dataMgr = DbManager.Instance;
+
     private void Start()
     {
         Crystal.SetActive(true);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //if the Coin/Crystal is Touched by the Player
         if (collision.CompareTag("Player"))
         {
             Shop.PlayerCrystals++;

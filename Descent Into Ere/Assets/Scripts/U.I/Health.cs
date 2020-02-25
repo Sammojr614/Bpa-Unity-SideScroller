@@ -11,11 +11,13 @@ public class Health : MonoBehaviour
     public GameObject[] healthBarCharges;
     DbManager dataManager = DbManager.Instance;
     public static bool gameOver;
-    // Start is called before the first frame update
+    
     void Start()
     {
+        //Making Sure The Values are Read and Set From the Database
         dataManager.ReadingData("SELECT*FROM PlayerSaveData");
     }
+    //if the Player is to Touch an Enemy 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))

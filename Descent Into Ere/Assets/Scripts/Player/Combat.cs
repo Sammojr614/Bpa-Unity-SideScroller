@@ -9,17 +9,17 @@ public class Combat : MonoBehaviour
     public Transform KnifeTrans;
     public Transform PlayerTrans;
     public Animator PlayerAnimator;
-    // Start is called before the first frame update
+                                /* This Script is For Controlling the Animations For the Steak/Butter Knives*/
     void Start()
     {
         Knife.SetActive(false);
         Drawn = false;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        KnifeTrans.rotation = PlayerTrans.rotation;
+        //this here is Controlling when the Knife GameObject is Enabled or not
         if (Input.GetButtonDown("DrawWepon") && Drawn == false)
         {
             Knife.SetActive(true);
@@ -30,6 +30,7 @@ public class Combat : MonoBehaviour
             Knife.SetActive(false);
             Drawn = false;
         }
+        //This Is The Animation Control
         if (Input.GetButtonDown("Attack") && Drawn == true)
         {
             PlayerAnimator.SetBool("Attacking", true);
