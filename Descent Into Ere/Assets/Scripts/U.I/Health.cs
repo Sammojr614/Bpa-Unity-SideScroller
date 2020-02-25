@@ -20,7 +20,11 @@ public class Health : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            health--;
+            if (!Input.GetButton("Attack"))
+            {
+                health--;
+            }
+            
         }
     }
     void Update()

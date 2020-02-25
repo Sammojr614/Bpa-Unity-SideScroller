@@ -30,7 +30,7 @@ public class UseInventoryItem : MonoBehaviour
             ButtonText.text = "Use";
             UseButton.enabled = true;
             Inventory.NumberOfPotions--;
-            string insertThis = string.Format("UPDATE PlayerInventory SET NumberOfItemsInSlot = '{0}'", Inventory.NumberOfPotions);
+            string insertThis = string.Format("UPDATE PlayerInventory SET NumberOfItem = '{0}'", Inventory.NumberOfPotions);
             Health.health = Health.health + 1;
             dbMgr.normalDbCommand(insertThis);
 
