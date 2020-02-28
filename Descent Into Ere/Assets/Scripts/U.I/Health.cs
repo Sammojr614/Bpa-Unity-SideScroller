@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -31,11 +32,20 @@ public class Health : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(lives);
         //Putting the Current amount of Health into the Db all The Time
         string insertThis = string.Format("UPDATE PlayerSaveData SET PlayerHealth='{0}'", health);
         dataManager.normalDbCommand(insertThis);
         //Updating the Lives in the Database
         string putThisIn = string.Format("UPDATE PlayerSaveData SET PlayerLives='{0}'", lives);
+
+        //If the player presses continue, the lives are reset to 3
+        if(Continue.resetLives == true)
+        {
+            putThisIn = string.Format("UPDATE PlayerSaveData SET PlayerLives= 3", lives);
+            Continue.resetLives = false;
+        }
+
         dataManager.normalDbCommand(putThisIn);
         //Getting the Health and Lives from the Database
         dataManager.ReadingData("SELECT*FROM PlayerSaveData");
@@ -71,13 +81,26 @@ public class Health : MonoBehaviour
         //Displaying the Amount of Lives
         switch (lives)
         {
-            case 3: LivesDisplay.text = "Lives: 3";
+            case 3:
+                {
+                    LivesDisplay.text = "Lives: 3";
+                }
                 break;
-            case 2: LivesDisplay.text = "Lives: 2";
+            case 2:
+                {
+                    LivesDisplay.text = "Lives: 2";
+                }
                 break;
-            case 1: LivesDisplay.text = "Last Life";
+            case 1:
+                {
+                    LivesDisplay.text = "Last Life";
+                }
                 break;
-            case 0: LivesDisplay.enabled = false;
+            case 0:
+                {
+                    LivesDisplay.enabled = false;
+                    SceneManager.LoadScene("GameOver");
+                }
                 break;
         }
     }

@@ -23,7 +23,7 @@ public class Sprint : MonoBehaviour
         Debug.Log(stamina);
         */
 
-        if(Input.GetButton("Sprint") && PlayerMovement.isGrounded == true && stamina > 0f && Input.GetButton("Horizontal"))
+        if(Input.GetButton("Sprint") && PlayerMovement.isGrounded == true && stamina > 0f)
         {
             stamina -= Time.deltaTime * 5;
 

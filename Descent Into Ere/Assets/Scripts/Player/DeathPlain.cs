@@ -24,6 +24,7 @@ public class DeathPlain : CheckPoint
         if (collision.CompareTag("Player") && CheckPoint.checkPointActive == false)
         {
             playerObj.transform.position = PlayerPos.transform.position;
+            Health.lives--;
         }
         /* Conversley, if the player enters the death plain,
          * and has reached the checkpoint, they will respawn at the checkpoint
@@ -31,6 +32,7 @@ public class DeathPlain : CheckPoint
         else if(collision.CompareTag("Player") && CheckPoint.checkPointActive == true)
         {
             playerObj.transform.position = CheckPointPos.transform.position;
+            Health.lives--;
         }
     }
 
