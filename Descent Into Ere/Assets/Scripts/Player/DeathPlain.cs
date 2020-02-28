@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathPlain : MonoBehaviour
+//Inherits from the checkpoint class
+public class DeathPlain : CheckPoint
 {
-    //PlayerSpawn and PlayerPos transforms
-    [SerializeField] private Transform PlayerSpawn;
+    //PlayerPos transform
     [SerializeField] private Transform PlayerPos;
 
     //The Actual Player
@@ -17,20 +17,21 @@ public class DeathPlain : MonoBehaviour
      */
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            playerObj.transform.position = PlayerSpawn.transform.position;
-        }
-    }
-
-    /* When the player exits the death plain,
-     * the player's position will return to it's normal position
-     */
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
+        /* If the player enters the death plain, 
+         * and the player has NOT reached the checkpoint yet,
+         * they will be sent back to the beginning of the level
+         */
+        if (collision.CompareTag("Player") && CheckPoint.checkPointActive == false)
         {
             playerObj.transform.position = PlayerPos.transform.position;
         }
+        /* Conversley, if the player enters the death plain,
+         * and has reached the checkpoint, they will respawn at the checkpoint
+         */
+        else if(collision.CompareTag("Player") && CheckPoint.checkPointActive == true)
+        {
+            playerObj.transform.position = CheckPointPos.transform.position;
+        }
     }
+
 }
