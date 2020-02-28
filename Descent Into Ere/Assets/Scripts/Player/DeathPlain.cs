@@ -4,14 +4,33 @@ using UnityEngine;
 
 public class DeathPlain : MonoBehaviour
 {
-    public Transform PlayerSpawn;
-    public Transform PlayerPos;
-    private void OnCollisionEnter2D(Collision2D collision)
+    //PlayerSpawn and PlayerPos transforms
+    [SerializeField] private Transform PlayerSpawn;
+    [SerializeField] private Transform PlayerPos;
+
+    //The Actual Player
+    [SerializeField] private GameObject playerObj;
+
+    /* If the player enters the death plain,
+     * the player will be sent back to the spawn point,
+     * and will have a life deducted (will add later)
+     */
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            PlayerPos.position = PlayerSpawn.position;
-            Health.lives--;
+            playerObj.transform.position = PlayerSpawn.transform.position;
+        }
+    }
+
+    /* When the player exits the death plain,
+     * the player's position will return to it's normal position
+     */
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            playerObj.transform.position = PlayerPos.transform.position;
         }
     }
 }

@@ -19,7 +19,9 @@ public class Sprint : MonoBehaviour
      */
     void Update()
     {
+        /*
         Debug.Log(stamina);
+        */
 
         if(Input.GetButton("Sprint") && PlayerMovement.isGrounded == true && stamina > 0f && Input.GetButton("Horizontal"))
         {

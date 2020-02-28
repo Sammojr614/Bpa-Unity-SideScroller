@@ -7,7 +7,9 @@ public class Movement : MonoBehaviour
     public Animator PlayerAnimator;
     private void Update()
     {
+        /*
         Debug.Log(PlayerAnimator.GetFloat("Movement"));
+        */
         if (Input.GetButton("Horizontal") && !Input.GetButton("Sprint"))
         {
             PlayerAnimator.SetFloat("Movement", 0.5f);
