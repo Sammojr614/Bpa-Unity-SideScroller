@@ -6,13 +6,12 @@ public class DeathPlain : MonoBehaviour
 {
     public Transform PlayerSpawn;
     public Transform PlayerPos;
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        /*All This Does is Put the Player at the Given SpawnPoint if He is To Touch this object's Collider*/
-        if (collision.CompareTag("Player"))
+        if (collision.collider.CompareTag("Player"))
         {
-            Health.lives--;
             PlayerPos.position = PlayerSpawn.position;
+            Health.lives--;
         }
     }
 }
