@@ -12,6 +12,9 @@ public class Health : MonoBehaviour
     public GameObject[] healthBarCharges;
     DbManager dataManager = DbManager.Instance;
     public static bool gameOver;
+
+    private string insertThis;
+    private string putThisIn;
     
     void Start()
     {
@@ -35,10 +38,10 @@ public class Health : MonoBehaviour
     void playerData()
     {
         //Putting the Current amount of Health into the Db all The Time
-        string insertThis = string.Format("UPDATE PlayerSaveData SET PlayerHealth='{0}'", health);
+        insertThis = string.Format("UPDATE PlayerSaveData SET PlayerHealth='{0}'", health);
         dataManager.normalDbCommand(insertThis);
         //Updating the Lives in the Database
-        string putThisIn = string.Format("UPDATE PlayerSaveData SET PlayerLives='{0}'", lives);
+        putThisIn = string.Format("UPDATE PlayerSaveData SET PlayerLives='{0}'", lives);
 
         //If the player presses continue, the lives are reset to 3
         if (Continue.resetLives == true)
@@ -54,8 +57,7 @@ public class Health : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(lives);
-
+        
         //This Is For Displaying the Amount of Health
         switch (health)
         {
