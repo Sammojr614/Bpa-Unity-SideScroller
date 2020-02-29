@@ -20,6 +20,7 @@ public class CheckPoint : MonoBehaviour
     {
         flagUnactive.enabled = true;
         flagActive.enabled = false;
+        checkPointActive = false;
     }
     /* When the player reaches the checkpoint,
      * it updates the spawn point, and sets checkPointActive to true.
