@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
     {
         //Making Sure The Values are Read and Set From the Database
         dataManager.ReadingData("SELECT*FROM PlayerSaveData");
+        playerData();
     }
     //if the Player is to Touch an Enemy 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,9 +31,9 @@ public class Health : MonoBehaviour
             
         }
     }
-    void Update()
+
+    void playerData()
     {
-        Debug.Log(lives);
         //Putting the Current amount of Health into the Db all The Time
         string insertThis = string.Format("UPDATE PlayerSaveData SET PlayerHealth='{0}'", health);
         dataManager.normalDbCommand(insertThis);
@@ -40,7 +41,7 @@ public class Health : MonoBehaviour
         string putThisIn = string.Format("UPDATE PlayerSaveData SET PlayerLives='{0}'", lives);
 
         //If the player presses continue, the lives are reset to 3
-        if(Continue.resetLives == true)
+        if (Continue.resetLives == true)
         {
             putThisIn = string.Format("UPDATE PlayerSaveData SET PlayerLives= 3", lives);
             Continue.resetLives = false;
@@ -49,6 +50,12 @@ public class Health : MonoBehaviour
         dataManager.normalDbCommand(putThisIn);
         //Getting the Health and Lives from the Database
         dataManager.ReadingData("SELECT*FROM PlayerSaveData");
+    }
+
+    void Update()
+    {
+        Debug.Log(lives);
+
         //This Is For Displaying the Amount of Health
         switch (health)
         {
@@ -102,7 +109,9 @@ public class Health : MonoBehaviour
                     SceneManager.LoadScene("GameOver");
                 }
                 break;
+                
         }
+        
     }
   
 }
