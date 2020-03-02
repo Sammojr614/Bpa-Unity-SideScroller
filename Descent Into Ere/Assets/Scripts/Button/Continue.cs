@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Continue : MonoBehaviour
 {
+    DbManager dbMgr = DbManager.Instance;
     //ContinueButton
     [SerializeField] private Button continueButton;
-
+    
     //Will replace this later with the database
-    private string previousLevel = "Ozul's Dream";
+    
 
     public static bool resetLives = false;
 
@@ -23,7 +24,21 @@ public class Continue : MonoBehaviour
     //If the player presses continue, they will return to the previous level
     void onClick()
     {
-        SceneManager.LoadScene(previousLevel);
+        //Punishing the Player For Dying 
+        if(Shop.PlayerCrystals %2 < 2 && Shop.PlayerCrystals > 0)
+        {
+            string insertifRemander = string.Format("UPDATE PlayerSaveData SET PlayerCurrency ='{0}'", Shop.PlayerCrystals - 2);
+            dbMgr.normalDbCommand(insertifRemander);
+        }
+        else if(Shop.PlayerCrystals > 0)
+        {
+            string insertThis = string.Format("UPDATE PlayerSaveData SET PlayerCurrency = '{0}'", Shop.PlayerCrystals / 2);
+            dbMgr.normalDbCommand(insertThis);
+        }
+
+        
+        //For Loading the Prev Scene
+        dbMgr.LoadSceneFromDb("SELECT*FROM PlayerSaveData");
         resetLives = true;
     }
 }
