@@ -68,6 +68,35 @@ public class DbManager
             }
         }
     }
+    //Setting Level Stuff
+    public void LevelData(string commandText)
+    {
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString))
+        {
+            dbCon.Open();
+            using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
+            {
+                using (SqliteDataReader dbReader = dbCmd.ExecuteReader())
+                {
+                    while (dbReader.Read())
+                    {
+                        if(Convert.ToInt32(dbReader[0]) == 1)
+                        {
+                            LevelMgr.LevelsComplete = 1;
+                        }
+                        if(Convert.ToInt32(dbReader[1]) == 1 && Convert.ToInt32(dbReader[0]) == 1)
+                        {
+                            LevelMgr.LevelsComplete = 2;
+                        }
+                        if(Convert.ToInt32(dbReader[2])== 1 && Convert.ToInt32(dbReader[1]) == 1 && Convert.ToInt32(dbReader[0]) == 1)
+                        {
+                            LevelMgr.LevelsComplete = 3;
+                        }
+                    }
+                }
+            }
+        }
+    }
     //Getting all The Data
     public void ReadingData(string commandText)
     {

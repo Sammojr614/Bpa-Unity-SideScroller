@@ -24,6 +24,8 @@ public class NewSaveData : MonoBehaviour
             dataManager.normalDbCommand("CREATE TABLE PlayerSaveData(PlayerLocation TEXT, PlayerHealth INT, PlayerLives INT, PlayerCurrency INT, TimesPlayed INT)");
             dataManager.normalDbCommand("INSERT INTO PlayerSaveData(PlayerLocation, PlayerHealth,PlayerLives,PlayerCurrency, TimesPlayed)VALUES('MainHub','4','3','0','1')");
             dataManager.normalDbCommand("CREATE TABLE PlayerInventory(SlotNumber INT, ItemInSlot TEXT, NumberOfItem INT)");
+            dataManager.normalDbCommand("CREATE TABLE LevelIndex(OzulDreamComplete INT, LucidComplete INT, NightMareComplete INT)");
+            dataManager.normalDbCommand("INSERT INTO LevelIndex(OzulDreamComplete, LucidComplete, NightmareComplte) VALUES('0','0', '0')");
             TutorialDialog.SetActive(true);
         }
     }
