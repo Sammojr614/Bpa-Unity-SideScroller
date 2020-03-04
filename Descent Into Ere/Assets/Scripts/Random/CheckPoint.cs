@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
+    //The Database manager
+    DbManager dbMgr = DbManager.Instance;
     //Original Spawnpoint and Checkpoint positions
     [SerializeField] protected Transform SpawnPointPos;
     [SerializeField] protected Transform CheckPointPos;
@@ -11,16 +13,27 @@ public class CheckPoint : MonoBehaviour
     //SpriteRenderers for the flag, active and unactive
     [SerializeField] private SpriteRenderer flagUnactive;
     [SerializeField] private SpriteRenderer flagActive;
+    public static bool activeCheckpoint;
 
     //Checks if the checkpoint has been reached, this is false by default
     protected static bool checkPointActive = false;
 
-    //On Start, the flag is unactive
+    //Zach, I have Updated the Database so that it will save if the player has the Checkpoint. I Will make you a DbCheck for it.
     private void Start()
     {
-        flagUnactive.enabled = true;
-        flagActive.enabled = false;
-        checkPointActive = false;
+        // checking if the Checkpoint is true or false in the database
+        string insertThis = string.Format("SELECT*FROM LevelIndex WHERE LevelName = '{0}'", dbMgr.PlayerLocation);
+        dbMgr.CheckpointCheck(insertThis);
+        if(activeCheckpoint == true)
+        {
+            SpawnPointPos.position = CheckPointPos.position;
+            flagActive.enabled = true;
+            flagUnactive.enabled = false;
+        }else if(activeCheckpoint == false)
+        {
+            flagUnactive.enabled = true;
+            flagActive.enabled = false;
+        }
     }
     /* When the player reaches the checkpoint,
      * it updates the spawn point, and sets checkPointActive to true.
@@ -33,6 +46,8 @@ public class CheckPoint : MonoBehaviour
         flagUnactive.enabled = false;
         flagActive.enabled = true;
         checkPointActive = true;
+        string insertThis = string.Format("UPDATE LevelIndex SET Checkpoint = '1' WHERE LevelName ='{0}'", dbMgr.PlayerLocation);
+        dbMgr.normalDbCommand(insertThis);
     }
 
 }

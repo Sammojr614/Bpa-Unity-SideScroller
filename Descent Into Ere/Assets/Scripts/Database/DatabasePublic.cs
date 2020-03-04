@@ -33,6 +33,30 @@ public class DbManager
     public bool slotThere;
     public int PotionsForDisplay;
     public bool LevelNamethere;
+    //Checkpoint Check
+    public void CheckpointCheck(string commandText)
+    {
+        using(SqliteConnection dbCon = new SqliteConnection(connectionString))
+        {
+            dbCon.Open();
+            using(SqliteCommand dbCmd = new SqliteCommand(commandText, dbCon))
+            {
+                using(SqliteDataReader dbReader = dbCmd.ExecuteReader())
+                {
+                    while (dbReader.Read())
+                    {
+                        if(Convert.ToInt32(dbReader[1]) == 0)
+                        {
+                            CheckPoint.activeCheckpoint = false;
+                        }else if(Convert.ToInt32(dbReader[1]) == 1)
+                        {
+                            CheckPoint.activeCheckpoint = true;
+                        }
+                    }
+                }
+            }
+        }
+    }
     //Normal Database Sqlite Commands
     public void normalDbCommand(string commandText)
     {
