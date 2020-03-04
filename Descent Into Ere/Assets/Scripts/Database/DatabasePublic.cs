@@ -32,6 +32,7 @@ public class DbManager
     public int PlayerCurrency;
     public bool slotThere;
     public int PotionsForDisplay;
+    public bool LevelNamethere;
     //Normal Database Sqlite Commands
     public void normalDbCommand(string commandText)
     {

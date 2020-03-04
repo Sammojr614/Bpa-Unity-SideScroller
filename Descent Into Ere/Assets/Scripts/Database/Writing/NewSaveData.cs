@@ -20,12 +20,22 @@ public class NewSaveData : MonoBehaviour
         dataManager.DataCheck("SELECT name FROM sqlite_master");
         if (dataManager.isDataHere == false)
         {
-            //Putting DataTables into the Database
+                                                                    /* Main Player Save Data*/ 
+            //Creating the Table
             dataManager.normalDbCommand("CREATE TABLE PlayerSaveData(PlayerLocation TEXT, PlayerHealth INT, PlayerLives INT, PlayerCurrency INT, TimesPlayed INT)");
+            //Inserting the Default Values
             dataManager.normalDbCommand("INSERT INTO PlayerSaveData(PlayerLocation, PlayerHealth,PlayerLives,PlayerCurrency, TimesPlayed)VALUES('MainHub','4','3','0','1')");
+            //Creating the Player Inventory 
             dataManager.normalDbCommand("CREATE TABLE PlayerInventory(SlotNumber INT, ItemInSlot TEXT, NumberOfItem INT)");
-            dataManager.normalDbCommand("CREATE TABLE LevelIndex(OzulDreamComplete INT, LucidComplete INT, NightMareComplete INT)");
-            dataManager.normalDbCommand("INSERT INTO LevelIndex(OzulDreamComplete, LucidComplete, NightmareComplte) VALUES('0','0', '0')");
+
+                                                        /*LevelIndex*/
+            //Table Creation
+            dataManager.normalDbCommand("CREATE TABLE LevelIndex(LevelName TEXT, Checkpoint INT, BossDefeated INT)");
+            //Modifying the Table 
+            dataManager.normalDbCommand("INSERT INTO LevelIndex(LevelName,Checkpoint, BossDefeated) VALUES('OzulDream', '0','0')");
+            dataManager.normalDbCommand("INSERT INTO LevelIndex(LevelName, Checkpoint, BossDefeated) VALUES('Lucid', '0','0')");
+            dataManager.normalDbCommand("INSERT INTO LevelIndex(LevelName, Checkpoint, BossDefeated) VALUES('Nightmare', '0','0')");
+            // For that Extra Bit Of Swag, Asking if the need a tutoiral 
             TutorialDialog.SetActive(true);
         }
     }
