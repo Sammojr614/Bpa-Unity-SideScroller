@@ -44,6 +44,7 @@ public class Health : MonoBehaviour
         dataManager.normalDbCommand(insertThis);
         //Updating the Lives in the Database
         putThisIn = string.Format("UPDATE PlayerSaveData SET PlayerLives='{0}'", lives);
+        dataManager.normalDbCommand(putThisIn);
 
         //If the player presses continue, the lives are reset to 3
         if (Continue.resetLives == true)
@@ -60,6 +61,8 @@ public class Health : MonoBehaviour
     void updateLives()
     {
         putThisIn = string.Format("UPDATE PlayerSaveData SET PlayerLives='{0}'", lives);
+        dataManager.normalDbCommand(putThisIn);
+
     }
 
     void Update()
