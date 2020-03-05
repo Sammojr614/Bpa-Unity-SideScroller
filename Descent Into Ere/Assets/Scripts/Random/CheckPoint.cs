@@ -46,6 +46,7 @@ public class CheckPoint : MonoBehaviour
         flagUnactive.enabled = false;
         flagActive.enabled = true;
         checkPointActive = true;
+        activeCheckpoint = true;
         string insertThis = string.Format("UPDATE LevelIndex SET Checkpoint = '1' WHERE LevelName ='{0}'", dbMgr.PlayerLocation);
         dbMgr.normalDbCommand(insertThis);
     }

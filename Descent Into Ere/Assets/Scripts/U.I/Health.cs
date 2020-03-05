@@ -20,7 +20,10 @@ public class Health : MonoBehaviour
     {
         //Making Sure The Values are Read and Set From the Database
         dataManager.ReadingData("SELECT*FROM PlayerSaveData");
+        /*
         playerData();
+        */
+
     }
     //if the Player is to Touch an Enemy 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -57,6 +60,7 @@ public class Health : MonoBehaviour
 
     void Update()
     {
+        playerData();
         
         //This Is For Displaying the Amount of Health
         switch (health)

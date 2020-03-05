@@ -12,9 +12,10 @@ public class OpenThingy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dbMgr.ReadingData("SELECT*FROM PlayerSaveData");
         ThingToOpen.SetActive(false);
         ButtonPressed.onClick.AddListener(TaskOnClick);
+        dbMgr.ReadingData("SELECT*FROM PlayerSaveData");
+        
     }
     void TaskOnClick()
     {
