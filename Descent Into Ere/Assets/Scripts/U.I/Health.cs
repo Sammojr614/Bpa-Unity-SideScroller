@@ -20,9 +20,8 @@ public class Health : MonoBehaviour
     {
         //Making Sure The Values are Read and Set From the Database
         dataManager.ReadingData("SELECT*FROM PlayerSaveData");
-        /*
+
         playerData();
-        */
 
     }
     //if the Player is to Touch an Enemy 
@@ -58,9 +57,13 @@ public class Health : MonoBehaviour
         dataManager.ReadingData("SELECT*FROM PlayerSaveData");
     }
 
+    void updateLives()
+    {
+        putThisIn = string.Format("UPDATE PlayerSaveData SET PlayerLives='{0}'", lives);
+    }
+
     void Update()
     {
-        playerData();
         
         //This Is For Displaying the Amount of Health
         switch (health)
@@ -79,7 +82,9 @@ public class Health : MonoBehaviour
                     charge.SetActive(true);
                 }
                 break;
-            case 0: lives--;
+            case 0: 
+                lives--;
+                updateLives();
                 health = 4;
                 break;
         }
