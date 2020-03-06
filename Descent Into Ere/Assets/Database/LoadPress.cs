@@ -26,7 +26,7 @@ public class LoadPress : MonoBehaviour
         data.TimesPlayed++;
         string updateTimesPlayed = JsonUtility.ToJson(data);
         File.WriteAllText("PlayerSaveData.json", updateTimesPlayed);
-        if(Loaded.TimesPlayed < 1)
+        if(Loaded.TimesPlayed == 0)
         {
             TutorialDialog.SetActive(true);
         }

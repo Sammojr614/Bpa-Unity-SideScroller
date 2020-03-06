@@ -14,7 +14,7 @@ public class Shop : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Shop"))
+        if (Input.GetButton("Shop"))
         {
             ShopMenu.SetActive(true);
         }
