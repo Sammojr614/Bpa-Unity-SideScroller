@@ -10,6 +10,10 @@ public class LocateMainhub : MonoBehaviour
     void Start()
     {
         data.location = "MainHub";
+        data.Playerhealth = Health.health;
+        data.PlayerLives = Health.lives;
+        data.Playercurrency = CurrencyCounter.currentCoins;
+        
         string locationUpdate = JsonUtility.ToJson(data);
         File.WriteAllText("PlayerSaveData.json", locationUpdate);
     }

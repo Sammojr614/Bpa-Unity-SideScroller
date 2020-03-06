@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class CurrencyCounter : MonoBehaviour
 {
     public GameObject Coin;
+    public static int currentCoins;
+
     DataMgr data = DataMgr.Instance;
     private void Start()
     {
@@ -21,5 +23,10 @@ public class CurrencyCounter : MonoBehaviour
             File.WriteAllText("PlayerSaveData.json", currencyUpdate);
             Coin.SetActive(false);
         }
+    }
+
+    private void Update()
+    {
+        currentCoins = data.Playercurrency;
     }
 }
