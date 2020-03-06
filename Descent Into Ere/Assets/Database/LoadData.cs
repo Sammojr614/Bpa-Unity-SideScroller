@@ -14,7 +14,7 @@ public class LoadData : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string forDisplay = File.ReadAllText(Application.dataPath + "/Database/PlayerSaveData.json");
+        string forDisplay = File.ReadAllText("PlayerSaveData.json");
         DataMgr LoadedData = JsonUtility.FromJson<DataMgr>(forDisplay);
         LoctionDisplay.text ="Locaition: " + LoadedData.location;
         LivesDisplay.text = "Lives: " + LoadedData.PlayerLives.ToString();

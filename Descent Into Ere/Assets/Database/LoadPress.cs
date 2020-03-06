@@ -18,14 +18,14 @@ public class LoadPress : MonoBehaviour
     }
     void LoadOnClick()
     {
-        string forload = File.ReadAllText(Application.dataPath + "/Database/PlayerSaveData.json");
+        string forload = File.ReadAllText("PlayerSaveData.json");
         DataMgr Loaded = JsonUtility.FromJson<DataMgr>(forload);
         SceneManager.LoadScene(Loaded.location);
         Health.health = Loaded.Playerhealth;
         Health.lives = Loaded.PlayerLives;
         data.TimesPlayed++;
         string updateTimesPlayed = JsonUtility.ToJson(data);
-        File.WriteAllText(Application.dataPath + "/Database/PlayerSaveData.json", updateTimesPlayed);
+        File.WriteAllText("PlayerSaveData.json", updateTimesPlayed);
         if(Loaded.TimesPlayed < 1)
         {
             TutorialDialog.SetActive(true);

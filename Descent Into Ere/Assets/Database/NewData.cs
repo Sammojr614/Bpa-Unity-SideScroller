@@ -20,7 +20,7 @@ public class NewData : MonoBehaviour
         Data.Playerhealth = 4;
         Data.PlayerLives = 3;
         string jsonData = JsonUtility.ToJson(Data);
-        File.WriteAllText(Application.dataPath + "/Database/PlayerSaveData.json",jsonData);
+        File.WriteAllText("PlayerSaveData.json",jsonData);
         
     }
 }

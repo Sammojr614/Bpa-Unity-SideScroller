@@ -14,7 +14,7 @@ public class CurrencyCounter : MonoBehaviour
         {
             data.Playercurrency++;
             string currencyUpdate = JsonUtility.ToJson(data);
-            File.WriteAllText(Application.dataPath + "/Database/PlayerSaveData.json", currencyUpdate);
+            File.WriteAllText("PlayerSaveData.json", currencyUpdate);
         }
     }
 }

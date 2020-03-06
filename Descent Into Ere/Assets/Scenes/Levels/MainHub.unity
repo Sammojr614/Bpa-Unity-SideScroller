@@ -2010,6 +2010,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddd89848811241399303596bf22748a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InventoryMenu: {fileID: 1307886488}
+  ItemCounter: {fileID: 482080276}
+  NumberOfItems: 0
+  nameOfItem: Potion
 --- !u!1 &506113074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,8 +3107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab3020b21b0d4058b96ab17c075ef54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthCharges: []
-  livesDisplay: {fileID: 0}
+  healthCharges:
+  - {fileID: 208970518}
+  - {fileID: 892146132}
+  - {fileID: 1487777300}
+  - {fileID: 1487777300}
+  livesDisplay: {fileID: 233918459}
 --- !u!61 &824651932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5986,6 +5994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5cd7e5462b9d449e81d4873afe2f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShopMenu: {fileID: 0}
 --- !u!1 &1865203199
 GameObject:
   m_ObjectHideFlags: 0
@@ -6669,8 +6678,8 @@ GameObject:
   - component: {fileID: 2069318624}
   - component: {fileID: 2069318623}
   - component: {fileID: 2069318622}
-  - component: {fileID: 2069318625}
   - component: {fileID: 2069318626}
+  - component: {fileID: 2069318625}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -6752,7 +6761,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2069318621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cca12f9bffdfd4b4ab51605e9726d3f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 45fc507a2133a894c9cc845ceda0c6d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2069318626

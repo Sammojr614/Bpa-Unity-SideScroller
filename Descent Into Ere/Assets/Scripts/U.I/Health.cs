@@ -15,11 +15,12 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        string DmgCheck = File.ReadAllText(Application.dataPath + "/Database/PlayerSaveData.json");
+        string DmgCheck = File.ReadAllText("PlayerSaveData.json");
         DataMgr loadDmg = JsonUtility.FromJson<DataMgr>(DmgCheck);
         health = loadDmg.Playerhealth;
         lives = loadDmg.PlayerLives;
         livesDisplay.text ="Lives: " +  loadDmg.PlayerLives.ToString();
+        //This Switch is for Changing the Health When you take Damage
         switch (health)
         {
             case 4:
@@ -46,13 +47,14 @@ public class Health : MonoBehaviour
         }
         
     }
+    //This is For the Damage
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
             health--;
             string json = JsonUtility.ToJson(data);
-            File.WriteAllText(Application.dataPath + "/Database/PlayerSaveData.json", json);
+            File.WriteAllText("PlayerSaveData.json", json);
         }
     }
 
