@@ -719,6 +719,7 @@ GameObject:
   - component: {fileID: 586550414}
   - component: {fileID: 586550413}
   - component: {fileID: 586550412}
+  - component: {fileID: 586550415}
   m_Layer: 5
   m_Name: Load
   m_TagString: Untagged
@@ -825,6 +826,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586550410}
   m_CullTransparentMesh: 0
+--- !u!114 &586550415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586550410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad491caf63a5b49968747e67c865a0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadButton: {fileID: 586550412}
+  TutorialDialog: {fileID: 686897714}
 --- !u!1 &596895193
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,10 +892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953c6e50f683fcf4cb67a065dbc3d63d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DropButton: {fileID: 596895196}
-  areYouSure: {fileID: 1692047864}
-  YesButton: {fileID: 2036056346}
-  NoButton: {fileID: 1416230252}
 --- !u!114 &596895196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,16 +1658,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1346271422}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b55de93864e8d41deaf198e2c90255ed, type: 3}
+  m_Script: {fileID: 11500000, guid: bfc9e2b26bbe54fe6b1daf1d35f722b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LocationDisplay: {fileID: 2071944919}
-  HealthDisplay: {fileID: 1284772050}
+  LoctionDisplay: {fileID: 2071944919}
   LivesDisplay: {fileID: 545767291}
-  LoadButton: {fileID: 586550412}
-  Buttontext: {fileID: 1531991242}
-  DreamCoinText: {fileID: 1868699076}
-  NumberOfTimesPlayed: {fileID: 1916115665}
+  HealthDisplay: {fileID: 1284772050}
+  Currecny: {fileID: 1868699076}
+  TimesPlayed: {fileID: 1916115665}
 --- !u!1 &1400709462
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,11 +2569,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1651732349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6642c8a1014b44618b8e7af2ac921ba, type: 3}
+  m_Script: {fileID: 11500000, guid: 757ea4544af4d4a2eb8fc01aa35a6c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewDataButton: {fileID: 1651732351}
-  TutorialDialog: {fileID: 686897714}
+  CreateButton: {fileID: 1651732351}
 --- !u!1 &1692047864
 GameObject:
   m_ObjectHideFlags: 0

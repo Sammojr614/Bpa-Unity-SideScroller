@@ -165,8 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d26a5f46453da4da2ab357505e72412a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UseButton: {fileID: 828328166}
-  ButtonText: {fileID: 831141714}
 --- !u!212 &10474113
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1578,7 +1576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d1d82e291d64206bf56da12037a276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrencyDisplayText: {fileID: 2039983583}
 --- !u!1 &460333864
 GameObject:
   m_ObjectHideFlags: 0
@@ -2013,11 +2010,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fddd89848811241399303596bf22748a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InventoryMenu: {fileID: 1307886488}
-  InventorySlots:
-  - {fileID: 10474110}
-  CloseButton: {fileID: 892836175}
-  HowManyPotions: {fileID: 482080276}
 --- !u!1 &506113074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3010,6 +3002,7 @@ GameObject:
   - component: {fileID: 824651929}
   - component: {fileID: 824651928}
   - component: {fileID: 824651927}
+  - component: {fileID: 824651935}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -3110,12 +3103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab3020b21b0d4058b96ab17c075ef54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LivesDisplay: {fileID: 233918459}
-  healthBarCharges:
-  - {fileID: 208970518}
-  - {fileID: 892146132}
-  - {fileID: 1487777300}
-  - {fileID: 433636515}
+  healthCharges: []
+  livesDisplay: {fileID: 0}
 --- !u!61 &824651932
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3175,6 +3164,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c294de43a7e204e4d86a7e2610b206aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &824651935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824651925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab3020b21b0d4058b96ab17c075ef54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthCharges:
+  - {fileID: 208970518}
+  - {fileID: 892146132}
+  - {fileID: 1487777300}
+  - {fileID: 433636515}
+  livesDisplay: {fileID: 233918459}
 --- !u!1 &828328164
 GameObject:
   m_ObjectHideFlags: 0
@@ -5979,10 +5986,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5cd7e5462b9d449e81d4873afe2f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuyButton: {fileID: 1034702767}
-  ShopMenu: {fileID: 1736041306}
-  CloseButton: {fileID: 1333381980}
-  ButtonText: {fileID: 1235123300}
 --- !u!1 &1865203199
 GameObject:
   m_ObjectHideFlags: 0
