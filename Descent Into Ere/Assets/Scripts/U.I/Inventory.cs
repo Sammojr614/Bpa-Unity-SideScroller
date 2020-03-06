@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     public GameObject InventoryMenu;
     InventoryMgr Inven = InventoryMgr.Instance;
     public Text ItemCounter;
-    public int NumberOfItems;
+    int NumberOfItems;
     public string nameOfItem;
     private void Start()
     {

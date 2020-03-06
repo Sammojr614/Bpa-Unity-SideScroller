@@ -2012,7 +2012,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InventoryMenu: {fileID: 1307886488}
   ItemCounter: {fileID: 482080276}
-  NumberOfItems: 0
   nameOfItem: Potion
 --- !u!1 &506113074
 GameObject:
@@ -3006,7 +3005,6 @@ GameObject:
   - component: {fileID: 824651929}
   - component: {fileID: 824651928}
   - component: {fileID: 824651927}
-  - component: {fileID: 824651935}
   m_Layer: 0
   m_Name: Ozul
   m_TagString: Player
@@ -3172,24 +3170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c294de43a7e204e4d86a7e2610b206aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &824651935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824651925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eab3020b21b0d4058b96ab17c075ef54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthCharges:
-  - {fileID: 208970518}
-  - {fileID: 892146132}
-  - {fileID: 1487777300}
-  - {fileID: 433636515}
-  livesDisplay: {fileID: 233918459}
 --- !u!1 &828328164
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,6 +3606,7 @@ GameObject:
   - component: {fileID: 892836177}
   - component: {fileID: 892836176}
   - component: {fileID: 892836175}
+  - component: {fileID: 892836178}
   m_Layer: 5
   m_Name: CloseInventory
   m_TagString: Untagged
@@ -3732,6 +3713,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892836173}
   m_CullTransparentMesh: 0
+--- !u!114 &892836178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892836173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae4eea3e9e0e4002bc6df04c1eaa9b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonPressed: {fileID: 892836175}
+  CloseThis: {fileID: 1307886488}
 --- !u!1 &926656316
 GameObject:
   m_ObjectHideFlags: 0
@@ -4974,6 +4969,7 @@ GameObject:
   - component: {fileID: 1333381982}
   - component: {fileID: 1333381981}
   - component: {fileID: 1333381980}
+  - component: {fileID: 1333381983}
   m_Layer: 5
   m_Name: CloseShopButton
   m_TagString: Untagged
@@ -5080,6 +5076,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333381978}
   m_CullTransparentMesh: 0
+--- !u!114 &1333381983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333381978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ae4eea3e9e0e4002bc6df04c1eaa9b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonPressed: {fileID: 1333381980}
+  CloseThis: {fileID: 1736041306}
 --- !u!1 &1358174045
 GameObject:
   m_ObjectHideFlags: 0
@@ -5994,7 +6004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5cd7e5462b9d449e81d4873afe2f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopMenu: {fileID: 0}
+  ShopMenu: {fileID: 1820614183}
 --- !u!1 &1865203199
 GameObject:
   m_ObjectHideFlags: 0
@@ -6008,6 +6018,7 @@ GameObject:
   - component: {fileID: 1865203202}
   - component: {fileID: 1865203201}
   - component: {fileID: 1865203200}
+  - component: {fileID: 1865203205}
   m_Layer: 5
   m_Name: Main U.I
   m_TagString: Untagged
@@ -6115,6 +6126,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1865203205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1865203199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd53f02744119ea4683b44fd415d637e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrencyDisplayText: {fileID: 2039983583}
 --- !u!1 &1907196906
 GameObject:
   m_ObjectHideFlags: 0

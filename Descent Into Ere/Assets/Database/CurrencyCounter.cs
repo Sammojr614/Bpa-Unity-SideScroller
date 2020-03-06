@@ -6,15 +6,20 @@ using UnityEngine.UI;
 
 public class CurrencyCounter : MonoBehaviour
 {
-    public Text CurrencyCounterD;
+    public GameObject Coin;
     DataMgr data = DataMgr.Instance;
+    private void Start()
+    {
+        Coin.SetActive(true);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Crystal"))
+        if (collision.CompareTag("Player"))
         {
             data.Playercurrency++;
             string currencyUpdate = JsonUtility.ToJson(data);
             File.WriteAllText("PlayerSaveData.json", currencyUpdate);
+            Coin.SetActive(false);
         }
     }
 }
