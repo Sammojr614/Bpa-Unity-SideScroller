@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -452,6 +453,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -872,6 +874,7 @@ RectTransform:
   m_LocalScale: {x: 0.01182072, y: 0.014118213, z: 1.0000328}
   m_Children:
   - {fileID: 1635328280}
+  - {fileID: 1692047865}
   m_Father: {fileID: 1346271423}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -889,9 +892,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 596895193}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 953c6e50f683fcf4cb67a065dbc3d63d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0218612b5b304b44dbe95adeb81b857f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EraseButton: {fileID: 596895196}
+  EraseDialog: {fileID: 1692047864}
+  YesButton: {fileID: 2036056346}
+  NoButton: {fileID: 1416230252}
 --- !u!114 &596895196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,6 +1009,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1591,7 +1599,6 @@ RectTransform:
   - {fileID: 1868699075}
   - {fileID: 1916115664}
   - {fileID: 596895194}
-  - {fileID: 1692047865}
   m_Father: {fileID: 1707513673}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1614,6 +1621,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2597,15 +2605,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692047864}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.8847362, y: -3.2402868, z: 0}
-  m_LocalScale: {x: 0.93040603, y: 1.1112413, z: 78.71235}
+  m_LocalPosition: {x: 41.390354, y: -126.240265, z: 0}
+  m_LocalScale: {x: 78.709755, y: 78.70977, z: 78.70976}
   m_Children:
   - {fileID: 1700799036}
   - {fileID: 892680772}
   - {fileID: 2036056345}
   - {fileID: 1416230251}
-  m_Father: {fileID: 1346271423}
-  m_RootOrder: 8
+  m_Father: {fileID: 596895194}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1695837802
 GameObject:
@@ -2862,6 +2870,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
