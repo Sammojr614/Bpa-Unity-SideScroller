@@ -12,13 +12,24 @@ public class PlayerMovement : MonoBehaviour
     public static bool isGrounded;
 
     //Player moves by using wsad or arrow keys
+    //This Is True Unless the Player Is Attacking
     void Update()
     {
+        if(Input.GetButton("Attack"))
+        {
+            moveSpeed = 0f;
+        }
+        else
+        {
+            moveSpeed = 5f;
+            Jump();
+            Vector3 Movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+            transform.position += Movement * Time.deltaTime * moveSpeed;
+        }
+      
+            
         
-
-        Jump();
-        Vector3 Movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
-        transform.position += Movement * Time.deltaTime * moveSpeed;
+        
     }
 
     /* If the player presses space while grounded,

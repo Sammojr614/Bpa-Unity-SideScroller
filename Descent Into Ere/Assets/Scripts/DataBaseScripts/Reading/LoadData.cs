@@ -18,7 +18,7 @@ public class LoadData : MonoBehaviour
         DataMgr LoadedData = JsonUtility.FromJson<DataMgr>(forDisplay);
         LoctionDisplay.text ="Locaition: " + LoadedData.location;
         LivesDisplay.text = "Lives: " + LoadedData.PlayerLives.ToString();
-        HealthDisplay.text = "Health: " + LoadedData.PlayerLives.ToString();
+        HealthDisplay.text = "Health: " + LoadedData.Playerhealth.ToString();
         Currecny.text = "Dream Coins: " + LoadedData.Playercurrency.ToString();
         TimesPlayed.text = "TimesPlayed: " + LoadedData.TimesPlayed.ToString();
     }

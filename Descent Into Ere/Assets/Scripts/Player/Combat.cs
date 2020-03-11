@@ -5,7 +5,7 @@ using UnityEngine;
 public class Combat : MonoBehaviour
 {
     public GameObject Knife;
-    public bool Drawn;
+    public static bool Drawn;
     public Transform KnifeTrans;
     public Transform PlayerTrans;
     public Animator PlayerAnimator;
