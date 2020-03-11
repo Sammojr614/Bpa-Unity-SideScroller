@@ -2024,6 +2024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InventoryMenu: {fileID: 1307886488}
+  useButton: {fileID: 828328166}
   ItemCounter: {fileID: 482080276}
   nameOfItem: Potion
 --- !u!1 &506113074
@@ -3064,7 +3065,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Knife: {fileID: 471646103}
-  Drawn: 0
   KnifeTrans: {fileID: 471646104}
   PlayerTrans: {fileID: 638387237}
   PlayerAnimator: {fileID: 824651930}
@@ -3963,6 +3963,7 @@ GameObject:
   - component: {fileID: 1034702769}
   - component: {fileID: 1034702768}
   - component: {fileID: 1034702767}
+  - component: {fileID: 1034702770}
   m_Layer: 5
   m_Name: Buy
   m_TagString: Untagged
@@ -4069,6 +4070,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1034702765}
   m_CullTransparentMesh: 0
+--- !u!114 &1034702770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034702765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 807af5ec0498649adbdace3c368ca342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BuyButton: {fileID: 1034702767}
+  PriceofItem: 5
 --- !u!1 &1112319400
 GameObject:
   m_ObjectHideFlags: 0
@@ -6000,6 +6015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1820614184}
   - component: {fileID: 1820614185}
+  - component: {fileID: 1820614186}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -6039,7 +6055,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5cd7e5462b9d449e81d4873afe2f21f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShopMenu: {fileID: 1820614183}
+  ShopMenu: {fileID: 1736041306}
+--- !u!114 &1820614186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820614183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd7afcbee2c834fa697c2337a2bc1b63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buyButton: {fileID: 1034702767}
+  priceOfItem: 5
 --- !u!1 &1865203199
 GameObject:
   m_ObjectHideFlags: 0
