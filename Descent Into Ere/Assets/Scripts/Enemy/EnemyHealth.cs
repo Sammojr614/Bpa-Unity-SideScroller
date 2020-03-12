@@ -4,25 +4,30 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public static int EHealth;
-    public string EnemyType;
     public GameObject Enemy;
-    // Start is called before the first frame update
+
+    [SerializeField] private int health;
+
+    //On start, enemy is set active to true
     void Start()
     {
         Enemy.SetActive(true);
-        if (EnemyType == "FirstEnemy")
+    }
+
+    //How the enemy takes damage
+    public void TakeDamage(int amount)
+    {
+        health -= amount;
+        
+        if(health <= 0)
         {
-            EHealth = 2;
+            Death();
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    //When the enemy dies, it is destroyed
+    void Death()
     {
-        if(EHealth == 0)
-        {
-            Enemy.SetActive(false);
-        }
+        Destroy(Enemy);
     }
 }
