@@ -8,7 +8,7 @@ public class LocateMainhub : MonoBehaviour
     DataMgr data = DataMgr.Instance;
     InventoryMgr Inven = InventoryMgr.Instance;
     // Start is called before the first frame update
-    void Start()
+    void Update()
     {
         data.location = "MainHub";
         data.Playerhealth = Health.health;

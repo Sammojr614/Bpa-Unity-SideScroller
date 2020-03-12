@@ -13,13 +13,20 @@ public class Health : MonoBehaviour
     public GameObject[] healthCharges;
     public Text livesDisplay;
 
+    private void Start()
+    {
+        string DmgCheck = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
+        DataMgr loadDmg = JsonUtility.FromJson<DataMgr>(DmgCheck);
+
+        health = loadDmg.Playerhealth;
+        lives = loadDmg.PlayerLives;
+    }
+
     private void Update()
     {
         string DmgCheck = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
         DataMgr loadDmg = JsonUtility.FromJson<DataMgr>(DmgCheck);
-        health = loadDmg.Playerhealth;
-        lives = loadDmg.PlayerLives;
-        livesDisplay.text ="Lives: " +  loadDmg.PlayerLives.ToString();
+        livesDisplay.text = "Lives: " + loadDmg.PlayerLives.ToString();
         //This Switch is for Changing the Health When you take Damage
         switch (health)
         {
@@ -44,6 +51,17 @@ public class Health : MonoBehaviour
                 lives--;
                 health = 4;
                 break;
+        }
+
+        if (Continue.resetLives == true)
+        {
+            lives = 3;
+            Continue.resetLives = false;
+        }
+
+        if (lives == 0)
+        {
+            SceneManager.LoadScene("GameOver");
         }
         
     }

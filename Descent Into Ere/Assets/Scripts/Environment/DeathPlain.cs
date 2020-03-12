@@ -12,11 +12,11 @@ public class DeathPlain : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            data.PlayerLives--;
             string tojson = JsonUtility.ToJson(data);
             File.WriteAllText("PlayerSaveData.json", tojson);
             DataMgr fromjson = JsonUtility.FromJson<DataMgr>(tojson);
-            fromjson.PlayerLives = Health.lives;
+            Health.lives--;
+            data.PlayerLives = Health.lives;
             Player.position = SpawnPoint.position;
 
         }
@@ -25,11 +25,11 @@ public class DeathPlain : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            data.PlayerLives--;
             string tojson = JsonUtility.ToJson(data);
             File.WriteAllText("PlayerSaveData.json", tojson);
             DataMgr fromjson = JsonUtility.FromJson<DataMgr>(tojson);
-            fromjson.PlayerLives = Health.lives;
+            Health.lives--;
+            data.PlayerLives = Health.lives;
             Player.position = SpawnPoint.position;
         }
     }

@@ -24,8 +24,8 @@ public class Continue : MonoBehaviour
     //If the player presses continue, they will return to the previous level
     void onClick()
     {
-        
 
+        SceneManager.LoadScene("OzulDream");
         
         //For Loading the Prev Scene
        
