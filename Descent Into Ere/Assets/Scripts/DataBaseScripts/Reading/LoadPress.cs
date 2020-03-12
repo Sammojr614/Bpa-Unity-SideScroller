@@ -16,11 +16,15 @@ public class LoadPress : MonoBehaviour
         loadButton.onClick.AddListener(LoadOnClick);
         TutorialDialog.SetActive(false);
     }
+    
     void LoadOnClick()
-    {
-        string forload = File.ReadAllText("PlayerSaveData.json");
+    { 
+        //Json Strings
+        string forload = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
+        string loadinven = File.ReadAllText(Application.dataPath + "PlayerInventory.json");
         //Reading the File
         DataMgr Loaded = JsonUtility.FromJson<DataMgr>(forload);
+        InventoryMgr LoadInven = JsonUtility.FromJson<InventoryMgr>(loadinven);
         //Getting location
         SceneManager.LoadScene(Loaded.location);
         //Getting Health
@@ -31,9 +35,11 @@ public class LoadPress : MonoBehaviour
         CurrencyCounter.currentCoins = Loaded.Playercurrency;
         //Times Played
         data.TimesPlayed++;
+        //Loading Inventory
+        Inventory.NumberOfItems = LoadInven.NumberOfItem;
         //Updating stuff
         string updateTimesPlayed = JsonUtility.ToJson(data);
-        File.WriteAllText("PlayerSaveData.json", updateTimesPlayed);
+        File.WriteAllText(Application.dataPath + "PlayerSaveData.json", updateTimesPlayed);
         if(Loaded.TimesPlayed == 0)
         {
             TutorialDialog.SetActive(true);

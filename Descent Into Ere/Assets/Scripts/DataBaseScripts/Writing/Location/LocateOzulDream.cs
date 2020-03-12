@@ -19,8 +19,8 @@ public class LocateOzulDream : MonoBehaviour
 
         string locationUpdate = JsonUtility.ToJson(data);
         string InvenUpdate = JsonUtility.ToJson(Inven);
-        File.WriteAllText("PlayerSaveData.json", locationUpdate);
-        File.WriteAllText("PlayerInventory.json", InvenUpdate);
+        File.WriteAllText(Application.dataPath + "PlayerSaveData.json", locationUpdate);
+        File.WriteAllText(Application.dataPath + "PlayerInventory.json", InvenUpdate);
     }
 
 }

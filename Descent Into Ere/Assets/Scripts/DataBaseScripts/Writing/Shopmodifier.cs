@@ -23,8 +23,8 @@ public class Shopmodifier : MonoBehaviour
             data.Playerhealth = Health.health;
             data.PlayerLives = Health.lives;
             string toJson = JsonUtility.ToJson(data);
-            File.WriteAllText("PlayerSaveData.json",toJson);
-            string fromJson = File.ReadAllText("PlayerSaveData.json");
+            File.WriteAllText(Application.dataPath + "PlayerSaveData.json", toJson);
+            string fromJson = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
             DataMgr update = JsonUtility.FromJson<DataMgr>(fromJson);
             update.Playercurrency = CurrencyCounter.currentCoins;
             update.Playerhealth = Health.health;
@@ -32,7 +32,7 @@ public class Shopmodifier : MonoBehaviour
             inven.ItemName = "Potion";
             inven.NumberOfItem++;
             string inventoJson = JsonUtility.ToJson(inven);
-            File.WriteAllText("PlayerInventory.json",inventoJson);
+            File.WriteAllText(Application.dataPath + "PlayerInventory.json",inventoJson);
         }
     }
 }

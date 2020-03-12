@@ -10,7 +10,7 @@ public class CurrencyDisplay : MonoBehaviour
     DataMgr data = DataMgr.Instance;
     private void Update()
     {
-        string fromJson = File.ReadAllText("PlayerSaveData.json");
+        string fromJson = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
         DataMgr getCurrency = JsonUtility.FromJson<DataMgr>(fromJson);
         CurrencyDisplayText.text = getCurrency.Playercurrency.ToString();
         

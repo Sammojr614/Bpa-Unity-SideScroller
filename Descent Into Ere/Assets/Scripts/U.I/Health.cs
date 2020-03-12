@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        string DmgCheck = File.ReadAllText("PlayerSaveData.json");
+        string DmgCheck = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
         DataMgr loadDmg = JsonUtility.FromJson<DataMgr>(DmgCheck);
         health = loadDmg.Playerhealth;
         lives = loadDmg.PlayerLives;

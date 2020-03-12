@@ -8,6 +8,7 @@ public class NewData : MonoBehaviour
 {
     public Button CreateButton;
     DataMgr Data = DataMgr.Instance;
+    InventoryMgr Inven = InventoryMgr.Instance;
     
     private void Start()
     {
@@ -19,8 +20,12 @@ public class NewData : MonoBehaviour
         Data.location = "MainHub";
         Data.Playerhealth = 4;
         Data.PlayerLives = 3;
+        Inven.NumberOfItem = 0;
+        Inven.ItemName = "Potion";
         string jsonData = JsonUtility.ToJson(Data);
-        File.WriteAllText("PlayerSaveData.json",jsonData);
+        File.WriteAllText(Application.dataPath +  "PlayerSaveData.json",jsonData);
+        string jsonInven = JsonUtility.ToJson(Inven);
+        File.WriteAllText(Application.dataPath + "PlayerInventory.json", jsonInven);
         
     }
 }

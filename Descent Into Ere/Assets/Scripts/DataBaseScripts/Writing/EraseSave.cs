@@ -29,7 +29,7 @@ public class EraseSave : MonoBehaviour
         data.Playerhealth = 4;
         data.PlayerLives = 3;
         string json = JsonUtility.ToJson(data);
-        File.WriteAllText("PlayerSaveData.json", json);
+        File.WriteAllText(Application.dataPath +  "PlayerSaveData.json", json);
     }
     void CloseErase()
     {

@@ -13,7 +13,7 @@ public class CurrencyCounter : MonoBehaviour
     private void Start()
     {
         Coin.SetActive(true);
-        string fromJson = File.ReadAllText("PlayerSaveData.json");
+        string fromJson = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
         DataMgr currencyCheck = JsonUtility.FromJson<DataMgr>(fromJson);
         currencyCheck.Playercurrency = currentCoins;
     }
@@ -23,7 +23,7 @@ public class CurrencyCounter : MonoBehaviour
         {
             data.Playercurrency++;
             string currencyUpdate = JsonUtility.ToJson(data);
-            File.WriteAllText("PlayerSaveData.json", currencyUpdate);
+            File.WriteAllText(Application.dataPath + "PlayerSaveData.json", currencyUpdate);
             Coin.SetActive(false);
         }
     }

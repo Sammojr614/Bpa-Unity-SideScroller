@@ -12,17 +12,18 @@ public class LoadData : MonoBehaviour
     public Text Currecny;
     public Text TimesPlayed;
     // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        string forDisplay = File.ReadAllText("PlayerSaveData.json");
+        string forDisplay = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
         DataMgr LoadedData = JsonUtility.FromJson<DataMgr>(forDisplay);
-        LoctionDisplay.text ="Locaition: " + LoadedData.location;
+        LoctionDisplay.text = "Locaition: " + LoadedData.location;
         LivesDisplay.text = "Lives: " + LoadedData.PlayerLives.ToString();
         HealthDisplay.text = "Health: " + LoadedData.Playerhealth.ToString();
         Currecny.text = "Dream Coins: " + LoadedData.Playercurrency.ToString();
         TimesPlayed.text = "TimesPlayed: " + LoadedData.TimesPlayed.ToString();
     }
-   
+
+
 
 
 }
