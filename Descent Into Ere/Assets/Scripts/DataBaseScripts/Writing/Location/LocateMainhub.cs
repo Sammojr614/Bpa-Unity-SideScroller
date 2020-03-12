@@ -14,7 +14,7 @@ public class LocateMainhub : MonoBehaviour
         data.Playerhealth = Health.health;
         data.PlayerLives = Health.lives;
         data.Playercurrency = CurrencyCounter.currentCoins;
-        Inven.NumberOfItem = Inventory.NumberOfItems;
+        Inventory.NumberOfItems = Inven.NumberOfItem;
         Inven.ItemName = "Potion";
         
         string locationUpdate = JsonUtility.ToJson(data);
