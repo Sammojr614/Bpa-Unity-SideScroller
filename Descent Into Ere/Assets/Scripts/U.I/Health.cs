@@ -1,79 +1,78 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.IO;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    DataMgr data = DataMgr.Instance;
-    public static int health;
-    public static int lives;
-    public GameObject[] healthCharges;
-    public Text livesDisplay;
+    public static int PlayerHealth;
+    public static int Lives;
+    public Sprite FullHeart;
+    public Sprite HalfHeart;
+    public Sprite EmptyHeart;
+    public Text LivesDisplay;
+
+    public List<SpriteRenderer> Hearts;
+    
+    
 
     private void Start()
     {
-        string DmgCheck = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
-        DataMgr loadDmg = JsonUtility.FromJson<DataMgr>(DmgCheck);
-
-        health = loadDmg.Playerhealth;
-        lives = loadDmg.PlayerLives;
+        string fromjson = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
+        DbManager dbMgr = JsonUtility.FromJson<DbManager>(fromjson);
+        PlayerHealth = dbMgr.dbHealth;
+        Lives = dbMgr.dbLives;
     }
 
     private void Update()
     {
-        string DmgCheck = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
-        DataMgr loadDmg = JsonUtility.FromJson<DataMgr>(DmgCheck);
-        livesDisplay.text = "Lives: " + loadDmg.PlayerLives.ToString();
-        //This Switch is for Changing the Health When you take Damage
-        switch (health)
+        string fromjson = File.ReadAllText(Application.dataPath + "PlayerSaveData.json");
+        DbManager dbMgr = JsonUtility.FromJson<DbManager>(fromjson);
+        if (PlayerHealth == 6)
         {
-            case 4:
-                foreach(GameObject charge in healthCharges)
-                {
-                    charge.SetActive(true);
-                }
-                break;
-            case 3:
-                healthCharges[0].SetActive(false);
-                break;
-            case 2:
-                healthCharges[1].SetActive(false);
-                break;
-            case 1: healthCharges[2].SetActive(false);
-                break;
-            case 0: foreach(GameObject charges in healthCharges)
-                {
-                    charges.SetActive(false);
-                }
-                lives--;
-                health = 4;
-                break;
+            Hearts[2].sprite = FullHeart;
+            Hearts[1].sprite = FullHeart;
+            Hearts[0].sprite = FullHeart;
         }
-
-        if (Continue.resetLives == true)
+        if(PlayerHealth == 5)
         {
-            lives = 3;
-            Continue.resetLives = false;
+            Hearts[2].sprite = HalfHeart;
+            Hearts[1].sprite = FullHeart;
+            Hearts[0].sprite = FullHeart;
         }
-
-        if (lives == 0)
+        if(PlayerHealth == 4)
         {
-            SceneManager.LoadScene("GameOver");
+            Hearts[2].sprite = EmptyHeart;
+            Hearts[1].sprite = FullHeart;
+            Hearts[0].sprite = FullHeart;
         }
-        
+        if(PlayerHealth == 3)
+        {
+            Hearts[2].sprite = EmptyHeart;
+            Hearts[1].sprite = HalfHeart;
+            Hearts[0].sprite = FullHeart;
+        }
+        if(PlayerHealth == 2)
+        {
+            Hearts[2].sprite = EmptyHeart;
+            Hearts[1].sprite = EmptyHeart;
+            Hearts[0].sprite = FullHeart;
+        }
+        if(PlayerHealth == 1)
+        {
+            Hearts[2].sprite = EmptyHeart;
+            Hearts[1].sprite = EmptyHeart;
+            Hearts[0].sprite = HalfHeart;
+        }
+        if(PlayerHealth == 0)
+        {
+            Hearts[2].sprite = EmptyHeart;
+            Hearts[1].sprite = EmptyHeart;
+            Hearts[0].sprite = EmptyHeart;
+            Lives--;
+            PlayerHealth = 6;
+        }
+        LivesDisplay.text ="Lives: " + dbMgr.dbLives.ToString();
     }
-    //This is For the Damage
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Enemy"))
-        {
-            health--;
-            string json = JsonUtility.ToJson(data);
-            File.WriteAllText("PlayerSaveData.json", json);
-        }
-    }
-
 }

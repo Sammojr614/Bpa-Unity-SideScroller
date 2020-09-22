@@ -1,23 +1,30 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class Groundcheck : MonoBehaviour
 {
-    //If the player is on the ground, isGrounded = true
-    void OnTriggerEnter2D(Collider2D collision)
+    public static bool isGrounded;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Ground"))
         {
-            PlayerMovement.isGrounded = true;
+            isGrounded = true;
         }
     }
-
-    //If the player is NOT on the ground, isGrounded = false
-    void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Ground"))
         {
-            PlayerMovement.isGrounded = false;
+            isGrounded = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Ground"))
+        {
+            isGrounded = false;
         }
     }
 }
