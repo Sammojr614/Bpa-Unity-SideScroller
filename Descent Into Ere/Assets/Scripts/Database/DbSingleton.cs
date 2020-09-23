@@ -23,4 +23,5 @@ public class DbManager
     public int dbHealth;
     public int dbLives;
     public string dbLocation;
+    public int dbCoins;
 }

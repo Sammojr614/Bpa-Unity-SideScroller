@@ -29,6 +29,7 @@ public class NewData : MonoBehaviour
         dataMgr.dbHealth = 6;
         dataMgr.dbLives = 4;
         dataMgr.dbLocation = "Testing";
+        dataMgr.dbCoins = 0;
         string jsonString = JsonUtility.ToJson(dataMgr);
         File.WriteAllText(Application.dataPath + "PlayerSaveData.json",jsonString);
     }
